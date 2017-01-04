@@ -1,0 +1,26 @@
+Implement a HashMap of strings using linear chaining.  
+
+Insert the entire dictionary, found here:  https://drive.google.com/file/d/0Bwxfq4Y7f7vkeW53OEYxSktWNmc/view?usp=sharing (Links to an external site.)
+
+Read in the file hw8.dat and for each word, print true if it is in the dictionary, false otherwise.
+
+ 
+
+display the histogram showing the number of steps to insert each word
+that took 1, 2, 3, ... 10 and 11 or more checks.
+
+example of output:
+
+insert    count
+
+1                 195000
+
+2                 10000
+
+3                 4000
+
+4                 500
+
+5                 100
+
+..... and so on

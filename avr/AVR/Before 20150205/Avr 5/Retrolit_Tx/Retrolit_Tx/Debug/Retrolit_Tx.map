@@ -1,0 +1,614 @@
+Archive member included because of file (symbol)
+
+c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_exit.o)
+                              c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr25/crttn2313.o (exit)
+c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_copy_data.o)
+                              Retrolit_Tx.o (__do_copy_data)
+c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_clear_bss.o)
+                              Retrolit_Tx.o (__do_clear_bss)
+c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fixunssfsi.o)
+                              Retrolit_Tx.o (__fixunssfsi)
+c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_addsub_sf.o)
+                              c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fixunssfsi.o) (__subsf3)
+c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_mul_sf.o)
+                              Retrolit_Tx.o (__mulsf3)
+c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_gt_sf.o)
+                              Retrolit_Tx.o (__gtsf2)
+c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_ge_sf.o)
+                              c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fixunssfsi.o) (__gesf2)
+c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_lt_sf.o)
+                              Retrolit_Tx.o (__ltsf2)
+c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_sf_to_si.o)
+                              c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fixunssfsi.o) (__fixsfsi)
+c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_thenan_sf.o)
+                              c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_addsub_sf.o) (__thenan_sf)
+c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_prologue.o)
+                              c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_addsub_sf.o) (__prologue_saves__)
+c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_epilogue.o)
+                              c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_addsub_sf.o) (__epilogue_restores__)
+c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_pack_sf.o)
+                              c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_addsub_sf.o) (__pack_f)
+c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_unpack_sf.o)
+                              c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_addsub_sf.o) (__unpack_f)
+c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fpcmp_parts_sf.o)
+                              c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_gt_sf.o) (__fpcmp_parts_f)
+
+Allocating common symbols
+Common symbol       size              file
+
+aNumberAsString     0x28              Retrolit_Tx.o
+UQFront             0x1               Retrolit_Tx.o
+UQEnd               0x1               Retrolit_Tx.o
+URBuff              0x40              Retrolit_Tx.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00002000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr25/crttn2313.o
+LOAD Retrolit_Tx.o
+LOAD c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a
+LOAD c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr25\libc.a
+LOAD c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x1158
+ *(.vectors)
+ .vectors       0x00000000       0x26 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr25/crttn2313.o
+                0x00000000                __vector_default
+                0x00000000                __vectors
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x00000026                . = ALIGN (0x2)
+                0x00000026                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x00000026        0x0 linker stubs
+ *(.trampolines*)
+                0x00000026                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x00000026                __ctors_start = .
+ *(.ctors)
+                0x00000026                __ctors_end = .
+                0x00000026                __dtors_start = .
+ *(.dtors)
+                0x00000026                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x00000026        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr25/crttn2313.o
+                0x00000026                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000026        0x8 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr25/crttn2313.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x0000002e       0x16 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_copy_data.o)
+                0x0000002e                __do_copy_data
+ .init4         0x00000044       0x10 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_clear_bss.o)
+                0x00000044                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x00000054        0x4 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr25/crttn2313.o
+ *(.init9)
+ *(.text)
+ .text          0x00000058        0x2 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr25/crttn2313.o
+                0x00000058                __vector_1
+                0x00000058                __vector_12
+                0x00000058                __bad_interrupt
+                0x00000058                __vector_6
+                0x00000058                __vector_3
+                0x00000058                __vector_11
+                0x00000058                __vector_13
+                0x00000058                __vector_17
+                0x00000058                __vector_7
+                0x00000058                __vector_5
+                0x00000058                __vector_4
+                0x00000058                __vector_9
+                0x00000058                __vector_2
+                0x00000058                __vector_15
+                0x00000058                __vector_8
+                0x00000058                __vector_14
+                0x00000058                __vector_10
+                0x00000058                __vector_16
+                0x00000058                __vector_18
+ .text          0x0000005a      0x660 Retrolit_Tx.o
+                0x0000005a                USARTInit
+                0x000000b0                USART0_RXC
+                0x00000174                UReadData
+                0x000001da                UWriteData
+                0x0000030e                UDataAvailable
+                0x0000036a                UWriteString
+                0x000003a4                Command_Display
+                0x000003c0                Change_Baudrate
+                0x000003e0                Set_Cursor_Position
+                0x00000408                SystemInit
+                0x00000438                start_Test
+                0x00000460                pause_Test
+                0x00000488                main
+ .text          0x000006ba        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_exit.o)
+ .text          0x000006ba        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_copy_data.o)
+ .text          0x000006ba        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_clear_bss.o)
+ .text          0x000006ba       0x50 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fixunssfsi.o)
+                0x000006ba                __fixunssfsi
+ .text          0x0000070a      0x334 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_addsub_sf.o)
+                0x0000099a                __addsf3
+                0x000009e8                __subsf3
+ .text          0x00000a3e      0x1ea c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_mul_sf.o)
+                0x00000a3e                __mulsf3
+ .text          0x00000c28       0x56 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_gt_sf.o)
+                0x00000c28                __gtsf2
+ .text          0x00000c7e       0x56 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_ge_sf.o)
+                0x00000c7e                __gesf2
+ .text          0x00000cd4       0x56 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_lt_sf.o)
+                0x00000cd4                __ltsf2
+ .text          0x00000d2a       0x9e c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_sf_to_si.o)
+                0x00000d2a                __fixsfsi
+ .text          0x00000dc8        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_thenan_sf.o)
+ .text          0x00000dc8        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_prologue.o)
+ .text          0x00000dc8        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_epilogue.o)
+ .text          0x00000dc8      0x19a c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_pack_sf.o)
+                0x00000dc8                __pack_f
+ .text          0x00000f62       0xd2 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_unpack_sf.o)
+                0x00000f62                __unpack_f
+ .text          0x00001034       0xb2 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fpcmp_parts_sf.o)
+                0x00001034                __fpcmp_parts_f
+                0x000010e6                . = ALIGN (0x2)
+ *(.text.*)
+ .text.libgcc   0x000010e6        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_exit.o)
+ .text.libgcc   0x000010e6        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_copy_data.o)
+ .text.libgcc   0x000010e6        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x000010e6       0x38 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_prologue.o)
+                0x000010e6                __prologue_saves__
+ .text.libgcc   0x0000111e       0x36 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_epilogue.o)
+                0x0000111e                __epilogue_restores__
+                0x00001154                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00001154        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_exit.o)
+                0x00001154                _exit
+                0x00001154                exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00001154        0x4 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00001158                _etext = .
+
+.data           0x00800060        0xe load address 0x00001158
+                0x00800060                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800060        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr25/crttn2313.o
+ .data          0x00800060        0x5 Retrolit_Tx.o
+                0x00800060                Label
+ .data          0x00800065        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_exit.o)
+ .data          0x00800065        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_copy_data.o)
+ .data          0x00800065        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_clear_bss.o)
+ .data          0x00800065        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fixunssfsi.o)
+ .data          0x00800065        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_addsub_sf.o)
+ .data          0x00800065        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_mul_sf.o)
+ .data          0x00800065        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_gt_sf.o)
+ .data          0x00800065        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_ge_sf.o)
+ .data          0x00800065        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_lt_sf.o)
+ .data          0x00800065        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_sf_to_si.o)
+ .data          0x00800065        0x8 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_thenan_sf.o)
+                0x00800065                __thenan_sf
+ .data          0x0080006d        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_prologue.o)
+ .data          0x0080006d        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_epilogue.o)
+ .data          0x0080006d        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_pack_sf.o)
+ .data          0x0080006d        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_unpack_sf.o)
+ .data          0x0080006d        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fpcmp_parts_sf.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x0080006e                . = ALIGN (0x2)
+ *fill*         0x0080006d        0x1 00
+                0x0080006e                _edata = .
+                0x0080006e                PROVIDE (__data_end, .)
+
+.bss            0x0080006e       0x6f
+                0x0080006e                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x0080006e        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr25/crttn2313.o
+ .bss           0x0080006e        0x5 Retrolit_Tx.o
+                0x0080006e                rotation_Count
+                0x00800072                first_Pause
+ .bss           0x00800073        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_exit.o)
+ .bss           0x00800073        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_copy_data.o)
+ .bss           0x00800073        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_clear_bss.o)
+ .bss           0x00800073        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fixunssfsi.o)
+ .bss           0x00800073        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_addsub_sf.o)
+ .bss           0x00800073        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_mul_sf.o)
+ .bss           0x00800073        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_gt_sf.o)
+ .bss           0x00800073        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_ge_sf.o)
+ .bss           0x00800073        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_lt_sf.o)
+ .bss           0x00800073        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_sf_to_si.o)
+ .bss           0x00800073        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_thenan_sf.o)
+ .bss           0x00800073        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_prologue.o)
+ .bss           0x00800073        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_epilogue.o)
+ .bss           0x00800073        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_pack_sf.o)
+ .bss           0x00800073        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_unpack_sf.o)
+ .bss           0x00800073        0x0 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fpcmp_parts_sf.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x00800073       0x6a Retrolit_Tx.o
+                0x00800073                aNumberAsString
+                0x0080009b                UQFront
+                0x0080009c                UQEnd
+                0x0080009d                URBuff
+                0x008000dd                PROVIDE (__bss_end, .)
+                0x00001158                __data_load_start = LOADADDR (.data)
+                0x00001166                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x008000dd        0x0
+                0x008000dd                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x008000dd                PROVIDE (__noinit_end, .)
+                0x008000dd                _end = .
+                0x008000dd                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab           0x00000000      0x6b4
+ *(.stab)
+ .stab          0x00000000      0x6b4 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr25/crttn2313.o
+
+.stabstr        0x00000000       0x85
+ *(.stabstr)
+ .stabstr       0x00000000       0x85 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr25/crttn2313.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x160
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 Retrolit_Tx.o
+ .debug_aranges
+                0x00000020       0x20 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fixunssfsi.o)
+ .debug_aranges
+                0x00000040       0x20 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_addsub_sf.o)
+ .debug_aranges
+                0x00000060       0x20 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_mul_sf.o)
+ .debug_aranges
+                0x00000080       0x20 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_gt_sf.o)
+ .debug_aranges
+                0x000000a0       0x20 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_ge_sf.o)
+ .debug_aranges
+                0x000000c0       0x20 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_lt_sf.o)
+ .debug_aranges
+                0x000000e0       0x20 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_sf_to_si.o)
+ .debug_aranges
+                0x00000100       0x20 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_pack_sf.o)
+ .debug_aranges
+                0x00000120       0x20 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_unpack_sf.o)
+ .debug_aranges
+                0x00000140       0x20 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fpcmp_parts_sf.o)
+
+.debug_pubnames
+                0x00000000      0x2b8
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000      0x148 Retrolit_Tx.o
+ .debug_pubnames
+                0x00000148       0x23 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fixunssfsi.o)
+ .debug_pubnames
+                0x0000016b       0x2c c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_addsub_sf.o)
+ .debug_pubnames
+                0x00000197       0x1f c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_mul_sf.o)
+ .debug_pubnames
+                0x000001b6       0x1e c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_gt_sf.o)
+ .debug_pubnames
+                0x000001d4       0x1e c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_ge_sf.o)
+ .debug_pubnames
+                0x000001f2       0x1e c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_lt_sf.o)
+ .debug_pubnames
+                0x00000210       0x20 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_sf_to_si.o)
+ .debug_pubnames
+                0x00000230       0x22 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_thenan_sf.o)
+ .debug_pubnames
+                0x00000252       0x1f c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_pack_sf.o)
+ .debug_pubnames
+                0x00000271       0x21 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_unpack_sf.o)
+ .debug_pubnames
+                0x00000292       0x26 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fpcmp_parts_sf.o)
+
+.debug_info     0x00000000     0x20b8
+ *(.debug_info)
+ .debug_info    0x00000000      0x4f3 Retrolit_Tx.o
+ .debug_info    0x000004f3       0xbd c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fixunssfsi.o)
+ .debug_info    0x000005b0      0x455 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_addsub_sf.o)
+ .debug_info    0x00000a05      0x3ec c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_mul_sf.o)
+ .debug_info    0x00000df1      0x28a c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_gt_sf.o)
+ .debug_info    0x0000107b      0x28a c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_ge_sf.o)
+ .debug_info    0x00001305      0x28a c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_lt_sf.o)
+ .debug_info    0x0000158f      0x2a5 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_sf_to_si.o)
+ .debug_info    0x00001834      0x15e c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_thenan_sf.o)
+ .debug_info    0x00001992      0x2d9 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_pack_sf.o)
+ .debug_info    0x00001c6b      0x25c c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_unpack_sf.o)
+ .debug_info    0x00001ec7      0x1f1 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fpcmp_parts_sf.o)
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0xf5d
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x17f Retrolit_Tx.o
+ .debug_abbrev  0x0000017f       0x5d c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fixunssfsi.o)
+ .debug_abbrev  0x000001dc      0x1af c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_addsub_sf.o)
+ .debug_abbrev  0x0000038b      0x1d9 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_mul_sf.o)
+ .debug_abbrev  0x00000564      0x151 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_gt_sf.o)
+ .debug_abbrev  0x000006b5      0x151 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_ge_sf.o)
+ .debug_abbrev  0x00000806      0x151 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_lt_sf.o)
+ .debug_abbrev  0x00000957      0x160 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_sf_to_si.o)
+ .debug_abbrev  0x00000ab7       0xcb c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_thenan_sf.o)
+ .debug_abbrev  0x00000b82      0x185 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_pack_sf.o)
+ .debug_abbrev  0x00000d07      0x14b c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_unpack_sf.o)
+ .debug_abbrev  0x00000e52      0x10b c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fpcmp_parts_sf.o)
+
+.debug_line     0x00000000     0x15fa
+ *(.debug_line)
+ .debug_line    0x00000000      0x5d6 Retrolit_Tx.o
+ .debug_line    0x000005d6       0xc9 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fixunssfsi.o)
+ .debug_line    0x0000069f      0x2ee c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_addsub_sf.o)
+ .debug_line    0x0000098d      0x28a c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_mul_sf.o)
+ .debug_line    0x00000c17      0x105 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_gt_sf.o)
+ .debug_line    0x00000d1c      0x105 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_ge_sf.o)
+ .debug_line    0x00000e21      0x105 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_lt_sf.o)
+ .debug_line    0x00000f26      0x13f c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_sf_to_si.o)
+ .debug_line    0x00001065       0xb2 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_thenan_sf.o)
+ .debug_line    0x00001117      0x1f5 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_pack_sf.o)
+ .debug_line    0x0000130c      0x175 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_unpack_sf.o)
+ .debug_line    0x00001481      0x179 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fpcmp_parts_sf.o)
+
+.debug_frame    0x00000000      0x240
+ *(.debug_frame)
+ .debug_frame   0x00000000       0xe0 Retrolit_Tx.o
+ .debug_frame   0x000000e0       0x20 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fixunssfsi.o)
+ .debug_frame   0x00000100       0x40 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_addsub_sf.o)
+ .debug_frame   0x00000140       0x20 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_mul_sf.o)
+ .debug_frame   0x00000160       0x20 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_gt_sf.o)
+ .debug_frame   0x00000180       0x20 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_ge_sf.o)
+ .debug_frame   0x000001a0       0x20 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_lt_sf.o)
+ .debug_frame   0x000001c0       0x20 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_sf_to_si.o)
+ .debug_frame   0x000001e0       0x20 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_pack_sf.o)
+ .debug_frame   0x00000200       0x20 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_unpack_sf.o)
+ .debug_frame   0x00000220       0x20 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fpcmp_parts_sf.o)
+
+.debug_str      0x00000000      0x4bf
+ *(.debug_str)
+ .debug_str     0x00000000      0x217 Retrolit_Tx.o
+                                0x252 (size before relaxing)
+ .debug_str     0x00000217       0xd8 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fixunssfsi.o)
+                                0x15d (size before relaxing)
+ .debug_str     0x000002ef      0x14f c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_addsub_sf.o)
+                                0x244 (size before relaxing)
+ .debug_str     0x0000043e       0x27 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_mul_sf.o)
+                                0x1fd (size before relaxing)
+ .debug_str     0x00000465        0xf c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_gt_sf.o)
+                                0x1cb (size before relaxing)
+ .debug_str     0x00000474        0x8 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_ge_sf.o)
+                                0x1cb (size before relaxing)
+ .debug_str     0x0000047c        0x8 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_lt_sf.o)
+                                0x1cb (size before relaxing)
+ .debug_str     0x00000484        0xa c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_sf_to_si.o)
+                                0x1d4 (size before relaxing)
+ .debug_str     0x00000000      0x176 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_thenan_sf.o)
+ .debug_str     0x0000048e       0x16 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_pack_sf.o)
+                                0x1d3 (size before relaxing)
+ .debug_str     0x000004a4        0xb c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_unpack_sf.o)
+                                0x1b5 (size before relaxing)
+ .debug_str     0x000004af       0x10 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fpcmp_parts_sf.o)
+                                0x199 (size before relaxing)
+
+.debug_loc      0x00000000      0xa79
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x34 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fixunssfsi.o)
+ .debug_loc     0x00000034      0x31d c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_addsub_sf.o)
+ .debug_loc     0x00000351      0x2a4 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_mul_sf.o)
+ .debug_loc     0x000005f5       0x48 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_gt_sf.o)
+ .debug_loc     0x0000063d       0x48 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_ge_sf.o)
+ .debug_loc     0x00000685       0x48 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_lt_sf.o)
+ .debug_loc     0x000006cd       0x56 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_sf_to_si.o)
+ .debug_loc     0x00000723      0x1f5 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_pack_sf.o)
+ .debug_loc     0x00000918      0x111 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_unpack_sf.o)
+ .debug_loc     0x00000a29       0x50 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fpcmp_parts_sf.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(Retrolit_Tx.elf elf32-avr)
+LOAD linker stubs
+
+.debug_pubtypes
+                0x00000000      0x5a0
+ .debug_pubtypes
+                0x00000000       0x43 Retrolit_Tx.o
+ .debug_pubtypes
+                0x00000043       0x34 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fixunssfsi.o)
+ .debug_pubtypes
+                0x00000077       0x9d c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_addsub_sf.o)
+ .debug_pubtypes
+                0x00000114       0x86 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_mul_sf.o)
+ .debug_pubtypes
+                0x0000019a       0x91 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_gt_sf.o)
+ .debug_pubtypes
+                0x0000022b       0x91 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_ge_sf.o)
+ .debug_pubtypes
+                0x000002bc       0x91 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_lt_sf.o)
+ .debug_pubtypes
+                0x0000034d       0x91 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_sf_to_si.o)
+ .debug_pubtypes
+                0x000003de       0x5b c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_thenan_sf.o)
+ .debug_pubtypes
+                0x00000439       0x86 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_pack_sf.o)
+ .debug_pubtypes
+                0x000004bf       0x86 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_unpack_sf.o)
+ .debug_pubtypes
+                0x00000545       0x5b c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_fpcmp_parts_sf.o)
+
+.debug_ranges   0x00000000       0x30
+ .debug_ranges  0x00000000       0x30 c:/program files (x86)/atmel/avr studio 5.0/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr25\libgcc.a(_mul_sf.o)

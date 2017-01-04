@@ -1,0 +1,170 @@
+'{$STAMP BS2}
+'{$PBASIC 2.5}
+Rx             PIN     0
+SensorServo    PIN     14
+Right          PIN     12
+Left           PIN     13
+EOM            CON     255
+Baud           CON     16780
+CmConstant     CON     2260
+
+' -----[ Variables ]-------------------------------------------------------
+short           VAR     Byte
+time            VAR     Byte
+counter         VAR     Byte
+string          VAR     Byte(16)        'Array to hold received data
+strLen          VAR     Byte            'Length of string received
+temp            VAR     Byte            'Temporary variable
+
+cValue          VAR     Byte            'Holder for CRC calculation
+crc             VAR     Word            'Calculate CRC value
+rcvdCrc         VAR     Word            'Received CRC value
+
+' -----[ Program Code ]----------------------------------------------------
+
+Main:
+DO
+  ' Wait for preamble, then receive data and crc value
+  SERIN Rx,Baud,[WAIT ("U!"), strLen, STR string\strLen,
+                 rcvdCRC.LOWBYTE,rcvdCrc.HIGHBYTE]
+  ' Calculate crc of received data
+  crc = 0
+  FOR temp = 0 TO strLen-1
+    cValue = string(temp)
+    GOSUB CalcCRC
+  NEXT
+  ' See if received crc value matches calculated crc value
+  IF rcvdCrc = crc THEN
+    ' Is last character the "end-of-message" marker ?
+    IF string(strLen-1) <> EOM THEN
+      'DEBUG STR string\strLen, CR           ' Display string on debug screen
+      'DEBUG STR string
+    ELSE
+      strLen = strLen -1                ' Don't display EOM
+      'DEBUG STR string\strLen, "--END OF MESSAGE--",CR,CR
+      'DEBUG STR string\strLen, CR
+      'DEBUG string, CR
+      IF string = "F" THEN
+      GOSUB MoveForward
+      ELSEIF string = "B" THEN
+      GOSUB MoveBackward
+      ELSEIF string = "L" THEN
+      GOSUB MoveLeft
+      ELSEIF string = "R" THEN
+      GOSUB MoveRight
+      ELSEIF string = "A" THEN
+      GOSUB Auto
+      ELSEIF string = "S" THEN
+      GOSUB SensorLeft
+      ELSEIF string = "M" THEN
+      GOSUB SensorRight
+      ELSEIF string = "N" THEN
+      GOSUB  Nothing
+      ENDIF
+    ENDIF
+  ELSE
+    ' Received crc did NOT match calculated crc
+   ' DEBUG "  ** RECEIVE ERROR **  ", BELL
+  ENDIF
+LOOP
+
+
+' -----[ Subroutines ]-----------------------------------------------------
+MoveForward:
+  FOR counter = 1 TO 10
+    PULSOUT Right, 850
+    PULSOUT Left, 650
+    PAUSE 20
+  NEXT
+RETURN
+
+MoveBackward:
+  FOR counter = 1 TO 10
+    PULSOUT Right, 650
+    PULSOUT Left, 850
+    PAUSE 20
+  NEXT
+RETURN
+
+MoveLeft:
+  FOR counter = 1 TO 10
+    PULSOUT Right, 740
+    PULSOUT Left, 740
+    PAUSE 20
+  NEXT
+RETURN
+
+MoveRight:
+  FOR counter = 1 TO 10
+    PULSOUT Right, 760
+    PULSOUT Left, 760
+    PAUSE 20
+  NEXT
+RETURN
+
+Auto:
+ short = 255
+ FOR counter = 1 TO 13
+  PULSOUT 3, 5
+  PULSIN 3, 1, time
+  DEBUG HOME, DEC3 time, " time"
+  IF time < short THEN
+  short = time
+  ENDIF
+  PAUSE 100
+  PULSOUT SensorServo, 800
+ NEXT
+
+FOR counter = 1 TO 26
+  PULSOUT 3, 5
+  PULSIN 3, 1, time
+  DEBUG HOME, DEC3 time, " time"
+  IF time < short THEN
+  short = time
+  ENDIF
+  PAUSE 100
+  PULSOUT SensorServo, 700
+NEXT
+
+ FOR counter = 1 TO 11
+  PULSOUT 3, 5
+  PULSIN 3, 1, time
+  DEBUG HOME, DEC3 time, " time"
+  IF time < short THEN
+  short = time
+  ENDIF
+  PAUSE 100
+  PULSOUT SensorServo, 800
+ NEXT
+
+ DEBUG CR,CR,"Shortest Time = ", DEC3 short
+RETURN
+
+SensorLeft:
+  FOR counter = 1 TO 2
+    PULSOUT SensorServo, 800
+    PAUSE 20
+  NEXT
+RETURN
+
+SensorRight:
+  FOR counter = 1 TO 2
+    PULSOUT SensorServo, 700
+    PAUSE 20
+  NEXT
+RETURN
+
+Nothing:
+  FOR counter = 1 TO 10
+    PULSOUT Right, 750
+    PULSOUT Left, 750
+    PULSOUT SensorServo, 750
+    PAUSE 20
+  NEXT
+RETURN
+
+' CRC Checksum Calculation Routine
+CalcCRC:
+  CValue= crc.HIGHBYTE ^ cValue >> 4 ^ (crc.HIGHBYTE ^ cValue)
+  crc = cValue ^ (cValue << 5) ^ (cValue << 12) ^ (crc << 8)
+RETURN

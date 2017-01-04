@@ -1,0 +1,513 @@
+
+ButtonClickRx.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000238  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000042  00800060  00800060  000002ac  2**0
+                  ALLOC
+  2 .debug_aranges 00000040  00000000  00000000  000002ac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_pubnames 000000da  00000000  00000000  000002ec  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   000003b6  00000000  00000000  000003c6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 00000256  00000000  00000000  0000077c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   000003d2  00000000  00000000  000009d2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_frame  000000a0  00000000  00000000  00000da4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_str    0000013a  00000000  00000000  00000e44  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_loc    0000009a  00000000  00000000  00000f7e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	21 c0       	rjmp	.+66     	; 0x46 <__bad_interrupt>
+   4:	20 c0       	rjmp	.+64     	; 0x46 <__bad_interrupt>
+   6:	1f c0       	rjmp	.+62     	; 0x46 <__bad_interrupt>
+   8:	1e c0       	rjmp	.+60     	; 0x46 <__bad_interrupt>
+   a:	1d c0       	rjmp	.+58     	; 0x46 <__bad_interrupt>
+   c:	1c c0       	rjmp	.+56     	; 0x46 <__bad_interrupt>
+   e:	1b c0       	rjmp	.+54     	; 0x46 <__bad_interrupt>
+  10:	1a c0       	rjmp	.+52     	; 0x46 <__bad_interrupt>
+  12:	19 c0       	rjmp	.+50     	; 0x46 <__bad_interrupt>
+  14:	18 c0       	rjmp	.+48     	; 0x46 <__bad_interrupt>
+  16:	27 c0       	rjmp	.+78     	; 0x66 <__vector_11>
+  18:	16 c0       	rjmp	.+44     	; 0x46 <__bad_interrupt>
+  1a:	15 c0       	rjmp	.+42     	; 0x46 <__bad_interrupt>
+  1c:	14 c0       	rjmp	.+40     	; 0x46 <__bad_interrupt>
+  1e:	13 c0       	rjmp	.+38     	; 0x46 <__bad_interrupt>
+  20:	12 c0       	rjmp	.+36     	; 0x46 <__bad_interrupt>
+  22:	11 c0       	rjmp	.+34     	; 0x46 <__bad_interrupt>
+  24:	10 c0       	rjmp	.+32     	; 0x46 <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+
+00000032 <__do_clear_bss>:
+  32:	10 e0       	ldi	r17, 0x00	; 0
+  34:	a0 e6       	ldi	r26, 0x60	; 96
+  36:	b0 e0       	ldi	r27, 0x00	; 0
+  38:	01 c0       	rjmp	.+2      	; 0x3c <.do_clear_bss_start>
+
+0000003a <.do_clear_bss_loop>:
+  3a:	1d 92       	st	X+, r1
+
+0000003c <.do_clear_bss_start>:
+  3c:	a2 3a       	cpi	r26, 0xA2	; 162
+  3e:	b1 07       	cpc	r27, r17
+  40:	e1 f7       	brne	.-8      	; 0x3a <.do_clear_bss_loop>
+  42:	cc d0       	rcall	.+408    	; 0x1dc <main>
+  44:	f7 c0       	rjmp	.+494    	; 0x234 <_exit>
+
+00000046 <__bad_interrupt>:
+  46:	dc cf       	rjmp	.-72     	; 0x0 <__vectors>
+
+00000048 <USARTInit>:
+
+
+void USARTInit(uint16_t ubrrvalue)
+{
+	//Setup q
+	UQFront=UQEnd=-1;
+  48:	2f ef       	ldi	r18, 0xFF	; 255
+  4a:	20 93 61 00 	sts	0x0061, r18
+  4e:	20 91 61 00 	lds	r18, 0x0061
+  52:	20 93 60 00 	sts	0x0060, r18
+
+	//Set Baud rate
+	UBRRH=(unsigned char)(ubrrvalue>>8);
+  56:	90 bd       	out	0x20, r25	; 32
+	UBRRL=(unsigned char)ubrrvalue;
+  58:	89 b9       	out	0x09, r24	; 9
+	No Parity
+	1 StopBit
+	char size 8
+
+	*/
+	UCSRC=(1<<URSEL)|(0<<UMSEL)|(0<<UPM1)|(0<<UPM0)|(0<<USBS)|(0<<UCSZ2)|(1<<UCSZ1)|(1<<UCSZ0)|(0<<UCPOL);
+  5a:	86 e8       	ldi	r24, 0x86	; 134
+  5c:	80 bd       	out	0x20, r24	; 32
+
+	Enable The recevier and transmitter
+
+	*/
+
+	UCSRB=(1<<RXCIE)|(1<<RXEN);
+  5e:	80 e9       	ldi	r24, 0x90	; 144
+  60:	8a b9       	out	0x0a, r24	; 10
+	sei();
+  62:	78 94       	sei
+
+}
+  64:	08 95       	ret
+
+00000066 <__vector_11>:
+
+//The USART ISR
+ISR(USART_RXC_VECT)
+{
+  66:	1f 92       	push	r1
+  68:	0f 92       	push	r0
+  6a:	0f b6       	in	r0, 0x3f	; 63
+  6c:	0f 92       	push	r0
+  6e:	11 24       	eor	r1, r1
+  70:	2f 93       	push	r18
+  72:	3f 93       	push	r19
+  74:	4f 93       	push	r20
+  76:	8f 93       	push	r24
+  78:	9f 93       	push	r25
+  7a:	ef 93       	push	r30
+  7c:	ff 93       	push	r31
+	//Read the data
+	char data=UDR;
+  7e:	4c b1       	in	r20, 0x0c	; 12
+
+	//Now add it to q
+
+	if(((UQEnd==RECEIVE_BUFF_SIZE-1) && UQFront==0) || ((UQEnd+1)==UQFront))
+  80:	80 91 61 00 	lds	r24, 0x0061
+  84:	8f 33       	cpi	r24, 0x3F	; 63
+  86:	21 f4       	brne	.+8      	; 0x90 <__vector_11+0x2a>
+  88:	80 91 60 00 	lds	r24, 0x0060
+  8c:	88 23       	and	r24, r24
+  8e:	71 f0       	breq	.+28     	; 0xac <__vector_11+0x46>
+  90:	80 91 61 00 	lds	r24, 0x0061
+  94:	20 91 60 00 	lds	r18, 0x0060
+  98:	99 27       	eor	r25, r25
+  9a:	87 fd       	sbrc	r24, 7
+  9c:	90 95       	com	r25
+  9e:	01 96       	adiw	r24, 0x01	; 1
+  a0:	33 27       	eor	r19, r19
+  a2:	27 fd       	sbrc	r18, 7
+  a4:	30 95       	com	r19
+  a6:	82 17       	cp	r24, r18
+  a8:	93 07       	cpc	r25, r19
+  aa:	59 f4       	brne	.+22     	; 0xc2 <__vector_11+0x5c>
+	{
+		//Q Full
+		UQFront++;
+  ac:	80 91 60 00 	lds	r24, 0x0060
+  b0:	8f 5f       	subi	r24, 0xFF	; 255
+  b2:	80 93 60 00 	sts	0x0060, r24
+		if(UQFront==RECEIVE_BUFF_SIZE) UQFront=0;
+  b6:	80 91 60 00 	lds	r24, 0x0060
+  ba:	80 34       	cpi	r24, 0x40	; 64
+  bc:	11 f4       	brne	.+4      	; 0xc2 <__vector_11+0x5c>
+  be:	10 92 60 00 	sts	0x0060, r1
+	}
+	
+
+	if(UQEnd==RECEIVE_BUFF_SIZE-1)
+  c2:	80 91 61 00 	lds	r24, 0x0061
+  c6:	8f 33       	cpi	r24, 0x3F	; 63
+  c8:	19 f4       	brne	.+6      	; 0xd0 <__vector_11+0x6a>
+		UQEnd=0;
+  ca:	10 92 61 00 	sts	0x0061, r1
+  ce:	05 c0       	rjmp	.+10     	; 0xda <__vector_11+0x74>
+	else
+		UQEnd++;
+  d0:	80 91 61 00 	lds	r24, 0x0061
+  d4:	8f 5f       	subi	r24, 0xFF	; 255
+  d6:	80 93 61 00 	sts	0x0061, r24
+
+
+	URBuff[UQEnd]=data;
+  da:	e0 91 61 00 	lds	r30, 0x0061
+  de:	ff 27       	eor	r31, r31
+  e0:	e7 fd       	sbrc	r30, 7
+  e2:	f0 95       	com	r31
+  e4:	ee 59       	subi	r30, 0x9E	; 158
+  e6:	ff 4f       	sbci	r31, 0xFF	; 255
+  e8:	40 83       	st	Z, r20
+
+	if(UQFront==-1) UQFront=0;
+  ea:	80 91 60 00 	lds	r24, 0x0060
+  ee:	8f 3f       	cpi	r24, 0xFF	; 255
+  f0:	11 f4       	brne	.+4      	; 0xf6 <__vector_11+0x90>
+  f2:	10 92 60 00 	sts	0x0060, r1
+
+}
+  f6:	ff 91       	pop	r31
+  f8:	ef 91       	pop	r30
+  fa:	9f 91       	pop	r25
+  fc:	8f 91       	pop	r24
+  fe:	4f 91       	pop	r20
+ 100:	3f 91       	pop	r19
+ 102:	2f 91       	pop	r18
+ 104:	0f 90       	pop	r0
+ 106:	0f be       	out	0x3f, r0	; 63
+ 108:	0f 90       	pop	r0
+ 10a:	1f 90       	pop	r1
+ 10c:	18 95       	reti
+
+0000010e <UReadData>:
+char UReadData()
+{
+	char data;
+	
+	//Check if q is empty
+	if(UQFront==-1)
+ 10e:	80 91 60 00 	lds	r24, 0x0060
+ 112:	8f 3f       	cpi	r24, 0xFF	; 255
+ 114:	11 f4       	brne	.+4      	; 0x11a <UReadData+0xc>
+ 116:	e0 e0       	ldi	r30, 0x00	; 0
+ 118:	21 c0       	rjmp	.+66     	; 0x15c <UReadData+0x4e>
+		return 0;
+	
+	data=URBuff[UQFront];
+ 11a:	e0 91 60 00 	lds	r30, 0x0060
+ 11e:	ff 27       	eor	r31, r31
+ 120:	e7 fd       	sbrc	r30, 7
+ 122:	f0 95       	com	r31
+ 124:	ee 59       	subi	r30, 0x9E	; 158
+ 126:	ff 4f       	sbci	r31, 0xFF	; 255
+ 128:	e0 81       	ld	r30, Z
+	
+	if(UQFront==UQEnd)
+ 12a:	90 91 60 00 	lds	r25, 0x0060
+ 12e:	80 91 61 00 	lds	r24, 0x0061
+ 132:	98 17       	cp	r25, r24
+ 134:	41 f4       	brne	.+16     	; 0x146 <UReadData+0x38>
+	{
+	//If single data is left
+	//So empty q
+	UQFront=UQEnd=-1;
+ 136:	8f ef       	ldi	r24, 0xFF	; 255
+ 138:	80 93 61 00 	sts	0x0061, r24
+ 13c:	80 91 61 00 	lds	r24, 0x0061
+ 140:	80 93 60 00 	sts	0x0060, r24
+ 144:	0b c0       	rjmp	.+22     	; 0x15c <UReadData+0x4e>
+	}
+	else
+	{
+		UQFront++;
+ 146:	80 91 60 00 	lds	r24, 0x0060
+ 14a:	8f 5f       	subi	r24, 0xFF	; 255
+ 14c:	80 93 60 00 	sts	0x0060, r24
+
+		if(UQFront==RECEIVE_BUFF_SIZE)
+ 150:	80 91 60 00 	lds	r24, 0x0060
+ 154:	80 34       	cpi	r24, 0x40	; 64
+ 156:	11 f4       	brne	.+4      	; 0x15c <UReadData+0x4e>
+		UQFront=0;
+ 158:	10 92 60 00 	sts	0x0060, r1
+	}
+
+	return data;
+}
+ 15c:	8e 2f       	mov	r24, r30
+ 15e:	08 95       	ret
+
+00000160 <UWriteData>:
+
+void UWriteData(char data)
+{
+	//Wait For Transmitter to become ready
+	while(!(UCSRA & (1<<UDRE)));
+ 160:	5d 9b       	sbis	0x0b, 5	; 11
+ 162:	fe cf       	rjmp	.-4      	; 0x160 <UWriteData>
+
+	//Now write
+	UDR=data;
+ 164:	8c b9       	out	0x0c, r24	; 12
+}
+ 166:	08 95       	ret
+
+00000168 <UDataAvailable>:
+
+uint8_t UDataAvailable()
+{
+	if(UQFront==-1) return 0;
+ 168:	80 91 60 00 	lds	r24, 0x0060
+ 16c:	8f 3f       	cpi	r24, 0xFF	; 255
+ 16e:	11 f4       	brne	.+4      	; 0x174 <UDataAvailable+0xc>
+ 170:	90 e0       	ldi	r25, 0x00	; 0
+ 172:	1a c0       	rjmp	.+52     	; 0x1a8 <UDataAvailable+0x40>
+	if(UQFront<UQEnd)
+ 174:	90 91 60 00 	lds	r25, 0x0060
+ 178:	80 91 61 00 	lds	r24, 0x0061
+ 17c:	98 17       	cp	r25, r24
+ 17e:	34 f4       	brge	.+12     	; 0x18c <UDataAvailable+0x24>
+		return(UQEnd-UQFront+1);
+ 180:	90 91 61 00 	lds	r25, 0x0061
+ 184:	80 91 60 00 	lds	r24, 0x0060
+ 188:	9f 5f       	subi	r25, 0xFF	; 255
+ 18a:	0d c0       	rjmp	.+26     	; 0x1a6 <UDataAvailable+0x3e>
+	else if(UQFront>UQEnd)
+ 18c:	90 91 60 00 	lds	r25, 0x0060
+ 190:	80 91 61 00 	lds	r24, 0x0061
+ 194:	89 17       	cp	r24, r25
+ 196:	14 f0       	brlt	.+4      	; 0x19c <UDataAvailable+0x34>
+ 198:	91 e0       	ldi	r25, 0x01	; 1
+ 19a:	06 c0       	rjmp	.+12     	; 0x1a8 <UDataAvailable+0x40>
+		return (RECEIVE_BUFF_SIZE-UQFront+UQEnd+1);
+ 19c:	90 91 61 00 	lds	r25, 0x0061
+ 1a0:	80 91 60 00 	lds	r24, 0x0060
+ 1a4:	9f 5b       	subi	r25, 0xBF	; 191
+ 1a6:	98 1b       	sub	r25, r24
+	else
+		return 1;
+}
+ 1a8:	89 2f       	mov	r24, r25
+ 1aa:	08 95       	ret
+
+000001ac <UWriteString>:
+
+void UWriteString(char *str)
+{
+ 1ac:	fc 01       	movw	r30, r24
+ 1ae:	04 c0       	rjmp	.+8      	; 0x1b8 <UWriteString+0xc>
+}
+
+void UWriteData(char data)
+{
+	//Wait For Transmitter to become ready
+	while(!(UCSRA & (1<<UDRE)));
+ 1b0:	5d 9b       	sbis	0x0b, 5	; 11
+ 1b2:	fe cf       	rjmp	.-4      	; 0x1b0 <UWriteString+0x4>
+
+	//Now write
+	UDR=data;
+ 1b4:	8c b9       	out	0x0c, r24	; 12
+void UWriteString(char *str)
+{
+	while((*str)!='\0')
+	{
+		UWriteData(*str);
+		str++;
+ 1b6:	31 96       	adiw	r30, 0x01	; 1
+		return 1;
+}
+
+void UWriteString(char *str)
+{
+	while((*str)!='\0')
+ 1b8:	80 81       	ld	r24, Z
+ 1ba:	88 23       	and	r24, r24
+ 1bc:	c9 f7       	brne	.-14     	; 0x1b0 <UWriteString+0x4>
+}
+
+void UWriteData(char data)
+{
+	//Wait For Transmitter to become ready
+	while(!(UCSRA & (1<<UDRE)));
+ 1be:	5d 9b       	sbis	0x0b, 5	; 11
+ 1c0:	fe cf       	rjmp	.-4      	; 0x1be <UWriteString+0x12>
+
+	//Now write
+	UDR=data;
+ 1c2:	1c b8       	out	0x0c, r1	; 12
+		UWriteData(*str);
+		str++;
+	}
+
+	UWriteData('\0');
+}
+ 1c4:	08 95       	ret
+
+000001c6 <delayms>:
+#define tbi(x,y) x ^= _BV(y) //toggle bit
+#define is_high(x,y) (x & _BV(y)) == _BV(y) //(for input) checks if the 							  // input is high (Logic 1)
+							  // if(is_high(PIND,PD0))
+
+void delayms(uint8_t t)//delay in ms 
+{
+ 1c6:	90 e0       	ldi	r25, 0x00	; 0
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ 1c8:	28 ee       	ldi	r18, 0xE8	; 232
+ 1ca:	33 e0       	ldi	r19, 0x03	; 3
+ 1cc:	04 c0       	rjmp	.+8      	; 0x1d6 <delayms+0x10>
+ 1ce:	f9 01       	movw	r30, r18
+ 1d0:	31 97       	sbiw	r30, 0x01	; 1
+ 1d2:	f1 f7       	brne	.-4      	; 0x1d0 <delayms+0xa>
+uint8_t i;
+for(i=0;i<t;i++)
+ 1d4:	9f 5f       	subi	r25, 0xFF	; 255
+ 1d6:	98 17       	cp	r25, r24
+ 1d8:	d0 f3       	brcs	.-12     	; 0x1ce <delayms+0x8>
+	_delay_ms(1);
+}
+ 1da:	08 95       	ret
+
+000001dc <main>:
+
+void main()
+{
+ 1dc:	ff 92       	push	r15
+ 1de:	0f 93       	push	r16
+ 1e0:	1f 93       	push	r17
+	
+//	uint8_t packet[5];
+	
+	uint8_t data=0;
+	
+	DDRC|=0xFF;	//All Output
+ 1e2:	84 b3       	in	r24, 0x14	; 20
+ 1e4:	8f ef       	ldi	r24, 0xFF	; 255
+ 1e6:	84 bb       	out	0x14, r24	; 20
+
+	cbi(PORTC,PC0);
+ 1e8:	a8 98       	cbi	0x15, 0	; 21
+	cbi(PORTC,PC1);
+ 1ea:	a9 98       	cbi	0x15, 1	; 21
+	cbi(PORTC,PC2);
+ 1ec:	aa 98       	cbi	0x15, 2	; 21
+
+	//Initialize the USART with Baud rate = 2400bps
+	USARTInit(416);
+ 1ee:	80 ea       	ldi	r24, 0xA0	; 160
+ 1f0:	91 e0       	ldi	r25, 0x01	; 1
+ 1f2:	2a df       	rcall	.-428    	; 0x48 <USARTInit>
+				cbi(PORTC,PC0);
+				tbi(PORTC,PC2);
+			}
+			else
+			{
+				tbi(PORTC,PC0);
+ 1f4:	ff 24       	eor	r15, r15
+ 1f6:	f3 94       	inc	r15
+				tbi(PORTC,PC1);
+ 1f8:	02 e0       	ldi	r16, 0x02	; 2
+			}
+			if(data == 0xFE)
+			{
+				sbi(PORTC,PC1);
+				cbi(PORTC,PC0);
+				tbi(PORTC,PC2);
+ 1fa:	14 e0       	ldi	r17, 0x04	; 4
+	*/
+
+	while(1)
+	{
+
+		if(UDataAvailable())
+ 1fc:	b5 df       	rcall	.-150    	; 0x168 <UDataAvailable>
+ 1fe:	88 23       	and	r24, r24
+ 200:	e9 f3       	breq	.-6      	; 0x1fc <main+0x20>
+		{			 
+			data= UReadData();
+ 202:	85 df       	rcall	.-246    	; 0x10e <UReadData>
+			if(data == 0x05)
+ 204:	85 30       	cpi	r24, 0x05	; 5
+ 206:	31 f4       	brne	.+12     	; 0x214 <main+0x38>
+			{
+				sbi(PORTC,PC0); //LED OFF
+ 208:	a8 9a       	sbi	0x15, 0	; 21
+				cbi(PORTC,PC1);
+ 20a:	a9 98       	cbi	0x15, 1	; 21
+				tbi(PORTC,PC2);
+ 20c:	85 b3       	in	r24, 0x15	; 21
+ 20e:	81 27       	eor	r24, r17
+ 210:	85 bb       	out	0x15, r24	; 21
+ 212:	08 c0       	rjmp	.+16     	; 0x224 <main+0x48>
+			}
+			if(data == 0xFE)
+ 214:	8e 3f       	cpi	r24, 0xFE	; 254
+ 216:	31 f4       	brne	.+12     	; 0x224 <main+0x48>
+			{
+				sbi(PORTC,PC1);
+ 218:	a9 9a       	sbi	0x15, 1	; 21
+				cbi(PORTC,PC0);
+ 21a:	a8 98       	cbi	0x15, 0	; 21
+				tbi(PORTC,PC2);
+ 21c:	85 b3       	in	r24, 0x15	; 21
+ 21e:	81 27       	eor	r24, r17
+ 220:	85 bb       	out	0x15, r24	; 21
+ 222:	ec cf       	rjmp	.-40     	; 0x1fc <main+0x20>
+			}
+			else
+			{
+				tbi(PORTC,PC0);
+ 224:	85 b3       	in	r24, 0x15	; 21
+ 226:	8f 25       	eor	r24, r15
+ 228:	85 bb       	out	0x15, r24	; 21
+				tbi(PORTC,PC1);
+ 22a:	85 b3       	in	r24, 0x15	; 21
+ 22c:	80 27       	eor	r24, r16
+ 22e:	85 bb       	out	0x15, r24	; 21
+				cbi(PORTC,PC2);
+ 230:	aa 98       	cbi	0x15, 2	; 21
+ 232:	e4 cf       	rjmp	.-56     	; 0x1fc <main+0x20>
+
+00000234 <_exit>:
+ 234:	f8 94       	cli
+
+00000236 <__stop_program>:
+ 236:	ff cf       	rjmp	.-2      	; 0x236 <__stop_program>

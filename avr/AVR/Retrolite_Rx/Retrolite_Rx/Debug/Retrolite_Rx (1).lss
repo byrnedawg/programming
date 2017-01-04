@@ -1,0 +1,966 @@
+
+Retrolite_Rx.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000047c  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000002  00800060  0000047c  00000510  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000008  00800062  00800062  00000512  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000512  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000078  00000000  00000000  00000542  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000044e  00000000  00000000  000005ba  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000222  00000000  00000000  00000a08  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000238  00000000  00000000  00000c2a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000001d4  00000000  00000000  00000e64  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000243  00000000  00000000  00001038  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000005b0  00000000  00000000  0000127b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000068  00000000  00000000  0000182b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0e c0       	rjmp	.+28     	; 0x1e <__ctors_end>
+   2:	28 c0       	rjmp	.+80     	; 0x54 <__bad_interrupt>
+   4:	b4 c1       	rjmp	.+872    	; 0x36e <__vector_2>
+   6:	26 c0       	rjmp	.+76     	; 0x54 <__bad_interrupt>
+   8:	85 c1       	rjmp	.+778    	; 0x314 <__vector_4>
+   a:	24 c0       	rjmp	.+72     	; 0x54 <__bad_interrupt>
+   c:	23 c0       	rjmp	.+70     	; 0x54 <__bad_interrupt>
+   e:	22 c0       	rjmp	.+68     	; 0x54 <__bad_interrupt>
+  10:	21 c0       	rjmp	.+66     	; 0x54 <__bad_interrupt>
+  12:	20 c0       	rjmp	.+64     	; 0x54 <__bad_interrupt>
+  14:	ba c1       	rjmp	.+884    	; 0x38a <__vector_10>
+  16:	1e c0       	rjmp	.+60     	; 0x54 <__bad_interrupt>
+  18:	1d c0       	rjmp	.+58     	; 0x54 <__bad_interrupt>
+  1a:	1c c0       	rjmp	.+56     	; 0x54 <__bad_interrupt>
+  1c:	1b c0       	rjmp	.+54     	; 0x54 <__bad_interrupt>
+
+0000001e <__ctors_end>:
+  1e:	11 24       	eor	r1, r1
+  20:	1f be       	out	0x3f, r1	; 63
+  22:	cf e5       	ldi	r28, 0x5F	; 95
+  24:	d2 e0       	ldi	r29, 0x02	; 2
+  26:	de bf       	out	0x3e, r29	; 62
+  28:	cd bf       	out	0x3d, r28	; 61
+
+0000002a <__do_copy_data>:
+  2a:	10 e0       	ldi	r17, 0x00	; 0
+  2c:	a0 e6       	ldi	r26, 0x60	; 96
+  2e:	b0 e0       	ldi	r27, 0x00	; 0
+  30:	ec e7       	ldi	r30, 0x7C	; 124
+  32:	f4 e0       	ldi	r31, 0x04	; 4
+  34:	02 c0       	rjmp	.+4      	; 0x3a <__do_copy_data+0x10>
+  36:	05 90       	lpm	r0, Z+
+  38:	0d 92       	st	X+, r0
+  3a:	a2 36       	cpi	r26, 0x62	; 98
+  3c:	b1 07       	cpc	r27, r17
+  3e:	d9 f7       	brne	.-10     	; 0x36 <__do_copy_data+0xc>
+
+00000040 <__do_clear_bss>:
+  40:	20 e0       	ldi	r18, 0x00	; 0
+  42:	a2 e6       	ldi	r26, 0x62	; 98
+  44:	b0 e0       	ldi	r27, 0x00	; 0
+  46:	01 c0       	rjmp	.+2      	; 0x4a <.do_clear_bss_start>
+
+00000048 <.do_clear_bss_loop>:
+  48:	1d 92       	st	X+, r1
+
+0000004a <.do_clear_bss_start>:
+  4a:	aa 36       	cpi	r26, 0x6A	; 106
+  4c:	b2 07       	cpc	r27, r18
+  4e:	e1 f7       	brne	.-8      	; 0x48 <.do_clear_bss_loop>
+  50:	0f d1       	rcall	.+542    	; 0x270 <main>
+  52:	12 c2       	rjmp	.+1060   	; 0x478 <_exit>
+
+00000054 <__bad_interrupt>:
+  54:	d5 cf       	rjmp	.-86     	; 0x0 <__vectors>
+
+00000056 <pushQ>:
+    return item;
+}
+
+void pushQ(struct Queue* queue, const uint8_t c)
+{
+    if (queue->size < BUFFER_SIZE)
+  56:	fc 01       	movw	r30, r24
+  58:	e0 58       	subi	r30, 0x80	; 128
+  5a:	ff 4f       	sbci	r31, 0xFF	; 255
+  5c:	20 81       	ld	r18, Z
+  5e:	22 23       	and	r18, r18
+  60:	3c f0       	brlt	.+14     	; 0x70 <pushQ+0x1a>
+    { queue->data[queue->size++] = c; }
+  62:	31 e0       	ldi	r19, 0x01	; 1
+  64:	32 0f       	add	r19, r18
+  66:	30 83       	st	Z, r19
+  68:	fc 01       	movw	r30, r24
+  6a:	e2 0f       	add	r30, r18
+  6c:	f1 1d       	adc	r31, r1
+  6e:	60 83       	st	Z, r22
+  70:	08 95       	ret
+
+00000072 <computeChecksum>:
+}
+
+uint16_t computeChecksum(const uint8_t* data, uint16_t bytes)
+{
+  72:	ff 92       	push	r15
+  74:	0f 93       	push	r16
+  76:	1f 93       	push	r17
+  78:	cf 93       	push	r28
+  7a:	df 93       	push	r29
+    uint16_t sum1 = 0xFF;
+    uint16_t sum2 = 0xFF;
+    
+    uint16_t wordLen;
+    
+    while (bytes)
+  7c:	61 15       	cp	r22, r1
+  7e:	71 05       	cpc	r23, r1
+  80:	79 f1       	breq	.+94     	; 0xe0 <computeChecksum+0x6e>
+     *  zero. Taken from here: http://goo.gl/Cjt4AO    *
+     *                                                 *
+     * * * * * * * * * * * * * * * * * * * * * * * * * */
+    
+    uint16_t sum1 = 0xFF;
+    uint16_t sum2 = 0xFF;
+  82:	4f ef       	ldi	r20, 0xFF	; 255
+  84:	50 e0       	ldi	r21, 0x00	; 0
+     *  computed flag when the returned value is non-  *
+     *  zero. Taken from here: http://goo.gl/Cjt4AO    *
+     *                                                 *
+     * * * * * * * * * * * * * * * * * * * * * * * * * */
+    
+    uint16_t sum1 = 0xFF;
+  86:	2f ef       	ldi	r18, 0xFF	; 255
+  88:	30 e0       	ldi	r19, 0x00	; 0
+    uint16_t wordLen;
+    
+    while (bytes)
+    {
+        /* maximum word size before overflow would occur */
+        wordLen = (bytes > 20) ? 20 : bytes;
+  8a:	0f 2e       	mov	r0, r31
+  8c:	f4 e1       	ldi	r31, 0x14	; 20
+  8e:	ff 2e       	mov	r15, r31
+  90:	f0 2d       	mov	r31, r0
+  92:	00 e0       	ldi	r16, 0x00	; 0
+  94:	eb 01       	movw	r28, r22
+  96:	65 31       	cpi	r22, 0x15	; 21
+  98:	71 05       	cpc	r23, r1
+  9a:	10 f0       	brcs	.+4      	; 0xa0 <computeChecksum+0x2e>
+  9c:	cf 2d       	mov	r28, r15
+  9e:	d0 2f       	mov	r29, r16
+        
+        bytes -= wordLen;
+  a0:	6c 1b       	sub	r22, r28
+  a2:	7d 0b       	sbc	r23, r29
+  a4:	fc 01       	movw	r30, r24
+  a6:	de 01       	movw	r26, r28
+  a8:	a8 0f       	add	r26, r24
+  aa:	b9 1f       	adc	r27, r25
+        
+        do
+        {
+            sum1 += *(data++);
+  ac:	11 91       	ld	r17, Z+
+  ae:	21 0f       	add	r18, r17
+  b0:	31 1d       	adc	r19, r1
+            sum2 += sum1;
+  b2:	42 0f       	add	r20, r18
+  b4:	53 1f       	adc	r21, r19
+        }
+        
+        while (--wordLen);
+  b6:	ea 17       	cp	r30, r26
+  b8:	fb 07       	cpc	r31, r27
+  ba:	c1 f7       	brne	.-16     	; 0xac <computeChecksum+0x3a>
+  bc:	8c 0f       	add	r24, r28
+  be:	9d 1f       	adc	r25, r29
+         * Do first modular reduction: mask off
+         * lower byte and add right shifted upper
+         * byte to it
+         * * * * * * * * * * * * * * * * * * * * * */
+        
+        sum1 = (sum1 & 0xFF) + (sum1 >> 8);
+  c0:	e3 2f       	mov	r30, r19
+  c2:	ff 27       	eor	r31, r31
+  c4:	df 01       	movw	r26, r30
+  c6:	a2 0f       	add	r26, r18
+  c8:	b1 1d       	adc	r27, r1
+  ca:	9d 01       	movw	r18, r26
+        sum2 = (sum2 & 0xFF) + (sum2 >> 8);
+  cc:	e5 2f       	mov	r30, r21
+  ce:	ff 27       	eor	r31, r31
+  d0:	df 01       	movw	r26, r30
+  d2:	a4 0f       	add	r26, r20
+  d4:	b1 1d       	adc	r27, r1
+  d6:	ad 01       	movw	r20, r26
+    uint16_t sum1 = 0xFF;
+    uint16_t sum2 = 0xFF;
+    
+    uint16_t wordLen;
+    
+    while (bytes)
+  d8:	61 15       	cp	r22, r1
+  da:	71 05       	cpc	r23, r1
+  dc:	d9 f6       	brne	.-74     	; 0x94 <computeChecksum+0x22>
+  de:	04 c0       	rjmp	.+8      	; 0xe8 <computeChecksum+0x76>
+     *  zero. Taken from here: http://goo.gl/Cjt4AO    *
+     *                                                 *
+     * * * * * * * * * * * * * * * * * * * * * * * * * */
+    
+    uint16_t sum1 = 0xFF;
+    uint16_t sum2 = 0xFF;
+  e0:	4f ef       	ldi	r20, 0xFF	; 255
+  e2:	50 e0       	ldi	r21, 0x00	; 0
+     *  computed flag when the returned value is non-  *
+     *  zero. Taken from here: http://goo.gl/Cjt4AO    *
+     *                                                 *
+     * * * * * * * * * * * * * * * * * * * * * * * * * */
+    
+    uint16_t sum1 = 0xFF;
+  e4:	2f ef       	ldi	r18, 0xFF	; 255
+  e6:	30 e0       	ldi	r19, 0x00	; 0
+        sum1 = (sum1 & 0xFF) + (sum1 >> 8);
+        sum2 = (sum2 & 0xFF) + (sum2 >> 8);
+    }
+    
+    /* Safety reduction */
+    sum1 = (sum1 & 0xFF) + (sum1 >> 8);
+  e8:	83 2f       	mov	r24, r19
+  ea:	99 27       	eor	r25, r25
+    sum2 = (sum2 & 0xFF) + (sum2 >> 8);
+  ec:	65 2f       	mov	r22, r21
+  ee:	77 27       	eor	r23, r23
+  f0:	fb 01       	movw	r30, r22
+  f2:	e4 0f       	add	r30, r20
+  f4:	f1 1d       	adc	r31, r1
+    
+    /* Return both sums in a 16 bit value */
+    return sum2 << 8 | sum1;
+  f6:	5e 2f       	mov	r21, r30
+  f8:	44 27       	eor	r20, r20
+        sum1 = (sum1 & 0xFF) + (sum1 >> 8);
+        sum2 = (sum2 & 0xFF) + (sum2 >> 8);
+    }
+    
+    /* Safety reduction */
+    sum1 = (sum1 & 0xFF) + (sum1 >> 8);
+  fa:	82 0f       	add	r24, r18
+  fc:	91 1d       	adc	r25, r1
+    sum2 = (sum2 & 0xFF) + (sum2 >> 8);
+    
+    /* Return both sums in a 16 bit value */
+    return sum2 << 8 | sum1;
+}
+  fe:	84 2b       	or	r24, r20
+ 100:	95 2b       	or	r25, r21
+ 102:	df 91       	pop	r29
+ 104:	cf 91       	pop	r28
+ 106:	1f 91       	pop	r17
+ 108:	0f 91       	pop	r16
+ 10a:	ff 90       	pop	r15
+ 10c:	08 95       	ret
+
+0000010e <initRX>:
+}
+
+void initRX(void)
+{
+    /* Set the RX pin as input */
+    CLEAR_BIT(DDRB,DDB3);
+ 10e:	bb 98       	cbi	0x17, 3	; 23
+    
+    /* Set LED as output */
+    SET_BIT(DDRB,DDB4);
+ 110:	bc 9a       	sbi	0x17, 4	; 23
+    
+    /* Enable pin change interrupt */
+    SET_BIT(GIMSK,PCIE);
+ 112:	8b b7       	in	r24, 0x3b	; 59
+ 114:	80 62       	ori	r24, 0x20	; 32
+ 116:	8b bf       	out	0x3b, r24	; 59
+    
+    /* Watch pin change on pin 3 */
+    SET_BIT(PCMSK,PCINT3);
+ 118:	ab 9a       	sbi	0x15, 3	; 21
+    
+    /* Enable Timer1 with clk/4096 prescaling. Timer1 is used for timing
+     out the connection pipeline. */
+    TCCR1 |= 0x0D;
+ 11a:	80 b7       	in	r24, 0x30	; 48
+ 11c:	8d 60       	ori	r24, 0x0D	; 13
+ 11e:	80 bf       	out	0x30, r24	; 48
+    
+    /* Enable the overflow interrupt for Timer1 */
+    SET_BIT(TIMSK,TOIE1);
+ 120:	89 b7       	in	r24, 0x39	; 57
+ 122:	84 60       	ori	r24, 0x04	; 4
+ 124:	89 bf       	out	0x39, r24	; 57
+    
+    /* Sample every 100 Âµs */
+    OCR0A = SAMPLE_TIME;
+ 126:	84 e6       	ldi	r24, 0x64	; 100
+ 128:	89 bd       	out	0x29, r24	; 41
+	
+    /* Enable the output compare interrupt for Timer0 */
+    SET_BIT(TIMSK,OCIE0A);
+ 12a:	89 b7       	in	r24, 0x39	; 57
+ 12c:	80 61       	ori	r24, 0x10	; 16
+ 12e:	89 bf       	out	0x39, r24	; 57
+     but the sampling, therefore we clear the timer after the sample and don't
+     let the timer be cleared automatically. */
+    
+    /* Turn on Timer0 with clk/8 prescaling, gives 1Âµs per cycle @8Mhz.
+     Timer0 is used for sampling */
+    SET_BIT(TCCR0B,CS01);
+ 130:	83 b7       	in	r24, 0x33	; 51
+ 132:	82 60       	ori	r24, 0x02	; 2
+ 134:	83 bf       	out	0x33, r24	; 51
+ 136:	08 95       	ret
+
+00000138 <startRX>:
+    uint8_t preambleBit, lows = 0, highs = 0;
+    
+    //SET_BIT(PORTB,LED);
+    
+    /* Enable global interrupts */
+	asm("sei");
+ 138:	78 94       	sei
+    
+    /* Reset */
+    TCNT0 = TCNT1 = 0;
+ 13a:	1f bc       	out	0x2f, r1	; 47
+ 13c:	12 be       	out	0x32, r1	; 50
+    
+    /* Enable while waiting for the preamble. Is turned false when the connection
+     times out. */
+    receiving = 1;
+ 13e:	81 e0       	ldi	r24, 0x01	; 1
+ 140:	80 93 64 00 	sts	0x0064, r24
+    
+    /* Going to record individual bits now */
+    sampleCount = 3;
+ 144:	83 e0       	ldi	r24, 0x03	; 3
+ 146:	80 93 60 00 	sts	0x0060, r24
+    
+    /* Reset this. Otherwise all RX attempts will fail after the first one. Not sure why. */
+    samples = 0;
+ 14a:	10 92 66 00 	sts	0x0066, r1
+ 14e:	10 92 67 00 	sts	0x0067, r1
+ 152:	10 92 68 00 	sts	0x0068, r1
+ 156:	10 92 69 00 	sts	0x0069, r1
+    SET_BIT(TCCR0B,CS01);
+}
+
+void startRX(void)
+{
+    uint8_t preambleBit, lows = 0, highs = 0;
+ 15a:	20 e0       	ldi	r18, 0x00	; 0
+ 15c:	30 e0       	ldi	r19, 0x00	; 0
+        if (samplesReady)
+        {
+            /* Grab bit */
+            preambleBit = getSamples();
+            
+            sampleCount = 3;
+ 15e:	43 e0       	ldi	r20, 0x03	; 3
+                 * change interrupt makes sure that any pin changes occur exactly between two
+                 * samples, therefore there can only be sample errors and not timing errors
+                 * (I think).
+                 */
+                
+                sampleCount = 2;
+ 160:	52 e0       	ldi	r21, 0x02	; 2
+    
+    /* Reset this. Otherwise all RX attempts will fail after the first one. Not sure why. */
+    samples = 0;
+    
+    /* receiving becomes false if the connection times out, so this will not go on forever */
+    while (receiving)
+ 162:	24 c0       	rjmp	.+72     	; 0x1ac <startRX+0x74>
+}
+
+uint32_t getSamples(void)
+{
+    /* Reset flag */
+    samplesReady = 0;
+ 164:	10 92 65 00 	sts	0x0065, r1
+    
+    return samples;
+ 168:	80 91 66 00 	lds	r24, 0x0066
+ 16c:	90 91 67 00 	lds	r25, 0x0067
+ 170:	a0 91 68 00 	lds	r26, 0x0068
+ 174:	b0 91 69 00 	lds	r27, 0x0069
+        if (samplesReady)
+        {
+            /* Grab bit */
+            preambleBit = getSamples();
+            
+            sampleCount = 3;
+ 178:	40 93 60 00 	sts	0x0060, r20
+            
+            /* The preamble consists of 6 low bits (10) and 2 high bits (01), everything
+             else or any other order than that resets the counter values to 0 */
+            
+            if (preambleBit == LOW)
+ 17c:	8c 30       	cpi	r24, 0x0C	; 12
+ 17e:	21 f4       	brne	.+8      	; 0x188 <startRX+0x50>
+            {
+                if (!highs) ++lows;
+ 180:	21 11       	cpse	r18, r1
+ 182:	0f c0       	rjmp	.+30     	; 0x1a2 <startRX+0x6a>
+ 184:	3f 5f       	subi	r19, 0xFF	; 255
+ 186:	12 c0       	rjmp	.+36     	; 0x1ac <startRX+0x74>
+                
+                else lows = highs = 0;
+            }
+            
+            else if (preambleBit == HIGH)
+ 188:	83 30       	cpi	r24, 0x03	; 3
+ 18a:	31 f4       	brne	.+12     	; 0x198 <startRX+0x60>
+            {
+                if (lows >= 6)
+ 18c:	36 30       	cpi	r19, 0x06	; 6
+ 18e:	60 f0       	brcs	.+24     	; 0x1a8 <startRX+0x70>
+                {
+                    if (++highs >= 2) break;
+ 190:	2f 5f       	subi	r18, 0xFF	; 255
+ 192:	22 30       	cpi	r18, 0x02	; 2
+ 194:	58 f0       	brcs	.+22     	; 0x1ac <startRX+0x74>
+ 196:	0f c0       	rjmp	.+30     	; 0x1b6 <startRX+0x7e>
+                 * change interrupt makes sure that any pin changes occur exactly between two
+                 * samples, therefore there can only be sample errors and not timing errors
+                 * (I think).
+                 */
+                
+                sampleCount = 2;
+ 198:	50 93 60 00 	sts	0x0060, r21
+                else lows = highs = 0;
+            }
+            
+            else
+            {
+                lows = highs = 0;
+ 19c:	20 e0       	ldi	r18, 0x00	; 0
+ 19e:	30 e0       	ldi	r19, 0x00	; 0
+ 1a0:	05 c0       	rjmp	.+10     	; 0x1ac <startRX+0x74>
+            
+            if (preambleBit == LOW)
+            {
+                if (!highs) ++lows;
+                
+                else lows = highs = 0;
+ 1a2:	20 e0       	ldi	r18, 0x00	; 0
+ 1a4:	30 e0       	ldi	r19, 0x00	; 0
+ 1a6:	02 c0       	rjmp	.+4      	; 0x1ac <startRX+0x74>
+                if (lows >= 6)
+                {
+                    if (++highs >= 2) break;
+                }
+                
+                else lows = highs = 0;
+ 1a8:	20 e0       	ldi	r18, 0x00	; 0
+ 1aa:	30 e0       	ldi	r19, 0x00	; 0
+    samples = 0;
+    
+    /* receiving becomes false if the connection times out, so this will not go on forever */
+    while (receiving)
+    {
+        if (samplesReady)
+ 1ac:	80 91 65 00 	lds	r24, 0x0065
+ 1b0:	88 23       	and	r24, r24
+ 1b2:	e1 f3       	breq	.-8      	; 0x1ac <startRX+0x74>
+ 1b4:	d7 cf       	rjmp	.-82     	; 0x164 <startRX+0x2c>
+            }
+        }
+    }
+    
+    /* Normal sampling now */
+    sampleCount = DATA_SAMPLES - 1;
+ 1b6:	8f e1       	ldi	r24, 0x1F	; 31
+ 1b8:	80 93 60 00 	sts	0x0060, r24
+ 1bc:	08 95       	ret
+
+000001be <stopRX>:
+
+void stopRX(void)
+{
+    /* Stop the wait for the preamble if it's still running,
+     else stop waiting for samples in main */
+    receiving = 0;
+ 1be:	10 92 64 00 	sts	0x0064, r1
+    
+    /* Disable sampling Timer/Counter */
+    CLEAR_BIT(TIMSK,OCIE0A);
+ 1c2:	89 b7       	in	r24, 0x39	; 57
+ 1c4:	8f 7e       	andi	r24, 0xEF	; 239
+ 1c6:	89 bf       	out	0x39, r24	; 57
+ 1c8:	08 95       	ret
+
+000001ca <interpretSamples>:
+    
+    //CLEAR_BIT(PORTB,LED);
+}
+
+uint8_t interpretSamples(const uint32_t samps)
+{
+ 1ca:	8f 92       	push	r8
+ 1cc:	9f 92       	push	r9
+ 1ce:	af 92       	push	r10
+ 1d0:	bf 92       	push	r11
+ 1d2:	cf 92       	push	r12
+ 1d4:	df 92       	push	r13
+ 1d6:	ef 92       	push	r14
+ 1d8:	ff 92       	push	r15
+ 1da:	cf 93       	push	r28
+ 1dc:	df 93       	push	r29
+ 1de:	c0 91 63 00 	lds	r28, 0x0063
+ 1e2:	27 e0       	ldi	r18, 0x07	; 7
+ 1e4:	30 e0       	ldi	r19, 0x00	; 0
+ 1e6:	ec e1       	ldi	r30, 0x1C	; 28
+ 1e8:	f0 e0       	ldi	r31, 0x00	; 0
+        /* Grab the current bit */
+        bit = (samps >> (i*4)) & 0x0F;
+        
+        if (bit == HIGH) SET_BIT(data,i);
+        
+        else if (bit == LOW) CLEAR_BIT(data,i);
+ 1ea:	c1 2c       	mov	r12, r1
+ 1ec:	d1 2c       	mov	r13, r1
+ 1ee:	76 01       	movw	r14, r12
+ 1f0:	c3 94       	inc	r12
+    uint8_t bit;
+    
+    for (; i >= 0; --i)
+    {
+        /* Grab the current bit */
+        bit = (samps >> (i*4)) & 0x0F;
+ 1f2:	4b 01       	movw	r8, r22
+ 1f4:	5c 01       	movw	r10, r24
+ 1f6:	0e 2e       	mov	r0, r30
+ 1f8:	04 c0       	rjmp	.+8      	; 0x202 <interpretSamples+0x38>
+ 1fa:	b6 94       	lsr	r11
+ 1fc:	a7 94       	ror	r10
+ 1fe:	97 94       	ror	r9
+ 200:	87 94       	ror	r8
+ 202:	0a 94       	dec	r0
+ 204:	d2 f7       	brpl	.-12     	; 0x1fa <interpretSamples+0x30>
+ 206:	48 2d       	mov	r20, r8
+ 208:	4f 70       	andi	r20, 0x0F	; 15
+        
+        if (bit == HIGH) SET_BIT(data,i);
+ 20a:	43 30       	cpi	r20, 0x03	; 3
+ 20c:	61 f4       	brne	.+24     	; 0x226 <interpretSamples+0x5c>
+ 20e:	46 01       	movw	r8, r12
+ 210:	57 01       	movw	r10, r14
+ 212:	02 2e       	mov	r0, r18
+ 214:	04 c0       	rjmp	.+8      	; 0x21e <interpretSamples+0x54>
+ 216:	88 0c       	add	r8, r8
+ 218:	99 1c       	adc	r9, r9
+ 21a:	aa 1c       	adc	r10, r10
+ 21c:	bb 1c       	adc	r11, r11
+ 21e:	0a 94       	dec	r0
+ 220:	d2 f7       	brpl	.-12     	; 0x216 <interpretSamples+0x4c>
+ 222:	c8 29       	or	r28, r8
+ 224:	13 c0       	rjmp	.+38     	; 0x24c <interpretSamples+0x82>
+        
+        else if (bit == LOW) CLEAR_BIT(data,i);
+ 226:	4c 30       	cpi	r20, 0x0C	; 12
+ 228:	21 f0       	breq	.+8      	; 0x232 <interpretSamples+0x68>
+ 22a:	c0 93 63 00 	sts	0x0063, r28
+        
+        else return 0;
+ 22e:	80 e0       	ldi	r24, 0x00	; 0
+ 230:	14 c0       	rjmp	.+40     	; 0x25a <interpretSamples+0x90>
+        /* Grab the current bit */
+        bit = (samps >> (i*4)) & 0x0F;
+        
+        if (bit == HIGH) SET_BIT(data,i);
+        
+        else if (bit == LOW) CLEAR_BIT(data,i);
+ 232:	46 01       	movw	r8, r12
+ 234:	57 01       	movw	r10, r14
+ 236:	02 2e       	mov	r0, r18
+ 238:	04 c0       	rjmp	.+8      	; 0x242 <interpretSamples+0x78>
+ 23a:	88 0c       	add	r8, r8
+ 23c:	99 1c       	adc	r9, r9
+ 23e:	aa 1c       	adc	r10, r10
+ 240:	bb 1c       	adc	r11, r11
+ 242:	0a 94       	dec	r0
+ 244:	d2 f7       	brpl	.-12     	; 0x23a <interpretSamples+0x70>
+ 246:	48 2d       	mov	r20, r8
+ 248:	40 95       	com	r20
+ 24a:	c4 23       	and	r28, r20
+ 24c:	34 97       	sbiw	r30, 0x04	; 4
+ 24e:	21 50       	subi	r18, 0x01	; 1
+ 250:	31 09       	sbc	r19, r1
+ 252:	78 f6       	brcc	.-98     	; 0x1f2 <interpretSamples+0x28>
+ 254:	c0 93 63 00 	sts	0x0063, r28
+        
+        else return 0;
+    }
+    
+    return 1;
+ 258:	81 e0       	ldi	r24, 0x01	; 1
+}
+ 25a:	df 91       	pop	r29
+ 25c:	cf 91       	pop	r28
+ 25e:	ff 90       	pop	r15
+ 260:	ef 90       	pop	r14
+ 262:	df 90       	pop	r13
+ 264:	cf 90       	pop	r12
+ 266:	bf 90       	pop	r11
+ 268:	af 90       	pop	r10
+ 26a:	9f 90       	pop	r9
+ 26c:	8f 90       	pop	r8
+ 26e:	08 95       	ret
+
+00000270 <main>:
+volatile int8_t sampleCount = DATA_SAMPLES - 1;
+
+uint8_t receiving = 0, data = 0, connectionCount = 0;
+
+int main(void)
+{
+ 270:	cf 93       	push	r28
+ 272:	df 93       	push	r29
+ 274:	cd b7       	in	r28, 0x3d	; 61
+ 276:	de b7       	in	r29, 0x3e	; 62
+ 278:	c1 58       	subi	r28, 0x81	; 129
+ 27a:	d1 09       	sbc	r29, r1
+ 27c:	0f b6       	in	r0, 0x3f	; 63
+ 27e:	f8 94       	cli
+ 280:	de bf       	out	0x3e, r29	; 62
+ 282:	0f be       	out	0x3f, r0	; 63
+ 284:	cd bf       	out	0x3d, r28	; 61
+    struct Queue q = {.size = 0};
+ 286:	fe 01       	movw	r30, r28
+ 288:	31 96       	adiw	r30, 0x01	; 1
+ 28a:	81 e8       	ldi	r24, 0x81	; 129
+ 28c:	df 01       	movw	r26, r30
+ 28e:	1d 92       	st	X+, r1
+ 290:	8a 95       	dec	r24
+ 292:	e9 f7       	brne	.-6      	; 0x28e <main+0x1e>
+    
+    uint16_t chksm;
+    
+    initRX();
+ 294:	3c df       	rcall	.-392    	; 0x10e <initRX>
+    
+    startRX();
+ 296:	50 df       	rcall	.-352    	; 0x138 <startRX>
+     
+     for (;;)
+     {
+         if (receiving && samplesReady && interpretSamples(getSamples()))
+ 298:	80 91 64 00 	lds	r24, 0x0064
+ 29c:	88 23       	and	r24, r24
+ 29e:	f1 f3       	breq	.-4      	; 0x29c <main+0x2c>
+ 2a0:	90 91 65 00 	lds	r25, 0x0065
+ 2a4:	99 23       	and	r25, r25
+ 2a6:	d1 f3       	breq	.-12     	; 0x29c <main+0x2c>
+}
+
+uint32_t getSamples(void)
+{
+    /* Reset flag */
+    samplesReady = 0;
+ 2a8:	10 92 65 00 	sts	0x0065, r1
+    
+    return samples;
+ 2ac:	60 91 66 00 	lds	r22, 0x0066
+ 2b0:	70 91 67 00 	lds	r23, 0x0067
+ 2b4:	80 91 68 00 	lds	r24, 0x0068
+ 2b8:	90 91 69 00 	lds	r25, 0x0069
+    
+    startRX();
+     
+     for (;;)
+     {
+         if (receiving && samplesReady && interpretSamples(getSamples()))
+ 2bc:	86 df       	rcall	.-244    	; 0x1ca <interpretSamples>
+ 2be:	88 23       	and	r24, r24
+ 2c0:	59 f3       	breq	.-42     	; 0x298 <main+0x28>
+         {
+                pushQ(&q,data);
+ 2c2:	60 91 63 00 	lds	r22, 0x0063
+ 2c6:	ce 01       	movw	r24, r28
+ 2c8:	01 96       	adiw	r24, 0x01	; 1
+ 2ca:	c5 de       	rcall	.-630    	; 0x56 <pushQ>
+     
+                if (q.size == 14) break;
+ 2cc:	cf 57       	subi	r28, 0x7F	; 127
+ 2ce:	df 4f       	sbci	r29, 0xFF	; 255
+ 2d0:	88 81       	ld	r24, Y
+ 2d2:	c1 58       	subi	r28, 0x81	; 129
+ 2d4:	d0 40       	sbci	r29, 0x00	; 0
+ 2d6:	8e 30       	cpi	r24, 0x0E	; 14
+ 2d8:	f9 f6       	brne	.-66     	; 0x298 <main+0x28>
+         }
+     }
+     
+     stopRX();
+ 2da:	71 df       	rcall	.-286    	; 0x1be <stopRX>
+     
+     chksm = computeChecksum(q.data,12);
+ 2dc:	6c e0       	ldi	r22, 0x0C	; 12
+ 2de:	70 e0       	ldi	r23, 0x00	; 0
+ 2e0:	ce 01       	movw	r24, r28
+ 2e2:	01 96       	adiw	r24, 0x01	; 1
+ 2e4:	c6 de       	rcall	.-628    	; 0x72 <computeChecksum>
+     
+     CLEAR_BIT(PORTB,LED);
+ 2e6:	c4 98       	cbi	0x18, 4	; 24
+     
+     if (chksm == ((q.data[12] << 8) | q.data[13])) SET_BIT(PORTB,LED);
+ 2e8:	2d 85       	ldd	r18, Y+13	; 0x0d
+ 2ea:	30 e0       	ldi	r19, 0x00	; 0
+ 2ec:	32 2f       	mov	r19, r18
+ 2ee:	22 27       	eor	r18, r18
+ 2f0:	4e 85       	ldd	r20, Y+14	; 0x0e
+ 2f2:	24 2b       	or	r18, r20
+ 2f4:	28 17       	cp	r18, r24
+ 2f6:	39 07       	cpc	r19, r25
+ 2f8:	09 f4       	brne	.+2      	; 0x2fc <main+0x8c>
+ 2fa:	c4 9a       	sbi	0x18, 4	; 24
+     
+     return 0;
+    
+}
+ 2fc:	80 e0       	ldi	r24, 0x00	; 0
+ 2fe:	90 e0       	ldi	r25, 0x00	; 0
+ 300:	cf 57       	subi	r28, 0x7F	; 127
+ 302:	df 4f       	sbci	r29, 0xFF	; 255
+ 304:	0f b6       	in	r0, 0x3f	; 63
+ 306:	f8 94       	cli
+ 308:	de bf       	out	0x3e, r29	; 62
+ 30a:	0f be       	out	0x3f, r0	; 63
+ 30c:	cd bf       	out	0x3d, r28	; 61
+ 30e:	df 91       	pop	r29
+ 310:	cf 91       	pop	r28
+ 312:	08 95       	ret
+
+00000314 <__vector_4>:
+    
+    return 1;
+}
+
+ISR(TIMER1_OVF_vect)
+{
+ 314:	1f 92       	push	r1
+ 316:	0f 92       	push	r0
+ 318:	0f b6       	in	r0, 0x3f	; 63
+ 31a:	0f 92       	push	r0
+ 31c:	11 24       	eor	r1, r1
+ 31e:	2f 93       	push	r18
+ 320:	3f 93       	push	r19
+ 322:	4f 93       	push	r20
+ 324:	5f 93       	push	r21
+ 326:	6f 93       	push	r22
+ 328:	7f 93       	push	r23
+ 32a:	8f 93       	push	r24
+ 32c:	9f 93       	push	r25
+ 32e:	af 93       	push	r26
+ 330:	bf 93       	push	r27
+ 332:	ef 93       	push	r30
+ 334:	ff 93       	push	r31
+    if (++connectionCount >= CONNECTION_TIME)
+ 336:	80 91 62 00 	lds	r24, 0x0062
+ 33a:	8f 5f       	subi	r24, 0xFF	; 255
+ 33c:	8d 34       	cpi	r24, 0x4D	; 77
+ 33e:	18 f4       	brcc	.+6      	; 0x346 <__vector_4+0x32>
+ 340:	80 93 62 00 	sts	0x0062, r24
+ 344:	03 c0       	rjmp	.+6      	; 0x34c <__vector_4+0x38>
+    {
+        connectionCount = 0;
+ 346:	10 92 62 00 	sts	0x0062, r1
+        
+        stopRX();
+ 34a:	39 df       	rcall	.-398    	; 0x1be <stopRX>
+    }
+}
+ 34c:	ff 91       	pop	r31
+ 34e:	ef 91       	pop	r30
+ 350:	bf 91       	pop	r27
+ 352:	af 91       	pop	r26
+ 354:	9f 91       	pop	r25
+ 356:	8f 91       	pop	r24
+ 358:	7f 91       	pop	r23
+ 35a:	6f 91       	pop	r22
+ 35c:	5f 91       	pop	r21
+ 35e:	4f 91       	pop	r20
+ 360:	3f 91       	pop	r19
+ 362:	2f 91       	pop	r18
+ 364:	0f 90       	pop	r0
+ 366:	0f be       	out	0x3f, r0	; 63
+ 368:	0f 90       	pop	r0
+ 36a:	1f 90       	pop	r1
+ 36c:	18 95       	reti
+
+0000036e <__vector_2>:
+
+ISR(PCINT0_vect)
+{
+ 36e:	1f 92       	push	r1
+ 370:	0f 92       	push	r0
+ 372:	0f b6       	in	r0, 0x3f	; 63
+ 374:	0f 92       	push	r0
+ 376:	11 24       	eor	r1, r1
+ 378:	8f 93       	push	r24
+    /* Set the timer to what it should be at the pin change. 52 instead
+     of 50 because of ISR-call overhead. */
+	TCNT0 = 52;
+ 37a:	84 e3       	ldi	r24, 0x34	; 52
+ 37c:	82 bf       	out	0x32, r24	; 50
+}
+ 37e:	8f 91       	pop	r24
+ 380:	0f 90       	pop	r0
+ 382:	0f be       	out	0x3f, r0	; 63
+ 384:	0f 90       	pop	r0
+ 386:	1f 90       	pop	r1
+ 388:	18 95       	reti
+
+0000038a <__vector_10>:
+
+ISR(TIMER0_COMPA_vect)
+{
+ 38a:	1f 92       	push	r1
+ 38c:	0f 92       	push	r0
+ 38e:	0f b6       	in	r0, 0x3f	; 63
+ 390:	0f 92       	push	r0
+ 392:	11 24       	eor	r1, r1
+ 394:	2f 93       	push	r18
+ 396:	4f 93       	push	r20
+ 398:	5f 93       	push	r21
+ 39a:	6f 93       	push	r22
+ 39c:	7f 93       	push	r23
+ 39e:	8f 93       	push	r24
+ 3a0:	9f 93       	push	r25
+ 3a2:	af 93       	push	r26
+ 3a4:	bf 93       	push	r27
+    /* If the current sample reads high, set the current bit in the samples */
+    if (IS_SET(RX_PORT,RX_PIN))
+ 3a6:	b3 9b       	sbis	0x16, 3	; 22
+ 3a8:	24 c0       	rjmp	.+72     	; 0x3f2 <__vector_10+0x68>
+    {
+        /* Reset timer now, after sampling */
+        TCNT0 = 1;
+ 3aa:	81 e0       	ldi	r24, 0x01	; 1
+ 3ac:	82 bf       	out	0x32, r24	; 50
+        
+        SET_BIT(samples,sampleCount);
+ 3ae:	20 91 60 00 	lds	r18, 0x0060
+ 3b2:	40 91 66 00 	lds	r20, 0x0066
+ 3b6:	50 91 67 00 	lds	r21, 0x0067
+ 3ba:	60 91 68 00 	lds	r22, 0x0068
+ 3be:	70 91 69 00 	lds	r23, 0x0069
+ 3c2:	81 e0       	ldi	r24, 0x01	; 1
+ 3c4:	90 e0       	ldi	r25, 0x00	; 0
+ 3c6:	a0 e0       	ldi	r26, 0x00	; 0
+ 3c8:	b0 e0       	ldi	r27, 0x00	; 0
+ 3ca:	04 c0       	rjmp	.+8      	; 0x3d4 <__vector_10+0x4a>
+ 3cc:	88 0f       	add	r24, r24
+ 3ce:	99 1f       	adc	r25, r25
+ 3d0:	aa 1f       	adc	r26, r26
+ 3d2:	bb 1f       	adc	r27, r27
+ 3d4:	2a 95       	dec	r18
+ 3d6:	d2 f7       	brpl	.-12     	; 0x3cc <__vector_10+0x42>
+ 3d8:	84 2b       	or	r24, r20
+ 3da:	95 2b       	or	r25, r21
+ 3dc:	a6 2b       	or	r26, r22
+ 3de:	b7 2b       	or	r27, r23
+ 3e0:	80 93 66 00 	sts	0x0066, r24
+ 3e4:	90 93 67 00 	sts	0x0067, r25
+ 3e8:	a0 93 68 00 	sts	0x0068, r26
+ 3ec:	b0 93 69 00 	sts	0x0069, r27
+ 3f0:	27 c0       	rjmp	.+78     	; 0x440 <__vector_10+0xb6>
+    
+    /* Else clear the current bit */
+    else
+    {
+        /* Reset timer now, after sampling */
+        TCNT0 = 1;
+ 3f2:	81 e0       	ldi	r24, 0x01	; 1
+ 3f4:	82 bf       	out	0x32, r24	; 50
+        
+        CLEAR_BIT(samples,sampleCount);
+ 3f6:	20 91 60 00 	lds	r18, 0x0060
+ 3fa:	40 91 66 00 	lds	r20, 0x0066
+ 3fe:	50 91 67 00 	lds	r21, 0x0067
+ 402:	60 91 68 00 	lds	r22, 0x0068
+ 406:	70 91 69 00 	lds	r23, 0x0069
+ 40a:	81 e0       	ldi	r24, 0x01	; 1
+ 40c:	90 e0       	ldi	r25, 0x00	; 0
+ 40e:	a0 e0       	ldi	r26, 0x00	; 0
+ 410:	b0 e0       	ldi	r27, 0x00	; 0
+ 412:	04 c0       	rjmp	.+8      	; 0x41c <__vector_10+0x92>
+ 414:	88 0f       	add	r24, r24
+ 416:	99 1f       	adc	r25, r25
+ 418:	aa 1f       	adc	r26, r26
+ 41a:	bb 1f       	adc	r27, r27
+ 41c:	2a 95       	dec	r18
+ 41e:	d2 f7       	brpl	.-12     	; 0x414 <__vector_10+0x8a>
+ 420:	80 95       	com	r24
+ 422:	90 95       	com	r25
+ 424:	a0 95       	com	r26
+ 426:	b0 95       	com	r27
+ 428:	84 23       	and	r24, r20
+ 42a:	95 23       	and	r25, r21
+ 42c:	a6 23       	and	r26, r22
+ 42e:	b7 23       	and	r27, r23
+ 430:	80 93 66 00 	sts	0x0066, r24
+ 434:	90 93 67 00 	sts	0x0067, r25
+ 438:	a0 93 68 00 	sts	0x0068, r26
+ 43c:	b0 93 69 00 	sts	0x0069, r27
+    }
+    
+    /* If the bit is finished, set the samplesReady flag */
+    if (! sampleCount--)
+ 440:	80 91 60 00 	lds	r24, 0x0060
+ 444:	9f ef       	ldi	r25, 0xFF	; 255
+ 446:	98 0f       	add	r25, r24
+ 448:	90 93 60 00 	sts	0x0060, r25
+ 44c:	81 11       	cpse	r24, r1
+ 44e:	06 c0       	rjmp	.+12     	; 0x45c <__vector_10+0xd2>
+	{
+		samplesReady = 1;
+ 450:	81 e0       	ldi	r24, 0x01	; 1
+ 452:	80 93 65 00 	sts	0x0065, r24
+		sampleCount = DATA_SAMPLES - 1;
+ 456:	8f e1       	ldi	r24, 0x1F	; 31
+ 458:	80 93 60 00 	sts	0x0060, r24
+	}
+}
+ 45c:	bf 91       	pop	r27
+ 45e:	af 91       	pop	r26
+ 460:	9f 91       	pop	r25
+ 462:	8f 91       	pop	r24
+ 464:	7f 91       	pop	r23
+ 466:	6f 91       	pop	r22
+ 468:	5f 91       	pop	r21
+ 46a:	4f 91       	pop	r20
+ 46c:	2f 91       	pop	r18
+ 46e:	0f 90       	pop	r0
+ 470:	0f be       	out	0x3f, r0	; 63
+ 472:	0f 90       	pop	r0
+ 474:	1f 90       	pop	r1
+ 476:	18 95       	reti
+
+00000478 <_exit>:
+ 478:	f8 94       	cli
+
+0000047a <__stop_program>:
+ 47a:	ff cf       	rjmp	.-2      	; 0x47a <__stop_program>

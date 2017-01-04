@@ -1,0 +1,20 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# AvrStudio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "RGB Night Light", "RGB Night Light\RGB Night Light.cproj", "{ED37B950-AE1E-406D-AFB3-22044B719477}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED37B950-AE1E-406D-AFB3-22044B719477}.Debug|AVR.ActiveCfg = Debug|AVR
+		{ED37B950-AE1E-406D-AFB3-22044B719477}.Debug|AVR.Build.0 = Debug|AVR
+		{ED37B950-AE1E-406D-AFB3-22044B719477}.Release|AVR.ActiveCfg = Release|AVR
+		{ED37B950-AE1E-406D-AFB3-22044B719477}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

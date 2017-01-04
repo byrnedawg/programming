@@ -1,0 +1,707 @@
+
+XM19 Plotting Board.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000038c  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          0000000e  00800060  00800060  00000400  2**0
+                  ALLOC
+  2 .stab         000006cc  00000000  00000000  00000400  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000085  00000000  00000000  00000acc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_aranges 00000020  00000000  00000000  00000b51  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_pubnames 000001c0  00000000  00000000  00000b71  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   0000031e  00000000  00000000  00000d31  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000000c7  00000000  00000000  0000104f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000473  00000000  00000000  00001116  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000110  00000000  00000000  0000158c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000226  00000000  00000000  0000169c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000013  00000000  00000000  000018c2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_pubtypes 0000002b  00000000  00000000  000018d5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0e c0       	rjmp	.+28     	; 0x1e <__ctors_end>
+   2:	1d c0       	rjmp	.+58     	; 0x3e <__bad_interrupt>
+   4:	2d c1       	rjmp	.+602    	; 0x260 <__vector_2>
+   6:	18 c1       	rjmp	.+560    	; 0x238 <__vector_3>
+   8:	ce c0       	rjmp	.+412    	; 0x1a6 <__vector_4>
+   a:	38 c0       	rjmp	.+112    	; 0x7c <__vector_5>
+   c:	18 c0       	rjmp	.+48     	; 0x3e <__bad_interrupt>
+   e:	18 c0       	rjmp	.+48     	; 0x40 <__vector_7>
+  10:	21 c0       	rjmp	.+66     	; 0x54 <__vector_8>
+  12:	1c c1       	rjmp	.+568    	; 0x24c <__vector_9>
+  14:	b4 c0       	rjmp	.+360    	; 0x17e <__vector_10>
+  16:	bd c0       	rjmp	.+378    	; 0x192 <__vector_11>
+  18:	12 c0       	rjmp	.+36     	; 0x3e <__bad_interrupt>
+  1a:	11 c0       	rjmp	.+34     	; 0x3e <__bad_interrupt>
+  1c:	10 c0       	rjmp	.+32     	; 0x3e <__bad_interrupt>
+
+0000001e <__ctors_end>:
+  1e:	11 24       	eor	r1, r1
+  20:	1f be       	out	0x3f, r1	; 63
+  22:	cf e5       	ldi	r28, 0x5F	; 95
+  24:	d2 e0       	ldi	r29, 0x02	; 2
+  26:	de bf       	out	0x3e, r29	; 62
+  28:	cd bf       	out	0x3d, r28	; 61
+
+0000002a <__do_clear_bss>:
+  2a:	10 e0       	ldi	r17, 0x00	; 0
+  2c:	a0 e6       	ldi	r26, 0x60	; 96
+  2e:	b0 e0       	ldi	r27, 0x00	; 0
+  30:	01 c0       	rjmp	.+2      	; 0x34 <.do_clear_bss_start>
+
+00000032 <.do_clear_bss_loop>:
+  32:	1d 92       	st	X+, r1
+
+00000034 <.do_clear_bss_start>:
+  34:	ae 36       	cpi	r26, 0x6E	; 110
+  36:	b1 07       	cpc	r27, r17
+  38:	e1 f7       	brne	.-8      	; 0x32 <.do_clear_bss_loop>
+  3a:	89 d1       	rcall	.+786    	; 0x34e <main>
+  3c:	a5 c1       	rjmp	.+842    	; 0x388 <_exit>
+
+0000003e <__bad_interrupt>:
+  3e:	e0 cf       	rjmp	.-64     	; 0x0 <__vectors>
+
+00000040 <__vector_7>:
+volatile uint16_t POT_Value; // Value the ADC reads on the LDR pin PB3
+volatile bool Light_on; // true if POT_Value > Light_On_Threshold
+volatile bool BTN_Down; // true if the push button is being help down 
+
+ISR(ANA_COMP_vect)
+{
+  40:	1f 92       	push	r1
+  42:	0f 92       	push	r0
+  44:	0f b6       	in	r0, 0x3f	; 63
+  46:	0f 92       	push	r0
+  48:	11 24       	eor	r1, r1
+
+}
+  4a:	0f 90       	pop	r0
+  4c:	0f be       	out	0x3f, r0	; 63
+  4e:	0f 90       	pop	r0
+  50:	1f 90       	pop	r1
+  52:	18 95       	reti
+
+00000054 <__vector_8>:
+
+ISR(ADC_vect) // Interrupt for ADC Converter
+{
+  54:	1f 92       	push	r1
+  56:	0f 92       	push	r0
+  58:	0f b6       	in	r0, 0x3f	; 63
+  5a:	0f 92       	push	r0
+  5c:	11 24       	eor	r1, r1
+  5e:	8f 93       	push	r24
+  60:	9f 93       	push	r25
+	uint8_t temp; // raw a2d variable
+	temp = ADCH ; // ADCH is the high portion of the a2d
+  62:	85 b1       	in	r24, 0x05	; 5
+	//POT_Value = (56 * 255 / temp); // 56/ 1.1v = 255/5v (5v/wanted voltage level = 255/ 8 bit quantized voltage
+    POT_Value = temp;
+  64:	90 e0       	ldi	r25, 0x00	; 0
+  66:	90 93 6c 00 	sts	0x006C, r25
+  6a:	80 93 6b 00 	sts	0x006B, r24
+}
+  6e:	9f 91       	pop	r25
+  70:	8f 91       	pop	r24
+  72:	0f 90       	pop	r0
+  74:	0f be       	out	0x3f, r0	; 63
+  76:	0f 90       	pop	r0
+  78:	1f 90       	pop	r1
+  7a:	18 95       	reti
+
+0000007c <__vector_5>:
+
+ISR(TIMER0_OVF_vect) // timer 0 overflow interrupt 
+{
+  7c:	1f 92       	push	r1
+  7e:	0f 92       	push	r0
+  80:	0f b6       	in	r0, 0x3f	; 63
+  82:	0f 92       	push	r0
+  84:	11 24       	eor	r1, r1
+  86:	5f 93       	push	r21
+  88:	6f 93       	push	r22
+  8a:	7f 93       	push	r23
+  8c:	8f 93       	push	r24
+  8e:	9f 93       	push	r25
+  90:	af 93       	push	r26
+  92:	bf 93       	push	r27
+	timer0Overflows++;	// 225 1 min // 1125 5 min // 2250 10min // 15 4seconds // keep track of timer 0 overflows for timer interrupt polling 
+  94:	80 91 60 00 	lds	r24, 0x0060
+  98:	90 91 61 00 	lds	r25, 0x0061
+  9c:	01 96       	adiw	r24, 0x01	; 1
+  9e:	90 93 61 00 	sts	0x0061, r25
+  a2:	80 93 60 00 	sts	0x0060, r24
+	if((timer0Overflows % 5) == 0) //15 4 seconds
+  a6:	80 91 60 00 	lds	r24, 0x0060
+  aa:	90 91 61 00 	lds	r25, 0x0061
+  ae:	65 e0       	ldi	r22, 0x05	; 5
+  b0:	70 e0       	ldi	r23, 0x00	; 0
+  b2:	56 d1       	rcall	.+684    	; 0x360 <__udivmodhi4>
+  b4:	00 97       	sbiw	r24, 0x00	; 0
+  b6:	79 f5       	brne	.+94     	; 0x116 <__vector_5+0x9a>
+		//if(switch_state == 0 && Light_on == true) // if the light is off and its supposed to be on
+		//{
+			//switch_state = last_switch_state; // restore previous powered on switch state
+			//last_switch_state = 1; // set last switch state to 1
+	//	}
+		if(switch_state == 1)	//Red
+  b8:	80 91 68 00 	lds	r24, 0x0068
+  bc:	81 30       	cpi	r24, 0x01	; 1
+  be:	21 f4       	brne	.+8      	; 0xc8 <__vector_5+0x4c>
+		{
+			LED_Brightness = 50;  // **** NOTE: for blue 0 is 0% and 255 is 100%
+  c0:	82 e3       	ldi	r24, 0x32	; 50
+  c2:	80 93 66 00 	sts	0x0066, r24
+  c6:	24 c0       	rjmp	.+72     	; 0x110 <__vector_5+0x94>
+		}
+		else if(switch_state == 2)	//Light detected OFF
+  c8:	80 91 68 00 	lds	r24, 0x0068
+  cc:	82 30       	cpi	r24, 0x02	; 2
+  ce:	21 f4       	brne	.+8      	; 0xd8 <__vector_5+0x5c>
+		{
+			LED_Brightness = 100;
+  d0:	84 e6       	ldi	r24, 0x64	; 100
+  d2:	80 93 66 00 	sts	0x0066, r24
+  d6:	1c c0       	rjmp	.+56     	; 0x110 <__vector_5+0x94>
+		}
+		else if(switch_state == 3)	//Light detected OFF
+  d8:	80 91 68 00 	lds	r24, 0x0068
+  dc:	83 30       	cpi	r24, 0x03	; 3
+  de:	21 f4       	brne	.+8      	; 0xe8 <__vector_5+0x6c>
+		{
+			LED_Brightness = 150 ;
+  e0:	86 e9       	ldi	r24, 0x96	; 150
+  e2:	80 93 66 00 	sts	0x0066, r24
+  e6:	14 c0       	rjmp	.+40     	; 0x110 <__vector_5+0x94>
+		}	
+		else if(switch_state == 4)	//Light detected OFF
+  e8:	80 91 68 00 	lds	r24, 0x0068
+  ec:	84 30       	cpi	r24, 0x04	; 4
+  ee:	21 f4       	brne	.+8      	; 0xf8 <__vector_5+0x7c>
+		{
+			LED_Brightness = 200 ;
+  f0:	88 ec       	ldi	r24, 0xC8	; 200
+  f2:	80 93 66 00 	sts	0x0066, r24
+  f6:	0c c0       	rjmp	.+24     	; 0x110 <__vector_5+0x94>
+		}
+		else if(switch_state == 5)	//Light detected OFF
+  f8:	80 91 68 00 	lds	r24, 0x0068
+  fc:	85 30       	cpi	r24, 0x05	; 5
+  fe:	21 f4       	brne	.+8      	; 0x108 <__vector_5+0x8c>
+		{
+			LED_Brightness = 255 ;
+ 100:	8f ef       	ldi	r24, 0xFF	; 255
+ 102:	80 93 66 00 	sts	0x0066, r24
+ 106:	04 c0       	rjmp	.+8      	; 0x110 <__vector_5+0x94>
+		}					
+
+		else
+		{
+			LED_Brightness = 0;
+ 108:	10 92 66 00 	sts	0x0066, r1
+			switch_state = 0; // set switch state to 0 if the state is above 9
+ 10c:	10 92 68 00 	sts	0x0068, r1
+		}
+		
+		//OCR0B = (255 - red_Brightness);  // PWM Duty cycle value
+		//OCR0A = (255 - green_Brightness); // PWM Duty cycle value switched green and red
+		OCR1B = LED_Brightness; // PWM Duty cycle value
+ 110:	80 91 66 00 	lds	r24, 0x0066
+ 114:	8b bd       	out	0x2b, r24	; 43
+	}
+	
+	if((timer0Overflows % 10) == 0) //  Sensor_Sample_Rate = %500 
+ 116:	80 91 60 00 	lds	r24, 0x0060
+ 11a:	90 91 61 00 	lds	r25, 0x0061
+ 11e:	6a e0       	ldi	r22, 0x0A	; 10
+ 120:	70 e0       	ldi	r23, 0x00	; 0
+ 122:	1e d1       	rcall	.+572    	; 0x360 <__udivmodhi4>
+ 124:	00 97       	sbiw	r24, 0x00	; 0
+ 126:	39 f4       	brne	.+14     	; 0x136 <__vector_5+0xba>
+	{
+		if(switch_state == 0)
+ 128:	80 91 68 00 	lds	r24, 0x0068
+ 12c:	88 23       	and	r24, r24
+ 12e:	11 f4       	brne	.+4      	; 0x134 <__vector_5+0xb8>
+		{
+			output_low(PORTB, PowerEnable);
+ 130:	c1 98       	cbi	0x18, 1	; 24
+ 132:	01 c0       	rjmp	.+2      	; 0x136 <__vector_5+0xba>
+		}
+		else
+		{
+			output_high(PORTB, PowerEnable);
+ 134:	c1 9a       	sbi	0x18, 1	; 24
+		}
+	}	
+
+	if((timer0Overflows % Sensor_Sample_Rate) == 0) //  Sensor_Sample_Rate = %500 
+ 136:	80 91 60 00 	lds	r24, 0x0060
+ 13a:	90 91 61 00 	lds	r25, 0x0061
+ 13e:	60 91 64 00 	lds	r22, 0x0064
+ 142:	70 91 65 00 	lds	r23, 0x0065
+ 146:	0c d1       	rcall	.+536    	; 0x360 <__udivmodhi4>
+ 148:	00 97       	sbiw	r24, 0x00	; 0
+ 14a:	69 f4       	brne	.+26     	; 0x166 <__vector_5+0xea>
+	{
+		ADCSRA|=(1<<ADSC); // setting ADSC to 1 starts A2D Conversion 
+ 14c:	36 9a       	sbi	0x06, 6	; 6
+		//if(Light_on == false) // return from A2D interrupt check if the light should be on
+		//{	
+			//switch_state = 0; // if light should be off set to state 0 or the off state
+		//}	
+		if(POT_Value < 130)
+ 14e:	80 91 6b 00 	lds	r24, 0x006B
+ 152:	90 91 6c 00 	lds	r25, 0x006C
+ 156:	82 38       	cpi	r24, 0x82	; 130
+ 158:	91 05       	cpc	r25, r1
+ 15a:	18 f4       	brcc	.+6      	; 0x162 <__vector_5+0xe6>
+		{
+			OCR1C = PWM_30Hz;
+ 15c:	8c ef       	ldi	r24, 0xFC	; 252
+ 15e:	8d bd       	out	0x2d, r24	; 45
+ 160:	02 c0       	rjmp	.+4      	; 0x166 <__vector_5+0xea>
+		}	
+		else
+		{
+			OCR1C = PWM_200Hz;
+ 162:	87 e2       	ldi	r24, 0x27	; 39
+ 164:	8d bd       	out	0x2d, r24	; 45
+		}							
+			
+	}		
+		
+}
+ 166:	bf 91       	pop	r27
+ 168:	af 91       	pop	r26
+ 16a:	9f 91       	pop	r25
+ 16c:	8f 91       	pop	r24
+ 16e:	7f 91       	pop	r23
+ 170:	6f 91       	pop	r22
+ 172:	5f 91       	pop	r21
+ 174:	0f 90       	pop	r0
+ 176:	0f be       	out	0x3f, r0	; 63
+ 178:	0f 90       	pop	r0
+ 17a:	1f 90       	pop	r1
+ 17c:	18 95       	reti
+
+0000017e <__vector_10>:
+ISR(TIMER0_COMPA_vect) // timer 0 compare A interrupt 
+{
+ 17e:	1f 92       	push	r1
+ 180:	0f 92       	push	r0
+ 182:	0f b6       	in	r0, 0x3f	; 63
+ 184:	0f 92       	push	r0
+ 186:	11 24       	eor	r1, r1
+	
+}
+ 188:	0f 90       	pop	r0
+ 18a:	0f be       	out	0x3f, r0	; 63
+ 18c:	0f 90       	pop	r0
+ 18e:	1f 90       	pop	r1
+ 190:	18 95       	reti
+
+00000192 <__vector_11>:
+
+ISR(TIMER0_COMPB_vect) // timer 0 compare B interrupt 
+{
+ 192:	1f 92       	push	r1
+ 194:	0f 92       	push	r0
+ 196:	0f b6       	in	r0, 0x3f	; 63
+ 198:	0f 92       	push	r0
+ 19a:	11 24       	eor	r1, r1
+
+}
+ 19c:	0f 90       	pop	r0
+ 19e:	0f be       	out	0x3f, r0	; 63
+ 1a0:	0f 90       	pop	r0
+ 1a2:	1f 90       	pop	r1
+ 1a4:	18 95       	reti
+
+000001a6 <__vector_4>:
+
+ISR(TIMER1_OVF_vect) // timer 1 overflow interrupt 
+{
+ 1a6:	1f 92       	push	r1
+ 1a8:	0f 92       	push	r0
+ 1aa:	0f b6       	in	r0, 0x3f	; 63
+ 1ac:	0f 92       	push	r0
+ 1ae:	11 24       	eor	r1, r1
+ 1b0:	5f 93       	push	r21
+ 1b2:	6f 93       	push	r22
+ 1b4:	7f 93       	push	r23
+ 1b6:	8f 93       	push	r24
+ 1b8:	9f 93       	push	r25
+ 1ba:	af 93       	push	r26
+ 1bc:	bf 93       	push	r27
+	timer1Overflows++; //keep track of timer 1 overflows for timer interrupt polling 
+ 1be:	80 91 69 00 	lds	r24, 0x0069
+ 1c2:	90 91 6a 00 	lds	r25, 0x006A
+ 1c6:	01 96       	adiw	r24, 0x01	; 1
+ 1c8:	90 93 6a 00 	sts	0x006A, r25
+ 1cc:	80 93 69 00 	sts	0x0069, r24
+	
+	if((timer1Overflows % 20) == 0) // push button polling 195 1 sec /975 5 sec/ 11700 1 min/
+ 1d0:	80 91 69 00 	lds	r24, 0x0069
+ 1d4:	90 91 6a 00 	lds	r25, 0x006A
+ 1d8:	64 e1       	ldi	r22, 0x14	; 20
+ 1da:	70 e0       	ldi	r23, 0x00	; 0
+ 1dc:	c1 d0       	rcall	.+386    	; 0x360 <__udivmodhi4>
+ 1de:	00 97       	sbiw	r24, 0x00	; 0
+ 1e0:	29 f4       	brne	.+10     	; 0x1ec <__vector_4+0x46>
+	{
+		if(bit_is_set(PINB, 2)) // if the push button is held down connecting pin B2 to ground
+ 1e2:	b2 9b       	sbis	0x16, 2	; 22
+ 1e4:	03 c0       	rjmp	.+6      	; 0x1ec <__vector_4+0x46>
+		//if(bit_is_clear(PINB, 2)) // if the push button is held down connecting pin B2 to ground
+		{
+			BTN_Down = true; // button down is true
+ 1e6:	81 e0       	ldi	r24, 0x01	; 1
+ 1e8:	80 93 67 00 	sts	0x0067, r24
+
+		}
+	}
+	if((timer1Overflows % 25) == 0) // push button polling on the release
+ 1ec:	80 91 69 00 	lds	r24, 0x0069
+ 1f0:	90 91 6a 00 	lds	r25, 0x006A
+ 1f4:	69 e1       	ldi	r22, 0x19	; 25
+ 1f6:	70 e0       	ldi	r23, 0x00	; 0
+ 1f8:	b3 d0       	rcall	.+358    	; 0x360 <__udivmodhi4>
+ 1fa:	00 97       	sbiw	r24, 0x00	; 0
+ 1fc:	89 f4       	brne	.+34     	; 0x220 <__vector_4+0x7a>
+	{
+
+			if(bit_is_clear(PINB, 2) && BTN_Down) // push button release to set pin B2 to high again after being held low
+ 1fe:	b2 99       	sbic	0x16, 2	; 22
+ 200:	0f c0       	rjmp	.+30     	; 0x220 <__vector_4+0x7a>
+ 202:	80 91 67 00 	lds	r24, 0x0067
+ 206:	88 23       	and	r24, r24
+ 208:	59 f0       	breq	.+22     	; 0x220 <__vector_4+0x7a>
+			//if(bit_is_set(PINB, 2) && BTN_Down) // push button release to set pin B2 to high again after being held low
+			{
+				//sbi(PORTB,PB3);
+				switch_state++; // increment mode states by 1 i.e. red -> yellow, green - > blue
+ 20a:	80 91 68 00 	lds	r24, 0x0068
+ 20e:	8f 5f       	subi	r24, 0xFF	; 255
+ 210:	80 93 68 00 	sts	0x0068, r24
+				last_switch_state = switch_state; // update the last switch state to hold the value of switch state in case of a light power down
+ 214:	80 91 68 00 	lds	r24, 0x0068
+ 218:	80 93 6d 00 	sts	0x006D, r24
+				BTN_Down = false; // push button is released so the button is no longer held down
+ 21c:	10 92 67 00 	sts	0x0067, r1
+			}
+	}
+		
+}
+ 220:	bf 91       	pop	r27
+ 222:	af 91       	pop	r26
+ 224:	9f 91       	pop	r25
+ 226:	8f 91       	pop	r24
+ 228:	7f 91       	pop	r23
+ 22a:	6f 91       	pop	r22
+ 22c:	5f 91       	pop	r21
+ 22e:	0f 90       	pop	r0
+ 230:	0f be       	out	0x3f, r0	; 63
+ 232:	0f 90       	pop	r0
+ 234:	1f 90       	pop	r1
+ 236:	18 95       	reti
+
+00000238 <__vector_3>:
+		
+
+
+ISR(TIMER1_COMPA_vect) // timer 1 compare A interrupt 
+{
+ 238:	1f 92       	push	r1
+ 23a:	0f 92       	push	r0
+ 23c:	0f b6       	in	r0, 0x3f	; 63
+ 23e:	0f 92       	push	r0
+ 240:	11 24       	eor	r1, r1
+
+}
+ 242:	0f 90       	pop	r0
+ 244:	0f be       	out	0x3f, r0	; 63
+ 246:	0f 90       	pop	r0
+ 248:	1f 90       	pop	r1
+ 24a:	18 95       	reti
+
+0000024c <__vector_9>:
+
+ISR(TIMER1_COMPB_vect) // timer 1 compare B interrupt 
+{
+ 24c:	1f 92       	push	r1
+ 24e:	0f 92       	push	r0
+ 250:	0f b6       	in	r0, 0x3f	; 63
+ 252:	0f 92       	push	r0
+ 254:	11 24       	eor	r1, r1
+
+}
+ 256:	0f 90       	pop	r0
+ 258:	0f be       	out	0x3f, r0	; 63
+ 25a:	0f 90       	pop	r0
+ 25c:	1f 90       	pop	r1
+ 25e:	18 95       	reti
+
+00000260 <__vector_2>:
+
+ISR(PCINT0_vect) // Pin Change interrupt service routine
+{
+ 260:	1f 92       	push	r1
+ 262:	0f 92       	push	r0
+ 264:	0f b6       	in	r0, 0x3f	; 63
+ 266:	0f 92       	push	r0
+ 268:	11 24       	eor	r1, r1
+ 26a:	8f 93       	push	r24
+	sleep_disable(); // If pins change state wake up
+ 26c:	85 b7       	in	r24, 0x35	; 53
+ 26e:	8f 7d       	andi	r24, 0xDF	; 223
+ 270:	85 bf       	out	0x35, r24	; 53
+	TCNT0 = 0x00; // reset timer 0
+ 272:	12 be       	out	0x32, r1	; 50
+	TCNT1 = 0x00; // reset timer 1
+ 274:	1f bc       	out	0x2f, r1	; 47
+	timer0Overflows = 0; // reset timer o overflows 
+ 276:	10 92 61 00 	sts	0x0061, r1
+ 27a:	10 92 60 00 	sts	0x0060, r1
+	//timer1Overflows = 0; // dont reset timer 1 overflows keep running forever
+}
+ 27e:	8f 91       	pop	r24
+ 280:	0f 90       	pop	r0
+ 282:	0f be       	out	0x3f, r0	; 63
+ 284:	0f 90       	pop	r0
+ 286:	1f 90       	pop	r1
+ 288:	18 95       	reti
+
+0000028a <PortInit>:
+	//	(PCINT3/XTAL1/CLKI/~OC1B/ADC3)	LDR		--PB3 |		 |PB2--	Switch	(SCK/USCK/SCL/ADC1/T0/INT0/PCINT2)
+	//	(PCINT4/XTAL2/CLKO/OC1B/ADC2)   LED     --PB4 |		 |PB1--	RED LED	(MISO/DO/AIN1/OC0B/OC1A/PCINT1)
+	//											--GND |______|PB0--	GRN LED	(MOSI/DI/SDA/AIN0/OC0A/~OC1A/AREF/PCINT0)
+	//
+
+	PORTB = (1<<PB4)|(1<<PB3)|(1<<PB2)|(1<<PB1)|(1<<PB0); // set all pins we are using high
+ 28a:	8f e1       	ldi	r24, 0x1F	; 31
+ 28c:	88 bb       	out	0x18, r24	; 24
+	DDRB = (1<<DDB4)|(0<<DDB3)|(0<<DDB2)|(1<<DDB1)|(1<<DDB0); // set PB4, PB1 and PB0 as outputs and PB3 and PB2 as inputs 
+ 28e:	83 e1       	ldi	r24, 0x13	; 19
+ 290:	87 bb       	out	0x17, r24	; 23
+	PORTB = (0<<PB4)|(0<<PB1)|(0<<PB0); // set all outputs to 0
+ 292:	18 ba       	out	0x18, r1	; 24
+	set_output(DDRB, PowerEnable);
+ 294:	b9 9a       	sbi	0x17, 1	; 23
+	output_high(PORTB, PowerEnable);
+ 296:	c1 9a       	sbi	0x18, 1	; 24
+}
+ 298:	08 95       	ret
+
+0000029a <SystemInit>:
+
+void SystemInit(void) // Power on variable initialization 
+{
+	Light_on = true; // initialize the light to be powered on
+ 29a:	21 e0       	ldi	r18, 0x01	; 1
+ 29c:	20 93 63 00 	sts	0x0063, r18
+	Sensor_Sample_Rate = 500; // set sensor read speed to 500
+ 2a0:	84 ef       	ldi	r24, 0xF4	; 244
+ 2a2:	91 e0       	ldi	r25, 0x01	; 1
+ 2a4:	90 93 65 00 	sts	0x0065, r25
+ 2a8:	80 93 64 00 	sts	0x0064, r24
+	OCR1C = PWM_200Hz; // set PWM for timer 1 to 200 hz
+ 2ac:	87 e2       	ldi	r24, 0x27	; 39
+ 2ae:	8d bd       	out	0x2d, r24	; 45
+	switch_state = 1; // set to state 1 which is red
+ 2b0:	20 93 68 00 	sts	0x0068, r18
+	last_switch_state = switch_state; // initialize last switch state to red
+ 2b4:	80 91 68 00 	lds	r24, 0x0068
+ 2b8:	80 93 6d 00 	sts	0x006D, r24
+	LED_Brightness = 0; // red values
+ 2bc:	10 92 66 00 	sts	0x0066, r1
+	//OCR0B = (255 - red_Brightness); // red values
+	//OCR0A = (255 - green_Brightness); // red values
+	OCR1B = LED_Brightness; // red values
+ 2c0:	80 91 66 00 	lds	r24, 0x0066
+ 2c4:	8b bd       	out	0x2b, r24	; 43
+	
+	BTN_Down = false; // button is not pushed down
+ 2c6:	10 92 67 00 	sts	0x0067, r1
+	PCMSK |= (1<<PCINT2); // pin change mask: listen to portb bit 2 PB2
+ 2ca:	aa 9a       	sbi	0x15, 2	; 21
+	GIMSK |= (1<<PCIE); // enable PCINT interrupt
+ 2cc:	8b b7       	in	r24, 0x3b	; 59
+ 2ce:	80 62       	ori	r24, 0x20	; 32
+ 2d0:	8b bf       	out	0x3b, r24	; 59
+	MCUCR |= (1<<BODS)|(0<<PUD)|(1<<SE)|(0<<SM1)|(1<<SM0)|(0<<BODSE)|(1<<ISC01)|(0<<ISC00); // disable BOD during sleep, Sleep Enable, ADC Noise Reduction, The falling edge of INT0 generates an interrupt request
+ 2d2:	85 b7       	in	r24, 0x35	; 53
+ 2d4:	8a 6a       	ori	r24, 0xAA	; 170
+ 2d6:	85 bf       	out	0x35, r24	; 53
+	sei(); // enable all interrupts
+ 2d8:	78 94       	sei
+	timer0Overflows = 0; // time0roverflows set to 0 
+ 2da:	10 92 61 00 	sts	0x0061, r1
+ 2de:	10 92 60 00 	sts	0x0060, r1
+	timer1Overflows = 0; // time1roverflows set to 0 
+ 2e2:	10 92 6a 00 	sts	0x006A, r1
+ 2e6:	10 92 69 00 	sts	0x0069, r1
+}
+ 2ea:	08 95       	ret
+
+000002ec <timer0_init>:
+void timer0_init(void) // Initialize timer 0 
+{
+	// NOTE: Assumes DIV8 fuse set for 1 MHz operation
+	// 8-bit counter means overflow interrupt every 61 Hz to turn on the LED
+	// Variable Compare_A interrupt in between OVF to turn off the LED
+	TCCR0A |= (0<<COM0A1)|(0<<COM0A0)|(0<<COM0B1)|(0<<COM0B0)|(0<<WGM01)|(0<<WGM00); // Set OC0A/OC0B on Compare Match, clear OC0A/OC0B at BOTTOM (inverting mode) ,Fast PWM Mode
+ 2ec:	8a b5       	in	r24, 0x2a	; 42
+ 2ee:	8a bd       	out	0x2a, r24	; 42
+	TCCR0B |= (0<<FOC0A)|(0<<FOC0B)|(0<<WGM02)|(0<<CS02)|(1<<CS01)|(0<<CS00); //0x02;	pre-scale= CK/8
+ 2f0:	83 b7       	in	r24, 0x33	; 51
+ 2f2:	82 60       	ori	r24, 0x02	; 2
+ 2f4:	83 bf       	out	0x33, r24	; 51
+	OCR0A = 0x00; // Governs Duty Cycle (192 ~75% of 256) for inverting mode OCR0A = (255-duty-cycle)
+ 2f6:	19 bc       	out	0x29, r1	; 41
+	OCR0B = 0x00; // Governs Duty Cycle (192 ~75% of 256) for inverting mode OCR0B = (255-duty-cycle)
+ 2f8:	18 bc       	out	0x28, r1	; 40
+	TCNT0 = 0x00; // Start Timer 
+ 2fa:	12 be       	out	0x32, r1	; 50
+	timer0Overflows = 0; // Start timer overflows at 0
+ 2fc:	10 92 61 00 	sts	0x0061, r1
+ 300:	10 92 60 00 	sts	0x0060, r1
+}
+ 304:	08 95       	ret
+
+00000306 <timer1_init>:
+
+void timer1_init(void) // Initialize timer 1
+{
+	TCCR1 |= (0<<CTC1)|(0<<PWM1A)|(0<<COM1A1)|(0<<COM1A0)|(1<<CS13)|(0<<CS12)|(0<<CS11)|(0<<CS10); // PWM1A Disabled, Timer/Counter Comparator A disconnected from output pin OC1A, prescale= CK/128 right now was CK/8 1000b ~ 1100b 
+ 306:	80 b7       	in	r24, 0x30	; 48
+ 308:	88 60       	ori	r24, 0x08	; 8
+ 30a:	80 bf       	out	0x30, r24	; 48
+	GTCCR |= (0<<TSM)|(1<<PWM1B)|(1<<COM1B1)|(0<<COM1B0)|(0<<FOC1B)|(0<<FOC1A)|(0<<PSR1)|(0<<PSR0); //PWM1B Enabled, OC1B cleared on compare match. Set when TCNT1 = $00
+ 30c:	8c b5       	in	r24, 0x2c	; 44
+ 30e:	80 66       	ori	r24, 0x60	; 96
+ 310:	8c bd       	out	0x2c, r24	; 44
+	//OCR1A = 0x00; // Disabled Governs Duty Cycle (128 ~50% of 256)
+	OCR1B = 0x00; // Governs Duty Cycle (192 ~75% of 256)
+ 312:	1b bc       	out	0x2b, r1	; 43
+	OCR1C = PWM_200Hz;	// OCR1C = Governs PWM Frequency :: (1Mhz/prescaler)/(OCR1C+1)= PWM Frequency :: 1M/128/39+1 = 200Hz	0x27 1M/128/252+1 = 33Hz	0xFC
+ 314:	87 e2       	ldi	r24, 0x27	; 39
+ 316:	8d bd       	out	0x2d, r24	; 45
+	TIMSK |= (0<<OCIE1A)|(1<<OCIE1B)|(0<<OCIE0A)|(0<<OCIE0B)|(1<<TOIE1)|(1<<TOIE0);	// Compare A and OVF Interrupt enabled
+ 318:	89 b7       	in	r24, 0x39	; 57
+ 31a:	86 62       	ori	r24, 0x26	; 38
+ 31c:	89 bf       	out	0x39, r24	; 57
+	TCNT1 = 0x00; // Start Timer
+ 31e:	1f bc       	out	0x2f, r1	; 47
+	timer1Overflows = 0; // Start timer overflows at 0
+ 320:	10 92 6a 00 	sts	0x006A, r1
+ 324:	10 92 69 00 	sts	0x0069, r1
+}
+ 328:	08 95       	ret
+
+0000032a <Analog_Comparator_init>:
+
+void Analog_Comparator_init(void) // Initialize Analog Comparator
+{
+	ADCSRB |= (0<<BIN)|(0<<ACME)|(0<<IPR)|(0<<ADTS2)|(0<<ADTS1)|(0<<ADTS0); //Analog Comparator Multiplexer Enable
+ 32a:	83 b1       	in	r24, 0x03	; 3
+ 32c:	83 b9       	out	0x03, r24	; 3
+	ACSR |= (0<<ACD)|(0<<ACBG)|(0<<ACO)|(0<<ACI)|(0<<ACIE)|(0<<ACIS1)|(0<<ACIS0); // Analog Comparator Control Register
+ 32e:	88 b1       	in	r24, 0x08	; 8
+ 330:	88 b9       	out	0x08, r24	; 8
+	DIDR0 |= (0<<ADC0D)|(0<<ADC2D)|(0<<ADC3D)|(0<<ADC1D)|(0<<AIN1D)|(0<<AIN0D); // Digital input Disable Register
+ 332:	84 b3       	in	r24, 0x14	; 20
+ 334:	84 bb       	out	0x14, r24	; 20
+}
+ 336:	08 95       	ret
+
+00000338 <ADC_init>:
+
+void ADC_init(void) // Initialize Analog to Digital Converter
+{
+	ADMUX |= (0<<REFS1)|(0<<REFS0)|(1<<ADLAR)|(0<<REFS2)|(0<<MUX3)|(0<<MUX2)|(1<<MUX1)|(1<<MUX0); //ADC Multiplexer Selection Register... (ADC3(PB3) Selected ADC Input)
+ 338:	87 b1       	in	r24, 0x07	; 7
+ 33a:	83 62       	ori	r24, 0x23	; 35
+ 33c:	87 b9       	out	0x07, r24	; 7
+	ADCSRA |= (1<<ADEN)|(1<<ADSC)|(0<<ADATE)|(0<<ADIF)|(1<<ADIE)|(0<<ADPS2)|(0<<ADPS1)|(0<<ADPS0); // ADC Control Register A
+ 33e:	86 b1       	in	r24, 0x06	; 6
+ 340:	88 6c       	ori	r24, 0xC8	; 200
+ 342:	86 b9       	out	0x06, r24	; 6
+	ADCSRB |= (0<<BIN)|(0<<ACME)|(0<<IPR)|(0<<ADTS2)|(0<<ADTS1)|(0<<ADTS0); // ADC Control Register B
+ 344:	83 b1       	in	r24, 0x03	; 3
+ 346:	83 b9       	out	0x03, r24	; 3
+	DIDR0 |= (0<<ADC0D)|(0<<ADC2D)|(0<<ADC3D)|(0<<ADC1D)|(0<<AIN1D)|(0<<AIN0D); // Digital input Disable Register
+ 348:	84 b3       	in	r24, 0x14	; 20
+ 34a:	84 bb       	out	0x14, r24	; 20
+}
+ 34c:	08 95       	ret
+
+0000034e <main>:
+
+int main(void) 
+{
+	timer0_init(); // timer 0 initialize  
+ 34e:	ce df       	rcall	.-100    	; 0x2ec <timer0_init>
+	timer1_init(); // timer 1 initialize
+ 350:	da df       	rcall	.-76     	; 0x306 <timer1_init>
+	ADC_init(); // analog to digital converter initialize
+ 352:	f2 df       	rcall	.-28     	; 0x338 <ADC_init>
+	PortInit(); // inputs and outputs initialize
+ 354:	9a df       	rcall	.-204    	; 0x28a <PortInit>
+	SystemInit(); // system variables and state initialize
+ 356:	a1 df       	rcall	.-190    	; 0x29a <SystemInit>
+
+	while(1)
+	{
+		sleep_enable(); // sleep until pin interrupt 
+ 358:	85 b7       	in	r24, 0x35	; 53
+ 35a:	80 62       	ori	r24, 0x20	; 32
+ 35c:	85 bf       	out	0x35, r24	; 53
+ 35e:	fc cf       	rjmp	.-8      	; 0x358 <main+0xa>
+
+00000360 <__udivmodhi4>:
+ 360:	aa 1b       	sub	r26, r26
+ 362:	bb 1b       	sub	r27, r27
+ 364:	51 e1       	ldi	r21, 0x11	; 17
+ 366:	07 c0       	rjmp	.+14     	; 0x376 <__udivmodhi4_ep>
+
+00000368 <__udivmodhi4_loop>:
+ 368:	aa 1f       	adc	r26, r26
+ 36a:	bb 1f       	adc	r27, r27
+ 36c:	a6 17       	cp	r26, r22
+ 36e:	b7 07       	cpc	r27, r23
+ 370:	10 f0       	brcs	.+4      	; 0x376 <__udivmodhi4_ep>
+ 372:	a6 1b       	sub	r26, r22
+ 374:	b7 0b       	sbc	r27, r23
+
+00000376 <__udivmodhi4_ep>:
+ 376:	88 1f       	adc	r24, r24
+ 378:	99 1f       	adc	r25, r25
+ 37a:	5a 95       	dec	r21
+ 37c:	a9 f7       	brne	.-22     	; 0x368 <__udivmodhi4_loop>
+ 37e:	80 95       	com	r24
+ 380:	90 95       	com	r25
+ 382:	bc 01       	movw	r22, r24
+ 384:	cd 01       	movw	r24, r26
+ 386:	08 95       	ret
+
+00000388 <_exit>:
+ 388:	f8 94       	cli
+
+0000038a <__stop_program>:
+ 38a:	ff cf       	rjmp	.-2      	; 0x38a <__stop_program>

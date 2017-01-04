@@ -1,0 +1,522 @@
+
+I2CPOLSKA.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000198  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .stab         000006cc  00000000  00000000  000001ec  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  2 .stabstr      00000085  00000000  00000000  000008b8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_aranges 00000060  00000000  00000000  0000093d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 000000de  00000000  00000000  0000099d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000002e8  00000000  00000000  00000a7b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000019e  00000000  00000000  00000d63  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000509  00000000  00000000  00000f01  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000000e0  00000000  00000000  0000140c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000172  00000000  00000000  000014ec  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000012f  00000000  00000000  0000165e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_pubtypes 0000004e  00000000  00000000  0000178d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	19 c0       	rjmp	.+50     	; 0x36 <__bad_interrupt>
+   4:	18 c0       	rjmp	.+48     	; 0x36 <__bad_interrupt>
+   6:	17 c0       	rjmp	.+46     	; 0x36 <__bad_interrupt>
+   8:	16 c0       	rjmp	.+44     	; 0x36 <__bad_interrupt>
+   a:	15 c0       	rjmp	.+42     	; 0x36 <__bad_interrupt>
+   c:	14 c0       	rjmp	.+40     	; 0x36 <__bad_interrupt>
+   e:	13 c0       	rjmp	.+38     	; 0x36 <__bad_interrupt>
+  10:	12 c0       	rjmp	.+36     	; 0x36 <__bad_interrupt>
+  12:	11 c0       	rjmp	.+34     	; 0x36 <__bad_interrupt>
+  14:	10 c0       	rjmp	.+32     	; 0x36 <__bad_interrupt>
+  16:	0f c0       	rjmp	.+30     	; 0x36 <__bad_interrupt>
+  18:	0e c0       	rjmp	.+28     	; 0x36 <__bad_interrupt>
+  1a:	0d c0       	rjmp	.+26     	; 0x36 <__bad_interrupt>
+  1c:	0c c0       	rjmp	.+24     	; 0x36 <__bad_interrupt>
+  1e:	0b c0       	rjmp	.+22     	; 0x36 <__bad_interrupt>
+  20:	0a c0       	rjmp	.+20     	; 0x36 <__bad_interrupt>
+  22:	09 c0       	rjmp	.+18     	; 0x36 <__bad_interrupt>
+  24:	08 c0       	rjmp	.+16     	; 0x36 <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+  32:	02 d0       	rcall	.+4      	; 0x38 <main>
+  34:	af c0       	rjmp	.+350    	; 0x194 <_exit>
+
+00000036 <__bad_interrupt>:
+  36:	e4 cf       	rjmp	.-56     	; 0x0 <__vectors>
+
+00000038 <main>:
+		
+
+
+ int main(void)
+ {
+     set_output(DDRB, LED);
+  38:	b9 9a       	sbi	0x17, 1	; 23
+	 unsigned char ret;
+     output_high(PORTB, LED);
+  3a:	c1 9a       	sbi	0x18, 1	; 24
+     i2c_init();                             // initialize I2C library
+  3c:	46 d0       	rcall	.+140    	; 0xca <i2c_init>
+
+     // write 0x75 to EEPROM address 5 (Byte Write) 
+     i2c_start_wait(MMA8452+I2C_WRITE);     // set device address and write mode
+  3e:	8d e1       	ldi	r24, 0x1D	; 29
+  40:	67 d0       	rcall	.+206    	; 0x110 <i2c_start_wait>
+     i2c_write(0x2A);                        // write address = 5
+  42:	8a e2       	ldi	r24, 0x2A	; 42
+  44:	8b d0       	rcall	.+278    	; 0x15c <i2c_write>
+     i2c_write(0x01);                        // write value 0x75 to EEPROM
+  46:	81 e0       	ldi	r24, 0x01	; 1
+  48:	89 d0       	rcall	.+274    	; 0x15c <i2c_write>
+     i2c_stop();                             // set stop conditon = release bus
+  4a:	82 d0       	rcall	.+260    	; 0x150 <i2c_stop>
+
+
+     // read previously written value back from EEPROM address 5 
+     i2c_start_wait(MMA8452+I2C_WRITE);     // set device address and write mode
+  4c:	8d e1       	ldi	r24, 0x1D	; 29
+  4e:	60 d0       	rcall	.+192    	; 0x110 <i2c_start_wait>
+
+     i2c_write(0x2A);                        // write address = 5
+  50:	8a e2       	ldi	r24, 0x2A	; 42
+  52:	84 d0       	rcall	.+264    	; 0x15c <i2c_write>
+     i2c_rep_start(MMA8452+I2C_READ);       // set device address and read mode
+  54:	8e e1       	ldi	r24, 0x1E	; 30
+  56:	7a d0       	rcall	.+244    	; 0x14c <i2c_rep_start>
+
+     ret = i2c_readNak();                    // read one byte from EEPROM
+  58:	96 d0       	rcall	.+300    	; 0x186 <i2c_readNak>
+     i2c_stop();
+  5a:	7a d0       	rcall	.+244    	; 0x150 <i2c_stop>
+	//_delay_ms(2000);
+	  output_low(PORTB, LED);
+  5c:	c1 98       	cbi	0x18, 1	; 24
+  5e:	ff cf       	rjmp	.-2      	; 0x5e <__SREG__+0x1f>
+
+00000060 <LIS302DL_init>:
+
+#include	"LIS302DL.h"
+
+void LIS302DL_init (void)
+{
+	i2c_start(I2C_LIS302DL + I2C_WRITE);
+  60:	8d e1       	ldi	r24, 0x1D	; 29
+  62:	37 d0       	rcall	.+110    	; 0xd2 <i2c_start>
+	i2c_write(0x2A); // CTRL_REG2 (21h)
+  64:	8a e2       	ldi	r24, 0x2A	; 42
+  66:	7a d0       	rcall	.+244    	; 0x15c <i2c_write>
+	i2c_write(0x01);
+  68:	81 e0       	ldi	r24, 0x01	; 1
+  6a:	78 d0       	rcall	.+240    	; 0x15c <i2c_write>
+	i2c_stop();
+  6c:	71 d0       	rcall	.+226    	; 0x150 <i2c_stop>
+	i2c_start(I2C_LIS302DL + I2C_WRITE);
+	i2c_write(0x20); // CTRL_REG1 (20h)
+	i2c_write(0b01000111);
+	i2c_stop();
+*/
+}
+  6e:	08 95       	ret
+
+00000070 <LIS302DL_read>:
+
+int LIS302DL_read (unsigned char axe )
+{
+  70:	1f 93       	push	r17
+  72:	df 93       	push	r29
+  74:	cf 93       	push	r28
+  76:	0f 92       	push	r0
+  78:	cd b7       	in	r28, 0x3d	; 61
+  7a:	de b7       	in	r29, 0x3e	; 62
+  7c:	18 2f       	mov	r17, r24
+	int axe_val;
+	unsigned char tmp;
+
+	i2c_start(I2C_LIS302DL + I2C_WRITE);
+  7e:	8d e1       	ldi	r24, 0x1D	; 29
+  80:	28 d0       	rcall	.+80     	; 0xd2 <i2c_start>
+	i2c_write(statusReg);
+  82:	80 e0       	ldi	r24, 0x00	; 0
+  84:	6b d0       	rcall	.+214    	; 0x15c <i2c_write>
+	i2c_stop();
+  86:	64 d0       	rcall	.+200    	; 0x150 <i2c_stop>
+   
+	i2c_start(I2C_LIS302DL + I2C_WRITE);
+  88:	8d e1       	ldi	r24, 0x1D	; 29
+  8a:	23 d0       	rcall	.+70     	; 0xd2 <i2c_start>
+	i2c_write(axe);
+  8c:	81 2f       	mov	r24, r17
+  8e:	66 d0       	rcall	.+204    	; 0x15c <i2c_write>
+	i2c_stop();
+  90:	5f d0       	rcall	.+190    	; 0x150 <i2c_stop>
+   
+	i2c_start(I2C_LIS302DL + I2C_READ);
+  92:	8e e1       	ldi	r24, 0x1E	; 30
+  94:	1e d0       	rcall	.+60     	; 0xd2 <i2c_start>
+	tmp = i2c_readNak();
+  96:	77 d0       	rcall	.+238    	; 0x186 <i2c_readNak>
+	i2c_stop();
+  98:	89 83       	std	Y+1, r24	; 0x01
+  9a:	5a d0       	rcall	.+180    	; 0x150 <i2c_stop>
+
+	if (tmp > 127) //If axis value is negative,
+  9c:	89 81       	ldd	r24, Y+1	; 0x01
+  9e:	87 fd       	sbrc	r24, 7
+  a0:	08 c0       	rjmp	.+16     	; 0xb2 <LIS302DL_read+0x42>
+	{
+		axe_val = 256 - tmp;
+		axe_val ^= 0xFFFF; //One's complement of axe_val.
+	}   
+   else
+   	 axe_val = tmp;
+  a2:	28 2f       	mov	r18, r24
+  a4:	30 e0       	ldi	r19, 0x00	; 0
+
+	return (axe_val);
+
+  a6:	c9 01       	movw	r24, r18
+  a8:	0f 90       	pop	r0
+  aa:	cf 91       	pop	r28
+  ac:	df 91       	pop	r29
+  ae:	1f 91       	pop	r17
+  b0:	08 95       	ret
+	tmp = i2c_readNak();
+	i2c_stop();
+
+	if (tmp > 127) //If axis value is negative,
+	{
+		axe_val = 256 - tmp;
+  b2:	20 e0       	ldi	r18, 0x00	; 0
+  b4:	31 e0       	ldi	r19, 0x01	; 1
+  b6:	28 1b       	sub	r18, r24
+  b8:	31 09       	sbc	r19, r1
+		axe_val ^= 0xFFFF; //One's complement of axe_val.
+  ba:	20 95       	com	r18
+  bc:	30 95       	com	r19
+   else
+   	 axe_val = tmp;
+
+	return (axe_val);
+
+  be:	c9 01       	movw	r24, r18
+  c0:	0f 90       	pop	r0
+  c2:	cf 91       	pop	r28
+  c4:	df 91       	pop	r29
+  c6:	1f 91       	pop	r17
+  c8:	08 95       	ret
+
+000000ca <i2c_init>:
+*************************************************************************/
+void i2c_init(void)
+{
+  /* initialize TWI clock: 100 kHz clock, TWPS = 0 => prescaler = 1 */
+  
+  TWSR = 0;                         /* no prescaler */
+  ca:	11 b8       	out	0x01, r1	; 1
+  TWBR = ((F_CPU/SCL_CLOCK)-16)/2;  /* must be > 10 for stable operation */
+  cc:	80 e2       	ldi	r24, 0x20	; 32
+  ce:	80 b9       	out	0x00, r24	; 0
+}/* i2c_init */
+  d0:	08 95       	ret
+
+000000d2 <i2c_start>:
+unsigned char i2c_start(unsigned char address)
+{
+    uint8_t   twst;
+
+	// send START condition
+	TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+  d2:	94 ea       	ldi	r25, 0xA4	; 164
+  d4:	96 bf       	out	0x36, r25	; 54
+
+	// wait until transmission completed
+	while(!(TWCR & (1<<TWINT)));
+  d6:	06 b6       	in	r0, 0x36	; 54
+  d8:	07 fe       	sbrs	r0, 7
+  da:	fd cf       	rjmp	.-6      	; 0xd6 <i2c_start+0x4>
+
+	// check value of TWI Status Register. Mask prescaler bits.
+	twst = TW_STATUS & 0xF8;
+  dc:	91 b1       	in	r25, 0x01	; 1
+  de:	98 7f       	andi	r25, 0xF8	; 248
+	if ( (twst != TW_START) && (twst != TW_REP_START)) return 1;
+  e0:	98 30       	cpi	r25, 0x08	; 8
+  e2:	21 f0       	breq	.+8      	; 0xec <i2c_start+0x1a>
+  e4:	90 31       	cpi	r25, 0x10	; 16
+  e6:	11 f0       	breq	.+4      	; 0xec <i2c_start+0x1a>
+  e8:	81 e0       	ldi	r24, 0x01	; 1
+  ea:	08 95       	ret
+
+	// send device address
+	TWDR = address;
+  ec:	83 b9       	out	0x03, r24	; 3
+	TWCR = (1<<TWINT) | (1<<TWEN);
+  ee:	84 e8       	ldi	r24, 0x84	; 132
+  f0:	86 bf       	out	0x36, r24	; 54
+
+	// wail until transmission completed and ACK/NACK has been received
+	while(!(TWCR & (1<<TWINT)));
+  f2:	06 b6       	in	r0, 0x36	; 54
+  f4:	07 fe       	sbrs	r0, 7
+  f6:	fd cf       	rjmp	.-6      	; 0xf2 <i2c_start+0x20>
+
+	// check value of TWI Status Register. Mask prescaler bits.
+	twst = TW_STATUS & 0xF8;
+  f8:	91 b1       	in	r25, 0x01	; 1
+  fa:	98 7f       	andi	r25, 0xF8	; 248
+	if ( (twst != TW_MT_SLA_ACK) && (twst != TW_MR_SLA_ACK) ) return 1;
+  fc:	98 31       	cpi	r25, 0x18	; 24
+  fe:	21 f0       	breq	.+8      	; 0x108 <i2c_start+0x36>
+
+/*************************************************************************	
+  Issues a start condition and sends address and transfer direction.
+  return 0 = device accessible, 1= failed to access device
+*************************************************************************/
+unsigned char i2c_start(unsigned char address)
+ 100:	81 e0       	ldi	r24, 0x01	; 1
+ 102:	90 34       	cpi	r25, 0x40	; 64
+ 104:	19 f0       	breq	.+6      	; 0x10c <i2c_start+0x3a>
+	twst = TW_STATUS & 0xF8;
+	if ( (twst != TW_MT_SLA_ACK) && (twst != TW_MR_SLA_ACK) ) return 1;
+
+	return 0;
+
+}/* i2c_start */
+ 106:	08 95       	ret
+
+	// check value of TWI Status Register. Mask prescaler bits.
+	twst = TW_STATUS & 0xF8;
+	if ( (twst != TW_MT_SLA_ACK) && (twst != TW_MR_SLA_ACK) ) return 1;
+
+	return 0;
+ 108:	80 e0       	ldi	r24, 0x00	; 0
+
+}/* i2c_start */
+ 10a:	08 95       	ret
+
+/*************************************************************************	
+  Issues a start condition and sends address and transfer direction.
+  return 0 = device accessible, 1= failed to access device
+*************************************************************************/
+unsigned char i2c_start(unsigned char address)
+ 10c:	80 e0       	ldi	r24, 0x00	; 0
+ 10e:	08 95       	ret
+
+00000110 <i2c_start_wait>:
+
+
+    while ( 1 )
+    {
+	    // send START condition
+	    TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+ 110:	24 ea       	ldi	r18, 0xA4	; 164
+    	twst = TW_STATUS & 0xF8;
+    	if ( (twst != TW_START) && (twst != TW_REP_START)) continue;
+    
+    	// send device address
+    	TWDR = address;
+    	TWCR = (1<<TWINT) | (1<<TWEN);
+ 112:	34 e8       	ldi	r19, 0x84	; 132
+    	// check value of TWI Status Register. Mask prescaler bits.
+    	twst = TW_STATUS & 0xF8;
+    	if ( (twst == TW_MT_SLA_NACK )||(twst ==TW_MR_DATA_NACK) ) 
+    	{    	    
+    	    /* device busy, send stop condition to terminate write operation */
+	        TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
+ 114:	44 e9       	ldi	r20, 0x94	; 148
+
+
+    while ( 1 )
+    {
+	    // send START condition
+	    TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+ 116:	26 bf       	out	0x36, r18	; 54
+    
+    	// wait until transmission completed
+    	while(!(TWCR & (1<<TWINT)));
+ 118:	06 b6       	in	r0, 0x36	; 54
+ 11a:	07 fe       	sbrs	r0, 7
+ 11c:	fd cf       	rjmp	.-6      	; 0x118 <i2c_start_wait+0x8>
+    
+    	// check value of TWI Status Register. Mask prescaler bits.
+    	twst = TW_STATUS & 0xF8;
+ 11e:	91 b1       	in	r25, 0x01	; 1
+ 120:	98 7f       	andi	r25, 0xF8	; 248
+    	if ( (twst != TW_START) && (twst != TW_REP_START)) continue;
+ 122:	98 30       	cpi	r25, 0x08	; 8
+ 124:	11 f0       	breq	.+4      	; 0x12a <i2c_start_wait+0x1a>
+ 126:	90 31       	cpi	r25, 0x10	; 16
+ 128:	b1 f7       	brne	.-20     	; 0x116 <i2c_start_wait+0x6>
+    
+    	// send device address
+    	TWDR = address;
+ 12a:	83 b9       	out	0x03, r24	; 3
+    	TWCR = (1<<TWINT) | (1<<TWEN);
+ 12c:	36 bf       	out	0x36, r19	; 54
+    
+    	// wail until transmission completed
+    	while(!(TWCR & (1<<TWINT)));
+ 12e:	06 b6       	in	r0, 0x36	; 54
+ 130:	07 fe       	sbrs	r0, 7
+ 132:	fd cf       	rjmp	.-6      	; 0x12e <i2c_start_wait+0x1e>
+    
+    	// check value of TWI Status Register. Mask prescaler bits.
+    	twst = TW_STATUS & 0xF8;
+ 134:	91 b1       	in	r25, 0x01	; 1
+ 136:	98 7f       	andi	r25, 0xF8	; 248
+    	if ( (twst == TW_MT_SLA_NACK )||(twst ==TW_MR_DATA_NACK) ) 
+ 138:	90 32       	cpi	r25, 0x20	; 32
+ 13a:	19 f0       	breq	.+6      	; 0x142 <i2c_start_wait+0x32>
+ 13c:	98 35       	cpi	r25, 0x58	; 88
+ 13e:	09 f0       	breq	.+2      	; 0x142 <i2c_start_wait+0x32>
+ 140:	08 95       	ret
+    	{    	    
+    	    /* device busy, send stop condition to terminate write operation */
+	        TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
+ 142:	46 bf       	out	0x36, r20	; 54
+	        
+	        // wait until stop condition is executed and bus released
+	        while(TWCR & (1<<TWSTO));
+ 144:	06 b6       	in	r0, 0x36	; 54
+ 146:	04 fc       	sbrc	r0, 4
+ 148:	fd cf       	rjmp	.-6      	; 0x144 <i2c_start_wait+0x34>
+ 14a:	e5 cf       	rjmp	.-54     	; 0x116 <i2c_start_wait+0x6>
+
+0000014c <i2c_rep_start>:
+ Return:  0 device accessible
+          1 failed to access device
+*************************************************************************/
+unsigned char i2c_rep_start(unsigned char address)
+{
+    return i2c_start( address );
+ 14c:	c2 df       	rcall	.-124    	; 0xd2 <i2c_start>
+
+}/* i2c_rep_start */
+ 14e:	08 95       	ret
+
+00000150 <i2c_stop>:
+ Terminates the data transfer and releases the I2C bus
+*************************************************************************/
+void i2c_stop(void)
+{
+    /* send stop condition */
+	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
+ 150:	84 e9       	ldi	r24, 0x94	; 148
+ 152:	86 bf       	out	0x36, r24	; 54
+	
+	// wait until stop condition is executed and bus released
+	while(TWCR & (1<<TWSTO));
+ 154:	06 b6       	in	r0, 0x36	; 54
+ 156:	04 fc       	sbrc	r0, 4
+ 158:	fd cf       	rjmp	.-6      	; 0x154 <i2c_stop+0x4>
+
+}/* i2c_stop */
+ 15a:	08 95       	ret
+
+0000015c <i2c_write>:
+unsigned char i2c_write( unsigned char data )
+{	
+    uint8_t   twst;
+    
+	// send data to the previously addressed device
+	TWDR = data;
+ 15c:	83 b9       	out	0x03, r24	; 3
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ 15e:	84 e8       	ldi	r24, 0x84	; 132
+ 160:	86 bf       	out	0x36, r24	; 54
+
+	// wait until transmission completed
+	while(!(TWCR & (1<<TWINT)));
+ 162:	06 b6       	in	r0, 0x36	; 54
+ 164:	07 fe       	sbrs	r0, 7
+ 166:	fd cf       	rjmp	.-6      	; 0x162 <i2c_write+0x6>
+
+	// check value of TWI Status Register. Mask prescaler bits
+	twst = TW_STATUS & 0xF8;
+ 168:	91 b1       	in	r25, 0x01	; 1
+ 16a:	98 7f       	andi	r25, 0xF8	; 248
+	if( twst != TW_MT_DATA_ACK) return 1;
+ 16c:	81 e0       	ldi	r24, 0x01	; 1
+ 16e:	98 32       	cpi	r25, 0x28	; 40
+ 170:	09 f0       	breq	.+2      	; 0x174 <i2c_write+0x18>
+	return 0;
+
+}/* i2c_write */
+ 172:	08 95       	ret
+	// wait until transmission completed
+	while(!(TWCR & (1<<TWINT)));
+
+	// check value of TWI Status Register. Mask prescaler bits
+	twst = TW_STATUS & 0xF8;
+	if( twst != TW_MT_DATA_ACK) return 1;
+ 174:	80 e0       	ldi	r24, 0x00	; 0
+	return 0;
+
+}/* i2c_write */
+ 176:	08 95       	ret
+
+00000178 <i2c_readAck>:
+ 
+ Return:  byte read from I2C device
+*************************************************************************/
+unsigned char i2c_readAck(void)
+{
+	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWEA);
+ 178:	84 ec       	ldi	r24, 0xC4	; 196
+ 17a:	86 bf       	out	0x36, r24	; 54
+	while(!(TWCR & (1<<TWINT)));    
+ 17c:	06 b6       	in	r0, 0x36	; 54
+ 17e:	07 fe       	sbrs	r0, 7
+ 180:	fd cf       	rjmp	.-6      	; 0x17c <i2c_readAck+0x4>
+
+    return TWDR;
+ 182:	83 b1       	in	r24, 0x03	; 3
+
+}/* i2c_readAck */
+ 184:	08 95       	ret
+
+00000186 <i2c_readNak>:
+ 
+ Return:  byte read from I2C device
+*************************************************************************/
+unsigned char i2c_readNak(void)
+{
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ 186:	84 e8       	ldi	r24, 0x84	; 132
+ 188:	86 bf       	out	0x36, r24	; 54
+	while(!(TWCR & (1<<TWINT)));
+ 18a:	06 b6       	in	r0, 0x36	; 54
+ 18c:	07 fe       	sbrs	r0, 7
+ 18e:	fd cf       	rjmp	.-6      	; 0x18a <i2c_readNak+0x4>
+	
+    return TWDR;
+ 190:	83 b1       	in	r24, 0x03	; 3
+
+}/* i2c_readNak */
+ 192:	08 95       	ret
+
+00000194 <_exit>:
+ 194:	f8 94       	cli
+
+00000196 <__stop_program>:
+ 196:	ff cf       	rjmp	.-2      	; 0x196 <__stop_program>

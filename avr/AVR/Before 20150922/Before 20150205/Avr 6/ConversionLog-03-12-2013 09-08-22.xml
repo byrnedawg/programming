@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<?xml-stylesheet type='text/xsl' href='AVRStudioConversionLog.xslt'?>
+<ConversionLog BrandName="Atmel Studio 6.0 Project ConversionLog">
+  <Project name="ps2" id="ps2" status="Failure">
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Source Project Path: C:\Users\gregory.byrne\Desktop\Projects\Electrical Engineering\AVR\Avr\code\ps2.aps</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Studio5 Project Path: C:\Users\gregory.byrne\Desktop\Projects\Electrical Engineering\AVR\Avr 6\ps2\ps2.avrgccproj</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Studio5 Solution Path: C:\Users\gregory.byrne\Desktop\Projects\Electrical Engineering\AVR\Avr 6\ps2.atsln</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Started : Processing General settings from source project</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Completed : Processing General settings from source project</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Started : Processing Project files information from source project</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Completed : Processing Project files information from source project</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Started : Processing Build Dependency settings from the source project</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Warning</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Skipped reading Build Dependency settings from source project. It is either invalid or not provided.</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Completed : Processing Build Dependency settings from the source project</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Started : Processing ProjectLevel Toolchain settings from source project</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Completed : Processing ProjectLevel Toolchain settings from source project</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Started : Processing Toolchain settings from source project [Configuration default]</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Error</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Project Import Failed : Object reference not set to an instance of an object. [Activity : Processing Toolchain settings from source project]</Message>
+      <Exception>System.Exception: Project Import Failed : Object reference not set to an instance of an object. [Activity : Processing Toolchain settings from source project] ---&gt; System.NullReferenceException: Object reference not set to an instance of an object.
+   at Atmel.VsIde.AvrStudio.Project.AvrStudio4ProjectImporter.Converters.GccToolChainConverter.GetProjectToolchainOptions()
+   at Atmel.VsIde.AvrStudio.Project.AvrStudio4ProjectImporter.Converters.GccToolChainConverter.Convert()
+   at Atmel.VsIde.AvrStudio.Project.AvrStudio4ProjectImporter.AVRStudio4ProjectInfoProvider.GetToolchainSettings(String configName)
+   at ProjectImporter.Core.Framework.SourceProjectParserActivities.ProcessToolchainSettings(String configName)
+   at ProjectImporter.Core.Framework.WorkflowBase.RunConfigurationDependentActions()
+   --- End of inner exception stack trace ---
+   at ProjectImporter.Core.Framework.WorkflowBase.RunConfigurationDependentActions()
+   at ProjectImporter.Core.Framework.WorkflowBase.Execute()
+   at ProjectImporter.Core.Framework.ProjectConversionEngine.ConvertSourceProject()</Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Started : Create Atmel Studio 6.0 Project</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Completed : Create Atmel Studio 6.0 Project</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Started : Updating Atmel Studio 6.0 GeneralSettings</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Completed : Updating Atmel Studio 6.0 GeneralSettings</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Started : Updating Atmel Studio 6.0 FileInformation</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Completed : Updating Atmel Studio 6.0 FileInformation</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Started : Copying Files</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Completed : Copying Files</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:19 AM</DateTime>
+      <Message>Started : Saving Atmel Studio 6.0 Solution</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:21 AM</DateTime>
+      <Message>Completed : Saving Atmel Studio 6.0 Solution</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:21 AM</DateTime>
+      <Message>Started : Updating Configurations In Atmel Studio 6.0 Project</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:21 AM</DateTime>
+      <Message>Completed : Updating Configurations In Atmel Studio 6.0 Project</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:21 AM</DateTime>
+      <Message>Started : Updating Build Dependencies in Atmel Studio 6.0 Solution for the project</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:21 AM</DateTime>
+      <Message>Completed : Updating Build Dependencies in Atmel Studio 6.0 Solution for the project</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Info</Type>
+      <DateTime>3/12/2013 9:08:21 AM</DateTime>
+      <Message>Started : Updating ProjectLevelToolchainSettings In Atmel Studio 6.0 Project</Message>
+      <Exception>
+      </Exception>
+    </LogEntry>
+    <LogEntry>
+      <Type>Fatal</Type>
+      <DateTime>3/12/2013 9:08:21 AM</DateTime>
+      <Message>Conversion Failed:Project Import Failed : The given key was not present in the dictionary. [Activity : Updating ProjectLevelToolchainSettings In Atmel Studio 6.0 Project]</Message>
+      <Exception>System.Exception: Project Import Failed : The given key was not present in the dictionary. [Activity : Updating ProjectLevelToolchainSettings In Atmel Studio 6.0 Project] ---&gt; System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Atmel.VsIde.AvrStudio.ToolchainProvider.FlavourContainer.AddToolchainFlavour(String toolchainName, String flavourName, FlavourContent flavourContent)
+   at Atmel.VsIde.AvrStudio.Project.Gcc.AVRGccConversionTarget.UpdateProjectLevelToolchainSettings(AvrStudio5ProjectLevelToolchainSettings settings)
+   at ProjectImporter.Core.Framework.Activities.AVRStudio5ProjectCreatorActivities.UpdateProjectLevelToolchainSettings()
+   at ProjectImporter.Core.Framework.WorkflowBase.RunConfigurationIndependentActions()
+   --- End of inner exception stack trace ---
+   at ProjectImporter.Core.Framework.WorkflowBase.RunConfigurationIndependentActions()
+   at ProjectImporter.Core.Framework.WorkflowBase.Execute()
+   at ProjectImporter.Core.Framework.ProjectConversionEngine.CreateTargetProject()
+   at ProjectImporter.Core.Framework.ProjectConversionEngine.Run()</Exception>
+    </LogEntry>
+  </Project>
+</ConversionLog>

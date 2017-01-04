@@ -1,0 +1,1126 @@
+Archive member included because of file (symbol)
+
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(LB1836M.o)
+                              RSAV_RX.o (sanyoLB1836M_Init)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(_uart_common.o)
+                              RSAV_RX.o (_uartInit)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2dReadMv.o)
+                              RSAV_RX.o (a2dReadMv)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(actuators.o)
+                              RSAV_RX.o (__act_setSpeed)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(buffer.o)
+                              ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(_uart_common.o) (bufferGet)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core.o)
+                              ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(_uart_common.o) (breathe)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interp.o)
+                              RSAV_RX.o (interpolate)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interpU.o)
+                              ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(LB1836M.o) (interpolateU)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(iopin.o)
+                              ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(_uart_common.o) (pin_make_input)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(led.o)
+                              RSAV_RX.o (LED_set)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintf.o)
+                              RSAV_RX.o (rprintfInit)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servos.o)
+                              RSAV_RX.o (servosInit)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servosConfig.o)
+                              ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servos.o) (servoSetConfig)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o)
+                              ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servos.o) (ticks_per_ms)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCapture.o)
+                              ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o) (timerCaptureDetach)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCompare.o)
+                              ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(LB1836M.o) (compareIsInUse)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerOverflow.o)
+                              ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o) (timerOverflowAttach)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerPWM.o)
+                              ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(LB1836M.o) (timerCalcPwm)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(uart.o)
+                              RSAV_RX.o (c_hw_uart)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2d.o)
+                              ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2dReadMv.o) (a2dConvert10bit)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintfs.o)
+                              ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o) (rprintf1RamRom)
+..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(scheduler.o)
+                              ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o) (scheduleJob)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+                              ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(LB1836M.o) (__mulsi3)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                              ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(buffer.o) (__udivmodhi4)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                              ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servosConfig.o) (__udivmodsi4)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+                              ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interp.o) (__divmodsi4)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm168.o (exit)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                              RSAV_RX.o (__do_copy_data)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                              RSAV_RX.o (__do_clear_bss)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ctors.o)
+                              ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2d.o) (__do_global_ctors)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_tablejump.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ctors.o) (__tablejump__)
+
+Allocating common symbols
+Common symbol       size              file
+
+statusLED           0x3               ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(led.o)
+buttonReleased      0xff              RSAV_RX.o
+__queue             0x34              RSAV_RX.o
+__numJobs           0x2               ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(scheduler.o)
+rx0Buf              0x20              RSAV_RX.o
+__error             0x5               ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o)
+__recheck           0x1               ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(scheduler.o)
+tx0Buf              0x20              RSAV_RX.o
+buttonPressed       0xff              RSAV_RX.o
+g_heartbeat         0x2               ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o)
+a2dCompleteFlag     0x1               ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2d.o)
+__running           0x1               ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(scheduler.o)
+
+Discarded input sections
+
+ .data          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm168.o
+ .bss           0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm168.o
+ .text          0x00000000        0x0 RSAV_RX.o
+ .data          0x00000000        0x0 RSAV_RX.o
+ .bss           0x00000000        0x0 RSAV_RX.o
+ .rodata.NUM_UARTS
+                0x00000000        0x0 RSAV_RX.o
+ .rodata.NUM_PCINT_PINS
+                0x00000000        0x0 RSAV_RX.o
+ .bss.i         0x00000000        0x0 RSAV_RX.o
+ .bss.left_x_pos
+                0x00000000        0x0 RSAV_RX.o
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(LB1836M.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(LB1836M.o)
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(_uart_common.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(_uart_common.o)
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2dReadMv.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2dReadMv.o)
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(actuators.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(actuators.o)
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(buffer.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(buffer.o)
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core.o)
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interp.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interp.o)
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interpU.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interpU.o)
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(iopin.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(iopin.o)
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(led.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(led.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintf.o)
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servos.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servos.o)
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servosConfig.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servosConfig.o)
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o)
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCapture.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCapture.o)
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCompare.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCompare.o)
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerOverflow.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerOverflow.o)
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerPWM.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerPWM.o)
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(uart.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(uart.o)
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2d.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2d.o)
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintfs.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintfs.o)
+ .data          0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(scheduler.o)
+ .bss           0x00000000        0x0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(scheduler.o)
+ .text          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+ .data          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+ .bss           0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+ .text          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .data          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .bss           0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .text          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ .data          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ .bss           0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ .text          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+ .data          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+ .bss           0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+ .text          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .data          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .bss           0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .data          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .bss           0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .data          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ctors.o)
+ .data          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ctors.o)
+ .bss           0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ctors.o)
+ .text.libgcc   0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ctors.o)
+ .text          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_tablejump.o)
+ .data          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_tablejump.o)
+ .bss           0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_tablejump.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm168.o
+LOAD RSAV_RX.o
+START GROUP
+LOAD ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a
+END GROUP
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x3e2c
+ *(.vectors)
+ .vectors       0x00000000       0x68 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm168.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+ .progmem.data  0x00000068      0x197 RSAV_RX.o
+                0x000001db                onboard_motors
+                0x0000009d                _C5
+                0x000000b8                _D5
+                0x0000007f                _B5
+                0x000000a3                _PORTD
+                0x000000c1                __timer0Compare
+                0x000000b2                _D3
+                0x00000094                _C2
+                0x00000101                __timer2Compare
+                0x000000ac                _D1
+                0x00000085                _B7
+                0x00000076                _B2
+                0x00000068                AVcc_MV
+                0x00000121                pgm_Timers
+                0x00000073                _B1
+                0x00000097                _C3
+                0x000000e1                __timer1Compare
+                0x000000a9                _D0
+                0x0000009a                _C4
+                0x000000bb                _D6
+                0x00000079                _B3
+                0x00000082                _B6
+                0x000001ab                PCINT_PINS
+                0x000000af                _D2
+                0x000000a0                _C6
+                0x000000be                _D7
+                0x00000088                _PORTC
+                0x00000070                _B0
+                0x0000006a                _PORTB
+                0x00000091                _C1
+                0x000000b5                _D4
+                0x0000008e                _C0
+                0x0000007c                _B4
+ .progmem.data  0x000001ff        0x4 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(LB1836M.o)
+ .progmem.data  0x00000203       0x11 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintf.o)
+                0x00000203                HexChars
+ .progmem.data  0x00000214        0x4 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servos.o)
+ .progmem.data  0x00000218       0x39 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o)
+                0x00000218                __3bit_modes
+                0x00000228                __2bit_modes
+ .progmem.data  0x00000251        0xc ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(uart.o)
+                0x00000251                c_hw_uart
+                0x0000025e                . = ALIGN (0x2)
+ *fill*         0x0000025d        0x1 00
+                0x0000025e                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x0000025e        0x0 linker stubs
+ *(.trampolines*)
+                0x0000025e                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x0000025e                __ctors_start = .
+ *(.ctors)
+ .ctors         0x0000025e        0x2 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2d.o)
+                0x00000260                __ctors_end = .
+                0x00000260                __dtors_start = .
+ *(.dtors)
+                0x00000260                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x00000260        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm168.o
+                0x00000260                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000260        0xc c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm168.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x0000026c       0x16 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                0x0000026c                __do_copy_data
+ .init4         0x00000282       0x10 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                0x00000282                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ .init6         0x00000292       0x16 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ctors.o)
+                0x00000292                __do_global_ctors
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x000002a8        0x8 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm168.o
+ *(.init9)
+ *(.text)
+ .text          0x000002b0        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm168.o
+                0x000002b0                __vector_22
+                0x000002b0                __vector_1
+                0x000002b0                __vector_24
+                0x000002b0                __bad_interrupt
+                0x000002b0                __vector_6
+                0x000002b0                __vector_3
+                0x000002b0                __vector_23
+                0x000002b0                __vector_25
+                0x000002b0                __vector_17
+                0x000002b0                __vector_19
+                0x000002b0                __vector_5
+                0x000002b0                __vector_4
+                0x000002b0                __vector_2
+ .text          0x000002b4      0x3b6 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(LB1836M.o)
+                0x000005a6                sanyoLB1836M_Init
+ .text          0x0000066a      0x344 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(_uart_common.o)
+                0x00000804                _uartSendByte
+                0x00000772                __uartFlushReceiveBuffer
+                0x000008a6                __uartGetByte
+                0x000006f4                _uartSetBaudRate
+                0x00000872                _uartSendBuffer
+                0x000008f2                __uartTransmitService
+                0x00000958                __uartReceiveService
+                0x00000734                __uartReceiveBufferIsEmpty
+                0x0000066a                _uartStartXmit
+                0x00000792                _uartInit
+                0x0000070c                _uartOff
+ .text          0x000009ae       0x26 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2dReadMv.o)
+                0x000009ae                a2dReadMv
+ .text          0x000009d4       0x76 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(actuators.o)
+                0x000009d4                __act_setSpeed
+                0x00000a14                __act_setConnected
+ .text          0x00000a4a      0x11e ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(buffer.o)
+                0x00000abe                bufferPut
+                0x00000b0a                bufferFreeSpace
+                0x00000a64                bufferGet
+                0x00000b2c                bufferBytesUsed
+                0x00000b46                bufferIsFull
+                0x00000a4a                bufferInit
+                0x00000b56                bufferFlush
+ .text          0x00000b68       0xf0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core.o)
+                0x00000b96                __portMaskGet
+                0x00000bca                main
+                0x00000bb0                __portMaskClear
+                0x00000b68                breathe
+                0x00000b7e                __portMaskSet
+ .text          0x00000c58       0x8e ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interp.o)
+                0x00000c58                interpolate
+ .text          0x00000ce6       0x82 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interpU.o)
+                0x00000ce6                interpolateU
+ .text          0x00000d68      0x1da ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(iopin.o)
+                0x00000f32                pin_set
+                0x00000de0                pin_make_output
+                0x00000e58                pin_toggle
+                0x00000eea                pin_high
+                0x00000ea0                pin_low
+                0x00000d68                pin_is_high
+                0x00000e2e                pin_is_output
+                0x00000d92                pin_make_input
+ .text          0x00000f42       0x44 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(led.o)
+                0x00000f42                LED_set
+ .text          0x00000f86       0xbc ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintf.o)
+                0x00000f86                rprintfIgnore
+                0x00000fc6                rprintfCharN
+                0x00000fe6                rprintfStr
+                0x00001004                rprintfProgStr
+                0x00000f88                rprintfInit
+                0x00000fa2                rprintfChar
+                0x00001024                rprintfCRLF
+                0x0000102c                rprintfu04
+ .text          0x00001042      0x3d2 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servos.o)
+                0x00001042                servosInit
+ .text          0x00001414      0x102 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servosConfig.o)
+                0x00001414                servoSetConfig
+ .text          0x00001516     0x10f8 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o)
+                0x000015da                __timerPrescalerIndex
+                0x00002554                clockWaitms
+                0x00001758                setErrorLog
+                0x00002222                __clockInit
+                0x000016c0                compareGetOutputMode
+                0x000020ec                initTimers
+                0x00002494                clockHasElapsedGetOverflow
+                0x00001a4e                setError
+                0x00001752                getError
+                0x00001656                timerGetCounter
+                0x0000154a                delay_cycles
+                0x000015b0                nullTimerCompareCallback
+                0x00001762                __error_flash
+                0x0000167c                compareSetOutputMode
+                0x00001c32                timerGetTOP
+                0x00001b26                compareDetach
+                0x00001a00                timerGetTicks
+                0x000019f0                clockGetSnapshot
+                0x00002156                compareAttach
+                0x00001ef0                timerInit
+                0x00002592                delay_us
+                0x00001718                __timer_captureService
+                0x00002566                delay_ms
+                0x00001516                ticks_per_ms
+                0x000016fa                __timer_overflowService
+                0x00001b6e                compareSetThreshold
+                0x00001cea                timerSnapshotToTicks
+                0x00001616                timerGetClosestPrescale
+                0x00001a40                clockGetus
+                0x000025c8                clockHasElapsed
+                0x00001fba                timerSetMode
+                0x00001736                __timer_compareService
+                0x00001dc2                timerGetBestPrescaler
+                0x00001e82                timerSetPrescaler
+                0x0000250c                clockWaitus
+                0x00001bd8                compareGetThreshold
+ .text          0x0000260e       0xa4 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCapture.o)
+                0x0000260e                timerCaptureDetach
+                0x0000263c                timerCaptureAttach
+ .text          0x000026b2       0xf4 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCompare.o)
+                0x000026b2                compareIsInUse
+                0x0000270e                compareFromIOPin
+ .text          0x000027a6       0x70 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerOverflow.o)
+                0x000027a6                timerOverflowAttach
+ .text          0x00002816      0x5a8 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerPWM.o)
+                0x00002998                timerCalcPwm
+                0x00002922                TimerGetPwmDeciHertz
+ .text          0x00002dbe      0x220 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(uart.o)
+                0x00002dbe                __uartHWSetBaudRate
+                0x00002f2a                __uartHWStartXmit
+                0x00002f7e                uartPollByte
+                0x00002f62                uartReceivePollingMode
+                0x00002fa6                __uartHWInit
+ .text          0x00002fde       0xf4 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2d.o)
+                0x0000303a                a2dConvert8bit
+                0x00002fde                a2dOff
+                0x00002ff0                a2dSetPrescaler
+                0x00003000                a2dConvert10bit
+                0x00003066                a2dInit
+                0x00003048                __vector_21
+ .text          0x000030d2      0x170 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintfs.o)
+                0x000030d2                rprintf1RamRom
+ .text          0x00003242      0x360 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(scheduler.o)
+                0x0000345a                scheduleJob
+                0x00003242                __scheduleUpdate
+                0x000035a2                . = ALIGN (0x2)
+ *(.text.*)
+ .text.configure_ports
+                0x000035a2        0x2 RSAV_RX.o
+                0x000035a2                configure_ports
+ .text.registerLED
+                0x000035a4        0x2 RSAV_RX.o
+                0x000035a4                registerLED
+ .text.sysInitHardware
+                0x000035a6        0x2 RSAV_RX.o
+                0x000035a6                sysInitHardware
+ .text.uart0GetByte
+                0x000035a8        0xa RSAV_RX.o
+                0x000035a8                uart0GetByte
+ .text.appControl
+                0x000035b2      0x366 RSAV_RX.o
+                0x000035b2                appControl
+ .text.appInitSoftware
+                0x00003918       0x32 RSAV_RX.o
+                0x00003918                appInitSoftware
+ .text.appInitHardware
+                0x0000394a       0x4c RSAV_RX.o
+                0x0000394a                appInitHardware
+ .text.__vector_18
+                0x00003996       0x56 RSAV_RX.o
+                0x00003996                __vector_18
+ .text.__vector_20
+                0x000039ec       0x4c RSAV_RX.o
+                0x000039ec                __vector_20
+ .text.uart0SendByte
+                0x00003a38        0xc RSAV_RX.o
+                0x00003a38                uart0SendByte
+ .text.__vector_8
+                0x00003a44       0x4c RSAV_RX.o
+                0x00003a44                __vector_8
+ .text.__vector_7
+                0x00003a90       0x4c RSAV_RX.o
+                0x00003a90                __vector_7
+ .text.__vector_12
+                0x00003adc       0x4c RSAV_RX.o
+                0x00003adc                __vector_12
+ .text.__vector_11
+                0x00003b28       0x4c RSAV_RX.o
+                0x00003b28                __vector_11
+ .text.__vector_15
+                0x00003b74       0x4c RSAV_RX.o
+                0x00003b74                __vector_15
+ .text.__vector_14
+                0x00003bc0       0x4c RSAV_RX.o
+                0x00003bc0                __vector_14
+ .text.__vector_9
+                0x00003c0c       0x4c RSAV_RX.o
+                0x00003c0c                __vector_9
+ .text.__vector_13
+                0x00003c58       0x4c RSAV_RX.o
+                0x00003c58                __vector_13
+ .text.__vector_16
+                0x00003ca4       0x4c RSAV_RX.o
+                0x00003ca4                __vector_16
+ .text.__vector_10
+                0x00003cf0       0x4c RSAV_RX.o
+                0x00003cf0                __vector_10
+ .text.libgcc   0x00003d3c       0x3e c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+                0x00003d3c                __mulsi3
+ .text.libgcc   0x00003d7a       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                0x00003d7a                __udivmodhi4
+ .text.libgcc   0x00003da2       0x44 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                0x00003da2                __udivmodsi4
+ .text.libgcc   0x00003de6       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+                0x00003de6                __divmodsi4
+ .text.libgcc   0x00003e1c        0xc c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_tablejump.o)
+                0x00003e20                __tablejump__
+                0x00003e1c                __tablejump2__
+                0x00003e28                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00003e28        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00003e28                exit
+                0x00003e28                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00003e28        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00003e2c                _etext = .
+
+.data           0x00800100       0xa2 load address 0x00003e2c
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800100        0x2 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintf.o)
+ *(.data*)
+ .data.rx0Buffer
+                0x00800102        0x8 RSAV_RX.o
+                0x00800102                rx0Buffer
+ .data.tx0Buffer
+                0x0080010a        0x8 RSAV_RX.o
+                0x0080010a                tx0Buffer
+ .data.Uarts    0x00800112       0x27 RSAV_RX.o
+                0x00800112                Uarts
+ .data.maxJobs  0x00800139        0x1 RSAV_RX.o
+                0x00800139                maxJobs
+ .data.Motor1   0x0080013a        0x8 RSAV_RX.o
+                0x0080013a                Motor1
+ .data.Motor2   0x00800142        0x8 RSAV_RX.o
+                0x00800142                Motor2
+ .data.onboard_driver
+                0x0080014a        0x3 RSAV_RX.o
+                0x0080014a                onboard_driver
+ .data.Pan      0x0080014d       0x14 RSAV_RX.o
+                0x0080014d                Pan
+ .data.Tilt     0x00800161       0x14 RSAV_RX.o
+                0x00800161                Tilt
+ .data.Servo_bank1
+                0x00800175       0x12 RSAV_RX.o
+                0x00800175                Servo_bank1
+ .data.RightRed
+                0x00800187        0x3 RSAV_RX.o
+                0x00800187                RightRed
+ .data.LeftRed  0x0080018a        0x3 RSAV_RX.o
+                0x0080018a                LeftRed
+ .data.SpotLightWhite
+                0x0080018d        0x3 RSAV_RX.o
+                0x0080018d                SpotLightWhite
+ .data.PowerGreen
+                0x00800190        0x3 RSAV_RX.o
+                0x00800190                PowerGreen
+ .data.Servo_bank1_list
+                0x00800193        0x4 RSAV_RX.o
+ *(.rodata)
+ *(.rodata*)
+ .rodata.cpu_speed
+                0x00800197        0x4 RSAV_RX.o
+                0x00800197                cpu_speed
+ .rodata.cpu_speed_div_1000
+                0x0080019b        0x2 RSAV_RX.o
+                0x0080019b                cpu_speed_div_1000
+ .rodata.cpu_speed_div_1000000
+                0x0080019d        0x2 RSAV_RX.o
+                0x0080019d                cpu_speed_div_1000000
+ .rodata.NUMBER_OF_TIMERS
+                0x0080019f        0x1 RSAV_RX.o
+                0x0080019f                NUMBER_OF_TIMERS
+ .rodata.NUM_ADC_CHANNELS
+                0x008001a0        0x1 RSAV_RX.o
+                0x008001a0                NUM_ADC_CHANNELS
+ *(.gnu.linkonce.d*)
+                0x008001a2                . = ALIGN (0x2)
+ *fill*         0x008001a1        0x1 00
+                0x008001a2                _edata = .
+                0x008001a2                PROVIDE (__data_end, .)
+
+.bss            0x008001a2      0x2cf
+                0x008001a2                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x008001a2        0x8 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o)
+ *(.bss*)
+ .bss.__timer0_data
+                0x008001aa        0xb RSAV_RX.o
+                0x008001aa                __timer0_data
+ .bss.__timer0CompareA_data
+                0x008001b5        0x4 RSAV_RX.o
+                0x008001b5                __timer0CompareA_data
+ .bss.__timer0CompareB_data
+                0x008001b9        0x4 RSAV_RX.o
+                0x008001b9                __timer0CompareB_data
+ .bss.__timer1_data
+                0x008001bd        0xb RSAV_RX.o
+                0x008001bd                __timer1_data
+ .bss.__timer1CompareA_data
+                0x008001c8        0x4 RSAV_RX.o
+                0x008001c8                __timer1CompareA_data
+ .bss.__timer1CompareB_data
+                0x008001cc        0x4 RSAV_RX.o
+                0x008001cc                __timer1CompareB_data
+ .bss.__timer2_data
+                0x008001d0        0xb RSAV_RX.o
+                0x008001d0                __timer2_data
+ .bss.__timer2CompareA_data
+                0x008001db        0x4 RSAV_RX.o
+                0x008001db                __timer2CompareA_data
+ .bss.__timer2CompareB_data
+                0x008001df        0x4 RSAV_RX.o
+                0x008001df                __timer2CompareB_data
+ .bss.SpotLightState
+                0x008001e3        0x1 RSAV_RX.o
+                0x008001e3                SpotLightState
+ .bss.CameraState
+                0x008001e4        0x1 RSAV_RX.o
+                0x008001e4                CameraState
+ .bss.BatteryState
+                0x008001e5        0x1 RSAV_RX.o
+                0x008001e5                BatteryState
+ .bss.left_x    0x008001e6        0x1 RSAV_RX.o
+                0x008001e6                left_x
+ .bss.left_y    0x008001e7        0x1 RSAV_RX.o
+                0x008001e7                left_y
+ .bss.right_x   0x008001e8        0x1 RSAV_RX.o
+                0x008001e8                right_x
+ .bss.right_y   0x008001e9        0x1 RSAV_RX.o
+                0x008001e9                right_y
+ .bss.circle_pressure
+                0x008001ea        0x1 RSAV_RX.o
+                0x008001ea                circle_pressure
+ .bss.triangle_pressure
+                0x008001eb        0x1 RSAV_RX.o
+                0x008001eb                triangle_pressure
+ .bss.xButton_pressure
+                0x008001ec        0x1 RSAV_RX.o
+                0x008001ec                xButton_pressure
+ .bss.SqButton_pressure
+                0x008001ed        0x1 RSAV_RX.o
+                0x008001ed                SqButton_pressure
+ .bss.DL_Button_pressure
+                0x008001ee        0x1 RSAV_RX.o
+                0x008001ee                DL_Button_pressure
+ .bss.DR_Button_pressure
+                0x008001ef        0x1 RSAV_RX.o
+                0x008001ef                DR_Button_pressure
+ *(COMMON)
+ COMMON         0x008001f0      0x272 RSAV_RX.o
+                0x008001f0                buttonReleased
+                0x008002ef                __queue
+                0x00800323                rx0Buf
+                0x00800343                tx0Buf
+                0x00800363                buttonPressed
+ COMMON         0x00800462        0x3 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(led.o)
+                0x00800462                statusLED
+ COMMON         0x00800465        0x7 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o)
+                0x00800465                __error
+                0x0080046a                g_heartbeat
+ COMMON         0x0080046c        0x1 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2d.o)
+                0x0080046c                a2dCompleteFlag
+ COMMON         0x0080046d        0x4 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(scheduler.o)
+                0x0080046d                __numJobs
+                0x0080046f                __recheck
+                0x00800470                __running
+                0x00800471                PROVIDE (__bss_end, .)
+                0x00003e2c                __data_load_start = LOADADDR (.data)
+                0x00003ece                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x00800471        0x0
+                0x00800471                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x00800471                PROVIDE (__noinit_end, .)
+                0x00800471                _end = .
+                0x00800471                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x378
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0xb8 RSAV_RX.o
+ .debug_aranges
+                0x000000b8       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(LB1836M.o)
+ .debug_aranges
+                0x000000d8       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(_uart_common.o)
+ .debug_aranges
+                0x000000f8       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2dReadMv.o)
+ .debug_aranges
+                0x00000118       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(actuators.o)
+ .debug_aranges
+                0x00000138       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(buffer.o)
+ .debug_aranges
+                0x00000158       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core.o)
+ .debug_aranges
+                0x00000178       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interp.o)
+ .debug_aranges
+                0x00000198       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interpU.o)
+ .debug_aranges
+                0x000001b8       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(iopin.o)
+ .debug_aranges
+                0x000001d8       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(led.o)
+ .debug_aranges
+                0x000001f8       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintf.o)
+ .debug_aranges
+                0x00000218       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servos.o)
+ .debug_aranges
+                0x00000238       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servosConfig.o)
+ .debug_aranges
+                0x00000258       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o)
+ .debug_aranges
+                0x00000278       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCapture.o)
+ .debug_aranges
+                0x00000298       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCompare.o)
+ .debug_aranges
+                0x000002b8       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerOverflow.o)
+ .debug_aranges
+                0x000002d8       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerPWM.o)
+ .debug_aranges
+                0x000002f8       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(uart.o)
+ .debug_aranges
+                0x00000318       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2d.o)
+ .debug_aranges
+                0x00000338       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintfs.o)
+ .debug_aranges
+                0x00000358       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(scheduler.o)
+
+.debug_pubnames
+                0x00000000      0xff5
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000      0x607 RSAV_RX.o
+ .debug_pubnames
+                0x00000607       0x28 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(LB1836M.o)
+ .debug_pubnames
+                0x0000062f       0xfc ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(_uart_common.o)
+ .debug_pubnames
+                0x0000072b       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2dReadMv.o)
+ .debug_pubnames
+                0x0000074b       0x3c ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(actuators.o)
+ .debug_pubnames
+                0x00000787       0x86 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(buffer.o)
+ .debug_pubnames
+                0x0000080d       0x5f ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core.o)
+ .debug_pubnames
+                0x0000086c       0x22 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interp.o)
+ .debug_pubnames
+                0x0000088e       0x23 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interpU.o)
+ .debug_pubnames
+                0x000008b1       0x8f ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(iopin.o)
+ .debug_pubnames
+                0x00000940       0x2c ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(led.o)
+ .debug_pubnames
+                0x0000096c       0xa3 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintf.o)
+ .debug_pubnames
+                0x00000a0f       0x21 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servos.o)
+ .debug_pubnames
+                0x00000a30       0x25 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servosConfig.o)
+ .debug_pubnames
+                0x00000a55      0x327 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o)
+ .debug_pubnames
+                0x00000d7c       0x40 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCapture.o)
+ .debug_pubnames
+                0x00000dbc       0x3a ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCompare.o)
+ .debug_pubnames
+                0x00000df6       0x2a ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerOverflow.o)
+ .debug_pubnames
+                0x00000e20       0x3c ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerPWM.o)
+ .debug_pubnames
+                0x00000e5c       0x8b ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(uart.o)
+ .debug_pubnames
+                0x00000ee7       0x88 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2d.o)
+ .debug_pubnames
+                0x00000f6f       0x25 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintfs.o)
+ .debug_pubnames
+                0x00000f94       0x61 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(scheduler.o)
+
+.debug_info     0x00000000     0xc8f3
+ *(.debug_info)
+ .debug_info    0x00000000     0x1a78 RSAV_RX.o
+ .debug_info    0x00001a78      0xa89 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(LB1836M.o)
+ .debug_info    0x00002501      0xa0a ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(_uart_common.o)
+ .debug_info    0x00002f0b      0x130 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2dReadMv.o)
+ .debug_info    0x0000303b      0x26d ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(actuators.o)
+ .debug_info    0x000032a8      0x3ca ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(buffer.o)
+ .debug_info    0x00003672      0x694 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core.o)
+ .debug_info    0x00003d06       0xff ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interp.o)
+ .debug_info    0x00003e05      0x115 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interpU.o)
+ .debug_info    0x00003f1a      0x8bc ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(iopin.o)
+ .debug_info    0x000047d6      0x1d7 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(led.o)
+ .debug_info    0x000049ad      0x32b ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintf.o)
+ .debug_info    0x00004cd8     0x13aa ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servos.o)
+ .debug_info    0x00006082      0x9ab ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servosConfig.o)
+ .debug_info    0x00006a2d     0x2916 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o)
+ .debug_info    0x00009343      0x66e ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCapture.o)
+ .debug_info    0x000099b1      0x9a7 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCompare.o)
+ .debug_info    0x0000a358      0x5e3 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerOverflow.o)
+ .debug_info    0x0000a93b      0xa94 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerPWM.o)
+ .debug_info    0x0000b3cf      0x725 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(uart.o)
+ .debug_info    0x0000baf4      0x2b6 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2d.o)
+ .debug_info    0x0000bdaa      0x196 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintfs.o)
+ .debug_info    0x0000bf40      0x9b3 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(scheduler.o)
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000     0x2b24
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x2fa RSAV_RX.o
+ .debug_abbrev  0x000002fa      0x28c ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(LB1836M.o)
+ .debug_abbrev  0x00000586      0x294 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(_uart_common.o)
+ .debug_abbrev  0x0000081a       0xe9 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2dReadMv.o)
+ .debug_abbrev  0x00000903      0x10b ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(actuators.o)
+ .debug_abbrev  0x00000a0e      0x177 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(buffer.o)
+ .debug_abbrev  0x00000b85      0x1cb ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core.o)
+ .debug_abbrev  0x00000d50       0x73 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interp.o)
+ .debug_abbrev  0x00000dc3       0x73 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interpU.o)
+ .debug_abbrev  0x00000e36      0x155 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(iopin.o)
+ .debug_abbrev  0x00000f8b      0x110 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(led.o)
+ .debug_abbrev  0x0000109b      0x1a0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintf.o)
+ .debug_abbrev  0x0000123b      0x306 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servos.o)
+ .debug_abbrev  0x00001541      0x204 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servosConfig.o)
+ .debug_abbrev  0x00001745      0x46b ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o)
+ .debug_abbrev  0x00001bb0      0x1dd ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCapture.o)
+ .debug_abbrev  0x00001d8d      0x25f ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCompare.o)
+ .debug_abbrev  0x00001fec      0x1bf ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerOverflow.o)
+ .debug_abbrev  0x000021ab      0x291 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerPWM.o)
+ .debug_abbrev  0x0000243c      0x1fc ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(uart.o)
+ .debug_abbrev  0x00002638      0x1a9 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2d.o)
+ .debug_abbrev  0x000027e1       0xdf ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintfs.o)
+ .debug_abbrev  0x000028c0      0x264 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(scheduler.o)
+
+.debug_line     0x00000000     0x417d
+ *(.debug_line)
+ .debug_line    0x00000000      0x88b RSAV_RX.o
+ .debug_line    0x0000088b      0x303 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(LB1836M.o)
+ .debug_line    0x00000b8e      0x493 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(_uart_common.o)
+ .debug_line    0x00001021       0xcb ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2dReadMv.o)
+ .debug_line    0x000010ec      0x122 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(actuators.o)
+ .debug_line    0x0000120e      0x254 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(buffer.o)
+ .debug_line    0x00001462      0x202 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core.o)
+ .debug_line    0x00001664       0xa0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interp.o)
+ .debug_line    0x00001704       0xa1 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interpU.o)
+ .debug_line    0x000017a5      0x32e ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(iopin.o)
+ .debug_line    0x00001ad3       0xde ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(led.o)
+ .debug_line    0x00001bb1      0x230 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintf.o)
+ .debug_line    0x00001de1      0x413 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servos.o)
+ .debug_line    0x000021f4      0x1c1 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servosConfig.o)
+ .debug_line    0x000023b5      0xe76 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o)
+ .debug_line    0x0000322b      0x16e ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCapture.o)
+ .debug_line    0x00003399      0x192 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCompare.o)
+ .debug_line    0x0000352b      0x129 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerOverflow.o)
+ .debug_line    0x00003654      0x30f ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerPWM.o)
+ .debug_line    0x00003963      0x261 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(uart.o)
+ .debug_line    0x00003bc4      0x1ab ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2d.o)
+ .debug_line    0x00003d6f      0x187 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintfs.o)
+ .debug_line    0x00003ef6      0x287 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(scheduler.o)
+
+.debug_frame    0x00000000      0xa20
+ *(.debug_frame)
+ .debug_frame   0x00000000      0x150 RSAV_RX.o
+ .debug_frame   0x00000150       0x50 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(LB1836M.o)
+ .debug_frame   0x000001a0       0xe0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(_uart_common.o)
+ .debug_frame   0x00000280       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2dReadMv.o)
+ .debug_frame   0x000002a0       0x30 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(actuators.o)
+ .debug_frame   0x000002d0       0x80 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(buffer.o)
+ .debug_frame   0x00000350       0x60 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core.o)
+ .debug_frame   0x000003b0       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interp.o)
+ .debug_frame   0x000003d0       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interpU.o)
+ .debug_frame   0x000003f0       0x90 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(iopin.o)
+ .debug_frame   0x00000480       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(led.o)
+ .debug_frame   0x000004a0       0x90 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintf.o)
+ .debug_frame   0x00000530       0x50 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servos.o)
+ .debug_frame   0x00000580       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servosConfig.o)
+ .debug_frame   0x000005a0      0x270 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o)
+ .debug_frame   0x00000810       0x30 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCapture.o)
+ .debug_frame   0x00000840       0x30 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCompare.o)
+ .debug_frame   0x00000870       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerOverflow.o)
+ .debug_frame   0x00000890       0x40 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerPWM.o)
+ .debug_frame   0x000008d0       0x90 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(uart.o)
+ .debug_frame   0x00000960       0x70 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2d.o)
+ .debug_frame   0x000009d0       0x20 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintfs.o)
+ .debug_frame   0x000009f0       0x30 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(scheduler.o)
+
+.debug_str      0x00000000     0x1d19
+ *(.debug_str)
+ .debug_str     0x00000000      0xd66 RSAV_RX.o
+                                0xe63 (size before relaxing)
+ .debug_str     0x00000d66      0x151 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(LB1836M.o)
+                                0x68c (size before relaxing)
+ .debug_str     0x00000eb7      0x154 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(_uart_common.o)
+                                0x3b3 (size before relaxing)
+ .debug_str     0x0000100b       0x38 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2dReadMv.o)
+                                0x104 (size before relaxing)
+ .debug_str     0x00001043       0x2e ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(actuators.o)
+                                0x18f (size before relaxing)
+ .debug_str     0x00001071       0x8a ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(buffer.o)
+                                0x192 (size before relaxing)
+ .debug_str     0x000010fb       0x4d ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core.o)
+                                0x32f (size before relaxing)
+ .debug_str     0x00001148       0x52 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interp.o)
+                                0x101 (size before relaxing)
+ .debug_str     0x0000119a       0x1c ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interpU.o)
+                                0x115 (size before relaxing)
+ .debug_str     0x000011b6       0x74 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(iopin.o)
+                                0x172 (size before relaxing)
+ .debug_str     0x0000122a        0xe ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(led.o)
+                                0x11c (size before relaxing)
+ .debug_str     0x00001238       0x9e ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintf.o)
+                                0x1a0 (size before relaxing)
+ .debug_str     0x000012d6       0xec ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servos.o)
+                                0x9b5 (size before relaxing)
+ .debug_str     0x000013c2       0x2b ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servosConfig.o)
+                                0x4b0 (size before relaxing)
+ .debug_str     0x000013ed      0x4c7 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o)
+                                0xbaa (size before relaxing)
+ .debug_str     0x000018b4       0x6c ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCapture.o)
+                                0x537 (size before relaxing)
+ .debug_str     0x00001920       0x45 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCompare.o)
+                                0x5e9 (size before relaxing)
+ .debug_str     0x00001965       0x24 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerOverflow.o)
+                                0x4f9 (size before relaxing)
+ .debug_str     0x00001989       0xd0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerPWM.o)
+                                0x61b (size before relaxing)
+ .debug_str     0x00001a59       0xac ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(uart.o)
+                                0x371 (size before relaxing)
+ .debug_str     0x00001b05      0x12c ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2d.o)
+                                0x213 (size before relaxing)
+ .debug_str     0x00001c31       0x7d ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintfs.o)
+                                0x146 (size before relaxing)
+ .debug_str     0x00001cae       0x6b ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(scheduler.o)
+                                0x5f4 (size before relaxing)
+
+.debug_loc      0x00000000     0x5aba
+ *(.debug_loc)
+ .debug_loc     0x00000000       0xd6 RSAV_RX.o
+ .debug_loc     0x000000d6      0x543 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(LB1836M.o)
+ .debug_loc     0x00000619      0x641 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(_uart_common.o)
+ .debug_loc     0x00000c5a       0x43 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2dReadMv.o)
+ .debug_loc     0x00000c9d      0x1bd ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(actuators.o)
+ .debug_loc     0x00000e5a      0x210 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(buffer.o)
+ .debug_loc     0x0000106a       0xc0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core.o)
+ .debug_loc     0x0000112a       0xc8 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interp.o)
+ .debug_loc     0x000011f2       0xee ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(core_interpU.o)
+ .debug_loc     0x000012e0      0x572 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(iopin.o)
+ .debug_loc     0x00001852       0x67 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(led.o)
+ .debug_loc     0x000018b9      0x1ae ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintf.o)
+ .debug_loc     0x00001a67      0x5f9 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servos.o)
+ .debug_loc     0x00002060      0x17e ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servosConfig.o)
+ .debug_loc     0x000021de     0x208f ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o)
+ .debug_loc     0x0000426d      0x151 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCapture.o)
+ .debug_loc     0x000043be      0x17f ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCompare.o)
+ .debug_loc     0x0000453d      0x11b ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerOverflow.o)
+ .debug_loc     0x00004658      0xa74 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerPWM.o)
+ .debug_loc     0x000050cc      0x22c ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(uart.o)
+ .debug_loc     0x000052f8       0x51 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(a2d.o)
+ .debug_loc     0x00005349      0x3bb ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(rprintfs.o)
+ .debug_loc     0x00005704      0x3b6 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(scheduler.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(RSAV_RX.elf elf32-avr)
+LOAD linker stubs
+
+.debug_ranges   0x00000000      0x250
+ .debug_ranges  0x00000000       0xb0 RSAV_RX.o
+ .debug_ranges  0x000000b0       0x38 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(servos.o)
+ .debug_ranges  0x000000e8       0x48 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timer.o)
+ .debug_ranges  0x00000130       0x68 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerCompare.o)
+ .debug_ranges  0x00000198       0xa0 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(timerPWM.o)
+ .debug_ranges  0x00000238       0x18 ..\..\..\..\..\..\webbotavrclib-1.36\libWebbot-ATMega168.a(scheduler.o)

@@ -1,0 +1,343 @@
+<!DOCTYPE project
+[
+<!ENTITY quote "&#034;">
+ ]>
+
+<project name="My Project" default="build-lib" basedir=".">
+
+
+	<property name="compile-lib" value="-DBUILDING_LIBRARY -Wall -gdwarf-2 -std=gnu99 -fpack-struct -fshort-enums  -funsigned-char -funsigned-bitfields"/>
+	<property name="compile-examples"               value="-Wall -gdwarf-2 -std=gnu99 -fpack-struct -fshort-enums  -funsigned-char -funsigned-bitfields -IC:/eclipse/workspace/WebbotCLibrary"/>
+	<property name="version" value="1.27"/>
+
+	<!-- Set the optimisation flag for compiling the library -->
+	<property name="compile-lib-opt" value="-Os"/>
+	<!-- property name="compile-lib-opt" value="-O0"/ -->
+
+	<target name="clean-lib" description="Clean the library">
+		<delete dir="./ant"/>
+	  	<delete>
+	    	<fileset dir="." includes="*.a, *.zip, *.lss"/>
+	  	</delete>
+	</target>
+
+	<target name="clean-examples" description="Clean the examples">
+	  	<delete>
+	    	<fileset dir="examples" excludes="**/*.h, **/*.c"/>
+	  	</delete>
+	  	<delete>
+	    	<fileset dir="." includes="examples-*.zip"/>
+	  	</delete>
+	</target>
+
+	<target name="clean" description="clean everything" depends="clean-lib, clean-examples">
+	</target>
+	
+	<target name="make-example" description="internal use only">
+		<echo message="Making examples for ${system}${suffix}" />
+		<!--  Compile the c files into o file -->
+		<apply executable="avr-gcc" dest="examples" parallel="false" failonerror="true">
+		  <arg line="${compile-examples}"/>
+		  <arg value="-Os"/>
+		  <arg value="-mmcu=${mcu}"/>
+		  <arg value="-DF_CPU=${mhz}"/>
+		  <arg value="-c"/>
+		  <arg value="-o"/> <targetfile/> <srcfile/>
+		  <fileset dir="examples" includes="**/${system}.c" />
+		  <mapper type="glob" from="*.c" to="*${suffix}.o"/>
+		</apply>
+		
+		<!-- Link to elf
+		avr-gcc -Wl,-Map=WebbotTest.map test.o   -L"C:\eclipse\workspace\WebbotCLibrary"  -lm -lWebbot-ATMega640 -lc  -o WebbotTest.elf
+		-->
+		<apply executable="avr-gcc" dest="examples" parallel="false" failonerror="true">
+		  <arg line="-Wl"/>
+		  <srcfile/>
+		  <arg value="-mmcu=${mcu}"/>
+		  <arg value="-L&quote;.&quote;"/>
+		  <arg value="-lm"/>
+		  <arg value="-l${lib}"/>
+		  <arg value="-lc"/>
+		  <arg value="-o"/> <targetfile/>
+		  <fileset dir="examples" includes="**/${system}${suffix}.o" />
+		  <mapper type="glob" from="*.o" to="*.elf"/>
+		</apply>
+		
+		<!--  create extended listing -->
+		<apply executable="avr-objdump" dest="examples" parallel="false" failonerror="true">
+			<arg line ="-h"/>
+		    <arg value="-S"/> <srcfile/>
+			<fileset dir="." includes="examples/**/${system}${suffix}.elf"  />
+	  		<mapper type="glob" from="*.elf" to="*.lss"/>
+			<redirector>
+	  		  	<outputmapper type="glob" from="*.elf" to="*.lss"/>
+			</redirector>
+		</apply>
+
+		<!--  Show size of file -->
+		<apply executable="avr-size" parallel="false" failonerror="true">
+		  <arg line="--format=avr"/>
+		  <arg line="--mcu=${mcu}"/> <srcfile/>
+		  <fileset dir="examples" includes="**/${system}${suffix}.elf" />
+		</apply>
+		
+		<!--  create hex file from elf -->
+		<apply executable="avr-objcopy" dest="examples" parallel="false" failonerror="true">
+		  <arg value="-R"/>
+		  <arg value=".eeprom"/>
+		  <arg value="-O"/>
+		  <arg value="ihex"/>
+		  <srcfile/> <targetfile/>
+		  <fileset dir="examples" includes="**/${system}${suffix}.elf" />
+		  <mapper type="glob" from="*.elf" to="*.hex"/>
+		</apply>
+		
+		
+		<!--  Zip the source code (*.c and *.h) and the .hex -->
+		<zip destfile="./examples-${system}${suffix}.zip" basedir="examples"
+			includes="**/${system}.c, **/*.h, **/${system}${suffix}.hex"
+		/>
+		
+		
+	</target>
+	
+	<target name="make-Axon2-example" description="Make examples for Axon2" depends="ATMega640">
+		<antcall target="make-example">
+			<param name="system" value="Axon2" />
+			<param name="mcu" value="atmega640" />
+			<param name="mhz" value="16000000" />
+			<param name="suffix" value="" />
+			<param name="lib" value="Webbot-ATMega640" />
+		</antcall>
+	</target>
+	
+	<target name="examples" description="Examples" depends="build-lib">
+		<antcall target="make-example">
+			<param name="system" value="BabyOrangutanB328" />
+			<param name="mcu" value="atmega328p" />
+			<param name="mhz" value="20000000" />
+			<param name="suffix" value="" />
+			<param name="lib" value="Webbot-ATMega328P" />
+		</antcall>
+		<antcall target="make-example">
+			<param name="system" value="Axon" />
+			<param name="mcu" value="atmega640" />
+			<param name="mhz" value="16000000" />
+			<param name="suffix" value="" />
+			<param name="lib" value="Webbot-ATMega640" />
+		</antcall>
+		<antcall target="make-Axon2-example"/>
+		<antcall target="make-example">
+			<param name="system" value="ATMega168" />
+			<param name="mcu" value="atmega168" />
+			<param name="mhz" value="8000000" />
+			<param name="suffix" value="-8MHz" />
+			<param name="lib" value="Webbot-ATMega168" />
+		</antcall>
+		<antcall target="make-example">
+			<param name="system" value="ATMega168" />
+			<param name="mcu" value="atmega168" />
+			<param name="mhz" value="1000000" />
+			<param name="suffix" value="-1MHz" />
+			<param name="lib" value="Webbot-ATMega168" />
+		</antcall>
+		<antcall target="make-example">
+			<param name="system" value="BabyOrangutan168" />
+			<param name="mcu" value="atmega168" />
+			<param name="mhz" value="20000000" />
+			<param name="suffix" value="" />
+			<param name="lib" value="Webbot-ATMega168" />
+		</antcall>
+	</target>
+	
+	<target name="release" description="Create release" depends="clean,build-lib,examples" >
+		
+		<!--  Zip the source code (*.c and *.h) and the libraries (*.a) -->
+		<zip destfile="./webbotavrclib-${version}.zip" basedir="."
+			includes="**/*.c, **/*.h, *.a, build.xml, license.txt"
+			excludes="examples/**" 
+		/>
+	</target>
+	
+	<!--  Pass argument of 'mcu = processor' -->
+	<target name="makeone" description="internal use only">
+		<echo message="Compiling for target = ${mcu} to libWebbot-${lib}.a" />
+		
+		<!--  create the directories that are needed -->
+		<mkdir dir="./ant/${mcu}"/>
+		<mkdir dir="./ant/${mcu}/Sensors"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Voltage"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Voltage/Phidget"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Temperature"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Temperature/Phidget"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Temperature/Devantech"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Humidity"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Humidity/Phidget"/>
+		<mkdir dir="./ant/${mcu}/Sensors/GPS"/>
+		<mkdir dir="./ant/${mcu}/Sensors/GPS/NMEA"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Distance"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Distance/Maxbotix"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Distance/Sharp"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Distance/Devantech"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Distance/Ping"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Compass"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Compass/Devantech"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Compass/Honeywell"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Current"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Current/Phidget"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Encoder"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Encoder/Generic"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Acceleration"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Acceleration/DimensionEngineering"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Acceleration/AnalogDevices"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Acceleration/Freescale"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Gyro"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Gyro/InvenSense"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Gyro/ST"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Pressure"/>
+		<mkdir dir="./ant/${mcu}/Sensors/Pressure/Motorola"/>
+		<mkdir dir="./ant/${mcu}/Sensors/IMU"/>
+		<mkdir dir="./ant/${mcu}/Sensors/IMU/Sparkfun"/>
+		<mkdir dir="./ant/${mcu}/Motors"/>
+		<mkdir dir="./ant/${mcu}/Motors/DimensionEngineering"/>
+		<mkdir dir="./ant/${mcu}/Motors/Pololu"/>
+		<mkdir dir="./ant/${mcu}/Motors/Solarbotics"/>
+		<mkdir dir="./ant/${mcu}/Motors/Toshiba"/>
+		<mkdir dir="./ant/${mcu}/Motors/Sanyo"/>
+		<mkdir dir="./ant/${mcu}/Cameras"/>
+		<mkdir dir="./ant/${mcu}/Cameras/AVRcam"/>
+		<mkdir dir="./ant/${mcu}/Cameras/Surveyor"/>
+		<mkdir dir="./ant/${mcu}/Displays"/>
+		<mkdir dir="./ant/${mcu}/Displays/Generic"/>
+		<mkdir dir="./ant/${mcu}/Displays/Sparkfun"/>
+		<mkdir dir="./ant/${mcu}/Displays/MatrixOrbital"/>
+		<mkdir dir="./ant/${mcu}/Storage"/>
+		<mkdir dir="./ant/${mcu}/Storage/FileSystem"/>
+		<mkdir dir="./ant/${mcu}/Servos"/>
+		<mkdir dir="./ant/${mcu}/Servos/Dynamixel"/>
+		<mkdir dir="./ant/${mcu}/Servos/Devantech"/>
+		<mkdir dir="./ant/${mcu}/Controller"/>
+		<mkdir dir="./ant/${mcu}/Controller/Sony"/>
+		<mkdir dir="./ant/${mcu}/Text2Speech"/>
+		<mkdir dir="./ant/${mcu}/Gait"/>
+		<mkdir dir="./ant/${mcu}/Maths"/>
+		<mkdir dir="./ant/${mcu}/Audio"/>
+		<mkdir dir="./ant/${mcu}/Stepper"/>
+		<mkdir dir="./ant/${mcu}/Stepper/Pololu"/>
+		<mkdir dir="./ant/${mcu}/Stepper/Generic"/>
+
+		<!--  Compile the c files into o files -->
+		<apply executable="avr-gcc" dest="./ant/${mcu}" parallel="false" failonerror="true">
+		  <arg line="${compile-lib}"/>
+		  <arg value="${compile-lib-opt}"/>
+		  <!-- arg value="-mcall-prologues"/ -->
+		  <arg value="-mmcu=${mcu}"/>
+		  <arg value="-c"/>
+		  <arg value="-o"/> <targetfile/> <srcfile/>
+		  <fileset dir="." includes="**/*.c" excludes="examples/**/*.c Text2Speech/test/**/*.c"/>
+		  <mapper type="glob" from="*.c" to="*.o"/>
+		</apply>
+		
+		<!--  Now add them all to a library -->
+		<apply executable="avr-ar"  parallel="true" failonerror="true">
+			<arg line ="-r ./libWebbot-${lib}.a"         />
+			<fileset dir="./ant/${mcu}" includes="**/*.o"  />
+			<mapper type="merge" to="./libWebbot-${lib}.a"/>
+		</apply>
+		
+		<!--  create extended listing -->
+		<apply executable="avr-objdump"  parallel="false" failonerror="true">
+			<arg line ="-h"/>
+		    <arg value="-S"/> <srcfile/>
+			<fileset dir="." includes="libWebbot-${lib}.a"  />
+			<mapper type="merge" to="./libWebbot-${lib}.lss"/>
+			<redirector>
+				<outputmapper type="merge" to="./libWebbot-${lib}.lss"/>
+			</redirector>
+		</apply>
+		
+	</target>
+	
+	
+	<target name="ATMega8" description="ATMega8 library">
+		<antcall target="makeone">
+			<param name="mcu" value="atmega8" />
+			<param name="lib" value="ATMega8" />
+		</antcall>
+	</target>
+
+	<target name="ATMega168" description="ATMega168 library">
+		<antcall target="makeone">
+			<param name="mcu" value="atmega168" />
+			<param name="lib" value="ATMega168" />
+		</antcall>
+	</target>
+	
+	<target name="ATMega328P" description="ATMega328P library">
+		<antcall target="makeone">
+			<param name="mcu" value="atmega328p" />
+			<param name="lib" value="ATMega328P" />
+		</antcall>
+	</target>
+	
+	<target name="ATMega32" description="ATMega32 library">
+		<antcall target="makeone">
+			<param name="mcu" value="atmega32" />
+			<param name="lib" value="ATMega32" />
+		</antcall>
+	</target>
+	
+	<target name="ATMega640" description="ATMega640 library">
+		<antcall target="makeone">
+			<param name="mcu" value="atmega640" />
+			<param name="lib" value="ATMega640" />
+		</antcall>
+	</target>
+	
+	<target name="ATMega644" description="ATMega644 library">
+		<antcall target="makeone">
+			<param name="mcu" value="atmega644" />
+			<param name="lib" value="ATMega644" />
+		</antcall>
+	</target>
+	
+	<target name="ATMega1280" description="ATMega1280 library">
+		<antcall target="makeone">
+			<param name="mcu" value="atmega1280" />
+			<param name="lib" value="ATMega1280" />
+		</antcall>
+	</target>
+	
+	<target name="ATMega128" description="ATMega128 library">
+		<antcall target="makeone">
+			<param name="mcu" value="atmega128" />
+			<param name="lib" value="ATMega128" />
+		</antcall>
+	</target>
+	
+	<target name="ATMega2560" description="ATMega2560 library">
+		<antcall target="makeone">
+			<param name="mcu" value="atmega2560" />
+			<param name="lib" value="ATMega2560" />
+		</antcall>
+	</target>
+	
+	<target name="ATMega2561" description="ATMega2561 library">
+		<antcall target="makeone">
+			<param name="mcu" value="atmega2561" />
+			<param name="lib" value="ATMega2561" />
+		</antcall>
+	</target>
+	
+	<target name="ATMega128RFA1" description="ATMega128RFA1 library">
+		<antcall target="makeone">
+			<param name="mcu" value="atmega128rfa1" />
+			<param name="lib" value="ATMega128RFA1" />
+		</antcall>
+	</target>
+	
+	
+	<target name="build-lib" description="Make all libraries" depends="ATMega8,ATMega168,ATMega32,ATMega640,ATMega644,ATMega128,ATMega1280,ATMega2560,ATMega2561,ATMega328P,ATMega128RFA1">
+	</target>
+	
+</project>

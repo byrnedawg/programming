@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "attiny85_Decoder_Rx", "attiny85_Decoder_Rx\attiny85_Decoder_Rx.cproj", "{C297B0CB-4253-491C-9490-DEE4006F741F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C297B0CB-4253-491C-9490-DEE4006F741F}.Debug|AVR.ActiveCfg = Debug|AVR
+		{C297B0CB-4253-491C-9490-DEE4006F741F}.Debug|AVR.Build.0 = Debug|AVR
+		{C297B0CB-4253-491C-9490-DEE4006F741F}.Release|AVR.ActiveCfg = Release|AVR
+		{C297B0CB-4253-491C-9490-DEE4006F741F}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

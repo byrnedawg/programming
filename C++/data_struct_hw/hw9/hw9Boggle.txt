@@ -1,0 +1,38 @@
+The game of Boggle is a grid of letters, on which we search for words.  A word may start with any letter on the board, The full rules are here: http://www.fun-with-words.com/play_boggle.html (Links to an external site.)
+
+We will set up a simplified boggle.  I will not use the letter q, so no need for the special case of one letter being Qu (because Q never appears by itself in the English language).
+
+First, read a dictionary into a trie. Here is the dictionary: https://drive.google.com/file/d/0B4WEFlVUmo6xei1zWHF5U0RKd2s/view?usp=sharing (Links to an external site.)
+
+The trie should support methods
+
+void add(string s)
+
+bool contains(string s)
+
+bool containsPrefix(string s)
+
+ 
+
+Here is the input file you must read in.  It is called boggle.dat: https://drive.google.com/file/d/0Bwxfq4Y7f7vkSl92ZkxoMm12cEE/view?usp=sharing (Links to an external site.)
+
+ 
+
+ Here is a sample test boggle file showing some of the words that are present: https://drive.google.com/file/d/0Bwxfq4Y7f7vkYndOUlNkT0xEeUU/view?usp=sharing (Links to an external site.)
+
+Your program should use backgtracking to find every possible word that is 3 letters or longer that is present in the dictionary.
+
+For the following example:
+4
+
+A E M P
+R S O T
+F A L D
+E S T O
+
+SEAR is a word
+POSE is a word
+POSER is a word
+
+but POSERS is not a word, because you cannot use the same letter S twice in the same word.
+Accordingly, the longest possible word for a 4x4 board is 16 letters.  You should be able to handle up to 5x5 (and bigger) but we may only test with 4x4.

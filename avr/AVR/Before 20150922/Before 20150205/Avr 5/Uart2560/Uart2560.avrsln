@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# AvrStudio Solution File, Format Version 11.00
+Project("{D1100916-62DA-4D80-A9B4-55A1E7CCEEB3}") = "Uart2560", "Uart2560\Uart2560.avrgccproj", "{AB62EFF2-7E74-4127-8924-86498287586A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB62EFF2-7E74-4127-8924-86498287586A}.Debug|AVR.ActiveCfg = Debug|AVR
+		{AB62EFF2-7E74-4127-8924-86498287586A}.Debug|AVR.Build.0 = Debug|AVR
+		{AB62EFF2-7E74-4127-8924-86498287586A}.Release|AVR.ActiveCfg = Release|AVR
+		{AB62EFF2-7E74-4127-8924-86498287586A}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

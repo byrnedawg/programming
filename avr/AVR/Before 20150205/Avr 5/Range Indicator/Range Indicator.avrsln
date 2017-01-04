@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# AvrStudio Solution File, Format Version 11.00
+Project("{D1100916-62DA-4D80-A9B4-55A1E7CCEEB3}") = "Range Indicator", "Range Indicator\Range Indicator.avrgccproj", "{7C6683B7-C776-4EF3-A591-CD853D62EE8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C6683B7-C776-4EF3-A591-CD853D62EE8F}.Debug|AVR.ActiveCfg = Debug|AVR
+		{7C6683B7-C776-4EF3-A591-CD853D62EE8F}.Debug|AVR.Build.0 = Debug|AVR
+		{7C6683B7-C776-4EF3-A591-CD853D62EE8F}.Release|AVR.ActiveCfg = Release|AVR
+		{7C6683B7-C776-4EF3-A591-CD853D62EE8F}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

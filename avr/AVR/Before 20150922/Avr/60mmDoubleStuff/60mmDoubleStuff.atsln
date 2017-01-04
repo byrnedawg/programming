@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "60mmDoubleStuff", "60mmDoubleStuff\60mmDoubleStuff.cproj", "{B1B2766E-657C-45A2-9E80-6C2DEB63C8DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1B2766E-657C-45A2-9E80-6C2DEB63C8DC}.Debug|AVR.ActiveCfg = Debug|AVR
+		{B1B2766E-657C-45A2-9E80-6C2DEB63C8DC}.Debug|AVR.Build.0 = Debug|AVR
+		{B1B2766E-657C-45A2-9E80-6C2DEB63C8DC}.Release|AVR.ActiveCfg = Release|AVR
+		{B1B2766E-657C-45A2-9E80-6C2DEB63C8DC}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

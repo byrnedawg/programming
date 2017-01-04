@@ -1,0 +1,17 @@
+EAGLE Version 4.16r2 Copyright (c) 1988-2006 CadSoft
+
+Electrical Rule Check for /home/duncan/eagle/rc_mk2_RX/untitled.sch at  3/19/2009 15:57:38 
+
+WARNING: Sheet 1/1: unconnected Pin: J1-10 J
+ERROR: Sheet 1/1: unconnected INPUT Pin: IC1 PF2(ADC2)
+ERROR: Sheet 1/1: unconnected INPUT Pin: IC1 PF3(ADC3)
+WARNING: Sheet 1/1: POWER Pin IC1 AVCC connected to +3V3
+WARNING: Sheet 1/1: POWER Pin IC1 AGND connected to GND
+WARNING: Sheet 1/1: POWER Pin IC1 AREF connected to +3V3
+WARNING: Sheet 1/1: POWER Pin IC1 VCC connected to +3V3
+WARNING: Sheet 1/1: POWER Pin IC1 VCC connected to +3V3
+
+Board and schematic are consistent
+
+    2 errors
+    6 warnings

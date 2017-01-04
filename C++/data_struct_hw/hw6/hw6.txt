@@ -1,0 +1,46 @@
+Load the dictionary given, and load the file specified in session07.  For each word, print true if it is in the dictionary, false otherwise.
+
+ 
+
+Dictionary: https://drive.google.com/file/d/0Bwxfq4Y7f7vkeW53OEYxSktWNmc/view?usp=sharing
+
+Note: for the homework, consider only lowercase letters.  a...z
+A..Za..z = 52
+if words in the dictionary have capital letters MAKE THEM LOWERCASE!!!!!
+
+John  → john
+
+char c = ‘a’; // 97
+int offset = c - ‘a’; // offset is zero (use to look into the table)
+
+In Java:
+
+public void add(String s) {
+   for (int i = 0; i < s.length(); i++) {
+      char c = s.charAt(i);
+
+      ….
+   }
+
+}
+
+
+In C++:
+
+void add(const char s[]) {
+  for (int i = 0; s[i] != ‘\0’; i++) {
+    char c = s[i];
+    int offset = c - ‘a’;
+    ...
+ 
+
+
+}
+
+or with strings
+
+void add(string s) {
+  for (int i = 0; i < s.length(); i++)
+    char c = s[i];
+
+English: 26 letters   26, 262, 263, ...

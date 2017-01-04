@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# AvrStudio Solution File, Format Version 11.00
+Project("{D1100916-62DA-4D80-A9B4-55A1E7CCEEB3}") = "Atinny85SWUART", "Atinny85SWUART\Atinny85SWUART.avrgccproj", "{7BA8C8FA-4AFA-4589-84F5-BA3B9593ED32}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BA8C8FA-4AFA-4589-84F5-BA3B9593ED32}.Debug|AVR.ActiveCfg = Debug|AVR
+		{7BA8C8FA-4AFA-4589-84F5-BA3B9593ED32}.Debug|AVR.Build.0 = Debug|AVR
+		{7BA8C8FA-4AFA-4589-84F5-BA3B9593ED32}.Release|AVR.ActiveCfg = Release|AVR
+		{7BA8C8FA-4AFA-4589-84F5-BA3B9593ED32}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

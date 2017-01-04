@@ -1,0 +1,84 @@
+https://www.khanacademy.org/computing/computer-programming/html-css/html-css-further-learning/v/html-validation
+
+validator.w3.org
+http://validator.w3.org 
+
+We've shown you how to make webpages, but we haven't necessarily shown you how to make webpages that look good. Of course, beauty is in the eye of the beholder, so it's ultimately up to you—and your users—to decide whether your webpage looks good. We can give you some tips and tricks, though!
+Besides looking good, you probably also want your webpage to look distinct from other webpages so that it stands out to your users.
+That's often the hard part—making your webpage look good while also making it look distinct. You can make it awfully distinct by covering everything with zebra stripes and using a 64-pixel font, but should you? Probably not.
+Picking good fonts
+
+By default, browsers serve webpages with the generic serif font family, which tends to convey a more formal look to a page. You might decide to change that to the generic sans-serif font family, or you might specify a specific font family that's on most users computers, like Garamond or Helvetica.
+To give your webpage a more distinct look, you can also use a custom web font. For example, Khan Academy uses Proxima Sans Nova on all of our pages, a nice sans-serif font:
+
+Screenshot of heading on Khan Academy webpage
+When you use a web font, you're actually making the user's browser download a font file to the user's computer so you can reference that font file from the CSS. It's an extra download for the browser, so you shouldn't use too many, and you shouldn't include any you don't intend on actually using. One great source of free web fonts is Google Web Fonts. Check out this example webpage on Khan Academy that uses two Google Web Fonts.
+Wherever you get your fonts from, you should watch out for font overload. Generally, you shouldn't use more than two or three font families on a page, and your fonts should pair nicely together. Here's a helpful website that gives examples of Google Web Fonts that pair well together.
+Picking good colors
+
+When designing a webpage, you often want to use a color palette—a range of colors that work well together and can be used for the various parts of your webpage. These colors might be based on your company logo, they might relate to the theme of the page, or they might just look good together.
+Need help picking a palette? If you already know a few colors that you want to base the palette on, you could head over to Paletton, a tool that lets you visualize different types of palettes: monochromatic, triads, adjacent colors, and tetrads.
+
+Screenshot of a palette of greens
+If you're starting from scratch, you can browse around the palettes at COLOURLovers, a community of people who love colors and contribute color, palette, and pattern ideas. Here's a palette named Giant Goldfish:
+
+Screenshot of color palette of oranges and blues
+Once you have a palette picked out, you're to the hard part: figuring out which colors to apply to which parts of your webpage. What color should the headlines be? The links? The text? The background? The great thing about Paletton is that they give you an example webpage that uses the palette:
+
+Screenshot of example website using green palette
+As you decide on how your palette will translate into CSS, consider a few things:
+If you change the styling of links too much from the default, users may not realize they're links anymore.
+The colors of foreground/background text should contrast enough that your users don't need to squint. Check your colors in this contrast checker.
+Many humans are color blind. Some color combinations won't have sufficient contrast for them. Check your colors in this color blindness simulator.
+If you're not sure about the way you're using your color palette, send it around to a few friends and ask for their honest opinion. Can they read everything? Do they know what's clickable? Do any colors make their noses crinkle? What colors do they love?
+Using whitespace well
+
+I once asked my colleague—who's now a designer at Google—what his secret to great design was. His response? Whitespace!
+Whitespace refers to any blank space between elements, and in CSS land, it usually comes from properties like padding, margin, and line-height.
+My friend is right—whitespace can have a big effect on how good your webpage looks and how easy it is to read. My designer friends sometimes spend hours tweaking whitespace to get it just right, because they know how important it is.
+For an extreme example, here's a comparison of our course page sidebar with and without whitespace:
+
+Screenshot of a before and after of Khan Academy page with different whitespace
+What does that mean for you? It's hard to give hard and fast rules about whitespace; just be aware of it. Whenever you have an element that's next to another element, consider how much margin is between them. If you have an element with a background or border, consider how much padding they have. When creating paragraphs and lists, consider if extra line-height would give them some reading room.
+Starting from templates and frameworks
+
+You might be intimidated after reading all of these guidelines, especially if you don't consider yourselves to have an eye for design. Don't worry, you don't have to be a design expert to have a great looking webpage. Instead, you can start from a template or framework and take advantage of the effort that other designers have put into it.
+A template is HTML and CSS that already looks like a complete webpage, often with fake content filled in. You can find templates on OpenDesigns.org or by searching the web for "free webpage templates"—and hoping that the ones you find are indeed free! Once you download a template, you can substitute your content and continue modifying the CSS to meet your needs.
+
+Screenshot of two webpage templates
+A CSS framework is a collection of CSS rules that give you a great starting point for a slick website. There are many popular CSS frameworks that will make it easier for you to create a beautifully styled website—Twitter Bootstrap, ZURB Foundation, Pure CSS, Topcoat, and more. You can check out examples of Twitter Bootstrap and ZURB foundation here on Khan Academy.
+Once you download a CSS framework, you can browse through the documentation to find examples—they often have templates too!—and figure out what CSS class names will achieve the look you want.
+When you use templates or frameworks, you risk your website looking exactly like another website and thus not standing out as much in your user's mind. To avoid that, add in your own logo and change some key elements like the font family or the background color.
+
+Congratulations on learning HTML and CSS fundamentals! You now understand a lot of what goes into the webpages you see around the internet, and you should hopefully be able to look at those webpages and start to recognize the HTML tags and CSS properties in use.
+There is a whole lot more that you can do to build on your HTML and CSS knowledge, however. Read on!
+More HTML tags
+
+Form tags: There are quite a few tags that are used to create web forms, like <button>s and <input>s. They are typically used to communicate data back to a server, something which we don't enable on Khan Academy. They can also be used with JS to create a game, which we do teach in the HTML/JS course. Learn more about form tags with these slides. Learn server-side languages like PHP, Python, Ruby on Codecademy.
+Iframes: The <iframe> tag is a way to frame another webpage inside yours, and is handy for things like embedding Youtube videos, Google Maps, etc. That tag is disabled on Khan Academy currently for security and moderation purposes, but can be experimented with elsewhere. Learn more with these slides.
+Multimedia tags: The <audio> and <video> tags are supported in modern browsers as a way to play audio and video files on webpages. Like the <iframe> tag, they are currently disabled on Khan Academy, but can be used elsewhere. Learn more with these slides.
+New semantic tags: In the past few years, as part of the "HTML5" specification, browsers have added new semantic tags for developers to use instead of <div>s, like <article>, <aside>, <nav>, etc. There are many articles about them here, including this handy flowchart for deciding when to use them.
+More CSS selectors and properties
+
+You should be able to experiment with all of these on Khan Academy:
+CSS3: We covered CSS that's been supported in browsers for years, but there are many new CSS properties and selectors in what's known as the "CSS3" specifications, and browsers are adding support continuously as they release new versions. Learn many from these slides and check caniuse.com to see what's supported in each browser.
+Media queries: This is a technique that lets you specify different CSS for different situations, like when your webpage is viewed at a smaller size or when it's printed. Learn more with these slides.
+CSS frameworks: A framework is a collection of CSS rules and classes, and many developers use CSS frameworks to enable them to write CSS faster. The most popular one is Twitter Bootstrap, but there's also ZURB foundation, Pure CSS, Topcoat, and more.
+Using JS in webpages
+
+Web developers use JavaScript to make webpages interactive, to respond to user events and bring in data dynamically from servers. They do that by embedding <script> tags inside the HTML, and putting JavaScript inside those tags. Their JS code then uses the "DOM API", a set of functions that browsers make available on every webpage to let developers query and manipulate that page.
+That means that if you want to learn to make your webpages interactive, you both need to learn the fundamentals of the JavaScript language (which you can do here on Khan Academy), plus you need to learn the DOM API (which you can learn in our course here).
+Making webpages outside Khan Academy
+
+We love to see you making cool webpages here and sharing what you're learning with the community, but we also think its a great thing to experience other code editing environments and get to experiment with functionality that we don't have enabled. If you want to continue coding inside the browser (especially if you're on a ChromeBook), you can try JSBin.com, JSFiddle.net, Cloud9 IDE, or Mozilla Thimble.
+If you want to code outside of the browser, you can download an IDE and save your webpages as ".html" files. Popular IDEs are Notepad++ (Windows only), SublimeText, Adobe Brackets, Coda, and TextWrangler.
+Hosting webpages on a server
+
+We host the webpages that you create here on Khan Academy on our own server, but you may want to set up your own web presence.
+First, you'll have to find a company that will host your site. There are many hosting providers out there, with varying degrees of flexibility and price. Learn more from these slides.
+Then you will also want to create a domain name, like "mycoolname.com", so that your site can be a part of your identity. Sometimes you can do that with your hosting provider, but often times, you use a different domain name registrar for that. Learn more from these slides.
+Once you have a web host, you can transfer your files to the server with an FTP client like FileZilla. That's a program that connects directly to the server and allows you to browse, download and upload files to and from the server. You might also be able to SSH into the server and directly edit the files on that machine.
+Keep learning
+
+HTML and CSS are constantly changing, because browsers release improvements so often and the web development community is an active one. One of our favorite ways to keep up-to-date is to subscribe to HTML5 weekly, a newsletter with links to articles and demos. Of course, whenever you learn something new, you should try it out to really understand how it works.
+Practice, practice, practice!

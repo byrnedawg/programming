@@ -1,0 +1,20 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Atmega8_PS2_Bit_Bang", "Atmega8_PS2_Bit_Bang\Atmega8_PS2_Bit_Bang_6_2.cproj", "{B0ADAE70-C8C3-49AC-8E0F-5B79FECDA2AC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0ADAE70-C8C3-49AC-8E0F-5B79FECDA2AC}.Debug|AVR.ActiveCfg = Debug|AVR
+		{B0ADAE70-C8C3-49AC-8E0F-5B79FECDA2AC}.Debug|AVR.Build.0 = Debug|AVR
+		{B0ADAE70-C8C3-49AC-8E0F-5B79FECDA2AC}.Release|AVR.ActiveCfg = Release|AVR
+		{B0ADAE70-C8C3-49AC-8E0F-5B79FECDA2AC}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

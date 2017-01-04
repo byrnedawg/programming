@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# AvrStudio Solution File, Format Version 11.00
+Project("{D1100916-62DA-4D80-A9B4-55A1E7CCEEB3}") = "I2C Tutorial", "I2C Tutorial\I2C Tutorial.avrgccproj", "{6D86D0B3-0E93-4E24-A9B2-42923BAC55D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6D86D0B3-0E93-4E24-A9B2-42923BAC55D8}.Debug|AVR.ActiveCfg = Debug|AVR
+		{6D86D0B3-0E93-4E24-A9B2-42923BAC55D8}.Debug|AVR.Build.0 = Debug|AVR
+		{6D86D0B3-0E93-4E24-A9B2-42923BAC55D8}.Release|AVR.ActiveCfg = Release|AVR
+		{6D86D0B3-0E93-4E24-A9B2-42923BAC55D8}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

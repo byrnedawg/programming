@@ -1,0 +1,312 @@
+
+AvrBlinkenLed.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00000278  000002ec  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000278  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .stab         000006cc  00000000  00000000  000002ec  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000054  00000000  00000000  000009b8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .comment      00000011  00000000  00000000  00000a0c  2**0
+                  CONTENTS, READONLY
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+   8:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+   c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  10:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  14:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  18:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  1c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  20:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  24:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  28:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  2c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  30:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  34:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  38:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  3c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  40:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  44:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  48:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  4c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  50:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  54:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  58:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  5c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  60:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  64:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  68:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  6c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  70:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  74:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  78:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  7c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  80:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  84:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  88:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e4       	ldi	r29, 0x40	; 64
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+  98:	0e 94 d5 00 	call	0x1aa	; 0x1aa <main>
+  9c:	0c 94 3a 01 	jmp	0x274	; 0x274 <_exit>
+
+000000a0 <__bad_interrupt>:
+  a0:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a4 <_ZN6IOPort16SetPortDirectionEh>:
+  a4:	cf 93       	push	r28
+  a6:	df 93       	push	r29
+  a8:	1f 92       	push	r1
+  aa:	cd b7       	in	r28, 0x3d	; 61
+  ac:	de b7       	in	r29, 0x3e	; 62
+  ae:	69 83       	std	Y+1, r22	; 0x01
+  b0:	dc 01       	movw	r26, r24
+  b2:	14 96       	adiw	r26, 0x04	; 4
+  b4:	ed 91       	ld	r30, X+
+  b6:	fc 91       	ld	r31, X
+  b8:	15 97       	sbiw	r26, 0x05	; 5
+  ba:	89 81       	ldd	r24, Y+1	; 0x01
+  bc:	80 83       	st	Z, r24
+  be:	0f 90       	pop	r0
+  c0:	df 91       	pop	r29
+  c2:	cf 91       	pop	r28
+  c4:	08 95       	ret
+
+000000c6 <_ZN6IOPort13SetPortValuesEh>:
+  c6:	cf 93       	push	r28
+  c8:	df 93       	push	r29
+  ca:	1f 92       	push	r1
+  cc:	cd b7       	in	r28, 0x3d	; 61
+  ce:	de b7       	in	r29, 0x3e	; 62
+  d0:	69 83       	std	Y+1, r22	; 0x01
+  d2:	dc 01       	movw	r26, r24
+  d4:	12 96       	adiw	r26, 0x02	; 2
+  d6:	ed 91       	ld	r30, X+
+  d8:	fc 91       	ld	r31, X
+  da:	13 97       	sbiw	r26, 0x03	; 3
+  dc:	89 81       	ldd	r24, Y+1	; 0x01
+  de:	80 83       	st	Z, r24
+  e0:	0f 90       	pop	r0
+  e2:	df 91       	pop	r29
+  e4:	cf 91       	pop	r28
+  e6:	08 95       	ret
+
+000000e8 <_ZN6IOPort13GetPortValuesERVh>:
+  e8:	dc 01       	movw	r26, r24
+  ea:	12 96       	adiw	r26, 0x02	; 2
+  ec:	ed 91       	ld	r30, X+
+  ee:	fc 91       	ld	r31, X
+  f0:	13 97       	sbiw	r26, 0x03	; 3
+  f2:	80 81       	ld	r24, Z
+  f4:	fb 01       	movw	r30, r22
+  f6:	80 83       	st	Z, r24
+  f8:	08 95       	ret
+
+000000fa <_ZN6IOPort15SetPinDirectionEi12PinDirection>:
+  fa:	dc 01       	movw	r26, r24
+  fc:	14 96       	adiw	r26, 0x04	; 4
+  fe:	ed 91       	ld	r30, X+
+ 100:	fc 91       	ld	r31, X
+ 102:	15 97       	sbiw	r26, 0x05	; 5
+ 104:	20 81       	ld	r18, Z
+ 106:	81 e0       	ldi	r24, 0x01	; 1
+ 108:	90 e0       	ldi	r25, 0x00	; 0
+ 10a:	06 2e       	mov	r0, r22
+ 10c:	01 c0       	rjmp	.+2      	; 0x110 <_ZN6IOPort15SetPinDirectionEi12PinDirection+0x16>
+ 10e:	88 0f       	add	r24, r24
+ 110:	0a 94       	dec	r0
+ 112:	ea f7       	brpl	.-6      	; 0x10e <_ZN6IOPort15SetPinDirectionEi12PinDirection+0x14>
+ 114:	41 30       	cpi	r20, 0x01	; 1
+ 116:	11 f4       	brne	.+4      	; 0x11c <_ZN6IOPort15SetPinDirectionEi12PinDirection+0x22>
+ 118:	28 2b       	or	r18, r24
+ 11a:	01 c0       	rjmp	.+2      	; 0x11e <_ZN6IOPort15SetPinDirectionEi12PinDirection+0x24>
+ 11c:	28 27       	eor	r18, r24
+ 11e:	20 83       	st	Z, r18
+ 120:	08 95       	ret
+
+00000122 <_ZN6IOPort11SetPinValueEib>:
+ 122:	dc 01       	movw	r26, r24
+ 124:	12 96       	adiw	r26, 0x02	; 2
+ 126:	ed 91       	ld	r30, X+
+ 128:	fc 91       	ld	r31, X
+ 12a:	13 97       	sbiw	r26, 0x03	; 3
+ 12c:	80 81       	ld	r24, Z
+ 12e:	90 e0       	ldi	r25, 0x00	; 0
+ 130:	06 2e       	mov	r0, r22
+ 132:	02 c0       	rjmp	.+4      	; 0x138 <_ZN6IOPort11SetPinValueEib+0x16>
+ 134:	95 95       	asr	r25
+ 136:	87 95       	ror	r24
+ 138:	0a 94       	dec	r0
+ 13a:	e2 f7       	brpl	.-8      	; 0x134 <_ZN6IOPort11SetPinValueEib+0x12>
+ 13c:	80 ff       	sbrs	r24, 0
+ 13e:	03 c0       	rjmp	.+6      	; 0x146 <_ZN6IOPort11SetPinValueEib+0x24>
+ 140:	41 11       	cpse	r20, r1
+ 142:	0b c0       	rjmp	.+22     	; 0x15a <_ZN6IOPort11SetPinValueEib+0x38>
+ 144:	02 c0       	rjmp	.+4      	; 0x14a <_ZN6IOPort11SetPinValueEib+0x28>
+ 146:	44 23       	and	r20, r20
+ 148:	41 f0       	breq	.+16     	; 0x15a <_ZN6IOPort11SetPinValueEib+0x38>
+ 14a:	81 e0       	ldi	r24, 0x01	; 1
+ 14c:	90 e0       	ldi	r25, 0x00	; 0
+ 14e:	06 2e       	mov	r0, r22
+ 150:	01 c0       	rjmp	.+2      	; 0x154 <_ZN6IOPort11SetPinValueEib+0x32>
+ 152:	88 0f       	add	r24, r24
+ 154:	0a 94       	dec	r0
+ 156:	ea f7       	brpl	.-6      	; 0x152 <_ZN6IOPort11SetPinValueEib+0x30>
+ 158:	80 83       	st	Z, r24
+ 15a:	08 95       	ret
+
+0000015c <_ZN6IOPort11GetPinValueEiRb>:
+ 15c:	dc 01       	movw	r26, r24
+ 15e:	12 96       	adiw	r26, 0x02	; 2
+ 160:	ed 91       	ld	r30, X+
+ 162:	fc 91       	ld	r31, X
+ 164:	13 97       	sbiw	r26, 0x03	; 3
+ 166:	80 81       	ld	r24, Z
+ 168:	90 e0       	ldi	r25, 0x00	; 0
+ 16a:	02 c0       	rjmp	.+4      	; 0x170 <_ZN6IOPort11GetPinValueEiRb+0x14>
+ 16c:	95 95       	asr	r25
+ 16e:	87 95       	ror	r24
+ 170:	6a 95       	dec	r22
+ 172:	e2 f7       	brpl	.-8      	; 0x16c <_ZN6IOPort11GetPinValueEiRb+0x10>
+ 174:	81 70       	andi	r24, 0x01	; 1
+ 176:	fa 01       	movw	r30, r20
+ 178:	80 83       	st	Z, r24
+ 17a:	08 95       	ret
+
+0000017c <_ZN3Led6TurnOnEv>:
+ 17c:	fc 01       	movw	r30, r24
+ 17e:	41 e0       	ldi	r20, 0x01	; 1
+ 180:	82 81       	ldd	r24, Z+2	; 0x02
+ 182:	81 11       	cpse	r24, r1
+ 184:	40 e0       	ldi	r20, 0x00	; 0
+ 186:	63 81       	ldd	r22, Z+3	; 0x03
+ 188:	70 e0       	ldi	r23, 0x00	; 0
+ 18a:	80 81       	ld	r24, Z
+ 18c:	91 81       	ldd	r25, Z+1	; 0x01
+ 18e:	0c 94 91 00 	jmp	0x122	; 0x122 <_ZN6IOPort11SetPinValueEib>
+
+00000192 <_ZN3Led7TurnOffEv>:
+ 192:	fc 01       	movw	r30, r24
+ 194:	41 e0       	ldi	r20, 0x01	; 1
+ 196:	82 81       	ldd	r24, Z+2	; 0x02
+ 198:	81 11       	cpse	r24, r1
+ 19a:	01 c0       	rjmp	.+2      	; 0x19e <_ZN3Led7TurnOffEv+0xc>
+ 19c:	40 e0       	ldi	r20, 0x00	; 0
+ 19e:	63 81       	ldd	r22, Z+3	; 0x03
+ 1a0:	70 e0       	ldi	r23, 0x00	; 0
+ 1a2:	80 81       	ld	r24, Z
+ 1a4:	91 81       	ldd	r25, Z+1	; 0x01
+ 1a6:	0c 94 91 00 	jmp	0x122	; 0x122 <_ZN6IOPort11SetPinValueEib>
+
+000001aa <main>:
+ 1aa:	cf 93       	push	r28
+ 1ac:	df 93       	push	r29
+ 1ae:	cd b7       	in	r28, 0x3d	; 61
+ 1b0:	de b7       	in	r29, 0x3e	; 62
+ 1b2:	a6 97       	sbiw	r28, 0x26	; 38
+ 1b4:	0f b6       	in	r0, 0x3f	; 63
+ 1b6:	f8 94       	cli
+ 1b8:	de bf       	out	0x3e, r29	; 62
+ 1ba:	0f be       	out	0x3f, r0	; 63
+ 1bc:	cd bf       	out	0x3d, r28	; 61
+ 1be:	82 e2       	ldi	r24, 0x22	; 34
+ 1c0:	90 e0       	ldi	r25, 0x00	; 0
+ 1c2:	9a 83       	std	Y+2, r25	; 0x02
+ 1c4:	89 83       	std	Y+1, r24	; 0x01
+ 1c6:	80 e2       	ldi	r24, 0x20	; 32
+ 1c8:	90 e0       	ldi	r25, 0x00	; 0
+ 1ca:	9c 83       	std	Y+4, r25	; 0x04
+ 1cc:	8b 83       	std	Y+3, r24	; 0x03
+ 1ce:	81 e2       	ldi	r24, 0x21	; 33
+ 1d0:	90 e0       	ldi	r25, 0x00	; 0
+ 1d2:	9e 83       	std	Y+6, r25	; 0x06
+ 1d4:	8d 83       	std	Y+5, r24	; 0x05
+ 1d6:	6f ef       	ldi	r22, 0xFF	; 255
+ 1d8:	8e 01       	movw	r16, r28
+ 1da:	0f 5f       	subi	r16, 0xFF	; 255
+ 1dc:	1f 4f       	sbci	r17, 0xFF	; 255
+ 1de:	c8 01       	movw	r24, r16
+ 1e0:	0e 94 52 00 	call	0xa4	; 0xa4 <_ZN6IOPort16SetPortDirectionEh>
+ 1e4:	1c a3       	std	Y+36, r17	; 0x24
+ 1e6:	0b a3       	std	Y+35, r16	; 0x23
+ 1e8:	1d a2       	std	Y+37, r1	; 0x25
+ 1ea:	1e a2       	std	Y+38, r1	; 0x26
+ 1ec:	18 a3       	std	Y+32, r17	; 0x20
+ 1ee:	0f 8f       	std	Y+31, r16	; 0x1f
+ 1f0:	19 a2       	std	Y+33, r1	; 0x21
+ 1f2:	81 e0       	ldi	r24, 0x01	; 1
+ 1f4:	8a a3       	std	Y+34, r24	; 0x22
+ 1f6:	1c 8f       	std	Y+28, r17	; 0x1c
+ 1f8:	0b 8f       	std	Y+27, r16	; 0x1b
+ 1fa:	1d 8e       	std	Y+29, r1	; 0x1d
+ 1fc:	82 e0       	ldi	r24, 0x02	; 2
+ 1fe:	8e 8f       	std	Y+30, r24	; 0x1e
+ 200:	18 8f       	std	Y+24, r17	; 0x18
+ 202:	0f 8b       	std	Y+23, r16	; 0x17
+ 204:	19 8e       	std	Y+25, r1	; 0x19
+ 206:	83 e0       	ldi	r24, 0x03	; 3
+ 208:	8a 8f       	std	Y+26, r24	; 0x1a
+ 20a:	1c 8b       	std	Y+20, r17	; 0x14
+ 20c:	0b 8b       	std	Y+19, r16	; 0x13
+ 20e:	1d 8a       	std	Y+21, r1	; 0x15
+ 210:	84 e0       	ldi	r24, 0x04	; 4
+ 212:	8e 8b       	std	Y+22, r24	; 0x16
+ 214:	18 8b       	std	Y+16, r17	; 0x10
+ 216:	0f 87       	std	Y+15, r16	; 0x0f
+ 218:	19 8a       	std	Y+17, r1	; 0x11
+ 21a:	85 e0       	ldi	r24, 0x05	; 5
+ 21c:	8a 8b       	std	Y+18, r24	; 0x12
+ 21e:	1c 87       	std	Y+12, r17	; 0x0c
+ 220:	0b 87       	std	Y+11, r16	; 0x0b
+ 222:	1d 86       	std	Y+13, r1	; 0x0d
+ 224:	86 e0       	ldi	r24, 0x06	; 6
+ 226:	8e 87       	std	Y+14, r24	; 0x0e
+ 228:	18 87       	std	Y+8, r17	; 0x08
+ 22a:	0f 83       	std	Y+7, r16	; 0x07
+ 22c:	19 86       	std	Y+9, r1	; 0x09
+ 22e:	87 e0       	ldi	r24, 0x07	; 7
+ 230:	8a 87       	std	Y+10, r24	; 0x0a
+ 232:	ce 01       	movw	r24, r28
+ 234:	83 96       	adiw	r24, 0x23	; 35
+ 236:	0e 94 be 00 	call	0x17c	; 0x17c <_ZN3Led6TurnOnEv>
+ 23a:	ce 01       	movw	r24, r28
+ 23c:	4f 96       	adiw	r24, 0x1f	; 31
+ 23e:	0e 94 be 00 	call	0x17c	; 0x17c <_ZN3Led6TurnOnEv>
+ 242:	ce 01       	movw	r24, r28
+ 244:	4b 96       	adiw	r24, 0x1b	; 27
+ 246:	0e 94 be 00 	call	0x17c	; 0x17c <_ZN3Led6TurnOnEv>
+ 24a:	ce 01       	movw	r24, r28
+ 24c:	47 96       	adiw	r24, 0x17	; 23
+ 24e:	0e 94 be 00 	call	0x17c	; 0x17c <_ZN3Led6TurnOnEv>
+ 252:	ce 01       	movw	r24, r28
+ 254:	43 96       	adiw	r24, 0x13	; 19
+ 256:	0e 94 be 00 	call	0x17c	; 0x17c <_ZN3Led6TurnOnEv>
+ 25a:	ce 01       	movw	r24, r28
+ 25c:	0f 96       	adiw	r24, 0x0f	; 15
+ 25e:	0e 94 be 00 	call	0x17c	; 0x17c <_ZN3Led6TurnOnEv>
+ 262:	ce 01       	movw	r24, r28
+ 264:	0b 96       	adiw	r24, 0x0b	; 11
+ 266:	0e 94 be 00 	call	0x17c	; 0x17c <_ZN3Led6TurnOnEv>
+ 26a:	ce 01       	movw	r24, r28
+ 26c:	07 96       	adiw	r24, 0x07	; 7
+ 26e:	0e 94 be 00 	call	0x17c	; 0x17c <_ZN3Led6TurnOnEv>
+ 272:	ff cf       	rjmp	.-2      	; 0x272 <main+0xc8>
+
+00000274 <_exit>:
+ 274:	f8 94       	cli
+
+00000276 <__stop_program>:
+ 276:	ff cf       	rjmp	.-2      	; 0x276 <__stop_program>

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "60mmCheckInRound", "60mmCheckInRound\60mmCheckInRound.cproj", "{CB0B617E-5B5A-45C2-A35E-15363BC8DC46}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB0B617E-5B5A-45C2-A35E-15363BC8DC46}.Debug|AVR.ActiveCfg = Debug|AVR
+		{CB0B617E-5B5A-45C2-A35E-15363BC8DC46}.Debug|AVR.Build.0 = Debug|AVR
+		{CB0B617E-5B5A-45C2-A35E-15363BC8DC46}.Release|AVR.ActiveCfg = Release|AVR
+		{CB0B617E-5B5A-45C2-A35E-15363BC8DC46}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

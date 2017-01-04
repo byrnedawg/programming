@@ -1,0 +1,18 @@
+Open a file hw2.dat
+
+Read each number in the file until end of file.  For each number, determine whether it is prime using MillerRabin.  Note that Miller-Rabin uses powermod.
+
+For example, given that hw2.dat contains:
+
+5   561   7919  7923    961748941    961748947
+
+ 
+
+The output should be:
+
+5    true
+561   false
+7919   true
+7923   false
+961748941   true
+961748947   true

@@ -1,0 +1,932 @@
+
+VFD.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000500  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000016  00800060  00000500  00000594  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          0000004a  00800076  00800076  000005aa  2**0
+                  ALLOC
+  3 .debug_aranges 00000040  00000000  00000000  000005aa  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 0000018a  00000000  00000000  000005ea  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000054d  00000000  00000000  00000774  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000030a  00000000  00000000  00000cc1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000005c8  00000000  00000000  00000fcb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000100  00000000  00000000  00001594  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000017e  00000000  00000000  00001694  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000000ac  00000000  00000000  00001812  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000048  00000000  00000000  000018be  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 49 00 	jmp	0x92	; 0x92 <__vector_1>
+   8:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  30:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  34:	0c 94 89 01 	jmp	0x312	; 0x312 <__vector_13>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 e2 00 	jmp	0x1c4	; 0x1c4 <__vector_16>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e0 e0       	ldi	r30, 0x00	; 0
+  68:	f5 e0       	ldi	r31, 0x05	; 5
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <.do_copy_data_start>
+
+0000006c <.do_copy_data_loop>:
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+
+00000070 <.do_copy_data_start>:
+  70:	a6 37       	cpi	r26, 0x76	; 118
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <.do_copy_data_loop>
+
+00000076 <__do_clear_bss>:
+  76:	10 e0       	ldi	r17, 0x00	; 0
+  78:	a6 e7       	ldi	r26, 0x76	; 118
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	a0 3c       	cpi	r26, 0xC0	; 192
+  82:	b1 07       	cpc	r27, r17
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 bc 00 	call	0x178	; 0x178 <main>
+  8a:	0c 94 7e 02 	jmp	0x4fc	; 0x4fc <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000092 <__vector_1>:
+uint16_t temp = 0;
+
+
+
+ISR(INT0_vect)
+{
+  92:	1f 92       	push	r1
+  94:	0f 92       	push	r0
+  96:	0f b6       	in	r0, 0x3f	; 63
+  98:	0f 92       	push	r0
+  9a:	11 24       	eor	r1, r1
+		//	pulse_incr -= 2;
+	//	}
+	//	brightness = INCREASING;
+		//slider_value = 0x00;				// Start new cycle with LED off
+//	}
+}
+  9c:	0f 90       	pop	r0
+  9e:	0f be       	out	0x3f, r0	; 63
+  a0:	0f 90       	pop	r0
+  a2:	1f 90       	pop	r1
+  a4:	18 95       	reti
+
+000000a6 <InitADC>:
+
+}
+ 
+void InitADC()
+{
+ADMUX=(1<<REFS0);                         // For Aref=AVcc;
+  a6:	80 e4       	ldi	r24, 0x40	; 64
+  a8:	87 b9       	out	0x07, r24	; 7
+ADCSRA=(1<<ADEN)|(1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0)|(1<<ADIE); //Rrescalar div factor =128
+  aa:	8f e8       	ldi	r24, 0x8F	; 143
+  ac:	86 b9       	out	0x06, r24	; 6
+sei();  //start interrupt
+  ae:	78 94       	sei
+}
+  b0:	08 95       	ret
+
+000000b2 <ReadADC>:
+
+uint16_t ReadADC(uint8_t ch)
+{
+   //Select ADC Channel ch must be 0-7
+   ch=ch&0b00000111;
+   ADMUX|=ch;
+  b2:	97 b1       	in	r25, 0x07	; 7
+  b4:	87 70       	andi	r24, 0x07	; 7
+  b6:	89 2b       	or	r24, r25
+  b8:	87 b9       	out	0x07, r24	; 7
+
+   //Start Single conversion
+   ADCSRA|=(1<<ADSC);
+  ba:	36 9a       	sbi	0x06, 6	; 6
+
+   //Wait for conversion to complete
+   while(!(ADCSRA & (1<<ADIF)));
+  bc:	34 9b       	sbis	0x06, 4	; 6
+  be:	fe cf       	rjmp	.-4      	; 0xbc <ReadADC+0xa>
+   //Clear ADIF by writing one to it
+   //Note you may be wondering why we have write one to clear it
+   //This is standard way of clearing bits in io as said in datasheets.
+   //The code writes '1' but it result in setting bit to '0' !!!
+
+   ADCSRA|=(1<<ADIF);
+  c0:	34 9a       	sbi	0x06, 4	; 6
+
+   return(ADC); 
+  c2:	24 b1       	in	r18, 0x04	; 4
+  c4:	35 b1       	in	r19, 0x05	; 5
+}
+  c6:	c9 01       	movw	r24, r18
+  c8:	08 95       	ret
+
+000000ca <Wait>:
+
+void Wait(uint8_t time)
+{
+  ca:	90 e0       	ldi	r25, 0x00	; 0
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+  cc:	20 e0       	ldi	r18, 0x00	; 0
+  ce:	30 e0       	ldi	r19, 0x00	; 0
+  d0:	04 c0       	rjmp	.+8      	; 0xda <Wait+0x10>
+  d2:	f9 01       	movw	r30, r18
+  d4:	31 97       	sbiw	r30, 0x01	; 1
+  d6:	f1 f7       	brne	.-4      	; 0xd4 <Wait+0xa>
+   uint8_t i;
+   for(i=0;i<time;i++)
+  d8:	9f 5f       	subi	r25, 0xFF	; 255
+  da:	98 17       	cp	r25, r24
+  dc:	d0 f3       	brcs	.-12     	; 0xd2 <Wait+0x8>
+      _delay_loop_2(0); 
+}
+  de:	08 95       	ret
+
+000000e0 <InitVFD>:
+} 
+
+void InitVFD()
+{
+	
+	UWriteData(Display_On);
+  e0:	88 e1       	ldi	r24, 0x18	; 24
+  e2:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(CMD);
+  e6:	8e ef       	ldi	r24, 0xFE	; 254
+  e8:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(Clear_Screen);
+  ec:	88 e5       	ldi	r24, 0x58	; 88
+  ee:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	
+	UWriteData(CMD);
+  f2:	8e ef       	ldi	r24, 0xFE	; 254
+  f4:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(New_Char); // Define custom character 2
+  f8:	8e e4       	ldi	r24, 0x4E	; 78
+  fa:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(Up_Arrow);
+  fe:	81 e0       	ldi	r24, 0x01	; 1
+ 100:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(0);// [0] ' 0 = %00000  		0 0 0 0 0
+ 104:	80 e0       	ldi	r24, 0x00	; 0
+ 106:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(4);// [4] ' 4 = %00100  		0 0 * 0 0
+ 10a:	84 e0       	ldi	r24, 0x04	; 4
+ 10c:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(14);// [14] ' 14 = %01110 	0 * * * 0
+ 110:	8e e0       	ldi	r24, 0x0E	; 14
+ 112:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(31);// [31] ' 31 = %11111 	* * * * *
+ 116:	8f e1       	ldi	r24, 0x1F	; 31
+ 118:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(4);// [4] ' 4 = %00100 		0 0 * 0 0
+ 11c:	84 e0       	ldi	r24, 0x04	; 4
+ 11e:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(4);// [4] ' 4 = %00100   	0 0 * 0 0
+ 122:	84 e0       	ldi	r24, 0x04	; 4
+ 124:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(4);// [4] ' 4 = %00100   	0 0 * 0 0 
+ 128:	84 e0       	ldi	r24, 0x04	; 4
+ 12a:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(0);// [0] ' 0 = %00000   	0 0 0 0 0 
+ 12e:	80 e0       	ldi	r24, 0x00	; 0
+ 130:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+
+	UWriteData(CMD);
+ 134:	8e ef       	ldi	r24, 0xFE	; 254
+ 136:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(New_Char); // Define custom character 2
+ 13a:	8e e4       	ldi	r24, 0x4E	; 78
+ 13c:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(Down_Arrow);
+ 140:	80 e0       	ldi	r24, 0x00	; 0
+ 142:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(0);// [0] ' 0 = %00000  		0 0 0 0 0
+ 146:	80 e0       	ldi	r24, 0x00	; 0
+ 148:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(4);// [4] ' 4 = %00100  		0 0 * 0 0
+ 14c:	84 e0       	ldi	r24, 0x04	; 4
+ 14e:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(4);// [4] ' 4 = %00100  		0 0 * 0 0
+ 152:	84 e0       	ldi	r24, 0x04	; 4
+ 154:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(4);// [4] ' 4 = %00100  		0 0 * 0 0
+ 158:	84 e0       	ldi	r24, 0x04	; 4
+ 15a:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(31);// [31] ' 31 = %11111 	* * * * *
+ 15e:	8f e1       	ldi	r24, 0x1F	; 31
+ 160:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(14);// [14] ' 14 = %01110 	0 * * * 0
+ 164:	8e e0       	ldi	r24, 0x0E	; 14
+ 166:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(4);// [4] ' 4 = %00100   	0 0 * 0 0 
+ 16a:	84 e0       	ldi	r24, 0x04	; 4
+ 16c:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+	UWriteData(0);// [0] ' 0 = %00000   	0 0 0 0 0
+ 170:	80 e0       	ldi	r24, 0x00	; 0
+ 172:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+
+}
+ 176:	08 95       	ret
+
+00000178 <main>:
+ 
+void InitADC()
+{
+ADMUX=(1<<REFS0);                         // For Aref=AVcc;
+ 178:	80 e4       	ldi	r24, 0x40	; 64
+ 17a:	87 b9       	out	0x07, r24	; 7
+ADCSRA=(1<<ADEN)|(1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0)|(1<<ADIE); //Rrescalar div factor =128
+ 17c:	8f e8       	ldi	r24, 0x8F	; 143
+ 17e:	86 b9       	out	0x06, r24	; 6
+sei();  //start interrupt
+ 180:	78 94       	sei
+   
+   //Initialize ADC
+   	InitADC();
+	
+	//Initialize the USART with Baud rate = 2400bps 
+	USARTInit(12);// 19200 4mhz 12 2400 4mhz 103 8mhz 207 9600 4mhz 25
+ 182:	8c e0       	ldi	r24, 0x0C	; 12
+ 184:	90 e0       	ldi	r25, 0x00	; 0
+ 186:	0e 94 7a 01 	call	0x2f4	; 0x2f4 <USARTInit>
+
+	//Enable Internal Pullups on PORTC
+	PORTC=0xFF;
+ 18a:	8f ef       	ldi	r24, 0xFF	; 255
+ 18c:	85 bb       	out	0x15, r24	; 21
+	
+	InitVFD();
+ 18e:	0e 94 70 00 	call	0xe0	; 0xe0 <InitVFD>
+
+	ADCSRA|=(1<<ADSC);
+ 192:	36 9a       	sbi	0x06, 6	; 6
+ 194:	40 e0       	ldi	r20, 0x00	; 0
+ 196:	50 e0       	ldi	r21, 0x00	; 0
+
+   while(1)
+   {
+		
+		ADCSRA|=(1<<ADSC); 
+ 198:	36 9a       	sbi	0x06, 6	; 6
+ 19a:	20 e0       	ldi	r18, 0x00	; 0
+ 19c:	ca 01       	movw	r24, r20
+ 19e:	01 97       	sbiw	r24, 0x01	; 1
+ 1a0:	f1 f7       	brne	.-4      	; 0x19e <main+0x26>
+}
+
+void Wait(uint8_t time)
+{
+   uint8_t i;
+   for(i=0;i<time;i++)
+ 1a2:	2f 5f       	subi	r18, 0xFF	; 255
+ 1a4:	2a 30       	cpi	r18, 0x0A	; 10
+ 1a6:	d1 f7       	brne	.-12     	; 0x19c <main+0x24>
+ 1a8:	f7 cf       	rjmp	.-18     	; 0x198 <main+0x20>
+
+000001aa <WriteString>:
+	}
+
+}
+
+void WriteString(unsigned char *strPointer)
+{   
+ 1aa:	cf 93       	push	r28
+ 1ac:	df 93       	push	r29
+ 1ae:	ec 01       	movw	r28, r24
+ 1b0:	03 c0       	rjmp	.+6      	; 0x1b8 <WriteString+0xe>
+   while (*strPointer)
+   {
+      UWriteData(*strPointer);
+ 1b2:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+      strPointer++;   
+ 1b6:	21 96       	adiw	r28, 0x01	; 1
+
+}
+
+void WriteString(unsigned char *strPointer)
+{   
+   while (*strPointer)
+ 1b8:	88 81       	ld	r24, Y
+ 1ba:	88 23       	and	r24, r24
+ 1bc:	d1 f7       	brne	.-12     	; 0x1b2 <WriteString+0x8>
+      UWriteData(*strPointer);
+      strPointer++;   
+   }
+   
+   return;
+} 
+ 1be:	df 91       	pop	r29
+ 1c0:	cf 91       	pop	r28
+ 1c2:	08 95       	ret
+
+000001c4 <__vector_16>:
+		//slider_value = 0x00;				// Start new cycle with LED off
+//	}
+}
+
+ISR(ADC_vect)
+{
+ 1c4:	1f 92       	push	r1
+ 1c6:	0f 92       	push	r0
+ 1c8:	0f b6       	in	r0, 0x3f	; 63
+ 1ca:	0f 92       	push	r0
+ 1cc:	11 24       	eor	r1, r1
+ 1ce:	2f 93       	push	r18
+ 1d0:	3f 93       	push	r19
+ 1d2:	4f 93       	push	r20
+ 1d4:	5f 93       	push	r21
+ 1d6:	6f 93       	push	r22
+ 1d8:	7f 93       	push	r23
+ 1da:	8f 93       	push	r24
+ 1dc:	9f 93       	push	r25
+ 1de:	af 93       	push	r26
+ 1e0:	bf 93       	push	r27
+ 1e2:	ef 93       	push	r30
+ 1e4:	ff 93       	push	r31
+	adc_result=ADC; 
+ 1e6:	84 b1       	in	r24, 0x04	; 4
+ 1e8:	95 b1       	in	r25, 0x05	; 5
+ 1ea:	90 93 7c 00 	sts	0x007C, r25
+ 1ee:	80 93 7b 00 	sts	0x007B, r24
+	if(abs(temp-adc_result) > 2)
+ 1f2:	40 91 76 00 	lds	r20, 0x0076
+ 1f6:	50 91 77 00 	lds	r21, 0x0077
+ 1fa:	9a 01       	movw	r18, r20
+ 1fc:	28 1b       	sub	r18, r24
+ 1fe:	39 0b       	sbc	r19, r25
+ 200:	37 ff       	sbrs	r19, 7
+ 202:	03 c0       	rjmp	.+6      	; 0x20a <__vector_16+0x46>
+ 204:	30 95       	com	r19
+ 206:	21 95       	neg	r18
+ 208:	3f 4f       	sbci	r19, 0xFF	; 255
+ 20a:	23 30       	cpi	r18, 0x03	; 3
+ 20c:	31 05       	cpc	r19, r1
+ 20e:	0c f4       	brge	.+2      	; 0x212 <__vector_16+0x4e>
+ 210:	5c c0       	rjmp	.+184    	; 0x2ca <__vector_16+0x106>
+	{
+		if(temp > adc_result)
+ 212:	84 17       	cp	r24, r20
+ 214:	95 07       	cpc	r25, r21
+ 216:	70 f5       	brcc	.+92     	; 0x274 <__vector_16+0xb0>
+		{
+			temp = adc_result;
+ 218:	90 93 77 00 	sts	0x0077, r25
+ 21c:	80 93 76 00 	sts	0x0076, r24
+			if(temp<1000)
+ 220:	88 5e       	subi	r24, 0xE8	; 232
+ 222:	93 40       	sbci	r25, 0x03	; 3
+ 224:	28 f4       	brcc	.+10     	; 0x230 <__vector_16+0x6c>
+			{
+				UWriteData(CMD);
+ 226:	8e ef       	ldi	r24, 0xFE	; 254
+ 228:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+				UWriteData(Clear_Screen);
+ 22c:	88 e5       	ldi	r24, 0x58	; 88
+ 22e:	04 c0       	rjmp	.+8      	; 0x238 <__vector_16+0x74>
+
+			}
+			else
+			{
+				UWriteData(CMD);
+ 230:	8e ef       	ldi	r24, 0xFE	; 254
+ 232:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+				UWriteData(Go_Home);
+ 236:	88 e4       	ldi	r24, 0x48	; 72
+ 238:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+			}
+			whole = adc_result;///204;
+ 23c:	80 91 7b 00 	lds	r24, 0x007B
+ 240:	90 91 7c 00 	lds	r25, 0x007C
+ 244:	90 93 7a 00 	sts	0x007A, r25
+ 248:	80 93 79 00 	sts	0x0079, r24
+			WriteString(Value);
+ 24c:	88 e6       	ldi	r24, 0x68	; 104
+ 24e:	90 e0       	ldi	r25, 0x00	; 0
+ 250:	0e 94 d5 00 	call	0x1aa	; 0x1aa <WriteString>
+			itoa(whole, message1, 10); 
+ 254:	80 91 79 00 	lds	r24, 0x0079
+ 258:	90 91 7a 00 	lds	r25, 0x007A
+ 25c:	68 e7       	ldi	r22, 0x78	; 120
+ 25e:	70 e0       	ldi	r23, 0x00	; 0
+ 260:	4a e0       	ldi	r20, 0x0A	; 10
+ 262:	50 e0       	ldi	r21, 0x00	; 0
+ 264:	0e 94 39 02 	call	0x472	; 0x472 <itoa>
+			WriteString(message1);
+ 268:	88 e7       	ldi	r24, 0x78	; 120
+ 26a:	90 e0       	ldi	r25, 0x00	; 0
+ 26c:	0e 94 d5 00 	call	0x1aa	; 0x1aa <WriteString>
+			UWriteData(Down_Arrow);// [2] ' Display the new custom character 1
+ 270:	80 e0       	ldi	r24, 0x00	; 0
+ 272:	28 c0       	rjmp	.+80     	; 0x2c4 <__vector_16+0x100>
+		}
+		else if(temp < adc_result)
+ 274:	48 17       	cp	r20, r24
+ 276:	59 07       	cpc	r21, r25
+ 278:	40 f5       	brcc	.+80     	; 0x2ca <__vector_16+0x106>
+		{
+			temp = adc_result;
+ 27a:	90 93 77 00 	sts	0x0077, r25
+ 27e:	80 93 76 00 	sts	0x0076, r24
+			UWriteData(CMD);
+ 282:	8e ef       	ldi	r24, 0xFE	; 254
+ 284:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+			UWriteData(Go_Home);
+ 288:	88 e4       	ldi	r24, 0x48	; 72
+ 28a:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+			whole = adc_result;///204;
+ 28e:	80 91 7b 00 	lds	r24, 0x007B
+ 292:	90 91 7c 00 	lds	r25, 0x007C
+ 296:	90 93 7a 00 	sts	0x007A, r25
+ 29a:	80 93 79 00 	sts	0x0079, r24
+			WriteString(Value);
+ 29e:	88 e6       	ldi	r24, 0x68	; 104
+ 2a0:	90 e0       	ldi	r25, 0x00	; 0
+ 2a2:	0e 94 d5 00 	call	0x1aa	; 0x1aa <WriteString>
+			itoa(whole, message1, 10); 
+ 2a6:	80 91 79 00 	lds	r24, 0x0079
+ 2aa:	90 91 7a 00 	lds	r25, 0x007A
+ 2ae:	68 e7       	ldi	r22, 0x78	; 120
+ 2b0:	70 e0       	ldi	r23, 0x00	; 0
+ 2b2:	4a e0       	ldi	r20, 0x0A	; 10
+ 2b4:	50 e0       	ldi	r21, 0x00	; 0
+ 2b6:	0e 94 39 02 	call	0x472	; 0x472 <itoa>
+			WriteString(message1);
+ 2ba:	88 e7       	ldi	r24, 0x78	; 120
+ 2bc:	90 e0       	ldi	r25, 0x00	; 0
+ 2be:	0e 94 d5 00 	call	0x1aa	; 0x1aa <WriteString>
+			UWriteData(Up_Arrow);// [2] ' Display the new custom character 1
+ 2c2:	81 e0       	ldi	r24, 0x01	; 1
+ 2c4:	0e 94 06 02 	call	0x40c	; 0x40c <UWriteData>
+ 2c8:	04 c0       	rjmp	.+8      	; 0x2d2 <__vector_16+0x10e>
+			temp = adc_result;
+		}
+	}
+	else
+	{
+		temp = adc_result;
+ 2ca:	90 93 77 00 	sts	0x0077, r25
+ 2ce:	80 93 76 00 	sts	0x0076, r24
+	}
+
+}
+ 2d2:	ff 91       	pop	r31
+ 2d4:	ef 91       	pop	r30
+ 2d6:	bf 91       	pop	r27
+ 2d8:	af 91       	pop	r26
+ 2da:	9f 91       	pop	r25
+ 2dc:	8f 91       	pop	r24
+ 2de:	7f 91       	pop	r23
+ 2e0:	6f 91       	pop	r22
+ 2e2:	5f 91       	pop	r21
+ 2e4:	4f 91       	pop	r20
+ 2e6:	3f 91       	pop	r19
+ 2e8:	2f 91       	pop	r18
+ 2ea:	0f 90       	pop	r0
+ 2ec:	0f be       	out	0x3f, r0	; 63
+ 2ee:	0f 90       	pop	r0
+ 2f0:	1f 90       	pop	r1
+ 2f2:	18 95       	reti
+
+000002f4 <USARTInit>:
+
+
+void USARTInit(uint16_t ubrrvalue)
+{
+	//Setup q
+	UQFront=UQEnd=-1;
+ 2f4:	2f ef       	ldi	r18, 0xFF	; 255
+ 2f6:	20 93 7f 00 	sts	0x007F, r18
+ 2fa:	20 91 7f 00 	lds	r18, 0x007F
+ 2fe:	20 93 7e 00 	sts	0x007E, r18
+
+	//Set Baud rate
+	UBRRH=(unsigned char)(ubrrvalue>>8);
+ 302:	90 bd       	out	0x20, r25	; 32
+	UBRRL=(unsigned char)ubrrvalue;
+ 304:	89 b9       	out	0x09, r24	; 9
+	1 StopBit
+	char size 8
+
+	*/
+
+	UCSRC=(1<<URSEL)|(3<<UCSZ0);
+ 306:	86 e8       	ldi	r24, 0x86	; 134
+ 308:	80 bd       	out	0x20, r24	; 32
+
+	Enable The recevier and transmitter
+
+	*/
+
+	UCSRB=(1<<RXCIE)|(1<<TXEN);
+ 30a:	88 e8       	ldi	r24, 0x88	; 136
+ 30c:	8a b9       	out	0x0a, r24	; 10
+	sei();
+ 30e:	78 94       	sei
+
+}
+ 310:	08 95       	ret
+
+00000312 <__vector_13>:
+
+//The USART ISR
+ISR(USART_RXC_VECT)
+{
+ 312:	1f 92       	push	r1
+ 314:	0f 92       	push	r0
+ 316:	0f b6       	in	r0, 0x3f	; 63
+ 318:	0f 92       	push	r0
+ 31a:	11 24       	eor	r1, r1
+ 31c:	2f 93       	push	r18
+ 31e:	3f 93       	push	r19
+ 320:	4f 93       	push	r20
+ 322:	8f 93       	push	r24
+ 324:	9f 93       	push	r25
+ 326:	ef 93       	push	r30
+ 328:	ff 93       	push	r31
+	//Read the data
+	char data=UDR;
+ 32a:	4c b1       	in	r20, 0x0c	; 12
+
+	//Now add it to q
+
+	if(((UQEnd==RECEIVE_BUFF_SIZE-1) && UQFront==0) || ((UQEnd+1)==UQFront))
+ 32c:	80 91 7f 00 	lds	r24, 0x007F
+ 330:	8f 33       	cpi	r24, 0x3F	; 63
+ 332:	21 f4       	brne	.+8      	; 0x33c <__vector_13+0x2a>
+ 334:	80 91 7e 00 	lds	r24, 0x007E
+ 338:	88 23       	and	r24, r24
+ 33a:	71 f0       	breq	.+28     	; 0x358 <__vector_13+0x46>
+ 33c:	80 91 7f 00 	lds	r24, 0x007F
+ 340:	20 91 7e 00 	lds	r18, 0x007E
+ 344:	99 27       	eor	r25, r25
+ 346:	87 fd       	sbrc	r24, 7
+ 348:	90 95       	com	r25
+ 34a:	01 96       	adiw	r24, 0x01	; 1
+ 34c:	33 27       	eor	r19, r19
+ 34e:	27 fd       	sbrc	r18, 7
+ 350:	30 95       	com	r19
+ 352:	82 17       	cp	r24, r18
+ 354:	93 07       	cpc	r25, r19
+ 356:	59 f4       	brne	.+22     	; 0x36e <__vector_13+0x5c>
+	{
+		//Q Full
+		UQFront++;
+ 358:	80 91 7e 00 	lds	r24, 0x007E
+ 35c:	8f 5f       	subi	r24, 0xFF	; 255
+ 35e:	80 93 7e 00 	sts	0x007E, r24
+		if(UQFront==RECEIVE_BUFF_SIZE) UQFront=0;
+ 362:	80 91 7e 00 	lds	r24, 0x007E
+ 366:	80 34       	cpi	r24, 0x40	; 64
+ 368:	11 f4       	brne	.+4      	; 0x36e <__vector_13+0x5c>
+ 36a:	10 92 7e 00 	sts	0x007E, r1
+	}
+	
+
+	if(UQEnd==RECEIVE_BUFF_SIZE-1)
+ 36e:	80 91 7f 00 	lds	r24, 0x007F
+ 372:	8f 33       	cpi	r24, 0x3F	; 63
+ 374:	19 f4       	brne	.+6      	; 0x37c <__vector_13+0x6a>
+		UQEnd=0;
+ 376:	10 92 7f 00 	sts	0x007F, r1
+ 37a:	05 c0       	rjmp	.+10     	; 0x386 <__vector_13+0x74>
+	else
+		UQEnd++;
+ 37c:	80 91 7f 00 	lds	r24, 0x007F
+ 380:	8f 5f       	subi	r24, 0xFF	; 255
+ 382:	80 93 7f 00 	sts	0x007F, r24
+
+
+	URBuff[UQEnd]=data;
+ 386:	e0 91 7f 00 	lds	r30, 0x007F
+ 38a:	ff 27       	eor	r31, r31
+ 38c:	e7 fd       	sbrc	r30, 7
+ 38e:	f0 95       	com	r31
+ 390:	e0 58       	subi	r30, 0x80	; 128
+ 392:	ff 4f       	sbci	r31, 0xFF	; 255
+ 394:	40 83       	st	Z, r20
+
+	if(UQFront==-1) UQFront=0;
+ 396:	80 91 7e 00 	lds	r24, 0x007E
+ 39a:	8f 3f       	cpi	r24, 0xFF	; 255
+ 39c:	11 f4       	brne	.+4      	; 0x3a2 <__vector_13+0x90>
+ 39e:	10 92 7e 00 	sts	0x007E, r1
+
+}
+ 3a2:	ff 91       	pop	r31
+ 3a4:	ef 91       	pop	r30
+ 3a6:	9f 91       	pop	r25
+ 3a8:	8f 91       	pop	r24
+ 3aa:	4f 91       	pop	r20
+ 3ac:	3f 91       	pop	r19
+ 3ae:	2f 91       	pop	r18
+ 3b0:	0f 90       	pop	r0
+ 3b2:	0f be       	out	0x3f, r0	; 63
+ 3b4:	0f 90       	pop	r0
+ 3b6:	1f 90       	pop	r1
+ 3b8:	18 95       	reti
+
+000003ba <UReadData>:
+char UReadData()
+{
+	char data;
+	
+	//Check if q is empty
+	if(UQFront==-1)
+ 3ba:	80 91 7e 00 	lds	r24, 0x007E
+ 3be:	8f 3f       	cpi	r24, 0xFF	; 255
+ 3c0:	11 f4       	brne	.+4      	; 0x3c6 <UReadData+0xc>
+ 3c2:	e0 e0       	ldi	r30, 0x00	; 0
+ 3c4:	21 c0       	rjmp	.+66     	; 0x408 <UReadData+0x4e>
+		return 0;
+	
+	data=URBuff[UQFront];
+ 3c6:	e0 91 7e 00 	lds	r30, 0x007E
+ 3ca:	ff 27       	eor	r31, r31
+ 3cc:	e7 fd       	sbrc	r30, 7
+ 3ce:	f0 95       	com	r31
+ 3d0:	e0 58       	subi	r30, 0x80	; 128
+ 3d2:	ff 4f       	sbci	r31, 0xFF	; 255
+ 3d4:	e0 81       	ld	r30, Z
+	
+	if(UQFront==UQEnd)
+ 3d6:	90 91 7e 00 	lds	r25, 0x007E
+ 3da:	80 91 7f 00 	lds	r24, 0x007F
+ 3de:	98 17       	cp	r25, r24
+ 3e0:	41 f4       	brne	.+16     	; 0x3f2 <UReadData+0x38>
+	{
+	//If single data is left
+	//So empty q
+	UQFront=UQEnd=-1;
+ 3e2:	8f ef       	ldi	r24, 0xFF	; 255
+ 3e4:	80 93 7f 00 	sts	0x007F, r24
+ 3e8:	80 91 7f 00 	lds	r24, 0x007F
+ 3ec:	80 93 7e 00 	sts	0x007E, r24
+ 3f0:	0b c0       	rjmp	.+22     	; 0x408 <UReadData+0x4e>
+	}
+	else
+	{
+		UQFront++;
+ 3f2:	80 91 7e 00 	lds	r24, 0x007E
+ 3f6:	8f 5f       	subi	r24, 0xFF	; 255
+ 3f8:	80 93 7e 00 	sts	0x007E, r24
+
+		if(UQFront==RECEIVE_BUFF_SIZE)
+ 3fc:	80 91 7e 00 	lds	r24, 0x007E
+ 400:	80 34       	cpi	r24, 0x40	; 64
+ 402:	11 f4       	brne	.+4      	; 0x408 <UReadData+0x4e>
+		UQFront=0;
+ 404:	10 92 7e 00 	sts	0x007E, r1
+	}
+
+	return data;
+}
+ 408:	8e 2f       	mov	r24, r30
+ 40a:	08 95       	ret
+
+0000040c <UWriteData>:
+
+void UWriteData(char data)
+{
+	//Wait For Transmitter to become ready
+	while(!(UCSRA & (1<<UDRE)));
+ 40c:	5d 9b       	sbis	0x0b, 5	; 11
+ 40e:	fe cf       	rjmp	.-4      	; 0x40c <UWriteData>
+
+	//Now write
+	UDR=data;
+ 410:	8c b9       	out	0x0c, r24	; 12
+}
+ 412:	08 95       	ret
+
+00000414 <UDataAvailable>:
+
+uint8_t UDataAvailable()
+{
+	if(UQFront==-1) return 0;
+ 414:	80 91 7e 00 	lds	r24, 0x007E
+ 418:	8f 3f       	cpi	r24, 0xFF	; 255
+ 41a:	11 f4       	brne	.+4      	; 0x420 <UDataAvailable+0xc>
+ 41c:	90 e0       	ldi	r25, 0x00	; 0
+ 41e:	1a c0       	rjmp	.+52     	; 0x454 <UDataAvailable+0x40>
+	if(UQFront<UQEnd)
+ 420:	90 91 7e 00 	lds	r25, 0x007E
+ 424:	80 91 7f 00 	lds	r24, 0x007F
+ 428:	98 17       	cp	r25, r24
+ 42a:	34 f4       	brge	.+12     	; 0x438 <UDataAvailable+0x24>
+		return(UQEnd-UQFront+1);
+ 42c:	90 91 7f 00 	lds	r25, 0x007F
+ 430:	80 91 7e 00 	lds	r24, 0x007E
+ 434:	9f 5f       	subi	r25, 0xFF	; 255
+ 436:	0d c0       	rjmp	.+26     	; 0x452 <UDataAvailable+0x3e>
+	else if(UQFront>UQEnd)
+ 438:	90 91 7e 00 	lds	r25, 0x007E
+ 43c:	80 91 7f 00 	lds	r24, 0x007F
+ 440:	89 17       	cp	r24, r25
+ 442:	14 f0       	brlt	.+4      	; 0x448 <UDataAvailable+0x34>
+ 444:	91 e0       	ldi	r25, 0x01	; 1
+ 446:	06 c0       	rjmp	.+12     	; 0x454 <UDataAvailable+0x40>
+		return (RECEIVE_BUFF_SIZE-UQFront+UQEnd+1);
+ 448:	90 91 7f 00 	lds	r25, 0x007F
+ 44c:	80 91 7e 00 	lds	r24, 0x007E
+ 450:	9f 5b       	subi	r25, 0xBF	; 191
+ 452:	98 1b       	sub	r25, r24
+	else
+		return 1;
+}
+ 454:	89 2f       	mov	r24, r25
+ 456:	08 95       	ret
+
+00000458 <UWriteString>:
+
+void UWriteString(char *str)
+{
+ 458:	fc 01       	movw	r30, r24
+ 45a:	04 c0       	rjmp	.+8      	; 0x464 <UWriteString+0xc>
+}
+
+void UWriteData(char data)
+{
+	//Wait For Transmitter to become ready
+	while(!(UCSRA & (1<<UDRE)));
+ 45c:	5d 9b       	sbis	0x0b, 5	; 11
+ 45e:	fe cf       	rjmp	.-4      	; 0x45c <UWriteString+0x4>
+
+	//Now write
+	UDR=data;
+ 460:	8c b9       	out	0x0c, r24	; 12
+void UWriteString(char *str)
+{
+	while((*str)!='\0')
+	{
+		UWriteData(*str);
+		str++;
+ 462:	31 96       	adiw	r30, 0x01	; 1
+		return 1;
+}
+
+void UWriteString(char *str)
+{
+	while((*str)!='\0')
+ 464:	80 81       	ld	r24, Z
+ 466:	88 23       	and	r24, r24
+ 468:	c9 f7       	brne	.-14     	; 0x45c <UWriteString+0x4>
+}
+
+void UWriteData(char data)
+{
+	//Wait For Transmitter to become ready
+	while(!(UCSRA & (1<<UDRE)));
+ 46a:	5d 9b       	sbis	0x0b, 5	; 11
+ 46c:	fe cf       	rjmp	.-4      	; 0x46a <UWriteString+0x12>
+
+	//Now write
+	UDR=data;
+ 46e:	1c b8       	out	0x0c, r1	; 12
+		UWriteData(*str);
+		str++;
+	}
+
+	UWriteData('\0');
+}
+ 470:	08 95       	ret
+
+00000472 <itoa>:
+ 472:	fb 01       	movw	r30, r22
+ 474:	9f 01       	movw	r18, r30
+ 476:	e8 94       	clt
+ 478:	42 30       	cpi	r20, 0x02	; 2
+ 47a:	c4 f0       	brlt	.+48     	; 0x4ac <itoa+0x3a>
+ 47c:	45 32       	cpi	r20, 0x25	; 37
+ 47e:	b4 f4       	brge	.+44     	; 0x4ac <itoa+0x3a>
+ 480:	4a 30       	cpi	r20, 0x0A	; 10
+ 482:	29 f4       	brne	.+10     	; 0x48e <itoa+0x1c>
+ 484:	97 fb       	bst	r25, 7
+ 486:	1e f4       	brtc	.+6      	; 0x48e <itoa+0x1c>
+ 488:	90 95       	com	r25
+ 48a:	81 95       	neg	r24
+ 48c:	9f 4f       	sbci	r25, 0xFF	; 255
+ 48e:	64 2f       	mov	r22, r20
+ 490:	77 27       	eor	r23, r23
+ 492:	0e 94 6a 02 	call	0x4d4	; 0x4d4 <__udivmodhi4>
+ 496:	80 5d       	subi	r24, 0xD0	; 208
+ 498:	8a 33       	cpi	r24, 0x3A	; 58
+ 49a:	0c f0       	brlt	.+2      	; 0x49e <itoa+0x2c>
+ 49c:	89 5d       	subi	r24, 0xD9	; 217
+ 49e:	81 93       	st	Z+, r24
+ 4a0:	cb 01       	movw	r24, r22
+ 4a2:	00 97       	sbiw	r24, 0x00	; 0
+ 4a4:	a1 f7       	brne	.-24     	; 0x48e <itoa+0x1c>
+ 4a6:	16 f4       	brtc	.+4      	; 0x4ac <itoa+0x3a>
+ 4a8:	5d e2       	ldi	r21, 0x2D	; 45
+ 4aa:	51 93       	st	Z+, r21
+ 4ac:	10 82       	st	Z, r1
+ 4ae:	c9 01       	movw	r24, r18
+ 4b0:	0c 94 5a 02 	jmp	0x4b4	; 0x4b4 <strrev>
+
+000004b4 <strrev>:
+ 4b4:	dc 01       	movw	r26, r24
+ 4b6:	fc 01       	movw	r30, r24
+ 4b8:	67 2f       	mov	r22, r23
+ 4ba:	71 91       	ld	r23, Z+
+ 4bc:	77 23       	and	r23, r23
+ 4be:	e1 f7       	brne	.-8      	; 0x4b8 <strrev+0x4>
+ 4c0:	32 97       	sbiw	r30, 0x02	; 2
+ 4c2:	04 c0       	rjmp	.+8      	; 0x4cc <strrev+0x18>
+ 4c4:	7c 91       	ld	r23, X
+ 4c6:	6d 93       	st	X+, r22
+ 4c8:	70 83       	st	Z, r23
+ 4ca:	62 91       	ld	r22, -Z
+ 4cc:	ae 17       	cp	r26, r30
+ 4ce:	bf 07       	cpc	r27, r31
+ 4d0:	c8 f3       	brcs	.-14     	; 0x4c4 <strrev+0x10>
+ 4d2:	08 95       	ret
+
+000004d4 <__udivmodhi4>:
+ 4d4:	aa 1b       	sub	r26, r26
+ 4d6:	bb 1b       	sub	r27, r27
+ 4d8:	51 e1       	ldi	r21, 0x11	; 17
+ 4da:	07 c0       	rjmp	.+14     	; 0x4ea <__udivmodhi4_ep>
+
+000004dc <__udivmodhi4_loop>:
+ 4dc:	aa 1f       	adc	r26, r26
+ 4de:	bb 1f       	adc	r27, r27
+ 4e0:	a6 17       	cp	r26, r22
+ 4e2:	b7 07       	cpc	r27, r23
+ 4e4:	10 f0       	brcs	.+4      	; 0x4ea <__udivmodhi4_ep>
+ 4e6:	a6 1b       	sub	r26, r22
+ 4e8:	b7 0b       	sbc	r27, r23
+
+000004ea <__udivmodhi4_ep>:
+ 4ea:	88 1f       	adc	r24, r24
+ 4ec:	99 1f       	adc	r25, r25
+ 4ee:	5a 95       	dec	r21
+ 4f0:	a9 f7       	brne	.-22     	; 0x4dc <__udivmodhi4_loop>
+ 4f2:	80 95       	com	r24
+ 4f4:	90 95       	com	r25
+ 4f6:	bc 01       	movw	r22, r24
+ 4f8:	cd 01       	movw	r24, r26
+ 4fa:	08 95       	ret
+
+000004fc <_exit>:
+ 4fc:	f8 94       	cli
+
+000004fe <__stop_program>:
+ 4fe:	ff cf       	rjmp	.-2      	; 0x4fe <__stop_program>

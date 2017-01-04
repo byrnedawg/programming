@@ -1,0 +1,507 @@
+Archive member included because of file (symbol)
+
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o (exit)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_clear_bss.o)
+                              Touchscreen_Number_Pad.o (__do_clear_bss)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libc.a(itoa.o)
+                              Touchscreen_Number_Pad.o (itoa)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libc.a(strrev.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libc.a(itoa.o) (strrev)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_udivmodhi4.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libc.a(itoa.o) (__udivmodhi4)
+
+Allocating common symbols
+Common symbol       size              file
+
+packet              0x4               Touchscreen_Number_Pad.o
+current_cursor_x    0x1               Touchscreen_Number_Pad.o
+message1            0x1               Touchscreen_Number_Pad.o
+p_data              0x1               Touchscreen_Number_Pad.o
+whole               0x2               Touchscreen_Number_Pad.o
+adc_result          0x2               Touchscreen_Number_Pad.o
+i                   0x1               Touchscreen_Number_Pad.o
+message2            0x1               Touchscreen_Number_Pad.o
+UQFront             0x1               Touchscreen_Number_Pad.o
+data                0x1               Touchscreen_Number_Pad.o
+UQEnd               0x1               Touchscreen_Number_Pad.o
+URBuff              0x40              Touchscreen_Number_Pad.o
+current_cursor_y    0x1               Touchscreen_Number_Pad.o
+count               0x1               Touchscreen_Number_Pad.o
+message3            0x1               Touchscreen_Number_Pad.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00100000         xr
+data             0x00800200         0x0000fe00         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800200
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+LOAD Touchscreen_Number_Pad.o
+LOAD USART.o
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x1106
+ *(.vectors)
+ .vectors       0x00000000       0xe4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x000000e4                . = ALIGN (0x2)
+                0x000000e4                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x000000e4        0x0 linker stubs
+ *(.trampolines*)
+                0x000000e4                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x000000e4                __ctors_start = .
+ *(.ctors)
+                0x000000e4                __ctors_end = .
+                0x000000e4                __dtors_start = .
+ *(.dtors)
+                0x000000e4                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x000000e4        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+                0x000000e4                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x000000e4       0x10 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x000000f4       0x1a c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+                0x000000f4                __do_copy_data
+ .init4         0x0000010e       0x10 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_clear_bss.o)
+                0x0000010e                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x0000011e        0x8 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+ *(.init9)
+ *(.text)
+ .text          0x00000126        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+                0x00000126                __vector_38
+                0x00000126                __vector_22
+                0x00000126                __vector_28
+                0x00000126                __vector_32
+                0x00000126                __vector_34
+                0x00000126                __vector_24
+                0x00000126                __vector_12
+                0x00000126                __vector_55
+                0x00000126                __vector_46
+                0x00000126                __bad_interrupt
+                0x00000126                __vector_6
+                0x00000126                __vector_31
+                0x00000126                __vector_35
+                0x00000126                __vector_39
+                0x00000126                __vector_3
+                0x00000126                __vector_30
+                0x00000126                __vector_45
+                0x00000126                __vector_11
+                0x00000126                __vector_54
+                0x00000126                __vector_13
+                0x00000126                __vector_17
+                0x00000126                __vector_19
+                0x00000126                __vector_56
+                0x00000126                __vector_7
+                0x00000126                __vector_49
+                0x00000126                __vector_41
+                0x00000126                __vector_43
+                0x00000126                __vector_27
+                0x00000126                __vector_5
+                0x00000126                __vector_33
+                0x00000126                __vector_47
+                0x00000126                __vector_52
+                0x00000126                __vector_37
+                0x00000126                __vector_4
+                0x00000126                __vector_44
+                0x00000126                __vector_51
+                0x00000126                __vector_9
+                0x00000126                __vector_2
+                0x00000126                __vector_21
+                0x00000126                __vector_15
+                0x00000126                __vector_36
+                0x00000126                __vector_40
+                0x00000126                __vector_8
+                0x00000126                __vector_26
+                0x00000126                __vector_48
+                0x00000126                __vector_14
+                0x00000126                __vector_53
+                0x00000126                __vector_10
+                0x00000126                __vector_50
+                0x00000126                __vector_16
+                0x00000126                __vector_18
+                0x00000126                __vector_20
+                0x00000126                __vector_42
+ .text          0x0000012a      0xd7a Touchscreen_Number_Pad.o
+                0x000001e2                __vector_1
+                0x000003a6                InitDisplay
+                0x00000242                Touch_Calibration
+                0x00000390                Choose_Color
+                0x0000035a                Cursor_Pos
+                0x000005ae                Button_Feedback
+                0x00000172                InitADC
+                0x000001ce                RESET_vect
+                0x00000210                Write_Blank
+                0x00000506                Draw_Line_At
+                0x000003ec                __vector_23
+                0x00000698                Draw_Solid_Rect
+                0x0000037a                Choose_Font
+                0x0000075a                Draw_Touch_Region
+                0x00000184                Wait
+                0x0000019a                ReadADC
+                0x000006e4                Set_Touch_Region
+                0x00000904                Draw_Pad
+                0x00000540                Continue_Line_To
+                0x00000b94                main
+                0x00000744                Set_Touch_Mode
+                0x000001f6                WriteString
+                0x00000562                Draw_Rect_At
+                0x00000276                __vector_29
+                0x0000024c                Delete_All_Regions
+                0x0000022e                Command_Display
+                0x0000012a                InitTimer
+                0x000003ca                Draw_Pixel_At
+                0x00000256                Cursor_Coordinate
+ .text          0x00000ea4      0x1d4 USART.o
+                0x00000eca                __vector_25
+                0x00000ea4                USARTInit
+                0x00000fee                UDataAvailable
+                0x00000f7c                UReadData
+                0x00001032                UWriteString
+                0x00000fce                UWriteData
+ .text          0x00001078        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
+ .text          0x00001078        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_clear_bss.o)
+ .text          0x00001078        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libc.a(itoa.o)
+ .text          0x00001078        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libc.a(strrev.o)
+ .text          0x00001078        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_udivmodhi4.o)
+                0x00001078                . = ALIGN (0x2)
+ *(.text.*)
+ .text.libgcc   0x00001078        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
+ .text.libgcc   0x00001078        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_clear_bss.o)
+ .text.avr-libc
+                0x00001078       0x42 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libc.a(itoa.o)
+                0x00001078                itoa
+ .text.avr-libc
+                0x000010ba       0x20 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libc.a(strrev.o)
+                0x000010ba                strrev
+ .text.libgcc   0x000010da       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_udivmodhi4.o)
+                0x000010da                __udivmodhi4
+                0x00001102                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00001102        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
+                0x00001102                exit
+                0x00001102                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00001102        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00001106                _etext = .
+
+.data           0x00800200       0x76 load address 0x00001106
+                0x00800200                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800200        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+ .data          0x00800200       0x75 Touchscreen_Number_Pad.o
+                0x0080022f                Value
+                0x0080026e                Empty
+                0x00800236                Packet
+                0x0080025c                Screen_Touched
+                0x0080020a                Status
+                0x00800200                Wulf
+                0x00800240                Button_Down
+                0x00800270                EL
+                0x00800274                color
+                0x0080024f                Button_Up
+ .data          0x00800275        0x0 USART.o
+ .data          0x00800275        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
+ .data          0x00800275        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_clear_bss.o)
+ .data          0x00800275        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libc.a(itoa.o)
+ .data          0x00800275        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libc.a(strrev.o)
+ .data          0x00800275        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_udivmodhi4.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x00800276                . = ALIGN (0x2)
+ *fill*         0x00800275        0x1 00
+                0x00800276                _edata = .
+                0x00800276                PROVIDE (__data_end, .)
+
+.bss            0x00800276       0x57
+                0x00800276                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x00800276        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+ .bss           0x00800276        0x4 Touchscreen_Number_Pad.o
+                0x00800279                draw_y
+                0x00800276                temp
+                0x00800278                draw_x
+ .bss           0x0080027a        0x0 USART.o
+ .bss           0x0080027a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
+ .bss           0x0080027a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_clear_bss.o)
+ .bss           0x0080027a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libc.a(itoa.o)
+ .bss           0x0080027a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libc.a(strrev.o)
+ .bss           0x0080027a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_udivmodhi4.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x0080027a       0x53 Touchscreen_Number_Pad.o
+                0x0080027a                packet
+                0x0080027e                current_cursor_x
+                0x0080027f                message1
+                0x00800280                p_data
+                0x00800281                whole
+                0x00800283                adc_result
+                0x00800285                i
+                0x00800286                message2
+                0x00800287                UQFront
+                0x00800288                data
+                0x00800289                UQEnd
+                0x0080028a                URBuff
+                0x008002ca                current_cursor_y
+                0x008002cb                count
+                0x008002cc                message3
+                0x008002cd                PROVIDE (__bss_end, .)
+                0x00001106                __data_load_start = LOADADDR (.data)
+                0x0000117c                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x008002cd        0x0
+                0x008002cd                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x008002cd                PROVIDE (__noinit_end, .)
+                0x008002cd                _end = .
+                0x008002cd                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0x40
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 Touchscreen_Number_Pad.o
+ .debug_aranges
+                0x00000020       0x20 USART.o
+
+.debug_pubnames
+                0x00000000      0x3db
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000      0x349 Touchscreen_Number_Pad.o
+ .debug_pubnames
+                0x00000349       0x92 USART.o
+
+.debug_info     0x00000000      0xbcc
+ *(.debug_info)
+ .debug_info    0x00000000      0x9cd Touchscreen_Number_Pad.o
+ .debug_info    0x000009cd      0x1ff USART.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0x337
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x1f5 Touchscreen_Number_Pad.o
+ .debug_abbrev  0x000001f5      0x142 USART.o
+
+.debug_line     0x00000000      0xdcb
+ *(.debug_line)
+ .debug_line    0x00000000      0xbbf Touchscreen_Number_Pad.o
+ .debug_line    0x00000bbf      0x20c USART.o
+
+.debug_frame    0x00000000      0x250
+ *(.debug_frame)
+ .debug_frame   0x00000000      0x1e0 Touchscreen_Number_Pad.o
+ .debug_frame   0x000001e0       0x70 USART.o
+
+.debug_str      0x00000000      0x3cf
+ *(.debug_str)
+ .debug_str     0x00000000      0x373 Touchscreen_Number_Pad.o
+                                0x3ca (size before relaxing)
+ .debug_str     0x00000373       0x5c USART.o
+                                0x16c (size before relaxing)
+
+.debug_loc      0x00000000      0x558
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x4c9 Touchscreen_Number_Pad.o
+ .debug_loc     0x000004c9       0x8f USART.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(Touchscreen_Number_Pad.elf elf32-avr)
+LOAD linker stubs

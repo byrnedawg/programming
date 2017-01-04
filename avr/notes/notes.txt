@@ -1,0 +1,22 @@
+// How to install on linux
+
+
+
+sudo apt-get update
+sudo apt-get upgrade all
+
+//Then install the required packages.
+
+sudo apt-get install gcc-avr binutils-avr avr-libc
+
+//You can also install gdb-avr is you like. It is useful for in-system debugging/emulation.
+
+sudo apt-get install gdb-avr
+
+//Once done, type avr- in the terminal and press tab twice (do not hit enter). You should be able to see all the tools installed for you.
+
+to compile
+
+avr-gcc -g -Os -mmcu=atmega32 -c led.c
+avr-gcc -g -mmcu=atmega32 -o led.elf led.o
+avr-objcopy -j .text -j .data -O ihex led.elf led.hex

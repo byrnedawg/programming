@@ -1,0 +1,39 @@
+Read in a file hw5a.txt containing some commands at the beginning, and possible data afterward.
+
+ 
+
+Here is an example:
+
+PRINT RANDOM 10 100
+PRINT RANDOM 5 8
+PRINT INPUT 10
+10 9 8 7 6 5 4 3 2 1
+BENCHMARK RANDOM 10 100
+BENCHMARK RANDOM 100 1000000000
+BENCHMARK RANDOM 1000 1000000000
+
+ 
+
+
+The first word on each line will be either PRINT or BENCHMARK.
+
+If the word PRINT, then print the array before and after sorting.
+
+If the word BENCHMARK, then print the time it takes to sort the array.
+
+n is the size of the array to be sorted.   For random, max is the maximum integer.
+
+RANDOM n max
+
+means generate n random integers from 0 to max-1
+
+
+INPUT n
+
+will read n numbers from the file.  Now look at the comments to the right of each line
+
+PRINT RANDOM 10 100    # print out 10 random numbers before and after sorting
+PRINT RANDOM 5 8          # print out 5 random numbers before and after sorting
+PRINT INPUT 10                # read in 10 numbers and print before and after sorting 
+10 9 8 7 6 5 4 3 2 1
+BENCHMARK RANDOM 10 100      # do the sort and print how much time it took

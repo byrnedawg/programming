@@ -1,0 +1,116 @@
+
+NewWay.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000006c  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .stab         000006cc  00000000  00000000  000000c0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  2 .stabstr      00000085  00000000  00000000  0000078c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_aranges 00000020  00000000  00000000  00000811  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 0000001b  00000000  00000000  00000831  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000196  00000000  00000000  0000084c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000106  00000000  00000000  000009e2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000195  00000000  00000000  00000ae8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000020  00000000  00000000  00000c80  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000011d  00000000  00000000  00000ca0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_pubtypes 00000038  00000000  00000000  00000dbd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	19 c0       	rjmp	.+50     	; 0x36 <__bad_interrupt>
+   4:	18 c0       	rjmp	.+48     	; 0x36 <__bad_interrupt>
+   6:	17 c0       	rjmp	.+46     	; 0x36 <__bad_interrupt>
+   8:	16 c0       	rjmp	.+44     	; 0x36 <__bad_interrupt>
+   a:	15 c0       	rjmp	.+42     	; 0x36 <__bad_interrupt>
+   c:	14 c0       	rjmp	.+40     	; 0x36 <__bad_interrupt>
+   e:	13 c0       	rjmp	.+38     	; 0x36 <__bad_interrupt>
+  10:	12 c0       	rjmp	.+36     	; 0x36 <__bad_interrupt>
+  12:	11 c0       	rjmp	.+34     	; 0x36 <__bad_interrupt>
+  14:	10 c0       	rjmp	.+32     	; 0x36 <__bad_interrupt>
+  16:	0f c0       	rjmp	.+30     	; 0x36 <__bad_interrupt>
+  18:	0e c0       	rjmp	.+28     	; 0x36 <__bad_interrupt>
+  1a:	0d c0       	rjmp	.+26     	; 0x36 <__bad_interrupt>
+  1c:	0c c0       	rjmp	.+24     	; 0x36 <__bad_interrupt>
+  1e:	0b c0       	rjmp	.+22     	; 0x36 <__bad_interrupt>
+  20:	0a c0       	rjmp	.+20     	; 0x36 <__bad_interrupt>
+  22:	09 c0       	rjmp	.+18     	; 0x36 <__bad_interrupt>
+  24:	08 c0       	rjmp	.+16     	; 0x36 <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf e5       	ldi	r28, 0x5F	; 95
+  2c:	d4 e0       	ldi	r29, 0x04	; 4
+  2e:	de bf       	out	0x3e, r29	; 62
+  30:	cd bf       	out	0x3d, r28	; 61
+  32:	02 d0       	rcall	.+4      	; 0x38 <main>
+  34:	19 c0       	rjmp	.+50     	; 0x68 <_exit>
+
+00000036 <__bad_interrupt>:
+  36:	e4 cf       	rjmp	.-56     	; 0x0 <__vectors>
+
+00000038 <main>:
+}
+*/
+int main(void)
+{
+	//DDRB = 0xff;
+	UCSRC=(1<<URSEL)|(3<<UCSZ0);
+  38:	86 e8       	ldi	r24, 0x86	; 134
+  3a:	80 bd       	out	0x20, r24	; 32
+	set_output(DDRB, LED);
+  3c:	b9 9a       	sbi	0x17, 1	; 23
+    while(1)
+    {
+        //PORTB |= 0x02;
+		output_high(PORTB, LED);
+  3e:	c1 9a       	sbi	0x18, 1	; 24
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  40:	8f ef       	ldi	r24, 0xFF	; 255
+  42:	93 ed       	ldi	r25, 0xD3	; 211
+  44:	a0 e3       	ldi	r26, 0x30	; 48
+  46:	81 50       	subi	r24, 0x01	; 1
+  48:	90 40       	sbci	r25, 0x00	; 0
+  4a:	a0 40       	sbci	r26, 0x00	; 0
+  4c:	e1 f7       	brne	.-8      	; 0x46 <__SREG__+0x7>
+  4e:	00 c0       	rjmp	.+0      	; 0x50 <__SREG__+0x11>
+  50:	00 00       	nop
+		_delay_ms(2000);
+		
+		//PORTB &= ~0x02;
+		output_low(PORTB, LED);
+  52:	c1 98       	cbi	0x18, 1	; 24
+  54:	8f ef       	ldi	r24, 0xFF	; 255
+  56:	93 ed       	ldi	r25, 0xD3	; 211
+  58:	a0 e3       	ldi	r26, 0x30	; 48
+  5a:	81 50       	subi	r24, 0x01	; 1
+  5c:	90 40       	sbci	r25, 0x00	; 0
+  5e:	a0 40       	sbci	r26, 0x00	; 0
+  60:	e1 f7       	brne	.-8      	; 0x5a <__SREG__+0x1b>
+  62:	00 c0       	rjmp	.+0      	; 0x64 <__SREG__+0x25>
+  64:	00 00       	nop
+  66:	eb cf       	rjmp	.-42     	; 0x3e <__SP_H__>
+
+00000068 <_exit>:
+  68:	f8 94       	cli
+
+0000006a <__stop_program>:
+  6a:	ff cf       	rjmp	.-2      	; 0x6a <__stop_program>

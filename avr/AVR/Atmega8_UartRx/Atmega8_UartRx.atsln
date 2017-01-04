@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Atmega8_UartRx", "Atmega8_UartRx\Atmega8_UartRx.cproj", "{A6D9F741-4499-416A-B6E8-4C14E6EED8A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6D9F741-4499-416A-B6E8-4C14E6EED8A9}.Debug|AVR.ActiveCfg = Debug|AVR
+		{A6D9F741-4499-416A-B6E8-4C14E6EED8A9}.Debug|AVR.Build.0 = Debug|AVR
+		{A6D9F741-4499-416A-B6E8-4C14E6EED8A9}.Release|AVR.ActiveCfg = Release|AVR
+		{A6D9F741-4499-416A-B6E8-4C14E6EED8A9}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

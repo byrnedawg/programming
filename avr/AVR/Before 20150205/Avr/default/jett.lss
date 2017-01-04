@@ -1,0 +1,540 @@
+
+jett.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000002  00800200  0000038a  0000041e  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000038a  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000000a  00800202  00800202  00000420  2**0
+                  ALLOC
+  3 .debug_aranges 00000020  00000000  00000000  00000420  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 000000f3  00000000  00000000  00000440  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000001fc  00000000  00000000  00000533  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000000c4  00000000  00000000  0000072f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000002b0  00000000  00000000  000007f3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000090  00000000  00000000  00000aa4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000110  00000000  00000000  00000b34  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 72 00 	jmp	0xe4	; 0xe4 <__ctors_end>
+   4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+   8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+   c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  10:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  14:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  18:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  1c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  20:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  24:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  28:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  2c:	0c 94 bc 00 	jmp	0x178	; 0x178 <__vector_11>
+  30:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  34:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  38:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  3c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  40:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  44:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  48:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  4c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  50:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  54:	0c 94 a9 00 	jmp	0x152	; 0x152 <__vector_21>
+  58:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  5c:	0c 94 95 00 	jmp	0x12a	; 0x12a <__vector_23>
+  60:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  64:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  68:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  6c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  70:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  74:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  78:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  7c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  80:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  84:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  88:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  8c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  90:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  94:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  98:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  9c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  a0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  a4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  a8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  ac:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  b0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  b4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  b8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  bc:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  c0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  c4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  c8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  cc:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  d0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  d4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  d8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  dc:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+  e0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+
+000000e4 <__ctors_end>:
+  e4:	11 24       	eor	r1, r1
+  e6:	1f be       	out	0x3f, r1	; 63
+  e8:	cf ef       	ldi	r28, 0xFF	; 255
+  ea:	d1 e2       	ldi	r29, 0x21	; 33
+  ec:	de bf       	out	0x3e, r29	; 62
+  ee:	cd bf       	out	0x3d, r28	; 61
+  f0:	00 e0       	ldi	r16, 0x00	; 0
+  f2:	0c bf       	out	0x3c, r16	; 60
+
+000000f4 <__do_copy_data>:
+  f4:	12 e0       	ldi	r17, 0x02	; 2
+  f6:	a0 e0       	ldi	r26, 0x00	; 0
+  f8:	b2 e0       	ldi	r27, 0x02	; 2
+  fa:	ea e8       	ldi	r30, 0x8A	; 138
+  fc:	f3 e0       	ldi	r31, 0x03	; 3
+  fe:	00 e0       	ldi	r16, 0x00	; 0
+ 100:	0b bf       	out	0x3b, r16	; 59
+ 102:	02 c0       	rjmp	.+4      	; 0x108 <__do_copy_data+0x14>
+ 104:	07 90       	elpm	r0, Z+
+ 106:	0d 92       	st	X+, r0
+ 108:	a2 30       	cpi	r26, 0x02	; 2
+ 10a:	b1 07       	cpc	r27, r17
+ 10c:	d9 f7       	brne	.-10     	; 0x104 <__do_copy_data+0x10>
+
+0000010e <__do_clear_bss>:
+ 10e:	12 e0       	ldi	r17, 0x02	; 2
+ 110:	a2 e0       	ldi	r26, 0x02	; 2
+ 112:	b2 e0       	ldi	r27, 0x02	; 2
+ 114:	01 c0       	rjmp	.+2      	; 0x118 <.do_clear_bss_start>
+
+00000116 <.do_clear_bss_loop>:
+ 116:	1d 92       	st	X+, r1
+
+00000118 <.do_clear_bss_start>:
+ 118:	ac 30       	cpi	r26, 0x0C	; 12
+ 11a:	b1 07       	cpc	r27, r17
+ 11c:	e1 f7       	brne	.-8      	; 0x116 <.do_clear_bss_loop>
+ 11e:	0e 94 4b 01 	call	0x296	; 0x296 <main>
+ 122:	0c 94 c3 01 	jmp	0x386	; 0x386 <_exit>
+
+00000126 <__bad_interrupt>:
+ 126:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000012a <__vector_23>:
+
+volatile unsigned long i;
+
+
+ISR(TIMER0_OVF_vect)
+{
+ 12a:	1f 92       	push	r1
+ 12c:	0f 92       	push	r0
+ 12e:	0f b6       	in	r0, 0x3f	; 63
+ 130:	0f 92       	push	r0
+ 132:	11 24       	eor	r1, r1
+ 134:	8f 93       	push	r24
+ 136:	9f 93       	push	r25
+      PORTC RESET LED_mask;  				// Turn on
+ 138:	98 b1       	in	r25, 0x08	; 8
+ 13a:	80 91 00 02 	lds	r24, 0x0200
+ 13e:	80 95       	com	r24
+ 140:	89 23       	and	r24, r25
+ 142:	88 b9       	out	0x08, r24	; 8
+
+}
+ 144:	9f 91       	pop	r25
+ 146:	8f 91       	pop	r24
+ 148:	0f 90       	pop	r0
+ 14a:	0f be       	out	0x3f, r0	; 63
+ 14c:	0f 90       	pop	r0
+ 14e:	1f 90       	pop	r1
+ 150:	18 95       	reti
+
+00000152 <__vector_21>:
+
+ISR(TIMER0_COMPA_vect)
+{
+ 152:	1f 92       	push	r1
+ 154:	0f 92       	push	r0
+ 156:	0f b6       	in	r0, 0x3f	; 63
+ 158:	0f 92       	push	r0
+ 15a:	11 24       	eor	r1, r1
+ 15c:	8f 93       	push	r24
+ 15e:	9f 93       	push	r25
+      PORTC SET LED_mask;   				// Turn off
+ 160:	98 b1       	in	r25, 0x08	; 8
+ 162:	80 91 00 02 	lds	r24, 0x0200
+ 166:	89 2b       	or	r24, r25
+ 168:	88 b9       	out	0x08, r24	; 8
+}
+ 16a:	9f 91       	pop	r25
+ 16c:	8f 91       	pop	r24
+ 16e:	0f 90       	pop	r0
+ 170:	0f be       	out	0x3f, r0	; 63
+ 172:	0f 90       	pop	r0
+ 174:	1f 90       	pop	r1
+ 176:	18 95       	reti
+
+00000178 <__vector_11>:
+
+ISR(PCINT2_vect)
+{
+ 178:	1f 92       	push	r1
+ 17a:	0f 92       	push	r0
+ 17c:	0f b6       	in	r0, 0x3f	; 63
+ 17e:	0f 92       	push	r0
+ 180:	11 24       	eor	r1, r1
+ 182:	2f 93       	push	r18
+ 184:	3f 93       	push	r19
+ 186:	4f 93       	push	r20
+ 188:	5f 93       	push	r21
+ 18a:	8f 93       	push	r24
+ 18c:	9f 93       	push	r25
+ 18e:	af 93       	push	r26
+ 190:	bf 93       	push	r27
+	switch_temp = ~PINK;
+ 192:	80 91 06 01 	lds	r24, 0x0106
+ 196:	80 95       	com	r24
+ 198:	80 93 05 02 	sts	0x0205, r24
+	if (switch_temp != 0x00){					// Skip if button release
+ 19c:	80 91 05 02 	lds	r24, 0x0205
+ 1a0:	88 23       	and	r24, r24
+ 1a2:	09 f4       	brne	.+2      	; 0x1a6 <__vector_11+0x2e>
+ 1a4:	46 c0       	rjmp	.+140    	; 0x232 <__vector_11+0xba>
+		pulse_incr = 0x10;					// Maximum step = 16
+ 1a6:	80 e1       	ldi	r24, 0x10	; 16
+ 1a8:	80 93 01 02 	sts	0x0201, r24
+		for (i=0x80;i > 0x00; i = i >> 1){
+ 1ac:	80 e8       	ldi	r24, 0x80	; 128
+ 1ae:	90 e0       	ldi	r25, 0x00	; 0
+ 1b0:	a0 e0       	ldi	r26, 0x00	; 0
+ 1b2:	b0 e0       	ldi	r27, 0x00	; 0
+ 1b4:	26 c0       	rjmp	.+76     	; 0x202 <__vector_11+0x8a>
+			if (switch_temp & i) break;
+ 1b6:	80 91 05 02 	lds	r24, 0x0205
+ 1ba:	20 91 06 02 	lds	r18, 0x0206
+ 1be:	30 91 07 02 	lds	r19, 0x0207
+ 1c2:	40 91 08 02 	lds	r20, 0x0208
+ 1c6:	50 91 09 02 	lds	r21, 0x0209
+ 1ca:	90 e0       	ldi	r25, 0x00	; 0
+ 1cc:	a0 e0       	ldi	r26, 0x00	; 0
+ 1ce:	b0 e0       	ldi	r27, 0x00	; 0
+ 1d0:	82 23       	and	r24, r18
+ 1d2:	93 23       	and	r25, r19
+ 1d4:	a4 23       	and	r26, r20
+ 1d6:	b5 23       	and	r27, r21
+ 1d8:	00 97       	sbiw	r24, 0x00	; 0
+ 1da:	a1 05       	cpc	r26, r1
+ 1dc:	b1 05       	cpc	r27, r1
+ 1de:	29 f5       	brne	.+74     	; 0x22a <__vector_11+0xb2>
+			pulse_incr -= 2;
+ 1e0:	80 91 01 02 	lds	r24, 0x0201
+ 1e4:	82 50       	subi	r24, 0x02	; 2
+ 1e6:	80 93 01 02 	sts	0x0201, r24
+ISR(PCINT2_vect)
+{
+	switch_temp = ~PINK;
+	if (switch_temp != 0x00){					// Skip if button release
+		pulse_incr = 0x10;					// Maximum step = 16
+		for (i=0x80;i > 0x00; i = i >> 1){
+ 1ea:	80 91 06 02 	lds	r24, 0x0206
+ 1ee:	90 91 07 02 	lds	r25, 0x0207
+ 1f2:	a0 91 08 02 	lds	r26, 0x0208
+ 1f6:	b0 91 09 02 	lds	r27, 0x0209
+ 1fa:	b6 95       	lsr	r27
+ 1fc:	a7 95       	ror	r26
+ 1fe:	97 95       	ror	r25
+ 200:	87 95       	ror	r24
+ 202:	80 93 06 02 	sts	0x0206, r24
+ 206:	90 93 07 02 	sts	0x0207, r25
+ 20a:	a0 93 08 02 	sts	0x0208, r26
+ 20e:	b0 93 09 02 	sts	0x0209, r27
+ 212:	80 91 06 02 	lds	r24, 0x0206
+ 216:	90 91 07 02 	lds	r25, 0x0207
+ 21a:	a0 91 08 02 	lds	r26, 0x0208
+ 21e:	b0 91 09 02 	lds	r27, 0x0209
+ 222:	00 97       	sbiw	r24, 0x00	; 0
+ 224:	a1 05       	cpc	r26, r1
+ 226:	b1 05       	cpc	r27, r1
+ 228:	31 f6       	brne	.-116    	; 0x1b6 <__vector_11+0x3e>
+			if (switch_temp & i) break;
+			pulse_incr -= 2;
+		}
+		brightness = INCREASING;
+ 22a:	10 92 03 02 	sts	0x0203, r1
+		slider_value = 0x00;				// Start new cycle with LED off
+ 22e:	10 92 04 02 	sts	0x0204, r1
+	}
+}
+ 232:	bf 91       	pop	r27
+ 234:	af 91       	pop	r26
+ 236:	9f 91       	pop	r25
+ 238:	8f 91       	pop	r24
+ 23a:	5f 91       	pop	r21
+ 23c:	4f 91       	pop	r20
+ 23e:	3f 91       	pop	r19
+ 240:	2f 91       	pop	r18
+ 242:	0f 90       	pop	r0
+ 244:	0f be       	out	0x3f, r0	; 63
+ 246:	0f 90       	pop	r0
+ 248:	1f 90       	pop	r1
+ 24a:	18 95       	reti
+
+0000024c <timer0_init>:
+void timer0_init(void)
+{
+// NOTE: Assumes DIV8 fuse set for 1 MHz operation
+// 8-bit counter means overflow interrupt every 61 Hz to turn on the LED
+// Variable Compare_A interrupt in between OVF to turn off the LED
+	OCR0A = slider_value;
+ 24c:	80 91 04 02 	lds	r24, 0x0204
+ 250:	87 bd       	out	0x27, r24	; 39
+  	TCCR0A = 0x03; 							// Fast PWM Mode
+ 252:	83 e0       	ldi	r24, 0x03	; 3
+ 254:	84 bd       	out	0x24, r24	; 36
+	TCCR0B = 0x03;							// Set prescaler to 64
+ 256:	85 bd       	out	0x25, r24	; 37
+	TIMSK0 |= (1<<OCIE0A) | (1<<TOIE0);		// Compare A and OVF Interupt enabled 
+ 258:	ee e6       	ldi	r30, 0x6E	; 110
+ 25a:	f0 e0       	ldi	r31, 0x00	; 0
+ 25c:	80 81       	ld	r24, Z
+ 25e:	83 60       	ori	r24, 0x03	; 3
+ 260:	80 83       	st	Z, r24
+	TCNT0  = 0x00;
+ 262:	16 bc       	out	0x26, r1	; 38
+}
+ 264:	08 95       	ret
+
+00000266 <LED_init>:
+
+void LED_init(void)
+{
+	PORTC = 0xFF;							// All PORTC set (LED off)
+ 266:	8f ef       	ldi	r24, 0xFF	; 255
+ 268:	88 b9       	out	0x08, r24	; 8
+	DDRC = 0xFF;							// All PORTC output
+ 26a:	87 b9       	out	0x07, r24	; 7
+}
+ 26c:	08 95       	ret
+
+0000026e <SW_init>:
+
+void SW_init(void)
+{
+	PORTK = 0xFF;							// All PORTK set
+ 26e:	9f ef       	ldi	r25, 0xFF	; 255
+ 270:	90 93 08 01 	sts	0x0108, r25
+	DDRK = 0x00;							// All PORTK input
+ 274:	10 92 07 01 	sts	0x0107, r1
+	PCICR = 1 << PCIE2;						// Enable pin change interrupt 16..23
+ 278:	84 e0       	ldi	r24, 0x04	; 4
+ 27a:	80 93 68 00 	sts	0x0068, r24
+	PCMSK2 = 0xFF;							// Enable mask for PCINT
+ 27e:	90 93 6d 00 	sts	0x006D, r25
+}
+ 282:	08 95       	ret
+
+00000284 <power_init>:
+
+void power_init(void)
+{
+	PRR0 = 0xCF;							// Only Timer0 enabled
+ 284:	8f ec       	ldi	r24, 0xCF	; 207
+ 286:	80 93 64 00 	sts	0x0064, r24
+	PRR1 = 0x3F;							// All disabled
+ 28a:	8f e3       	ldi	r24, 0x3F	; 63
+ 28c:	80 93 65 00 	sts	0x0065, r24
+	SMCR = 0x01;							// Enable Idle mode
+ 290:	81 e0       	ldi	r24, 0x01	; 1
+ 292:	83 bf       	out	0x33, r24	; 51
+}
+ 294:	08 95       	ret
+
+00000296 <main>:
+
+int main(void)
+{
+	timer0_init();
+ 296:	0e 94 26 01 	call	0x24c	; 0x24c <timer0_init>
+	TCNT0  = 0x00;
+}
+
+void LED_init(void)
+{
+	PORTC = 0xFF;							// All PORTC set (LED off)
+ 29a:	9f ef       	ldi	r25, 0xFF	; 255
+ 29c:	98 b9       	out	0x08, r25	; 8
+	DDRC = 0xFF;							// All PORTC output
+ 29e:	97 b9       	out	0x07, r25	; 7
+}
+
+void SW_init(void)
+{
+	PORTK = 0xFF;							// All PORTK set
+ 2a0:	90 93 08 01 	sts	0x0108, r25
+	DDRK = 0x00;							// All PORTK input
+ 2a4:	10 92 07 01 	sts	0x0107, r1
+	PCICR = 1 << PCIE2;						// Enable pin change interrupt 16..23
+ 2a8:	84 e0       	ldi	r24, 0x04	; 4
+ 2aa:	80 93 68 00 	sts	0x0068, r24
+	PCMSK2 = 0xFF;							// Enable mask for PCINT
+ 2ae:	90 93 6d 00 	sts	0x006D, r25
+}
+
+void power_init(void)
+{
+	PRR0 = 0xCF;							// Only Timer0 enabled
+ 2b2:	8f ec       	ldi	r24, 0xCF	; 207
+ 2b4:	80 93 64 00 	sts	0x0064, r24
+	PRR1 = 0x3F;							// All disabled
+ 2b8:	8f e3       	ldi	r24, 0x3F	; 63
+ 2ba:	80 93 65 00 	sts	0x0065, r24
+	SMCR = 0x01;							// Enable Idle mode
+ 2be:	81 e0       	ldi	r24, 0x01	; 1
+ 2c0:	83 bf       	out	0x33, r24	; 51
+
+	LED_init();
+	SW_init();
+	power_init();
+
+	sei();
+ 2c2:	78 94       	sei
+				slider_value += pulse_incr;
+				slider_temp = (1 + slider_value + (slider_value * slider_value / 2)) >> 7;
+				OCR0A = slider_temp;
+			}
+			else								// slider_value >= 240
+				brightness = DECREASING;
+ 2c4:	51 e0       	ldi	r21, 0x01	; 1
+					if (LED_mask == 0x00) {LED_mask = 0x40; direction = RIGHT;}
+				}
+				else 							// direction = RIGHT
+				{
+					LED_mask = LED_mask >> 1;
+					if (LED_mask == 0x00) {LED_mask = 0x02; direction = LEFT;}
+ 2c6:	72 e0       	ldi	r23, 0x02	; 2
+			else {								// slider_value = 0
+				brightness = INCREASING;
+				if(direction == LEFT) 
+				{
+					LED_mask = LED_mask << 1;
+					if (LED_mask == 0x00) {LED_mask = 0x40; direction = RIGHT;}
+ 2c8:	60 e4       	ldi	r22, 0x40	; 64
+	sei();
+
+	while(1)
+	{
+
+		_SLEEP();
+ 2ca:	88 95       	sleep
+		
+		if(brightness == INCREASING)
+ 2cc:	80 91 03 02 	lds	r24, 0x0203
+ 2d0:	88 23       	and	r24, r24
+ 2d2:	69 f4       	brne	.+26     	; 0x2ee <main+0x58>
+		{
+			if(slider_value < 240)				// pulse_incr can = 16 without overflow
+ 2d4:	80 91 04 02 	lds	r24, 0x0204
+ 2d8:	80 3f       	cpi	r24, 0xF0	; 240
+ 2da:	30 f4       	brcc	.+12     	; 0x2e8 <main+0x52>
+			{
+				slider_value += pulse_incr;
+ 2dc:	90 91 04 02 	lds	r25, 0x0204
+ 2e0:	80 91 01 02 	lds	r24, 0x0201
+ 2e4:	89 0f       	add	r24, r25
+ 2e6:	0c c0       	rjmp	.+24     	; 0x300 <main+0x6a>
+				slider_temp = (1 + slider_value + (slider_value * slider_value / 2)) >> 7;
+				OCR0A = slider_temp;
+			}
+			else								// slider_value >= 240
+				brightness = DECREASING;
+ 2e8:	50 93 03 02 	sts	0x0203, r21
+ 2ec:	ee cf       	rjmp	.-36     	; 0x2ca <main+0x34>
+		}
+		else
+		{
+			if(slider_value > 0) 
+ 2ee:	80 91 04 02 	lds	r24, 0x0204
+ 2f2:	88 23       	and	r24, r24
+ 2f4:	21 f1       	breq	.+72     	; 0x33e <main+0xa8>
+			{
+				slider_value -= pulse_incr;
+ 2f6:	80 91 04 02 	lds	r24, 0x0204
+ 2fa:	90 91 01 02 	lds	r25, 0x0201
+ 2fe:	89 1b       	sub	r24, r25
+ 300:	80 93 04 02 	sts	0x0204, r24
+				slider_temp = (1 + slider_value + (slider_value * slider_value / 2)) >> 7;
+ 304:	80 91 04 02 	lds	r24, 0x0204
+ 308:	40 91 04 02 	lds	r20, 0x0204
+ 30c:	20 91 04 02 	lds	r18, 0x0204
+ 310:	90 e0       	ldi	r25, 0x00	; 0
+ 312:	01 96       	adiw	r24, 0x01	; 1
+ 314:	24 9f       	mul	r18, r20
+ 316:	90 01       	movw	r18, r0
+ 318:	11 24       	eor	r1, r1
+ 31a:	35 95       	asr	r19
+ 31c:	27 95       	ror	r18
+ 31e:	82 0f       	add	r24, r18
+ 320:	93 1f       	adc	r25, r19
+ 322:	88 0f       	add	r24, r24
+ 324:	89 2f       	mov	r24, r25
+ 326:	88 1f       	adc	r24, r24
+ 328:	99 0b       	sbc	r25, r25
+ 32a:	90 93 0b 02 	sts	0x020B, r25
+ 32e:	80 93 0a 02 	sts	0x020A, r24
+				OCR0A = slider_temp;
+ 332:	80 91 0a 02 	lds	r24, 0x020A
+ 336:	90 91 0b 02 	lds	r25, 0x020B
+ 33a:	87 bd       	out	0x27, r24	; 39
+ 33c:	c6 cf       	rjmp	.-116    	; 0x2ca <main+0x34>
+			}
+			else {								// slider_value = 0
+				brightness = INCREASING;
+ 33e:	10 92 03 02 	sts	0x0203, r1
+				if(direction == LEFT) 
+ 342:	80 91 02 02 	lds	r24, 0x0202
+ 346:	88 23       	and	r24, r24
+ 348:	79 f4       	brne	.+30     	; 0x368 <main+0xd2>
+				{
+					LED_mask = LED_mask << 1;
+ 34a:	80 91 00 02 	lds	r24, 0x0200
+ 34e:	88 0f       	add	r24, r24
+ 350:	80 93 00 02 	sts	0x0200, r24
+					if (LED_mask == 0x00) {LED_mask = 0x40; direction = RIGHT;}
+ 354:	80 91 00 02 	lds	r24, 0x0200
+ 358:	88 23       	and	r24, r24
+ 35a:	09 f0       	breq	.+2      	; 0x35e <main+0xc8>
+ 35c:	b6 cf       	rjmp	.-148    	; 0x2ca <main+0x34>
+ 35e:	60 93 00 02 	sts	0x0200, r22
+ 362:	50 93 02 02 	sts	0x0202, r21
+ 366:	b1 cf       	rjmp	.-158    	; 0x2ca <main+0x34>
+				}
+				else 							// direction = RIGHT
+				{
+					LED_mask = LED_mask >> 1;
+ 368:	80 91 00 02 	lds	r24, 0x0200
+ 36c:	86 95       	lsr	r24
+ 36e:	80 93 00 02 	sts	0x0200, r24
+					if (LED_mask == 0x00) {LED_mask = 0x02; direction = LEFT;}
+ 372:	80 91 00 02 	lds	r24, 0x0200
+ 376:	88 23       	and	r24, r24
+ 378:	09 f0       	breq	.+2      	; 0x37c <main+0xe6>
+ 37a:	a7 cf       	rjmp	.-178    	; 0x2ca <main+0x34>
+ 37c:	70 93 00 02 	sts	0x0200, r23
+ 380:	10 92 02 02 	sts	0x0202, r1
+ 384:	a2 cf       	rjmp	.-188    	; 0x2ca <main+0x34>
+
+00000386 <_exit>:
+ 386:	f8 94       	cli
+
+00000388 <__stop_program>:
+ 388:	ff cf       	rjmp	.-2      	; 0x388 <__stop_program>

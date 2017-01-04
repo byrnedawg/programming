@@ -1,0 +1,1003 @@
+Archive member included because of file (symbol)
+
+N:\Private\Avr\Webot\libWebbot-ATMega32.a(ps2.o)
+                              WebbotFirst.o (sonyPS2_buttonsRaw)
+N:\Private\Avr\Webot\libWebbot-ATMega32.a(_spi_common.o)
+                              WebbotFirst.o (spiAbstractBusInit)
+N:\Private\Avr\Webot\libWebbot-ATMega32.a(_uart_common.o)
+                              WebbotFirst.o (_uartInit)
+N:\Private\Avr\Webot\libWebbot-ATMega32.a(buffer.o)
+                              N:\Private\Avr\Webot\libWebbot-ATMega32.a(_uart_common.o) (bufferGet)
+N:\Private\Avr\Webot\libWebbot-ATMega32.a(core.o)
+                              N:\Private\Avr\Webot\libWebbot-ATMega32.a(_uart_common.o) (breathe)
+N:\Private\Avr\Webot\libWebbot-ATMega32.a(core_interpU.o)
+                              N:\Private\Avr\Webot\libWebbot-ATMega32.a(ps2.o) (interpolateU)
+N:\Private\Avr\Webot\libWebbot-ATMega32.a(iopin.o)
+                              N:\Private\Avr\Webot\libWebbot-ATMega32.a(_uart_common.o) (pin_make_input)
+N:\Private\Avr\Webot\libWebbot-ATMega32.a(led.o)
+                              WebbotFirst.o (LED_set)
+N:\Private\Avr\Webot\libWebbot-ATMega32.a(pwm.o)
+                              WebbotFirst.o (pwmSetDutyCycle)
+N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintf.o)
+                              WebbotFirst.o (rprintfInit)
+N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfn.o)
+                              WebbotFirst.o (rprintfNum)
+N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfs.o)
+                              WebbotFirst.o (rprintf1RamRom)
+N:\Private\Avr\Webot\libWebbot-ATMega32.a(spisw.o)
+                              WebbotFirst.o (c_sw_spi)
+N:\Private\Avr\Webot\libWebbot-ATMega32.a(timer.o)
+                              N:\Private\Avr\Webot\libWebbot-ATMega32.a(pwm.o) (nullTimerCompareCallback)
+N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCapture.o)
+                              N:\Private\Avr\Webot\libWebbot-ATMega32.a(timer.o) (timerCaptureDetach)
+N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCompare.o)
+                              N:\Private\Avr\Webot\libWebbot-ATMega32.a(pwm.o) (compareIsInUse)
+N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerOverflow.o)
+                              N:\Private\Avr\Webot\libWebbot-ATMega32.a(timer.o) (timerOverflowAttach)
+N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerPWM.o)
+                              N:\Private\Avr\Webot\libWebbot-ATMega32.a(pwm.o) (TimerGetPwmDeciHertz)
+N:\Private\Avr\Webot\libWebbot-ATMega32.a(uart.o)
+                              WebbotFirst.o (c_hw_uart)
+N:\Private\Avr\Webot\libWebbot-ATMega32.a(scheduler.o)
+                              N:\Private\Avr\Webot\libWebbot-ATMega32.a(timer.o) (scheduleJob)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(exit.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o (exit)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+                              N:\Private\Avr\Webot\libWebbot-ATMega32.a(core_interpU.o) (__mulsi3)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+                              N:\Private\Avr\Webot\libWebbot-ATMega32.a(spisw.o) (__udivmodqi4)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                              N:\Private\Avr\Webot\libWebbot-ATMega32.a(buffer.o) (__udivmodhi4)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
+                              N:\Private\Avr\Webot\libWebbot-ATMega32.a(ps2.o) (__divmodhi4)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                              N:\Private\Avr\Webot\libWebbot-ATMega32.a(pwm.o) (__udivmodsi4)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+                              N:\Private\Avr\Webot\libWebbot-ATMega32.a(core_interpU.o) (__divmodsi4)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(exit.o) (_exit)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                              WebbotFirst.o (__do_copy_data)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                              WebbotFirst.o (__do_clear_bss)
+
+Allocating common symbols
+Common symbol       size              file
+
+buttonReleased      0xff              WebbotFirst.o
+__queue             0x34              WebbotFirst.o
+__numJobs           0x2               N:\Private\Avr\Webot\libWebbot-ATMega32.a(scheduler.o)
+__error             0x5               N:\Private\Avr\Webot\libWebbot-ATMega32.a(timer.o)
+__recheck           0x1               N:\Private\Avr\Webot\libWebbot-ATMega32.a(scheduler.o)
+buttonPressed       0xff              WebbotFirst.o
+g_heartbeat         0x2               N:\Private\Avr\Webot\libWebbot-ATMega32.a(timer.o)
+data                0x96              WebbotFirst.o
+__running           0x1               N:\Private\Avr\Webot\libWebbot-ATMega32.a(scheduler.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+LOAD WebbotFirst.o
+LOAD N:\Private\Avr\Webot\libWebbot-ATMega32.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x508e
+ *(.vectors)
+ .vectors       0x00000000       0x54 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+ .progmem.data  0x00000054      0x1de WebbotFirst.o
+                0x000000ad                _C7
+                0x0000005c                _A0
+                0x000000a7                _C5
+                0x000000c5                _D5
+                0x00000089                _B5
+                0x000000b0                _PORTD
+                0x000000ce                __timer0Compare
+                0x000000bf                _D3
+                0x0000009e                _C2
+                0x0000005f                _A1
+                0x000000fe                __timer2Compare
+                0x000000b9                _D1
+                0x00000056                _PORTA
+                0x0000006e                _A6
+                0x0000008f                _B7
+                0x00000080                _B2
+                0x00000054                AVcc_MV
+                0x0000010e                pgm_Timers
+                0x0000007d                _B1
+                0x000000a1                _C3
+                0x000000de                __timer1Compare
+                0x000000b6                _D0
+                0x000000a4                _C4
+                0x000000c8                _D6
+                0x00000083                _B3
+                0x0000008c                _B6
+                0x000000bc                _D2
+                0x000000aa                _C6
+                0x000000cb                _D7
+                0x00000062                _A2
+                0x00000071                _A7
+                0x00000092                _PORTC
+                0x0000006b                _A5
+                0x0000007a                _B0
+                0x00000065                _A3
+                0x00000074                _PORTB
+                0x0000009b                _C1
+                0x00000068                _A4
+                0x000000c2                _D4
+                0x00000098                _C0
+                0x00000086                _B4
+ .progmem.data  0x00000232       0x3b N:\Private\Avr\Webot\libWebbot-ATMega32.a(ps2.o)
+ .progmem.data  0x0000026d       0x11 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintf.o)
+                0x0000026d                HexChars
+ .progmem.data  0x0000027e       0x12 N:\Private\Avr\Webot\libWebbot-ATMega32.a(spisw.o)
+                0x0000027e                c_sw_spi
+ .progmem.data  0x00000290       0x55 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timer.o)
+                0x000002ac                __3bit_modes
+                0x0000029c                TimerRTCPrescaleFactor
+                0x00000290                TimerPrescaleFactor
+                0x000002bc                __2bit_modes
+ .progmem.data  0x000002e5        0xc N:\Private\Avr\Webot\libWebbot-ATMega32.a(uart.o)
+                0x000002e5                c_hw_uart
+                0x000002f2                . = ALIGN (0x2)
+ *fill*         0x000002f1        0x1 00
+                0x000002f2                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x000002f2        0x0 linker stubs
+ *(.trampolines*)
+                0x000002f2                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x000002f2                __ctors_start = .
+ *(.ctors)
+                0x000002f2                __ctors_end = .
+                0x000002f2                __dtors_start = .
+ *(.dtors)
+                0x000002f2                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x000002f2        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+                0x000002f2                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x000002f2        0xc c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x000002fe       0x16 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                0x000002fe                __do_copy_data
+ .init4         0x00000314       0x10 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                0x00000314                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x00000324        0x8 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ *(.init9)
+ *(.text)
+ .text          0x0000032c        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+                0x0000032c                __vector_1
+                0x0000032c                __vector_12
+                0x0000032c                __bad_interrupt
+                0x0000032c                __vector_3
+                0x0000032c                __vector_17
+                0x0000032c                __vector_19
+                0x0000032c                __vector_2
+                0x0000032c                __vector_14
+                0x0000032c                __vector_16
+                0x0000032c                __vector_18
+                0x0000032c                __vector_20
+ .text          0x00000330     0x11da WebbotFirst.o
+                0x000004b0                appInitSoftware
+                0x00000494                InitDisplay
+                0x0000041c                Touch_Calibration
+                0x00000480                Choose_Color
+                0x0000044c                Cursor_Pos
+                0x00000aa6                Button_Feedback
+                0x000014be                __vector_6
+                0x00000d1c                Write_Blank
+                0x0000073a                Draw_Line_At
+                0x00001294                uart0GetByte
+                0x00000b42                Draw_Solid_Rect
+                0x00001472                __vector_11
+                0x0000046c                Choose_Font
+                0x00000332                registerLED
+                0x000011f2                __vector_13
+                0x00001342                __vector_7
+                0x0000038e                service_PS2_Controller
+                0x00000bee                Draw_Touch_Region
+                0x00000336                Wait
+                0x0000129e                uart0SendByte
+                0x000013da                __vector_5
+                0x00000b84                Set_Touch_Region
+                0x0000034c                appInitHardware
+                0x000007d4                Draw_Pad
+                0x00000772                Continue_Line_To
+                0x00000bda                Set_Touch_Mode
+                0x000012aa                __vector_4
+                0x00000792                Draw_Rect_At
+                0x00000330                configure_ports
+                0x00001426                __vector_9
+                0x00001248                __vector_15
+                0x000012f6                __vector_8
+                0x00000424                Delete_All_Regions
+                0x00000408                Command_Display
+                0x0000071a                Draw_Pixel_At
+                0x00000334                sysInitHardware
+                0x0000138e                __vector_10
+                0x00000d44                appControl
+                0x0000042c                Cursor_Coordinate
+ .text          0x0000150a      0x53e N:\Private\Avr\Webot\libWebbot-ATMega32.a(ps2.o)
+                0x00001762                sonyPS2_buttonUp
+                0x0000195e                sonyPS2_setAnalogMode
+                0x00001812                sonyPS_setRumble
+                0x0000178a                sonyPS2_buttonHeld
+                0x00001534                sonyPS2_buttonsRaw
+                0x0000155c                sonyPS2_buttonPressure
+                0x00001542                sonyPS2_buttonPressed
+                0x0000188a                sonyPS2_read
+                0x00001a08                sonyPS2_calibrate
+                0x0000150a                sonyPS2_isAnalogMode
+                0x0000166e                sonyPS2_joystickRaw
+                0x0000151e                sonyPS2_buttonsChanged
+                0x0000173c                sonyPS2_buttonDown
+                0x000016c0                sonyPS2_joystick
+ .text          0x00001a48      0x3ea N:\Private\Avr\Webot\libWebbot-ATMega32.a(_spi_common.o)
+                0x00001dec                spiAbstractDeviceReceiveWord
+                0x00001c14                spiAbstractDeviceSendBytes
+                0x00001cb8                spiAbstractDeviceReceiveBytes
+                0x00001ab6                spiAbstractBusSetClock
+                0x00001b5c                spiAbstractDeviceSelect
+                0x00001e02                spiAbstractDeviceReceiveByte
+                0x00001ad8                spiAbstractBusInit
+                0x00001db6                spiAbstractDeviceXferWord
+                0x00001e0c                spiAbstractDeviceSendByte
+                0x00001e12                spiAbstractDeviceSendWord
+                0x00001d6c                spiAbstractDeviceXferByte
+                0x00001a72                spiAbstractBusSetMode
+                0x00001a94                spiAbstractBusSetDataOrder
+                0x00001a48                spiAbstractBusOff
+ .text          0x00001e32      0x33e N:\Private\Avr\Webot\libWebbot-ATMega32.a(_uart_common.o)
+                0x00001fcc                _uartSendByte
+                0x00001f3a                __uartFlushReceiveBuffer
+                0x0000206e                __uartGetByte
+                0x00001ebc                _uartSetBaudRate
+                0x0000203a                _uartSendBuffer
+                0x000020ba                __uartTransmitService
+                0x00002120                __uartReceiveService
+                0x00001efc                __uartReceiveBufferIsEmpty
+                0x00001e32                _uartStartXmit
+                0x00001f5a                _uartInit
+                0x00001ed4                _uartOff
+ .text          0x00002170      0x11e N:\Private\Avr\Webot\libWebbot-ATMega32.a(buffer.o)
+                0x000021e4                bufferPut
+                0x00002230                bufferFreeSpace
+                0x0000218a                bufferGet
+                0x00002252                bufferBytesUsed
+                0x0000226c                bufferIsFull
+                0x00002170                bufferInit
+                0x0000227c                bufferFlush
+ .text          0x0000228e       0xf0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(core.o)
+                0x000022bc                __portMaskGet
+                0x000022f0                main
+                0x000022d6                __portMaskClear
+                0x0000228e                breathe
+                0x000022a4                __portMaskSet
+ .text          0x0000237e       0x82 N:\Private\Avr\Webot\libWebbot-ATMega32.a(core_interpU.o)
+                0x0000237e                interpolateU
+ .text          0x00002400      0x1da N:\Private\Avr\Webot\libWebbot-ATMega32.a(iopin.o)
+                0x000025ca                pin_set
+                0x00002478                pin_make_output
+                0x000024f0                pin_toggle
+                0x00002582                pin_high
+                0x00002538                pin_low
+                0x00002400                pin_is_high
+                0x000024c6                pin_is_output
+                0x0000242a                pin_make_input
+ .text          0x000025da       0x44 N:\Private\Avr\Webot\libWebbot-ATMega32.a(led.o)
+                0x000025da                LED_set
+ .text          0x0000261e      0x310 N:\Private\Avr\Webot\libWebbot-ATMega32.a(pwm.o)
+                0x0000289e                pwmInitHertz
+                0x00002708                pwmInitDeciHertz
+                0x000026a8                pwmSetDutyCycle
+                0x0000263e                pwmGetDutyCycle
+                0x0000261e                pwmOff
+ .text          0x0000292e       0xb6 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintf.o)
+                0x0000292e                rprintfIgnore
+                0x00002968                rprintfCharN
+                0x00002988                rprintfStr
+                0x000029a6                rprintfProgStr
+                0x00002930                rprintfInit
+                0x00002944                rprintfChar
+                0x000029c6                rprintfCRLF
+                0x000029ce                rprintfu04
+ .text          0x000029e4      0x172 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfn.o)
+                0x000029e4                rprintfNum
+ .text          0x00002b56      0x170 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfs.o)
+                0x00002b56                rprintf1RamRom
+ .text          0x00002cc6      0x4ba N:\Private\Avr\Webot\libWebbot-ATMega32.a(spisw.o)
+ .text          0x00003180     0x10d6 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timer.o)
+                0x00003244                __timerPrescalerIndex
+                0x0000419c                clockWaitms
+                0x000033dc                setErrorLog
+                0x00003e78                __clockInit
+                0x00003344                compareGetOutputMode
+                0x00003d4a                initTimers
+                0x000040dc                clockHasElapsedGetOverflow
+                0x000036d2                setError
+                0x000033d6                getError
+                0x000032da                timerGetCounter
+                0x000031b4                delay_cycles
+                0x0000321a                nullTimerCompareCallback
+                0x000033e6                __error_flash
+                0x00003300                compareSetOutputMode
+                0x000038b6                timerGetTOP
+                0x000037aa                compareDetach
+                0x00003684                timerGetTicks
+                0x00003674                clockGetSnapshot
+                0x00003dac                compareAttach
+                0x00003b62                timerInit
+                0x000041da                delay_us
+                0x0000339c                __timer_captureService
+                0x000041ae                delay_ms
+                0x00003180                ticks_per_ms
+                0x0000337e                __timer_overflowService
+                0x000037f2                compareSetThreshold
+                0x0000396c                timerSnapshotToTicks
+                0x0000329a                timerGetClosestPrescale
+                0x000036c4                clockGetus
+                0x00004210                clockHasElapsed
+                0x00003c22                timerSetMode
+                0x000033ba                __timer_compareService
+                0x00003a44                timerGetBestPrescaler
+                0x00003b04                timerSetPrescaler
+                0x00004154                clockWaitus
+                0x0000385c                compareGetThreshold
+ .text          0x00004256       0xa4 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCapture.o)
+                0x00004256                timerCaptureDetach
+                0x00004284                timerCaptureAttach
+ .text          0x000042fa       0xf4 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCompare.o)
+                0x000042fa                compareIsInUse
+                0x00004356                compareFromIOPin
+ .text          0x000043ee       0x70 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerOverflow.o)
+                0x000043ee                timerOverflowAttach
+ .text          0x0000445e      0x594 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerPWM.o)
+                0x000045da                timerCalcPwm
+                0x0000456a                TimerGetPwmDeciHertz
+ .text          0x000049f2      0x214 N:\Private\Avr\Webot\libWebbot-ATMega32.a(uart.o)
+                0x000049f2                __uartHWSetBaudRate
+                0x00004b5e                __uartHWStartXmit
+                0x00004bb2                uartPollByte
+                0x00004b96                uartReceivePollingMode
+                0x00004bda                __uartHWInit
+ .text          0x00004c06      0x360 N:\Private\Avr\Webot\libWebbot-ATMega32.a(scheduler.o)
+                0x00004e1e                scheduleJob
+                0x00004c06                __scheduleUpdate
+ .text          0x00004f66        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(exit.o)
+ .text          0x00004f66        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+ .text          0x00004f66        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+ .text          0x00004f66        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .text          0x00004f66        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
+ .text          0x00004f66        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ .text          0x00004f66        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+ .text          0x00004f66        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text          0x00004f66        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text          0x00004f66        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                0x00004f66                . = ALIGN (0x2)
+ *(.text.*)
+ .text.avr-libc
+                0x00004f66        0x6 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(exit.o)
+                0x00004f66                exit
+ .text.libgcc   0x00004f6c       0x3e c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+                0x00004f6c                __mulsi3
+ .text.libgcc   0x00004faa       0x18 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+                0x00004faa                __udivmodqi4
+ .text.libgcc   0x00004fc2       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                0x00004fc2                __udivmodhi4
+ .text.libgcc   0x00004fea       0x26 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
+                0x00004fea                __divmodhi4
+                0x00004fea                _div
+ .text.libgcc   0x00005010       0x44 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                0x00005010                __udivmodsi4
+ .text.libgcc   0x00005054       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+                0x00005054                __divmodsi4
+ .text.libgcc   0x0000508a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x0000508a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x0000508a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                0x0000508a                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x0000508a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x0000508a                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x0000508a        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ *(.fini0)
+                0x0000508e                _etext = .
+
+.data           0x00800060       0x86 load address 0x0000508e
+                0x00800060                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .data          0x00800060       0x84 WebbotFirst.o
+                0x0080006a                NUMBER_OF_TIMERS
+                0x008000e1                boardLED7
+                0x008000d2                boardLED2
+                0x0080006b                NUM_UARTS
+                0x008000d5                boardLED3
+                0x008000cf                boardLED1
+                0x008000d8                boardLED4
+                0x008000de                boardLED6
+                0x00800062                cpu_speed
+                0x00800093                color
+                0x00800094                controller1
+                0x008000cc                boardLED0
+                0x008000db                boardLED5
+                0x00800091                NUM_ADC_CHANNELS
+                0x00800068                cpu_speed_div_1000000
+                0x00800092                maxJobs
+                0x00800066                cpu_speed_div_1000
+                0x008000ba                spiBus
+                0x0080006c                Uarts
+ .data          0x008000e4        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(ps2.o)
+ .data          0x008000e4        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(_spi_common.o)
+ .data          0x008000e4        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(_uart_common.o)
+ .data          0x008000e4        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(buffer.o)
+ .data          0x008000e4        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(core.o)
+ .data          0x008000e4        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(core_interpU.o)
+ .data          0x008000e4        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(iopin.o)
+ .data          0x008000e4        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(led.o)
+ .data          0x008000e4        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(pwm.o)
+ .data          0x008000e4        0x2 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintf.o)
+                0x008000e4                rputchar
+ .data          0x008000e6        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfn.o)
+ .data          0x008000e6        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfs.o)
+ .data          0x008000e6        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(spisw.o)
+ .data          0x008000e6        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timer.o)
+ .data          0x008000e6        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCapture.o)
+ .data          0x008000e6        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCompare.o)
+ .data          0x008000e6        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerOverflow.o)
+ .data          0x008000e6        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerPWM.o)
+ .data          0x008000e6        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(uart.o)
+ .data          0x008000e6        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(scheduler.o)
+ .data          0x008000e6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(exit.o)
+ .data          0x008000e6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+ .data          0x008000e6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+ .data          0x008000e6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .data          0x008000e6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
+ .data          0x008000e6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ .data          0x008000e6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+ .data          0x008000e6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .data          0x008000e6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .data          0x008000e6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x008000e6                . = ALIGN (0x2)
+                0x008000e6                _edata = .
+                0x008000e6                PROVIDE (__data_end, .)
+
+.bss            0x008000e6      0x30f
+                0x008000e6                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x008000e6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .bss           0x008000e6       0x31 WebbotFirst.o
+                0x00800104                __timer1CompareB_data
+                0x00800100                __timer1CompareA_data
+                0x00800113                __timer2Compare_data
+                0x008000f5                __timer1_data
+                0x00800108                __timer2_data
+                0x008000f1                __timer0Compare_data
+                0x008000e6                __timer0_data
+ .bss           0x00800117        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(ps2.o)
+ .bss           0x00800117        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(_spi_common.o)
+ .bss           0x00800117        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(_uart_common.o)
+ .bss           0x00800117        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(buffer.o)
+ .bss           0x00800117        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(core.o)
+ .bss           0x00800117        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(core_interpU.o)
+ .bss           0x00800117        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(iopin.o)
+ .bss           0x00800117        0x3 N:\Private\Avr\Webot\libWebbot-ATMega32.a(led.o)
+                0x00800117                statusLED
+ .bss           0x0080011a        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(pwm.o)
+ .bss           0x0080011a        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintf.o)
+ .bss           0x0080011a        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfn.o)
+ .bss           0x0080011a        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfs.o)
+ .bss           0x0080011a        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(spisw.o)
+ .bss           0x0080011a        0x8 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timer.o)
+ .bss           0x00800122        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCapture.o)
+ .bss           0x00800122        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCompare.o)
+ .bss           0x00800122        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerOverflow.o)
+ .bss           0x00800122        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerPWM.o)
+ .bss           0x00800122        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(uart.o)
+ .bss           0x00800122        0x0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(scheduler.o)
+ .bss           0x00800122        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(exit.o)
+ .bss           0x00800122        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+ .bss           0x00800122        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+ .bss           0x00800122        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .bss           0x00800122        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodhi4.o)
+ .bss           0x00800122        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ .bss           0x00800122        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+ .bss           0x00800122        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .bss           0x00800122        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .bss           0x00800122        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x00800122      0x2c8 WebbotFirst.o
+                0x00800122                buttonReleased
+                0x00800221                __queue
+                0x00800255                buttonPressed
+                0x00800354                data
+ COMMON         0x008003ea        0x7 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timer.o)
+                0x008003ea                __error
+                0x008003ef                g_heartbeat
+ COMMON         0x008003f1        0x4 N:\Private\Avr\Webot\libWebbot-ATMega32.a(scheduler.o)
+                0x008003f1                __numJobs
+                0x008003f3                __recheck
+                0x008003f4                __running
+                0x008003f5                PROVIDE (__bss_end, .)
+                0x0000508e                __data_load_start = LOADADDR (.data)
+                0x00005114                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x008003f5        0x0
+                0x008003f5                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x008003f5                PROVIDE (__noinit_end, .)
+                0x008003f5                _end = .
+                0x008003f5                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x2a0
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 WebbotFirst.o
+ .debug_aranges
+                0x00000020       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(ps2.o)
+ .debug_aranges
+                0x00000040       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(_spi_common.o)
+ .debug_aranges
+                0x00000060       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(_uart_common.o)
+ .debug_aranges
+                0x00000080       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(buffer.o)
+ .debug_aranges
+                0x000000a0       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(core.o)
+ .debug_aranges
+                0x000000c0       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(core_interpU.o)
+ .debug_aranges
+                0x000000e0       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(iopin.o)
+ .debug_aranges
+                0x00000100       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(led.o)
+ .debug_aranges
+                0x00000120       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(pwm.o)
+ .debug_aranges
+                0x00000140       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintf.o)
+ .debug_aranges
+                0x00000160       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfn.o)
+ .debug_aranges
+                0x00000180       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfs.o)
+ .debug_aranges
+                0x000001a0       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(spisw.o)
+ .debug_aranges
+                0x000001c0       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timer.o)
+ .debug_aranges
+                0x000001e0       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCapture.o)
+ .debug_aranges
+                0x00000200       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCompare.o)
+ .debug_aranges
+                0x00000220       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerOverflow.o)
+ .debug_aranges
+                0x00000240       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerPWM.o)
+ .debug_aranges
+                0x00000260       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(uart.o)
+ .debug_aranges
+                0x00000280       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(scheduler.o)
+
+.debug_pubnames
+                0x00000000     0x12a7
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000      0x640 WebbotFirst.o
+ .debug_pubnames
+                0x00000640      0x158 N:\Private\Avr\Webot\libWebbot-ATMega32.a(ps2.o)
+ .debug_pubnames
+                0x00000798      0x1aa N:\Private\Avr\Webot\libWebbot-ATMega32.a(_spi_common.o)
+ .debug_pubnames
+                0x00000942       0xfc N:\Private\Avr\Webot\libWebbot-ATMega32.a(_uart_common.o)
+ .debug_pubnames
+                0x00000a3e       0x86 N:\Private\Avr\Webot\libWebbot-ATMega32.a(buffer.o)
+ .debug_pubnames
+                0x00000ac4       0x5f N:\Private\Avr\Webot\libWebbot-ATMega32.a(core.o)
+ .debug_pubnames
+                0x00000b23       0x23 N:\Private\Avr\Webot\libWebbot-ATMega32.a(core_interpU.o)
+ .debug_pubnames
+                0x00000b46       0x8f N:\Private\Avr\Webot\libWebbot-ATMega32.a(iopin.o)
+ .debug_pubnames
+                0x00000bd5       0x2c N:\Private\Avr\Webot\libWebbot-ATMega32.a(led.o)
+ .debug_pubnames
+                0x00000c01       0x6b N:\Private\Avr\Webot\libWebbot-ATMega32.a(pwm.o)
+ .debug_pubnames
+                0x00000c6c       0xb0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintf.o)
+ .debug_pubnames
+                0x00000d1c       0x21 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfn.o)
+ .debug_pubnames
+                0x00000d3d       0x25 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfs.o)
+ .debug_pubnames
+                0x00000d62       0x1f N:\Private\Avr\Webot\libWebbot-ATMega32.a(spisw.o)
+ .debug_pubnames
+                0x00000d81      0x35a N:\Private\Avr\Webot\libWebbot-ATMega32.a(timer.o)
+ .debug_pubnames
+                0x000010db       0x40 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCapture.o)
+ .debug_pubnames
+                0x0000111b       0x3a N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCompare.o)
+ .debug_pubnames
+                0x00001155       0x2a N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerOverflow.o)
+ .debug_pubnames
+                0x0000117f       0x3c N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerPWM.o)
+ .debug_pubnames
+                0x000011bb       0x8b N:\Private\Avr\Webot\libWebbot-ATMega32.a(uart.o)
+ .debug_pubnames
+                0x00001246       0x61 N:\Private\Avr\Webot\libWebbot-ATMega32.a(scheduler.o)
+
+.debug_info     0x00000000     0xd900
+ *(.debug_info)
+ .debug_info    0x00000000     0x241c WebbotFirst.o
+ .debug_info    0x0000241c     0x10b6 N:\Private\Avr\Webot\libWebbot-ATMega32.a(ps2.o)
+ .debug_info    0x000034d2      0xc0e N:\Private\Avr\Webot\libWebbot-ATMega32.a(_spi_common.o)
+ .debug_info    0x000040e0      0x9f3 N:\Private\Avr\Webot\libWebbot-ATMega32.a(_uart_common.o)
+ .debug_info    0x00004ad3      0x3c6 N:\Private\Avr\Webot\libWebbot-ATMega32.a(buffer.o)
+ .debug_info    0x00004e99      0x685 N:\Private\Avr\Webot\libWebbot-ATMega32.a(core.o)
+ .debug_info    0x0000551e      0x111 N:\Private\Avr\Webot\libWebbot-ATMega32.a(core_interpU.o)
+ .debug_info    0x0000562f      0x8b8 N:\Private\Avr\Webot\libWebbot-ATMega32.a(iopin.o)
+ .debug_info    0x00005ee7      0x1d3 N:\Private\Avr\Webot\libWebbot-ATMega32.a(led.o)
+ .debug_info    0x000060ba      0x9c9 N:\Private\Avr\Webot\libWebbot-ATMega32.a(pwm.o)
+ .debug_info    0x00006a83      0x2ac N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintf.o)
+ .debug_info    0x00006d2f      0x1b0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfn.o)
+ .debug_info    0x00006edf      0x192 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfs.o)
+ .debug_info    0x00007071      0xfb5 N:\Private\Avr\Webot\libWebbot-ATMega32.a(spisw.o)
+ .debug_info    0x00008026     0x2838 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timer.o)
+ .debug_info    0x0000a85e      0x65f N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCapture.o)
+ .debug_info    0x0000aebd      0x998 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCompare.o)
+ .debug_info    0x0000b855      0x5d4 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerOverflow.o)
+ .debug_info    0x0000be29      0xa2f N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerPWM.o)
+ .debug_info    0x0000c858      0x6ff N:\Private\Avr\Webot\libWebbot-ATMega32.a(uart.o)
+ .debug_info    0x0000cf57      0x9a9 N:\Private\Avr\Webot\libWebbot-ATMega32.a(scheduler.o)
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000     0x2b7d
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x3b4 WebbotFirst.o
+ .debug_abbrev  0x000003b4      0x348 N:\Private\Avr\Webot\libWebbot-ATMega32.a(ps2.o)
+ .debug_abbrev  0x000006fc      0x274 N:\Private\Avr\Webot\libWebbot-ATMega32.a(_spi_common.o)
+ .debug_abbrev  0x00000970      0x292 N:\Private\Avr\Webot\libWebbot-ATMega32.a(_uart_common.o)
+ .debug_abbrev  0x00000c02      0x175 N:\Private\Avr\Webot\libWebbot-ATMega32.a(buffer.o)
+ .debug_abbrev  0x00000d77      0x1c9 N:\Private\Avr\Webot\libWebbot-ATMega32.a(core.o)
+ .debug_abbrev  0x00000f40       0x71 N:\Private\Avr\Webot\libWebbot-ATMega32.a(core_interpU.o)
+ .debug_abbrev  0x00000fb1      0x153 N:\Private\Avr\Webot\libWebbot-ATMega32.a(iopin.o)
+ .debug_abbrev  0x00001104      0x10e N:\Private\Avr\Webot\libWebbot-ATMega32.a(led.o)
+ .debug_abbrev  0x00001212      0x250 N:\Private\Avr\Webot\libWebbot-ATMega32.a(pwm.o)
+ .debug_abbrev  0x00001462      0x134 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintf.o)
+ .debug_abbrev  0x00001596       0xf9 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfn.o)
+ .debug_abbrev  0x0000168f       0xdd N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfs.o)
+ .debug_abbrev  0x0000176c      0x2da N:\Private\Avr\Webot\libWebbot-ATMega32.a(spisw.o)
+ .debug_abbrev  0x00001a46      0x469 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timer.o)
+ .debug_abbrev  0x00001eaf      0x1db N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCapture.o)
+ .debug_abbrev  0x0000208a      0x25d N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCompare.o)
+ .debug_abbrev  0x000022e7      0x1bd N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerOverflow.o)
+ .debug_abbrev  0x000024a4      0x27d N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerPWM.o)
+ .debug_abbrev  0x00002721      0x1fa N:\Private\Avr\Webot\libWebbot-ATMega32.a(uart.o)
+ .debug_abbrev  0x0000291b      0x262 N:\Private\Avr\Webot\libWebbot-ATMega32.a(scheduler.o)
+
+.debug_line     0x00000000     0x54da
+ *(.debug_line)
+ .debug_line    0x00000000      0xf08 WebbotFirst.o
+ .debug_line    0x00000f08      0x653 N:\Private\Avr\Webot\libWebbot-ATMega32.a(ps2.o)
+ .debug_line    0x0000155b      0x4e7 N:\Private\Avr\Webot\libWebbot-ATMega32.a(_spi_common.o)
+ .debug_line    0x00001a42      0x4df N:\Private\Avr\Webot\libWebbot-ATMega32.a(_uart_common.o)
+ .debug_line    0x00001f21      0x2a1 N:\Private\Avr\Webot\libWebbot-ATMega32.a(buffer.o)
+ .debug_line    0x000021c2      0x24d N:\Private\Avr\Webot\libWebbot-ATMega32.a(core.o)
+ .debug_line    0x0000240f       0xc5 N:\Private\Avr\Webot\libWebbot-ATMega32.a(core_interpU.o)
+ .debug_line    0x000024d4      0x378 N:\Private\Avr\Webot\libWebbot-ATMega32.a(iopin.o)
+ .debug_line    0x0000284c      0x129 N:\Private\Avr\Webot\libWebbot-ATMega32.a(led.o)
+ .debug_line    0x00002975      0x2e7 N:\Private\Avr\Webot\libWebbot-ATMega32.a(pwm.o)
+ .debug_line    0x00002c5c      0x256 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintf.o)
+ .debug_line    0x00002eb2      0x17c N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfn.o)
+ .debug_line    0x0000302e      0x1ab N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfs.o)
+ .debug_line    0x000031d9      0x66b N:\Private\Avr\Webot\libWebbot-ATMega32.a(spisw.o)
+ .debug_line    0x00003844      0xebc N:\Private\Avr\Webot\libWebbot-ATMega32.a(timer.o)
+ .debug_line    0x00004700      0x1ba N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCapture.o)
+ .debug_line    0x000048ba      0x1de N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCompare.o)
+ .debug_line    0x00004a98      0x175 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerOverflow.o)
+ .debug_line    0x00004c0d      0x35b N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerPWM.o)
+ .debug_line    0x00004f68      0x29e N:\Private\Avr\Webot\libWebbot-ATMega32.a(uart.o)
+ .debug_line    0x00005206      0x2d4 N:\Private\Avr\Webot\libWebbot-ATMega32.a(scheduler.o)
+
+.debug_frame    0x00000000      0xcf0
+ *(.debug_frame)
+ .debug_frame   0x00000000      0x280 WebbotFirst.o
+ .debug_frame   0x00000280      0x110 N:\Private\Avr\Webot\libWebbot-ATMega32.a(ps2.o)
+ .debug_frame   0x00000390       0xf0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(_spi_common.o)
+ .debug_frame   0x00000480       0xe0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(_uart_common.o)
+ .debug_frame   0x00000560       0x80 N:\Private\Avr\Webot\libWebbot-ATMega32.a(buffer.o)
+ .debug_frame   0x000005e0       0x60 N:\Private\Avr\Webot\libWebbot-ATMega32.a(core.o)
+ .debug_frame   0x00000640       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(core_interpU.o)
+ .debug_frame   0x00000660       0x90 N:\Private\Avr\Webot\libWebbot-ATMega32.a(iopin.o)
+ .debug_frame   0x000006f0       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(led.o)
+ .debug_frame   0x00000710       0x60 N:\Private\Avr\Webot\libWebbot-ATMega32.a(pwm.o)
+ .debug_frame   0x00000770       0x90 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintf.o)
+ .debug_frame   0x00000800       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfn.o)
+ .debug_frame   0x00000820       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfs.o)
+ .debug_frame   0x00000840       0xc0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(spisw.o)
+ .debug_frame   0x00000900      0x270 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timer.o)
+ .debug_frame   0x00000b70       0x30 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCapture.o)
+ .debug_frame   0x00000ba0       0x30 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCompare.o)
+ .debug_frame   0x00000bd0       0x20 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerOverflow.o)
+ .debug_frame   0x00000bf0       0x40 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerPWM.o)
+ .debug_frame   0x00000c30       0x90 N:\Private\Avr\Webot\libWebbot-ATMega32.a(uart.o)
+ .debug_frame   0x00000cc0       0x30 N:\Private\Avr\Webot\libWebbot-ATMega32.a(scheduler.o)
+
+.debug_str      0x00000000     0x2285
+ *(.debug_str)
+ .debug_str     0x00000000      0xdc1 WebbotFirst.o
+                                0xe8c (size before relaxing)
+ .debug_str     0x00000dc1      0x21d N:\Private\Avr\Webot\libWebbot-ATMega32.a(ps2.o)
+                                0x727 (size before relaxing)
+ .debug_str     0x00000fde      0x1ba N:\Private\Avr\Webot\libWebbot-ATMega32.a(_spi_common.o)
+                                0x463 (size before relaxing)
+ .debug_str     0x00001198      0x171 N:\Private\Avr\Webot\libWebbot-ATMega32.a(_uart_common.o)
+                                0x3a6 (size before relaxing)
+ .debug_str     0x00001309       0xae N:\Private\Avr\Webot\libWebbot-ATMega32.a(buffer.o)
+                                0x190 (size before relaxing)
+ .debug_str     0x000013b7       0x71 N:\Private\Avr\Webot\libWebbot-ATMega32.a(core.o)
+                                0x328 (size before relaxing)
+ .debug_str     0x00001428       0x78 N:\Private\Avr\Webot\libWebbot-ATMega32.a(core_interpU.o)
+                                0x113 (size before relaxing)
+ .debug_str     0x000014a0       0x98 N:\Private\Avr\Webot\libWebbot-ATMega32.a(iopin.o)
+                                0x170 (size before relaxing)
+ .debug_str     0x00001538       0x32 N:\Private\Avr\Webot\libWebbot-ATMega32.a(led.o)
+                                0x11a (size before relaxing)
+ .debug_str     0x0000156a      0x15b N:\Private\Avr\Webot\libWebbot-ATMega32.a(pwm.o)
+                                0x5fb (size before relaxing)
+ .debug_str     0x000016c5       0xc2 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintf.o)
+                                0x175 (size before relaxing)
+ .debug_str     0x00001787       0x5a N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfn.o)
+                                0x104 (size before relaxing)
+ .debug_str     0x000017e1       0x9c N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfs.o)
+                                0x144 (size before relaxing)
+ .debug_str     0x0000187d      0x118 N:\Private\Avr\Webot\libWebbot-ATMega32.a(spisw.o)
+                                0x592 (size before relaxing)
+ .debug_str     0x00001995      0x55c N:\Private\Avr\Webot\libWebbot-ATMega32.a(timer.o)
+                                0xbce (size before relaxing)
+ .debug_str     0x00001ef1       0x90 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCapture.o)
+                                0x530 (size before relaxing)
+ .debug_str     0x00001f81       0x69 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCompare.o)
+                                0x5e2 (size before relaxing)
+ .debug_str     0x00001fea       0x48 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerOverflow.o)
+                                0x4f2 (size before relaxing)
+ .debug_str     0x00002032       0xf4 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerPWM.o)
+                                0x614 (size before relaxing)
+ .debug_str     0x00002126       0xca N:\Private\Avr\Webot\libWebbot-ATMega32.a(uart.o)
+                                0x35e (size before relaxing)
+ .debug_str     0x000021f0       0x95 N:\Private\Avr\Webot\libWebbot-ATMega32.a(scheduler.o)
+                                0x5ed (size before relaxing)
+
+.debug_loc      0x00000000     0x7187
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x74f WebbotFirst.o
+ .debug_loc     0x0000074f      0x7c4 N:\Private\Avr\Webot\libWebbot-ATMega32.a(ps2.o)
+ .debug_loc     0x00000f13      0xa49 N:\Private\Avr\Webot\libWebbot-ATMega32.a(_spi_common.o)
+ .debug_loc     0x0000195c      0x636 N:\Private\Avr\Webot\libWebbot-ATMega32.a(_uart_common.o)
+ .debug_loc     0x00001f92      0x210 N:\Private\Avr\Webot\libWebbot-ATMega32.a(buffer.o)
+ .debug_loc     0x000021a2       0xc0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(core.o)
+ .debug_loc     0x00002262       0xee N:\Private\Avr\Webot\libWebbot-ATMega32.a(core_interpU.o)
+ .debug_loc     0x00002350      0x572 N:\Private\Avr\Webot\libWebbot-ATMega32.a(iopin.o)
+ .debug_loc     0x000028c2       0x67 N:\Private\Avr\Webot\libWebbot-ATMega32.a(led.o)
+ .debug_loc     0x00002929      0x5bd N:\Private\Avr\Webot\libWebbot-ATMega32.a(pwm.o)
+ .debug_loc     0x00002ee6      0x1ae N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintf.o)
+ .debug_loc     0x00003094      0x1c6 N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfn.o)
+ .debug_loc     0x0000325a      0x3bb N:\Private\Avr\Webot\libWebbot-ATMega32.a(rprintfs.o)
+ .debug_loc     0x00003615      0x7c1 N:\Private\Avr\Webot\libWebbot-ATMega32.a(spisw.o)
+ .debug_loc     0x00003dd6     0x1fca N:\Private\Avr\Webot\libWebbot-ATMega32.a(timer.o)
+ .debug_loc     0x00005da0      0x151 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCapture.o)
+ .debug_loc     0x00005ef1      0x17f N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCompare.o)
+ .debug_loc     0x00006070      0x11b N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerOverflow.o)
+ .debug_loc     0x0000618b      0xa43 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerPWM.o)
+ .debug_loc     0x00006bce      0x203 N:\Private\Avr\Webot\libWebbot-ATMega32.a(uart.o)
+ .debug_loc     0x00006dd1      0x3b6 N:\Private\Avr\Webot\libWebbot-ATMega32.a(scheduler.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(WebbotFirst.elf elf32-avr)
+LOAD linker stubs
+
+.debug_ranges   0x00000000      0x1c8
+ .debug_ranges  0x00000000       0x18 N:\Private\Avr\Webot\libWebbot-ATMega32.a(ps2.o)
+ .debug_ranges  0x00000018       0x18 N:\Private\Avr\Webot\libWebbot-ATMega32.a(pwm.o)
+ .debug_ranges  0x00000030       0x30 N:\Private\Avr\Webot\libWebbot-ATMega32.a(spisw.o)
+ .debug_ranges  0x00000060       0x48 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timer.o)
+ .debug_ranges  0x000000a8       0x68 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerCompare.o)
+ .debug_ranges  0x00000110       0xa0 N:\Private\Avr\Webot\libWebbot-ATMega32.a(timerPWM.o)
+ .debug_ranges  0x000001b0       0x18 N:\Private\Avr\Webot\libWebbot-ATMega32.a(scheduler.o)
