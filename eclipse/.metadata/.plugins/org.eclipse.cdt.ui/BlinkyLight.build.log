@@ -1,0 +1,20 @@
+20:16:28 **** Incremental Build of configuration Debug for project BlinkyLight ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega645 BlinkyLight.elf
+AVR Memory Usage
+----------------
+Device: atmega645
+
+Program:    1188 bytes (1.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+20:16:28 Build Finished (took 435ms)
+

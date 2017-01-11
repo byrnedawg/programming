@@ -1,0 +1,276 @@
+14:50:34 **** Incremental Build of configuration Release for project cppBlinkeyLight ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega1284p cppBlinkeyLight.elf
+AVR Memory Usage
+----------------
+Device: atmega1284p
+
+Program:     468 bytes (0.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:15:39 **** Incremental Build of configuration Debug for project BlinkyLight ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega645 BlinkyLight.elf
+AVR Memory Usage
+----------------
+Device: atmega645
+
+Program:    1188 bytes (1.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:15:52 **** Incremental Build of configuration Release for project cppBlinkeyLight ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega1284p cppBlinkeyLight.elf
+AVR Memory Usage
+----------------
+Device: atmega1284p
+
+Program:     468 bytes (0.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:15:57 **** Incremental Build of configuration Debug for project helloCooper ****
+make all 
+make: Nothing to be done for `all'.
+18:33:10 **** Incremental Build of configuration Debug for project BlinkyLight ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega645 BlinkyLight.elf
+AVR Memory Usage
+----------------
+Device: atmega645
+
+Program:    1188 bytes (1.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:33:14 **** Incremental Build of configuration Release for project cppBlinkeyLight ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega1284p cppBlinkeyLight.elf
+AVR Memory Usage
+----------------
+Device: atmega1284p
+
+Program:     468 bytes (0.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:33:16 **** Incremental Build of configuration Debug for project helloCooper ****
+make all 
+make: Nothing to be done for `all'.
+18:36:03 **** Incremental Build of configuration Debug for project BlinkyLight ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega645 BlinkyLight.elf
+AVR Memory Usage
+----------------
+Device: atmega645
+
+Program:    1188 bytes (1.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:36:06 **** Incremental Build of configuration Release for project cppBlinkeyLight ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega1284p cppBlinkeyLight.elf
+AVR Memory Usage
+----------------
+Device: atmega1284p
+
+Program:     468 bytes (0.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:36:08 **** Incremental Build of configuration Debug for project helloCooper ****
+make all 
+make: Nothing to be done for `all'.
+18:59:51 **** Incremental Build of configuration Debug for project BlinkyLight ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega645 BlinkyLight.elf
+AVR Memory Usage
+----------------
+Device: atmega645
+
+Program:    1188 bytes (1.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:59:54 **** Incremental Build of configuration Release for project cppBlinkeyLight ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega1284p cppBlinkeyLight.elf
+AVR Memory Usage
+----------------
+Device: atmega1284p
+
+Program:     468 bytes (0.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:59:56 **** Incremental Build of configuration Debug for project helloCooper ****
+make all 
+make: Nothing to be done for `all'.
+19:17:45 **** Incremental Build of configuration Debug for project BlinkyLight ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega645 BlinkyLight.elf
+AVR Memory Usage
+----------------
+Device: atmega645
+
+Program:    1188 bytes (1.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:18:01 **** Incremental Build of configuration Release for project cppBlinkeyLight ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega1284p cppBlinkeyLight.elf
+AVR Memory Usage
+----------------
+Device: atmega1284p
+
+Program:     468 bytes (0.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:18:10 **** Incremental Build of configuration Debug for project helloCooper ****
+make all 
+make: Nothing to be done for `all'.
+19:33:15 **** Incremental Build of configuration Debug for project BlinkyLight ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega645 BlinkyLight.elf
+AVR Memory Usage
+----------------
+Device: atmega645
+
+Program:    1188 bytes (1.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:34:08 **** Incremental Build of configuration Release for project cppBlinkeyLight ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega1284p cppBlinkeyLight.elf
+AVR Memory Usage
+----------------
+Device: atmega1284p
+
+Program:     468 bytes (0.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:34:35 **** Incremental Build of configuration Debug for project helloCooper ****
+make all 
+make: Nothing to be done for `all'.
+20:16:28 **** Incremental Build of configuration Debug for project BlinkyLight ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega645 BlinkyLight.elf
+AVR Memory Usage
+----------------
+Device: atmega645
+
+Program:    1188 bytes (1.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:16:31 **** Incremental Build of configuration Release for project cppBlinkeyLight ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega1284p cppBlinkeyLight.elf
+AVR Memory Usage
+----------------
+Device: atmega1284p
+
+Program:     468 bytes (0.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:16:33 **** Incremental Build of configuration Debug for project helloCooper ****
+make all 
+make: Nothing to be done for `all'.

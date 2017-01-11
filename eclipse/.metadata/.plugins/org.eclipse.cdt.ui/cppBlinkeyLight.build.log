@@ -1,0 +1,20 @@
+20:16:31 **** Incremental Build of configuration Release for project cppBlinkeyLight ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega1284p cppBlinkeyLight.elf
+AVR Memory Usage
+----------------
+Device: atmega1284p
+
+Program:     468 bytes (0.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+20:16:31 Build Finished (took 217ms)
+

@@ -1,0 +1,17 @@
+13:17:44 **** Build of configuration Debug for project blinkeyled ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega644 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: blinkeyled.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,blinkeyled.map -mmcu=atmega644 -o "blinkeyled.elf"  ./main.o   
+/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm644.o: In function `__bad_interrupt':
+../../../../crt1/gcrt1.S:195: undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [blinkeyled.elf] Error 1
+
+13:17:46 Build Finished (took 1s.803ms)
+
