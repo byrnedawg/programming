@@ -1,0 +1,8 @@
+#!/bin/sh
+#NAME OF THE FILE TO COMPILE
+TARGET="findblue.cpp"
+echo "compilation started " $TARGET
+#sudo gcc -I/home/pi/opencv_include -L/usr/lib/arm-linux-gnueabihf  -lopencv_core -lopencv_highgui -lopencv_imgproc -lopencv_ml -lm -lopencv_contrib -lopencv_legacy $TARGET
+sudo g++ -I/home/pi/PiCam/opencv_include -I/home/pi/PiCam/lib -lopencv_core -lopencv_highgui -lopencv_imgproc  $TARGET
+echo "compilation completed run ./a.out to execute the o/p "
+
