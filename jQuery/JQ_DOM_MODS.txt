@@ -1,0 +1,25 @@
+https://www.khanacademy.org/computing/computer-programming/html-js-jquery/dom-modification-with-jquery/a/review-dom-modification-with-jquery
+
+Once you have found a collection of elements using the jQuery function, you can change them using various methods.
+Set their inner text with text():
+$("h1").text("All about cats"); (See example)
+Set their inner html with html():
+$("h1").html("I <strong>love</strong> cats"); (See example)
+Set attributes with attr():
+$(".dog-pic").attr("src", "dog.jpg");
+$(".google-link").attr("href", "http://www.google.com"); (See example)
+Change CSS styles with css():
+$("h1").css("font-family", "monospace");
+$("h1").css({"font-family": "monospace", color: "red"}); (See example)
+Add a class name with addClass():
+$("h1").addClass("warning");
+You can also create new elements from scratch by passing a string of HTML into the jQuery function:
+var $p = $("<p>");
+If you'd like, you can pass in the full HTML, including tag contents, attributes, and styles.
+var $p = $('<p style="color:red;">I love people who love cats.</p>');
+Once you create an element, you can modify it using any of the methods above:
+$p.addClass("warning");
+Then you can append it to an existing element using append(), :
+$("#main-div").append($p); (See example)
+You can also insert it into the page using prepend() (See example) or appendTo() (See example).
+Read the jQuery documentation for more details on each of these methods, following the linked method names above. We won't be able to cover everything here, and as web development best practices change quickly, you will need to get good at reading documentation to keep up to date on the latest and greatest. It's good to start working on that skill now!

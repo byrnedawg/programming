@@ -1,0 +1,27 @@
+Adding event listeners
+
+To make sure that the browser calls a particular function when an event happens on an element, you must use document.addEventListener:
+var buttonEl = document.getElementById("clicker");
+var onButtonClick = function() {
+    console.log("Oh golly gosh, you clicked me");
+};
+buttonEl.addEventListener("click", onButtonClick);
+You can pass many valid strings as the first argument, see the event types article.
+If you want information about the event that happened, you can look at the event object that the browser passes to your callback function:
+var faceEl = document.getElementById("face");
+var onFaceClick = function(e) {
+    console.log("You clicked " + e.clientX + " , " + e.clientY);
+};
+faceEl.addEventListener("click", onFaceClick);
+There are many properties on the event object, you can see a full list here.
+If you are overriding click behavior on a link or submit behavior on a form, you may want to call event.preventDefault() to prevent the browser's default behavior.
+Removing event listeners
+
+If you no longer need a particular event listener, you can remove it using removeEventListener:
+var faceEl = document.getElementById("face");
+var onFaceClick = function(e) {
+    console.log("You clicked " + e.clientX + " , " + e.clientY);
+};
+faceEl.addEventListener("click", onFaceClick);
+// later...
+faceEl.removeEventListener("click", onFaceClick);

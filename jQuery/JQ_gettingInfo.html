@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Getting info on elements with jQuery</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                color: rgb(16, 10, 102);
+            }
+            
+            p {
+                color: red;
+            }
+            
+            #main-heading {
+                color: purple;
+            }
+            
+            .note {
+                background: yellow;
+            }
+        </style>
+    </head>
+    <body>
+
+    <h1 id="main-heading">What is jQuery?</h1>
+
+    <p>jQuery is the most popular JavaScript library. It gives developers lots of useful functions so they can make their webpage interactive across multiple browsers.</p>
+    
+    <p class="note">jQuery is an open source library with a big community of contributors.</p>
+    
+    <h1>Why should you learn jQuery?</h1>
+
+    <p>If you learn jQuery, you'll be able to use it in your own webpages, understand other developer's webpages, and have a better understanding generally about how to use libraries.</p>
+    
+    <p class="note">Note: jQuery functions use the DOM API (like <code>document.getElementById</code>). You should  learn that first, if you haven't yet.</p>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    
+    <script>
+        $("p").text("jQuery is the GREATEST!!!");
+        //$("#main-heading").text("jQuery? More like YAY-QUERY!");
+        var headingText = $("#main-heading").text();
+        console.log(headingText);
+        $("#main-heading").text("!!" + headingText + "!!");
+        
+        $(".note").text("NOTE: jQuery has been known to cause EXTREME JOY!");
+        
+    </script>
+    </body>
+</html>
