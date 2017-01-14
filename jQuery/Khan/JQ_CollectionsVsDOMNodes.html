@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Collections vs. DOM Nodes</title>
+        <style>
+            .crocodile {
+                color: green;
+                font-family: fantasy;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <h2 id="cuteness">Cats are cute!</h2>
+
+        <p>Cats are widely known to be one of the cutest animals. It has long been rumored that they have put all of humanity under a hypnosis, so that they can achieve their goals of getting fed while also getting to do whatever they darn want around our houses.</p>
+        
+        <p>This cat is exhibiting what's known as the "so-cute-now-feed-me" face:</p>
+        <a href="https://en.wikipedia.org/wiki/Cat_food">
+            <img src="https://www.kasandbox.org/programming-images/animals/cat.png" width="50">
+        </a>
+        
+        <h2 id="activities">Common cat activities (Cat-ivities)</h2>
+        
+        <p>Cats enjoy attacking innocent pieces of string, walking around your legs at the exact moment that you're trying to flip a pancake on the stove, sleeping for hours and hours and hours, and pouncing on unsuspecting laser dots.</p> 
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/2006-07-07_katze_mit_angel.jpg" width="50">
+        
+        <a href="https://en.wikipedia.org/wiki/Cat">Learn more</a>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>
+        // Modifying elements
+        $("h2").text("CROCODILE ATTACK!");
+        $("p").html("The crocodiles are coming - <strong>oh noess</strong>!!");
+        $("p").css("color", "green");
+        $("h2").addClass("crocodile");
+        $("a").attr("href", "https://en.wikipedia.org/wiki/Crocodile");
+        $("img").attr("src", "https://www.kasandbox.org/programming-images/animals/crocodiles.png");
+        
+        // Creating elements
+        var newP = $("<p>");
+        newP.text("The crocodiles have eaten this ENTIRE PAGE!");
+        newP.addClass("crocodile");
+        $("body").append(newP);
+        
+        // Let's discuss:
+        var headingFromD = document.getElementById("cuteness"); // DOM node
+        headingFromD.innerHTML = "Setting .innerHTML";
+        var headingFromJ = $("#cuteness"); // jQuery collection
+        headingFromJ.html("Using .html()");
+        
+        var $heading = $("#cuteness");
+        $heading.html("Using jQuery again!");
+        var headingD = $heading[0];
+        
+        var $headingJ = $(headingD);
+        
+        </script>
+    </body>
+</html>

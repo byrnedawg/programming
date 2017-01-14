@@ -1,0 +1,30 @@
+
+jQuery provides a number of functions for animation and effects, which are listed in its documentation.
+Changing visibility
+
+For simple visibility changes, you can use hide() and show():
+$("#pic").hide();
+$("#pic").show(); (See example)
+You can also use toggle(), which will decide whether to show or hide based on the current state: $("#pic").toggle(); (See example)
+You can pass a duration into any of those functions, and jQuery will then animate the changing of the visibility: $("#pic").toggle(1000);
+You can also use slideDown(), slideUp() and slideToggle() for sliding effects (See example) or fadeIn(), fadeOut() and fadeToggle() for fading effects (See example).
+You can pass a callback function as the second parameter to any of those functions, and jQuery will call that callback function when the animation is complete:
+$("#pic").toggle(1000, function() {
+    $("body").append("It's here!");
+});
+You can also chain multiple effects together and call delay() if you'd like a delay between them:
+$("#pic").slideUp(300).delay().fadeIn();
+Custom animation
+
+If you'd like to animate specific CSS properties, you can use animate():
+$("#pic").animate({
+   width: "70%",
+   opacity: 0.7,
+   padding: 20
+}, 1000);
+Note that you can only animate CSS properties that take numeric values - so you can't use this to animate properties like 'color'. (See example)
+You can also attach various callback functions in animate(), if you'd like to find out when the animation has progressed or is complete. Check the documentation for more details.
+Animating responsibly
+
+Animations should always improve the user experience, not make it worse. Animations should help users understand something about the state of your web app or add a touch of fun - they should not slow down the experience unnecessarily and frustrate the user. You can ask users for feedback about your use of animations or work with a designer to decide how and where to animate.
+If you know your user is on a device that doesn't perform well with animations, you can set $.fx.off to true

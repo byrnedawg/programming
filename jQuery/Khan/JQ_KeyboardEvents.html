@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery example: keyboard events</title>
+        <style>
+            body {
+                font-family: monospace;
+                font-size: 18px;
+                font-weight: bold;
+                color: #437a39;
+            }
+            
+            .khan-stripe {
+                background: #437a39;
+                line-height: 32px;
+                height: 42px;
+                width: 96%;
+                padding-left: 0.5cm;
+                color: #ffffff;
+            }
+            div.header
+            {
+                font-family: Gruppo;
+                font-size: 20px;
+                font-weight: bold;
+                color: #ffffff;
+            }
+            div.dirs
+            {
+                line-height: 42px;
+            }
+            div.msg
+            {
+                line-height: 64px;
+                font-family: "Roboto Slab";
+                font-size: 16px;
+                font-weight: bold;
+                color: #222222;
+            }
+            main
+            {
+                height: 280px;
+                margin: 10px;
+            }
+            footer
+            {
+                text-align: center;
+                font-family: Gruppo;
+                font-size: 16px;
+                font-weight: bold;
+            }
+            .lowlight
+            {
+                background: #ffffff;
+            }
+            .highlight
+            {
+                background: #ffff00;
+            }
+            .key-up
+            {
+                background: #f2f2f2;
+            }
+            .key-down
+            {
+                background: #eafaea;
+            }
+        </style>
+    </head>
+    <body>
+    
+    <p class="msg">This textbox responds to these keyboard events: focus, blur, keyup, keydown, and keypress.</p>
+    <p class="dirs">Enter your name and then press Enter: </p>
+    <input type="text" id="you" class="lowlight" size="40px" />
+    <p id="greeting" class="msg"></p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        /** CONSTANTS **/
+        var ENTER_KEY = 13;
+        
+        var greetUser = function(str) {
+            document.getElementById("greeting").textContent = str;
+        };
+        
+        var makeNameCase = function(str) {
+            return ( str.charAt(0).toUpperCase() +
+			         str.substring(1, str.length).toLowerCase());  
+        };
+    
+        // When input receives focus,
+        // add a CSS class that highlights it
+        $("input:text").on("focus", function() {
+        
+            $(this).removeClass("lowlight");
+            $(this).addClass("highlight");
+        });
+        
+        // When input loses focus (blurs),
+        // revert class names to original
+        $("input:text").on("blur", function() {
+        
+            $(this).removeClass("highlight");
+            $(this).removeClass("key-up");
+            $(this).removeClass("key-down");
+            $(this).addClass("lowlight");
+        });
+        
+        // When keypress event is triggered and
+        //  the key is the enter key,
+        //  clear the input and display name greeting
+        $("input:text").on("keypress", function(key) {
+            
+            if ( key.keyCode === ENTER_KEY )
+            {
+                greetUser("Hello, " + makeNameCase($(this).val()) +  "!"); 
+                $(this).val("");
+                $(this).blur();
+            }
+        });
+        
+        // When keydown event is triggered, change classes
+        $("input:text").on("keydown", function(key) {
+        
+            $(this).removeClass("activelight");
+            $(this).removeClass("highlight");
+            $(this).removeClass("key-up");
+            $(this).addClass("key-down");
+        });
+        
+        // When keyup event is triggered, change classes
+        $("input:text").on("keyup", function(key) {
+        
+            $(this).removeClass("key-down");
+            $(this).addClass("key-up");
+        });
+    </script>
+    </body>
+</html>
+ <!-- Example created by trek:
+ http://khanacademy.org/profile/trek 
+ https://www.khanacademy.org/computing/computer-programming/html-js-jquery/dom-events-with-jquery/a/dom-events-and-properties-->
