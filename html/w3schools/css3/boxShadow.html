@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+h1 {
+    width: 300px;
+    height: 100px;
+    padding: 15px;
+    background-color: yellow;
+    box-shadow: 10px 10px;
+}
+
+div {
+    width: 300px;
+    height: 100px;
+    padding: 15px;
+    background-color: yellow;
+    box-shadow: 10px 10px grey;
+}
+
+#boxshadow1{
+    box-shadow: 10px 10px 5px grey;
+}
+
+#boxshadow {
+    position: relative;
+    -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
+    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    padding: 10px;
+    background: white;
+}
+
+/* Make the image fit the box */
+#boxshadow img {
+    width: 100%;
+    border: 1px solid #8a4419;
+    border-style: inset;
+}
+
+#boxshadow::after {
+    content: '';
+    position: absolute;
+    z-index: -1; /* hide shadow behind image */
+    -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);                
+    width: 70%; 
+    left: 15%; /* one half of the remaining 30% */
+    height: 100px;
+    bottom: 0;
+}
+
+div.polaroid {
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+div.container {
+  padding: 10px;
+}
+
+</style>
+</head>
+<body>
+
+<h1>This is a h1 element with a box-shadow</h1>
+
+<div>This is a div element with a box-shadow</div>
+<br>
+<div id = "boxshadow1">This is a div element with a box-shadow blur</div>
+<br>
+<div id="boxshadow">
+  <img src="https://avatars1.githubusercontent.com/u/8659471?v=3&s=460.jpg" alt="ByrneDawg" width="100" >
+</div>
+<br>
+<br>
+<div class="polaroid">
+  <img src="rock600x400.jpg" alt="Norway" style="width:100%">
+  <div class="container">
+    <p>Hardanger, Norway</p>
+  </div>
+</div>
+
+
+</body>
+</html>

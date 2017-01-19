@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div {
+    width: 100px;
+    height: 100px;
+    background: red;
+}
+
+#div1{
+    -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+}
+
+#div2{
+    -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s, height 4s;
+}
+
+#div3{
+    -webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+}
+
+#div4{
+    -webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
+    -webkit-transition-timing-function: ease;
+    transition-timing-function: ease;
+}
+
+#div5{
+    -webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+}
+
+#div6{
+    -webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+#div7{
+    -webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+}
+
+#div8
+{
+    -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari */
+    transition: width 2s, height 2s, transform 2s;
+    
+}
+
+#div9
+{
+    -webkit-transition-property: width;
+    -webkit-transition-duration: 2s;
+    -webkit-transition-timing-function: linear;
+    -webkit-transition-delay: 1s;
+    /* Standard syntax */
+    transition-property: width;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    transition-delay: 1s;
+}
+
+div:hover {
+    width: 300px;
+}
+
+#div2:hover {
+     width: 300px;
+    height: 300px;
+}
+
+#div8:hover {
+     width: 300px;
+    height: 300px;
+    -webkit-transform: rotate(180deg); /* Safari */
+    transform: rotate(180deg);
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
+
+<div id = "div1"></div>
+<br>
+<div id = "div2"></div>
+<br>
+<div id="div3">linear</div><br>
+<div id="div4">ease</div><br>
+<div id="div5">ease-in</div><br>
+<div id="div6">ease-out</div><br>
+<div id="div7">ease-in-out</div><br>
+<div id="div8">transform</div><br>
+<div id="div9">delay</div><br>
+
+<p>Hover over the div element above, to see the transition effect.</p>
+
+</body>
+</html>
