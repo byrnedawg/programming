@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+#pic1 {
+    border-radius: 8px;
+}
+
+#pic2 {
+    border-radius: 50%;
+}
+
+#pic3{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+#pic4{
+    max-width: 100%;
+    height: auto;
+}
+
+#pic5{
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
+#pic6{
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+a {
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+a:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+div.polaroid {
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+}
+
+div.container {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.container {
+    position: relative;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+}
+
+img { 
+    width: 100%;
+    height: auto;
+    opacity: 0.3;
+}
+
+</style>
+</head>
+<body>
+
+<h2>Rounded Images</h2>
+<p>Use the border-radius property to create rounded images:</p>
+
+<img id = "pic1" src="https://avatars1.githubusercontent.com/u/8659471?v=3&s=460.jpg" alt="ByrneDawg" width="300">
+<br>
+<img id = "pic2" src="https://avatars1.githubusercontent.com/u/8659471?v=3&s=460.jpg" alt="ByrneDawg" width="300">
+<br>
+<img id = "pic3" src="https://avatars1.githubusercontent.com/u/8659471?v=3&s=460.jpg" alt="ByrneDawg" width="300">
+<br>
+
+<h2>Thumbnail Image as Link</h2>
+<p>Use the border property to create thumbnail images. Wrap an anchor around the image to use it as a link.</p>
+<p>Hover over the image and click on it to see the effect.</p>
+
+<a target="_blank" href="https://avatars1.githubusercontent.com/u/8659471?v=3&s=460.jpg">
+  <img src="https://avatars1.githubusercontent.com/u/8659471?v=3&s=460.jpg" alt="ByrneDawg" width="300">
+
+</a>
+
+<br>
+<img id = "pic4" src="https://avatars1.githubusercontent.com/u/8659471?v=3&s=460.jpg" alt="ByrneDawg" width="300">
+<br>
+<img id = "pic5" src="https://avatars1.githubusercontent.com/u/8659471?v=3&s=460.jpg" alt="ByrneDawg" width="300">
+<br>
+
+<div class="polaroid">
+  <img src="https://avatars1.githubusercontent.com/u/8659471?v=3&s=460.jpg" alt="ByrneDawg" width=100%>
+  <div class="container">
+    <p>ByrneDawg Logo</p>
+</div>
+
+<br>
+<img id = "pic6" src="https://avatars1.githubusercontent.com/u/8659471?v=3&s=460.jpg" alt="ByrneDawg" width="300">
+<br>
+
+<h2>Image Text</h2>
+<p>Center text in image:</p>
+
+<div class="container">
+  <img src="https://avatars1.githubusercontent.com/u/8659471?v=3&s=460.jpg" alt="ByrneDawg" width="300">
+
+  <div class="center">Centered</div>
+</div>
+
+</body>
+</html>
