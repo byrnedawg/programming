@@ -12,8 +12,79 @@
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
     cursor: pointer;
 }
+
+.button1 
+{
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50; /* Green */
+    font-size: 10px;
+    padding: 10px 24px;
+    border-radius: 2px;
+}
+
+.button2 
+{
+    font-size: 12px;
+    padding: 12px 28px;
+    border-radius: 4px;
+}
+.button3 
+{
+    font-size: 16px;
+    padding: 14px 40px;
+    border-radius: 8px;
+}
+.button4 
+{
+    font-size: 20px;
+    width: 250px;
+    padding: 32px 16px;
+    border-radius: 12px;
+}
+.button5 
+{
+    font-size: 24px;
+    padding: 16px;
+    border-radius: 50%;
+}
+
+.button6
+{
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    width: 100%;
+}
+
+.button6:hover 
+{
+    background-color: #555555;
+    color: white;
+}
+
+.button7 {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+    border: 1px solid green
+}
+
+.button7:hover {
+    background-color: #3e8e41;
+}
+
 </style>
 </head>
 <body>
@@ -24,6 +95,28 @@
 <a href="#" class="button">Link Button</a>
 <button class="button">Button</button>
 <input type="button" class="button" value="Input Button">
+
+<h2>Button Sizes</h2>
+<p>Change the font size of a button with the font-size property:</p>
+
+<button class="button button1">10px</button>
+<button class="button button2">12px</button>
+<button class="button button3">16px</button>
+<button class="button button4">20px</button>
+<button class="button button5">24px</button>
+
+<h2>Button Shadows</h2>
+<button class="button button6">24px</button>
+
+<h2>Button Groups</h2>
+<p>Remove margins and float the buttons to create a button group:</p>
+
+<button class="button7">Button</button>
+<button class="button7">Button</button>
+<button class="button7">Button</button>
+<button class="button7">Button</button>
+
+<p style="clear:both"><br>Remember to clear floats after, or else will this p element also float next to the buttons.</p>
 
 </body>
 </html>
