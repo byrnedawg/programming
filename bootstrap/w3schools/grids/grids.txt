@@ -1,0 +1,40 @@
+http://www.w3schools.com/bootstrap/bootstrap_grid_system.asp
+
+Grid Classes
+The Bootstrap grid system has four classes:
+
+xs (for phones)
+sm (for tablets)
+md (for desktops)
+lg (for larger desktops)
+The classes above can be combined to create more dynamic and flexible layouts.
+
+Tip: Each class scales up, so if you wish to set the same widths for xs and sm, you only need to specify xs. 
+
+Grid System Rules
+Some Bootstrap grid system rules:
+
+Rows must be placed within a .container (fixed-width) or .container-fluid (full-width) for proper alignment and padding
+Use rows to create horizontal groups of columns
+Content should be placed within columns, and only columns may be immediate children of rows
+Predefined classes like .row and .col-sm-4 are available for quickly making grid layouts
+Columns create gutters (gaps between column content) via padding. That padding is offset in rows for the first and last column via negative margin on .rows
+Grid columns are created by specifying the number of 12 available columns you wish to span. For example, three equal columns would use three .col-sm-4
+
+Grid Options
+The following table summarizes how the Bootstrap grid system works across multiple devices:
+
+ 	Extra small devices
+Phones (<768px)	Small devices
+Tablets (>=768px)	Medium devices
+Desktops (>=992px)	Large devices
+Desktops (>=1200px)
+Grid behaviour	Horizontal at all times	Collapsed to start, horizontal above breakpoints	Collapsed to start, horizontal above breakpoints	Collapsed to start, horizontal above breakpoints
+Container width	None (auto)	750px	970px	1170px
+Class prefix	.col-xs-	.col-sm-	.col-md-	.col-lg-
+Number of columns	12	12	12	12
+Column width	Auto	~62px	~81px	~97px
+Gutter width	30px (15px on each side of a column)	30px (15px on each side of a column)	30px (15px on each side of a column)	30px (15px on each side of a column)
+Nestable	Yes	Yes	Yes	Yes
+Offsets	Yes	Yes	Yes	Yes
+Column ordering	Yes	Yes	Yes	Yes
