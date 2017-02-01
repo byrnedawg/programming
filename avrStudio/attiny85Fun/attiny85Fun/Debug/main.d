@@ -4,8 +4,8 @@ main.d main.o: .././main.c \
  c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
  c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\4.9.2\include\stdint.h \
  c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdint.h \
- C:\Program\ Files\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.1.102\include/avr/iotn85.h \
- C:\Program\ Files\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.1.102\include/avr/iotnx5.h \
+ c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\iotn85.h \
+ c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\iotnx5.h \
  c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\portpins.h \
  c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\common.h \
  c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\version.h \
@@ -29,9 +29,9 @@ c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr
 
 c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdint.h:
 
-C:\Program\ Files\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.1.102\include/avr/iotn85.h:
+c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\iotn85.h:
 
-C:\Program\ Files\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.1.102\include/avr/iotnx5.h:
+c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\iotnx5.h:
 
 c:\program\ files\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\portpins.h:
 

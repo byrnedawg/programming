@@ -1,0 +1,540 @@
+
+attiny85RetroLiteTx.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000250  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .debug_aranges 00000098  00000000  00000000  000002a4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  2 .debug_pubnames 0000013d  00000000  00000000  0000033c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_info   0000032d  00000000  00000000  00000479  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_abbrev 00000107  00000000  00000000  000007a6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_line   0000044f  00000000  00000000  000008ad  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_frame  00000110  00000000  00000000  00000cfc  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_str    000001d8  00000000  00000000  00000e0c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_loc    00000078  00000000  00000000  00000fe4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_ranges 00000090  00000000  00000000  0000105c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+	//timer0Overflows = 0; // time0roverflows set to 0
+	//timer1Overflows = 0; // time1roverflows set to 0
+}
+
+void timer0_init(void) // Initialize timer 0
+{
+   0:	0e c0       	rjmp	.+28     	; 0x1e <__ctors_end>
+   2:	1d c0       	rjmp	.+58     	; 0x3e <__bad_interrupt>
+   4:	94 c0       	rjmp	.+296    	; 0x12e <__vector_2>
+   6:	7f c0       	rjmp	.+254    	; 0x106 <__vector_3>
+   8:	74 c0       	rjmp	.+232    	; 0xf2 <__vector_4>
+   a:	55 c0       	rjmp	.+170    	; 0xb6 <__vector_5>
+   c:	18 c0       	rjmp	.+48     	; 0x3e <__bad_interrupt>
+   e:	18 c0       	rjmp	.+48     	; 0x40 <__vector_7>
+  10:	48 c0       	rjmp	.+144    	; 0xa2 <__vector_8>
+  12:	83 c0       	rjmp	.+262    	; 0x11a <__vector_9>
+  14:	5a c0       	rjmp	.+180    	; 0xca <__vector_10>
+  16:	63 c0       	rjmp	.+198    	; 0xde <__vector_11>
+  18:	12 c0       	rjmp	.+36     	; 0x3e <__bad_interrupt>
+  1a:	11 c0       	rjmp	.+34     	; 0x3e <__bad_interrupt>
+  1c:	10 c0       	rjmp	.+32     	; 0x3e <__bad_interrupt>
+
+0000001e <__ctors_end>:
+  1e:	11 24       	eor	r1, r1
+  20:	1f be       	out	0x3f, r1	; 63
+  22:	cf e5       	ldi	r28, 0x5F	; 95
+  24:	d2 e0       	ldi	r29, 0x02	; 2
+  26:	de bf       	out	0x3e, r29	; 62
+  28:	cd bf       	out	0x3d, r28	; 61
+
+0000002a <__do_clear_bss>:
+  2a:	10 e0       	ldi	r17, 0x00	; 0
+  2c:	a0 e6       	ldi	r26, 0x60	; 96
+  2e:	b0 e0       	ldi	r27, 0x00	; 0
+  30:	01 c0       	rjmp	.+2      	; 0x34 <.do_clear_bss_start>
+
+00000032 <.do_clear_bss_loop>:
+  32:	1d 92       	st	X+, r1
+
+00000034 <.do_clear_bss_start>:
+  34:	a0 36       	cpi	r26, 0x60	; 96
+  36:	b1 07       	cpc	r27, r17
+  38:	e1 f7       	brne	.-8      	; 0x32 <.do_clear_bss_loop>
+  3a:	e8 d0       	rcall	.+464    	; 0x20c <main>
+  3c:	07 c1       	rjmp	.+526    	; 0x24c <_exit>
+
+0000003e <__bad_interrupt>:
+  3e:	e0 cf       	rjmp	.-64     	; 0x0 <__vectors>
+
+00000040 <__vector_7>:
+volatile uint16_t timer1Overflows; // Stores the value for timer polling timer 1
+
+volatile bool BTN_Down; // true if the push button is being help down
+
+ISR(ANA_COMP_vect)
+{
+  40:	1f 92       	push	r1
+  42:	0f 92       	push	r0
+  44:	0f b6       	in	r0, 0x3f	; 63
+  46:	0f 92       	push	r0
+  48:	11 24       	eor	r1, r1
+  4a:	2f 93       	push	r18
+  4c:	3f 93       	push	r19
+  4e:	4f 93       	push	r20
+  50:	5f 93       	push	r21
+  52:	8f 93       	push	r24
+  54:	9f 93       	push	r25
+  56:	ef 93       	push	r30
+  58:	ff 93       	push	r31
+	//}
+	//else
+	//{
+	//	output_low(PORTB, YellowLED);
+	//}
+	output_low(PORTB, TxEn);
+  5a:	e8 e3       	ldi	r30, 0x38	; 56
+  5c:	f0 e0       	ldi	r31, 0x00	; 0
+  5e:	80 81       	ld	r24, Z
+  60:	87 7f       	andi	r24, 0xF7	; 247
+  62:	80 83       	st	Z, r24
+	output_high(PORTB, TxData);
+  64:	80 81       	ld	r24, Z
+  66:	80 61       	ori	r24, 0x10	; 16
+  68:	80 83       	st	Z, r24
+  6a:	20 e1       	ldi	r18, 0x10	; 16
+  6c:	37 e2       	ldi	r19, 0x27	; 39
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+  6e:	48 ec       	ldi	r20, 0xC8	; 200
+  70:	50 e0       	ldi	r21, 0x00	; 0
+  72:	ca 01       	movw	r24, r20
+  74:	01 97       	sbiw	r24, 0x01	; 1
+  76:	f1 f7       	brne	.-4      	; 0x74 <__vector_7+0x34>
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+  78:	21 50       	subi	r18, 0x01	; 1
+  7a:	30 40       	sbci	r19, 0x00	; 0
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+  7c:	d1 f7       	brne	.-12     	; 0x72 <__vector_7+0x32>
+	_delay_ms(1000);
+	output_high(PORTB, TxEn);
+  7e:	e8 e3       	ldi	r30, 0x38	; 56
+  80:	f0 e0       	ldi	r31, 0x00	; 0
+  82:	80 81       	ld	r24, Z
+  84:	88 60       	ori	r24, 0x08	; 8
+  86:	80 83       	st	Z, r24
+}
+  88:	ff 91       	pop	r31
+  8a:	ef 91       	pop	r30
+  8c:	9f 91       	pop	r25
+  8e:	8f 91       	pop	r24
+  90:	5f 91       	pop	r21
+  92:	4f 91       	pop	r20
+  94:	3f 91       	pop	r19
+  96:	2f 91       	pop	r18
+  98:	0f 90       	pop	r0
+  9a:	0f be       	out	0x3f, r0	; 63
+  9c:	0f 90       	pop	r0
+  9e:	1f 90       	pop	r1
+  a0:	18 95       	reti
+
+000000a2 <__vector_8>:
+
+ISR(ADC_vect) // Interrupt for ADC Converter
+{
+  a2:	1f 92       	push	r1
+  a4:	0f 92       	push	r0
+  a6:	0f b6       	in	r0, 0x3f	; 63
+  a8:	0f 92       	push	r0
+  aa:	11 24       	eor	r1, r1
+	//uint8_t temp; // raw a2d variable
+	//temp = ADCH ; // ADCH is the high portion of the a2d
+	//LDR_Value = (56 * 255 / temp); // 56/ 1.1v = 255/5v (5v/wanted voltage level = 255/ 8 bit quantized voltage
+
+	//if(LDR_Value > Light_On_Threshold) //132/2.6V Low Battery Voltage divider R1 324Ohms R2 200
+}
+  ac:	0f 90       	pop	r0
+  ae:	0f be       	out	0x3f, r0	; 63
+  b0:	0f 90       	pop	r0
+  b2:	1f 90       	pop	r1
+  b4:	18 95       	reti
+
+000000b6 <__vector_5>:
+
+ISR(TIMER0_OVF_vect) // timer 0 overflow interrupt
+{
+  b6:	1f 92       	push	r1
+  b8:	0f 92       	push	r0
+  ba:	0f b6       	in	r0, 0x3f	; 63
+  bc:	0f 92       	push	r0
+  be:	11 24       	eor	r1, r1
+		OCR0B = (255 - Led_Strip_Brightness);  // PWM Duty cycle value
+		OCR0A = (255 - Aux_PWM); // PWM Duty cycle value switched green and red
+		OCR1B = Power_Latch; // PWM Duty cycle value
+	}
+	*/
+}
+  c0:	0f 90       	pop	r0
+  c2:	0f be       	out	0x3f, r0	; 63
+  c4:	0f 90       	pop	r0
+  c6:	1f 90       	pop	r1
+  c8:	18 95       	reti
+
+000000ca <__vector_10>:
+
+ISR(TIMER0_COMPA_vect) // timer 0 compare A interrupt
+{
+  ca:	1f 92       	push	r1
+  cc:	0f 92       	push	r0
+  ce:	0f b6       	in	r0, 0x3f	; 63
+  d0:	0f 92       	push	r0
+  d2:	11 24       	eor	r1, r1
+	
+}
+  d4:	0f 90       	pop	r0
+  d6:	0f be       	out	0x3f, r0	; 63
+  d8:	0f 90       	pop	r0
+  da:	1f 90       	pop	r1
+  dc:	18 95       	reti
+
+000000de <__vector_11>:
+
+ISR(TIMER0_COMPB_vect) // timer 0 compare B interrupt
+{
+  de:	1f 92       	push	r1
+  e0:	0f 92       	push	r0
+  e2:	0f b6       	in	r0, 0x3f	; 63
+  e4:	0f 92       	push	r0
+  e6:	11 24       	eor	r1, r1
+
+}
+  e8:	0f 90       	pop	r0
+  ea:	0f be       	out	0x3f, r0	; 63
+  ec:	0f 90       	pop	r0
+  ee:	1f 90       	pop	r1
+  f0:	18 95       	reti
+
+000000f2 <__vector_4>:
+
+ISR(TIMER1_OVF_vect) // timer 1 overflow interrupt
+{
+  f2:	1f 92       	push	r1
+  f4:	0f 92       	push	r0
+  f6:	0f b6       	in	r0, 0x3f	; 63
+  f8:	0f 92       	push	r0
+  fa:	11 24       	eor	r1, r1
+	//timer1Overflows++; //keep track of timer 1 overflows for timer interrupt polling
+	
+}
+  fc:	0f 90       	pop	r0
+  fe:	0f be       	out	0x3f, r0	; 63
+ 100:	0f 90       	pop	r0
+ 102:	1f 90       	pop	r1
+ 104:	18 95       	reti
+
+00000106 <__vector_3>:
+
+
+
+ISR(TIMER1_COMPA_vect) // timer 1 compare A interrupt
+{
+ 106:	1f 92       	push	r1
+ 108:	0f 92       	push	r0
+ 10a:	0f b6       	in	r0, 0x3f	; 63
+ 10c:	0f 92       	push	r0
+ 10e:	11 24       	eor	r1, r1
+
+}
+ 110:	0f 90       	pop	r0
+ 112:	0f be       	out	0x3f, r0	; 63
+ 114:	0f 90       	pop	r0
+ 116:	1f 90       	pop	r1
+ 118:	18 95       	reti
+
+0000011a <__vector_9>:
+
+ISR(TIMER1_COMPB_vect) // timer 1 compare B interrupt
+{
+ 11a:	1f 92       	push	r1
+ 11c:	0f 92       	push	r0
+ 11e:	0f b6       	in	r0, 0x3f	; 63
+ 120:	0f 92       	push	r0
+ 122:	11 24       	eor	r1, r1
+
+}
+ 124:	0f 90       	pop	r0
+ 126:	0f be       	out	0x3f, r0	; 63
+ 128:	0f 90       	pop	r0
+ 12a:	1f 90       	pop	r1
+ 12c:	18 95       	reti
+
+0000012e <__vector_2>:
+
+ISR(PCINT0_vect) // Pin Change interrupt service routine
+{
+ 12e:	1f 92       	push	r1
+ 130:	0f 92       	push	r0
+ 132:	0f b6       	in	r0, 0x3f	; 63
+ 134:	0f 92       	push	r0
+ 136:	11 24       	eor	r1, r1
+ 138:	2f 93       	push	r18
+ 13a:	3f 93       	push	r19
+ 13c:	4f 93       	push	r20
+ 13e:	5f 93       	push	r21
+ 140:	8f 93       	push	r24
+ 142:	9f 93       	push	r25
+ 144:	ef 93       	push	r30
+ 146:	ff 93       	push	r31
+	//sleep_disable(); // If pins change state wake up
+	if(is_set(PINB, Switch1))
+ 148:	b2 9b       	sbis	0x16, 2	; 22
+ 14a:	18 c0       	rjmp	.+48     	; 0x17c <__vector_2+0x4e>
+	{
+		output_low(PORTB,TxEn);
+ 14c:	e8 e3       	ldi	r30, 0x38	; 56
+ 14e:	f0 e0       	ldi	r31, 0x00	; 0
+ 150:	80 81       	ld	r24, Z
+ 152:	87 7f       	andi	r24, 0xF7	; 247
+ 154:	80 83       	st	Z, r24
+		output_toggle(PORTB, TxData);
+ 156:	80 81       	ld	r24, Z
+ 158:	90 e1       	ldi	r25, 0x10	; 16
+ 15a:	89 27       	eor	r24, r25
+ 15c:	80 83       	st	Z, r24
+ 15e:	20 e1       	ldi	r18, 0x10	; 16
+ 160:	37 e2       	ldi	r19, 0x27	; 39
+ 162:	48 ec       	ldi	r20, 0xC8	; 200
+ 164:	50 e0       	ldi	r21, 0x00	; 0
+ 166:	ca 01       	movw	r24, r20
+ 168:	01 97       	sbiw	r24, 0x01	; 1
+ 16a:	f1 f7       	brne	.-4      	; 0x168 <__vector_2+0x3a>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 16c:	21 50       	subi	r18, 0x01	; 1
+ 16e:	30 40       	sbci	r19, 0x00	; 0
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 170:	d1 f7       	brne	.-12     	; 0x166 <__vector_2+0x38>
+		_delay_ms(1000);
+		output_high(PORTB, TxEn);
+ 172:	e8 e3       	ldi	r30, 0x38	; 56
+ 174:	f0 e0       	ldi	r31, 0x00	; 0
+ 176:	80 81       	ld	r24, Z
+ 178:	88 60       	ori	r24, 0x08	; 8
+ 17a:	80 83       	st	Z, r24
+	}
+	//TCNT0 = 0x00; // reset timer 0
+	//TCNT1 = 0x00; // reset timer 1
+	//timer0Overflows = 0; // reset timer o overflows
+	//timer1Overflows = 0; // dont reset timer 1 overflows keep running forever
+}
+ 17c:	ff 91       	pop	r31
+ 17e:	ef 91       	pop	r30
+ 180:	9f 91       	pop	r25
+ 182:	8f 91       	pop	r24
+ 184:	5f 91       	pop	r21
+ 186:	4f 91       	pop	r20
+ 188:	3f 91       	pop	r19
+ 18a:	2f 91       	pop	r18
+ 18c:	0f 90       	pop	r0
+ 18e:	0f be       	out	0x3f, r0	; 63
+ 190:	0f 90       	pop	r0
+ 192:	1f 90       	pop	r1
+ 194:	18 95       	reti
+
+00000196 <PortInit>:
+
+	//PORTB |= (1<<PB4)|(1<<PB3)|(1<<PB2)|(1<<PB1)|(1<<PB0); // set all pins we are using high
+	//DDRB |= (1<<DDB4)|(1<<DDB3)|(1<<DDB2)|(1<<DDB1)|(0<<DDB0); // set PB4, PB1 and PB0 as outputs and PB3 and PB2 as inputs
+	//PORTB |= (0<<PB4)|(0<<PB3)|(0<<PB2)|(0<<PB1); // set all outputs to 0
+	// make sure pull-up resistors are turned off
+	PORTB = 0x00;
+ 196:	a8 e3       	ldi	r26, 0x38	; 56
+ 198:	b0 e0       	ldi	r27, 0x00	; 0
+ 19a:	1c 92       	st	X, r1
+	DDRB = 0x00;
+ 19c:	e7 e3       	ldi	r30, 0x37	; 55
+ 19e:	f0 e0       	ldi	r31, 0x00	; 0
+ 1a0:	10 82       	st	Z, r1
+	set_input(DDRB, Pot);
+ 1a2:	80 81       	ld	r24, Z
+ 1a4:	8e 7f       	andi	r24, 0xFE	; 254
+ 1a6:	80 83       	st	Z, r24
+	set_input(DDRB, Divider);
+ 1a8:	80 81       	ld	r24, Z
+ 1aa:	8d 7f       	andi	r24, 0xFD	; 253
+ 1ac:	80 83       	st	Z, r24
+	set_input(DDRB, Switch1);
+ 1ae:	80 81       	ld	r24, Z
+ 1b0:	8b 7f       	andi	r24, 0xFB	; 251
+ 1b2:	80 83       	st	Z, r24
+	
+	set_output(DDRB, TxEn);
+ 1b4:	80 81       	ld	r24, Z
+ 1b6:	88 60       	ori	r24, 0x08	; 8
+ 1b8:	80 83       	st	Z, r24
+	set_output(DDRB, TxData);
+ 1ba:	80 81       	ld	r24, Z
+ 1bc:	80 61       	ori	r24, 0x10	; 16
+ 1be:	80 83       	st	Z, r24
+	
+	output_low(PORTB, TxEn);
+ 1c0:	8c 91       	ld	r24, X
+ 1c2:	87 7f       	andi	r24, 0xF7	; 247
+ 1c4:	8c 93       	st	X, r24
+	output_low(PORTB, TxData);
+ 1c6:	8c 91       	ld	r24, X
+ 1c8:	8f 7e       	andi	r24, 0xEF	; 239
+ 1ca:	8c 93       	st	X, r24
+	
+}
+ 1cc:	08 95       	ret
+
+000001ce <SystemInit>:
+
+void SystemInit(void) // Power on variable initialization
+{
+	//BTN_Down = false; // button is not pushed down
+	PCMSK |= (1<<PCINT2); // pin change mask: listen to portb bit 0 PB0
+ 1ce:	e5 e3       	ldi	r30, 0x35	; 53
+ 1d0:	f0 e0       	ldi	r31, 0x00	; 0
+ 1d2:	80 81       	ld	r24, Z
+ 1d4:	84 60       	ori	r24, 0x04	; 4
+ 1d6:	80 83       	st	Z, r24
+	GIMSK |= (1<<PCIE); // enable PCINT interrupt
+ 1d8:	eb e5       	ldi	r30, 0x5B	; 91
+ 1da:	f0 e0       	ldi	r31, 0x00	; 0
+ 1dc:	80 81       	ld	r24, Z
+ 1de:	80 62       	ori	r24, 0x20	; 32
+ 1e0:	80 83       	st	Z, r24
+	MCUCR |= (1<<BODS)|(0<<PUD)|(1<<SE)|(0<<SM1)|(1<<SM0)|(0<<BODSE)|(1<<ISC01)|(0<<ISC00); // disable BOD during sleep, Sleep Enable, ADC Noise Reduction, The falling edge of INT0 generates an interrupt request
+ 1e2:	e5 e5       	ldi	r30, 0x55	; 85
+ 1e4:	f0 e0       	ldi	r31, 0x00	; 0
+ 1e6:	80 81       	ld	r24, Z
+ 1e8:	8a 6a       	ori	r24, 0xAA	; 170
+ 1ea:	80 83       	st	Z, r24
+	sei(); // enable all interrupts
+ 1ec:	78 94       	sei
+	//timer0Overflows = 0; // time0roverflows set to 0
+	//timer1Overflows = 0; // time1roverflows set to 0
+}
+ 1ee:	08 95       	ret
+
+000001f0 <Analog_Comparator_init>:
+	timer1Overflows = 0; // Start timer overflows at 0
+}
+
+void Analog_Comparator_init(void) // Initialize Analog Comparator
+{
+	ADCSRB |= (0<<BIN)|(0<<ACME)|(0<<IPR)|(0<<ADTS2)|(0<<ADTS1)|(0<<ADTS0); //Analog Comparator Multiplexer Enable
+ 1f0:	e3 e2       	ldi	r30, 0x23	; 35
+ 1f2:	f0 e0       	ldi	r31, 0x00	; 0
+ 1f4:	80 81       	ld	r24, Z
+ 1f6:	80 83       	st	Z, r24
+	ACSR |= (0<<ACD)|(0<<ACBG)|(0<<ACO)|(0<<ACI)|(1<<ACIE)|(0<<ACIS1)|(0<<ACIS0); // Analog Comparator Control Register
+ 1f8:	e8 e2       	ldi	r30, 0x28	; 40
+ 1fa:	f0 e0       	ldi	r31, 0x00	; 0
+ 1fc:	80 81       	ld	r24, Z
+ 1fe:	88 60       	ori	r24, 0x08	; 8
+ 200:	80 83       	st	Z, r24
+	DIDR0 |= (0<<ADC0D)|(0<<ADC2D)|(0<<ADC3D)|(0<<ADC1D)|(0<<AIN1D)|(0<<AIN0D); // Digital input Disable Register
+ 202:	e4 e3       	ldi	r30, 0x34	; 52
+ 204:	f0 e0       	ldi	r31, 0x00	; 0
+ 206:	80 81       	ld	r24, Z
+ 208:	80 83       	st	Z, r24
+}
+ 20a:	08 95       	ret
+
+0000020c <main>:
+int main(void)
+{
+	//timer0_init(); // timer 0 initialize
+	//timer1_init(); // timer 1 initialize
+	//ADC_init(); // analog to digital converter initialize
+	Analog_Comparator_init();
+ 20c:	f1 df       	rcall	.-30     	; 0x1f0 <Analog_Comparator_init>
+	PortInit(); // inputs and outputs initialize
+ 20e:	c3 df       	rcall	.-122    	; 0x196 <PortInit>
+	SystemInit(); // system variables and state initialize
+ 210:	de df       	rcall	.-68     	; 0x1ce <SystemInit>
+	output_low(PORTB, TxEn);
+ 212:	e8 e3       	ldi	r30, 0x38	; 56
+ 214:	f0 e0       	ldi	r31, 0x00	; 0
+ 216:	80 81       	ld	r24, Z
+ 218:	87 7f       	andi	r24, 0xF7	; 247
+ 21a:	80 83       	st	Z, r24
+	output_low(PORTB, TxData);
+ 21c:	80 81       	ld	r24, Z
+ 21e:	8f 7e       	andi	r24, 0xEF	; 239
+ 220:	80 83       	st	Z, r24
+ 222:	20 e1       	ldi	r18, 0x10	; 16
+ 224:	37 e2       	ldi	r19, 0x27	; 39
+ 226:	48 ec       	ldi	r20, 0xC8	; 200
+ 228:	50 e0       	ldi	r21, 0x00	; 0
+ 22a:	ca 01       	movw	r24, r20
+ 22c:	01 97       	sbiw	r24, 0x01	; 1
+ 22e:	f1 f7       	brne	.-4      	; 0x22c <main+0x20>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 230:	21 50       	subi	r18, 0x01	; 1
+ 232:	30 40       	sbci	r19, 0x00	; 0
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 234:	d1 f7       	brne	.-12     	; 0x22a <main+0x1e>
+	_delay_ms(1000);
+	output_high(PORTB, TxEn);
+ 236:	e8 e3       	ldi	r30, 0x38	; 56
+ 238:	f0 e0       	ldi	r31, 0x00	; 0
+ 23a:	80 81       	ld	r24, Z
+ 23c:	88 60       	ori	r24, 0x08	; 8
+ 23e:	80 83       	st	Z, r24
+	while(1)
+	{
+		sleep_enable(); // sleep until pin interrupt
+ 240:	e5 e5       	ldi	r30, 0x55	; 85
+ 242:	f0 e0       	ldi	r31, 0x00	; 0
+ 244:	80 81       	ld	r24, Z
+ 246:	80 62       	ori	r24, 0x20	; 32
+ 248:	80 83       	st	Z, r24
+ 24a:	fc cf       	rjmp	.-8      	; 0x244 <main+0x38>
+
+0000024c <_exit>:
+ 24c:	f8 94       	cli
+
+0000024e <__stop_program>:
+ 24e:	ff cf       	rjmp	.-2      	; 0x24e <__stop_program>

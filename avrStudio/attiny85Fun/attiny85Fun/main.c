@@ -48,7 +48,10 @@
 #define PWM_200Hz 0x27   //timer 1 OCR1C = PWM_200Hz;
 #define PWM_30Hz 0xFC	//timer 1 OCR1C = PWM_30Hz;
 
-#define Switch1 PB0
+#define Pot PB0
+#define Divider PB1
+#define Switch1 PB2
+#define YellowLED PB3
 #define GreenLED PB4
 
 volatile uint8_t switch_state;	// Light Function state
@@ -69,7 +72,14 @@ volatile bool BTN_Down; // true if the push button is being help down
 
 ISR(ANA_COMP_vect)
 {
-
+	if(ACSR & (1 << ACO))
+	{
+		output_high(PORTB, YellowLED);
+	}
+	else
+	{
+		output_low(PORTB, YellowLED);
+	}
 }
 
 ISR(ADC_vect) // Interrupt for ADC Converter
@@ -245,7 +255,7 @@ ISR(TIMER1_COMPB_vect) // timer 1 compare B interrupt
 
 ISR(PCINT0_vect) // Pin Change interrupt service routine
 {
-	sleep_disable(); // If pins change state wake up
+	//sleep_disable(); // If pins change state wake up
 	if(is_set(PINB, Switch1))
 	{
 		output_high(PORTB, GreenLED);
@@ -264,9 +274,9 @@ void PortInit(void) // initialize port B inputs and outputs
 {
 	//												   ______
 	//	(PCINT5/~RESET/ADC0/dW)			Reset	--PB5 |		 |VCC--	5V
-	//	(PCINT3/XTAL1/CLKI/~OC1B/ADC3)	LDR		--PB3 |		 |PB2--	Switch	(SCK/USCK/SCL/ADC1/T0/INT0/PCINT2)
-	//	(PCINT4/XTAL2/CLKO/OC1B/ADC2)	GRN LED	--PB4 |		 |PB1--	RED LED	(MISO/DO/AIN1/OC0B/OC1A/PCINT1)
-	//											--GND |______|PB0--	Switch	(MOSI/DI/SDA/AIN0/OC0A/~OC1A/AREF/PCINT0)
+	//	(PCINT3/XTAL1/CLKI/~OC1B/ADC3)	YLW LED --PB3 |		 |PB2--	Switch1	(SCK/USCK/SCL/ADC1/T0/INT0/PCINT2)
+	//	(PCINT4/XTAL2/CLKO/OC1B/ADC2)	GRN LED	--PB4 |		 |PB1--	Divider	(MISO/DO/AIN1/OC0B/OC1A/PCINT1)
+	//											--GND |______|PB0--	POT	(MOSI/DI/SDA/AIN0/OC0A/~OC1A/AREF/PCINT0)
 	//
 
 	//PORTB |= (1<<PB4)|(1<<PB3)|(1<<PB2)|(1<<PB1)|(1<<PB0); // set all pins we are using high
@@ -275,8 +285,13 @@ void PortInit(void) // initialize port B inputs and outputs
 	// make sure pull-up resistors are turned off
 	PORTB = 0x00;
 	DDRB = 0x00;
+	set_input(DDRB, Pot);
+	set_input(DDRB, Divider);
 	set_input(DDRB, Switch1);
+	set_output(DDRB, YellowLED);
 	set_output(DDRB, GreenLED);
+	
+	output_high(PORTB, YellowLED);
 	output_high(PORTB, GreenLED);
 	
 }
@@ -284,7 +299,7 @@ void PortInit(void) // initialize port B inputs and outputs
 void SystemInit(void) // Power on variable initialization
 {
 	//BTN_Down = false; // button is not pushed down
-	PCMSK |= (1<<PCINT0); // pin change mask: listen to portb bit 0 PB0
+	PCMSK |= (1<<PCINT2); // pin change mask: listen to portb bit 0 PB0
 	GIMSK |= (1<<PCIE); // enable PCINT interrupt
 	MCUCR |= (1<<BODS)|(0<<PUD)|(1<<SE)|(0<<SM1)|(1<<SM0)|(0<<BODSE)|(1<<ISC01)|(0<<ISC00); // disable BOD during sleep, Sleep Enable, ADC Noise Reduction, The falling edge of INT0 generates an interrupt request
 	sei(); // enable all interrupts
@@ -320,7 +335,7 @@ void timer1_init(void) // Initialize timer 1
 void Analog_Comparator_init(void) // Initialize Analog Comparator
 {
 	ADCSRB |= (0<<BIN)|(0<<ACME)|(0<<IPR)|(0<<ADTS2)|(0<<ADTS1)|(0<<ADTS0); //Analog Comparator Multiplexer Enable
-	ACSR |= (0<<ACD)|(0<<ACBG)|(0<<ACO)|(0<<ACI)|(0<<ACIE)|(0<<ACIS1)|(0<<ACIS0); // Analog Comparator Control Register
+	ACSR |= (0<<ACD)|(0<<ACBG)|(0<<ACO)|(0<<ACI)|(1<<ACIE)|(0<<ACIS1)|(0<<ACIS0); // Analog Comparator Control Register
 	DIDR0 |= (0<<ADC0D)|(0<<ADC2D)|(0<<ADC3D)|(0<<ADC1D)|(0<<AIN1D)|(0<<AIN0D); // Digital input Disable Register
 }
 
@@ -337,6 +352,7 @@ int main(void)
 	//timer0_init(); // timer 0 initialize
 	//timer1_init(); // timer 1 initialize
 	//ADC_init(); // analog to digital converter initialize
+	Analog_Comparator_init();
 	PortInit(); // inputs and outputs initialize
 	SystemInit(); // system variables and state initialize
 
@@ -344,5 +360,7 @@ int main(void)
 	{
 		sleep_enable(); // sleep until pin interrupt
 	}
+	
+	return 0;
 }
 
