@@ -1,0 +1,315 @@
+
+attiny85RetroLiteRx.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000001a6  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  0000021a  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000005  00800060  00800060  0000021a  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  0000021a  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  0000024c  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 000000a0  00000000  00000000  00000288  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000679  00000000  00000000  00000328  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000490  00000000  00000000  000009a1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000436  00000000  00000000  00000e31  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000194  00000000  00000000  00001268  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    000003af  00000000  00000000  000013fc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000001b4  00000000  00000000  000017ab  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000090  00000000  00000000  0000195f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0e c0       	rjmp	.+28     	; 0x1e <__ctors_end>
+   2:	1d c0       	rjmp	.+58     	; 0x3e <__bad_interrupt>
+   4:	6d c0       	rjmp	.+218    	; 0xe0 <__vector_2>
+   6:	58 c0       	rjmp	.+176    	; 0xb8 <__vector_3>
+   8:	4d c0       	rjmp	.+154    	; 0xa4 <__vector_4>
+   a:	2e c0       	rjmp	.+92     	; 0x68 <__vector_5>
+   c:	18 c0       	rjmp	.+48     	; 0x3e <__bad_interrupt>
+   e:	18 c0       	rjmp	.+48     	; 0x40 <__vector_7>
+  10:	21 c0       	rjmp	.+66     	; 0x54 <__vector_8>
+  12:	5c c0       	rjmp	.+184    	; 0xcc <__vector_9>
+  14:	33 c0       	rjmp	.+102    	; 0x7c <__vector_10>
+  16:	3c c0       	rjmp	.+120    	; 0x90 <__vector_11>
+  18:	12 c0       	rjmp	.+36     	; 0x3e <__bad_interrupt>
+  1a:	11 c0       	rjmp	.+34     	; 0x3e <__bad_interrupt>
+  1c:	10 c0       	rjmp	.+32     	; 0x3e <__bad_interrupt>
+
+0000001e <__ctors_end>:
+  1e:	11 24       	eor	r1, r1
+  20:	1f be       	out	0x3f, r1	; 63
+  22:	cf e5       	ldi	r28, 0x5F	; 95
+  24:	d2 e0       	ldi	r29, 0x02	; 2
+  26:	de bf       	out	0x3e, r29	; 62
+  28:	cd bf       	out	0x3d, r28	; 61
+
+0000002a <__do_clear_bss>:
+  2a:	20 e0       	ldi	r18, 0x00	; 0
+  2c:	a0 e6       	ldi	r26, 0x60	; 96
+  2e:	b0 e0       	ldi	r27, 0x00	; 0
+  30:	01 c0       	rjmp	.+2      	; 0x34 <.do_clear_bss_start>
+
+00000032 <.do_clear_bss_loop>:
+  32:	1d 92       	st	X+, r1
+
+00000034 <.do_clear_bss_start>:
+  34:	a5 36       	cpi	r26, 0x65	; 101
+  36:	b2 07       	cpc	r27, r18
+  38:	e1 f7       	brne	.-8      	; 0x32 <.do_clear_bss_loop>
+  3a:	9a d0       	rcall	.+308    	; 0x170 <main>
+  3c:	b2 c0       	rjmp	.+356    	; 0x1a2 <_exit>
+
+0000003e <__bad_interrupt>:
+  3e:	e0 cf       	rjmp	.-64     	; 0x0 <__vectors>
+
+00000040 <__vector_7>:
+void ADC_init(void) // Initialize Analog to Digital Converter
+{
+	ADMUX |= (0<<REFS1)|(0<<REFS0)|(1<<ADLAR)|(0<<REFS2)|(0<<MUX3)|(0<<MUX2)|(1<<MUX1)|(1<<MUX0); //ADC Multiplexer Selection Register... (ADC3(PB3) Selected ADC Input)
+	ADCSRA |= (1<<ADEN)|(1<<ADSC)|(0<<ADATE)|(0<<ADIF)|(1<<ADIE)|(0<<ADPS2)|(0<<ADPS1)|(0<<ADPS0); // ADC Control Register A
+	ADCSRB |= (0<<BIN)|(0<<ACME)|(0<<IPR)|(0<<ADTS2)|(0<<ADTS1)|(0<<ADTS0); // ADC Control Register B
+	DIDR0 |= (0<<ADC0D)|(0<<ADC2D)|(0<<ADC3D)|(0<<ADC1D)|(0<<AIN1D)|(0<<AIN0D); // Digital input Disable Register
+  40:	1f 92       	push	r1
+  42:	0f 92       	push	r0
+  44:	0f b6       	in	r0, 0x3f	; 63
+  46:	0f 92       	push	r0
+  48:	11 24       	eor	r1, r1
+  4a:	0f 90       	pop	r0
+  4c:	0f be       	out	0x3f, r0	; 63
+  4e:	0f 90       	pop	r0
+  50:	1f 90       	pop	r1
+  52:	18 95       	reti
+
+00000054 <__vector_8>:
+  54:	1f 92       	push	r1
+  56:	0f 92       	push	r0
+  58:	0f b6       	in	r0, 0x3f	; 63
+  5a:	0f 92       	push	r0
+  5c:	11 24       	eor	r1, r1
+  5e:	0f 90       	pop	r0
+  60:	0f be       	out	0x3f, r0	; 63
+  62:	0f 90       	pop	r0
+  64:	1f 90       	pop	r1
+  66:	18 95       	reti
+
+00000068 <__vector_5>:
+  68:	1f 92       	push	r1
+  6a:	0f 92       	push	r0
+  6c:	0f b6       	in	r0, 0x3f	; 63
+  6e:	0f 92       	push	r0
+  70:	11 24       	eor	r1, r1
+  72:	0f 90       	pop	r0
+  74:	0f be       	out	0x3f, r0	; 63
+  76:	0f 90       	pop	r0
+  78:	1f 90       	pop	r1
+  7a:	18 95       	reti
+
+0000007c <__vector_10>:
+  7c:	1f 92       	push	r1
+  7e:	0f 92       	push	r0
+  80:	0f b6       	in	r0, 0x3f	; 63
+  82:	0f 92       	push	r0
+  84:	11 24       	eor	r1, r1
+  86:	0f 90       	pop	r0
+  88:	0f be       	out	0x3f, r0	; 63
+  8a:	0f 90       	pop	r0
+  8c:	1f 90       	pop	r1
+  8e:	18 95       	reti
+
+00000090 <__vector_11>:
+  90:	1f 92       	push	r1
+  92:	0f 92       	push	r0
+  94:	0f b6       	in	r0, 0x3f	; 63
+  96:	0f 92       	push	r0
+  98:	11 24       	eor	r1, r1
+  9a:	0f 90       	pop	r0
+  9c:	0f be       	out	0x3f, r0	; 63
+  9e:	0f 90       	pop	r0
+  a0:	1f 90       	pop	r1
+  a2:	18 95       	reti
+
+000000a4 <__vector_4>:
+  a4:	1f 92       	push	r1
+  a6:	0f 92       	push	r0
+  a8:	0f b6       	in	r0, 0x3f	; 63
+  aa:	0f 92       	push	r0
+  ac:	11 24       	eor	r1, r1
+  ae:	0f 90       	pop	r0
+  b0:	0f be       	out	0x3f, r0	; 63
+  b2:	0f 90       	pop	r0
+  b4:	1f 90       	pop	r1
+  b6:	18 95       	reti
+
+000000b8 <__vector_3>:
+  b8:	1f 92       	push	r1
+  ba:	0f 92       	push	r0
+  bc:	0f b6       	in	r0, 0x3f	; 63
+  be:	0f 92       	push	r0
+  c0:	11 24       	eor	r1, r1
+  c2:	0f 90       	pop	r0
+  c4:	0f be       	out	0x3f, r0	; 63
+  c6:	0f 90       	pop	r0
+  c8:	1f 90       	pop	r1
+  ca:	18 95       	reti
+
+000000cc <__vector_9>:
+  cc:	1f 92       	push	r1
+  ce:	0f 92       	push	r0
+  d0:	0f b6       	in	r0, 0x3f	; 63
+  d2:	0f 92       	push	r0
+  d4:	11 24       	eor	r1, r1
+  d6:	0f 90       	pop	r0
+  d8:	0f be       	out	0x3f, r0	; 63
+  da:	0f 90       	pop	r0
+  dc:	1f 90       	pop	r1
+  de:	18 95       	reti
+
+000000e0 <__vector_2>:
+  e0:	1f 92       	push	r1
+  e2:	0f 92       	push	r0
+  e4:	0f b6       	in	r0, 0x3f	; 63
+  e6:	0f 92       	push	r0
+  e8:	11 24       	eor	r1, r1
+  ea:	8f 93       	push	r24
+  ec:	85 b7       	in	r24, 0x35	; 53
+  ee:	8f 7d       	andi	r24, 0xDF	; 223
+  f0:	85 bf       	out	0x35, r24	; 53
+  f2:	b3 9b       	sbis	0x16, 3	; 22
+  f4:	04 c0       	rjmp	.+8      	; 0xfe <__vector_2+0x1e>
+  f6:	81 e0       	ldi	r24, 0x01	; 1
+  f8:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <validRecieved>
+  fc:	02 c0       	rjmp	.+4      	; 0x102 <__vector_2+0x22>
+  fe:	10 92 64 00 	sts	0x0064, r1	; 0x800064 <validRecieved>
+ 102:	b2 9b       	sbis	0x16, 2	; 22
+ 104:	06 c0       	rjmp	.+12     	; 0x112 <__vector_2+0x32>
+ 106:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <validRecieved>
+ 10a:	88 23       	and	r24, r24
+ 10c:	11 f0       	breq	.+4      	; 0x112 <__vector_2+0x32>
+ 10e:	c4 9a       	sbi	0x18, 4	; 24
+ 110:	01 c0       	rjmp	.+2      	; 0x114 <__vector_2+0x34>
+ 112:	c4 98       	cbi	0x18, 4	; 24
+ 114:	8f 91       	pop	r24
+ 116:	0f 90       	pop	r0
+ 118:	0f be       	out	0x3f, r0	; 63
+ 11a:	0f 90       	pop	r0
+ 11c:	1f 90       	pop	r1
+ 11e:	18 95       	reti
+
+00000120 <PortInit>:
+ 120:	18 ba       	out	0x18, r1	; 24
+ 122:	17 ba       	out	0x17, r1	; 23
+ 124:	ba 98       	cbi	0x17, 2	; 23
+ 126:	bb 98       	cbi	0x17, 3	; 23
+ 128:	bc 9a       	sbi	0x17, 4	; 23
+ 12a:	c4 9a       	sbi	0x18, 4	; 24
+ 12c:	08 95       	ret
+
+0000012e <SystemInit>:
+ 12e:	10 92 64 00 	sts	0x0064, r1	; 0x800064 <validRecieved>
+ 132:	85 b3       	in	r24, 0x15	; 21
+ 134:	8c 60       	ori	r24, 0x0C	; 12
+ 136:	85 bb       	out	0x15, r24	; 21
+ 138:	8b b7       	in	r24, 0x3b	; 59
+ 13a:	80 62       	ori	r24, 0x20	; 32
+ 13c:	8b bf       	out	0x3b, r24	; 59
+ 13e:	8a b7       	in	r24, 0x3a	; 58
+ 140:	8a bf       	out	0x3a, r24	; 58
+ 142:	85 b7       	in	r24, 0x35	; 53
+ 144:	8a 6a       	ori	r24, 0xAA	; 170
+ 146:	85 bf       	out	0x35, r24	; 53
+ 148:	78 94       	sei
+ 14a:	08 95       	ret
+
+0000014c <timer1_init>:
+ 14c:	80 b7       	in	r24, 0x30	; 48
+ 14e:	8f 68       	ori	r24, 0x8F	; 143
+ 150:	80 bf       	out	0x30, r24	; 48
+ 152:	8c b5       	in	r24, 0x2c	; 44
+ 154:	8c bd       	out	0x2c, r24	; 44
+ 156:	1e bc       	out	0x2e, r1	; 46
+ 158:	1b bc       	out	0x2b, r1	; 43
+ 15a:	83 ef       	ldi	r24, 0xF3	; 243
+ 15c:	8d bd       	out	0x2d, r24	; 45
+ 15e:	89 b7       	in	r24, 0x39	; 57
+ 160:	80 64       	ori	r24, 0x40	; 64
+ 162:	89 bf       	out	0x39, r24	; 57
+ 164:	1f bc       	out	0x2f, r1	; 47
+ 166:	10 92 63 00 	sts	0x0063, r1	; 0x800063 <timer1Overflows+0x1>
+ 16a:	10 92 62 00 	sts	0x0062, r1	; 0x800062 <timer1Overflows>
+ 16e:	08 95       	ret
+
+00000170 <main>:
+}
+
+int main(void)
+{
+	//timer0_init(); // timer 0 initialize
+	timer1_init(); // timer 1 initialize
+ 170:	ed df       	rcall	.-38     	; 0x14c <timer1_init>
+	//ADC_init(); // analog to digital converter initialize
+	//Analog_Comparator_init();
+	PortInit(); // inputs and outputs initialize
+ 172:	d6 df       	rcall	.-84     	; 0x120 <PortInit>
+	SystemInit(); // system variables and state initialize
+ 174:	dc df       	rcall	.-72     	; 0x12e <SystemInit>
+	output_high(PORTB, DataOut);
+ 176:	c4 9a       	sbi	0x18, 4	; 24
+	//_delay_ms(2000);
+	if(is_set(PINB, VT))
+ 178:	b3 9b       	sbis	0x16, 3	; 22
+ 17a:	04 c0       	rjmp	.+8      	; 0x184 <main+0x14>
+	{
+		validRecieved = true;	
+ 17c:	81 e0       	ldi	r24, 0x01	; 1
+ 17e:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <validRecieved>
+ 182:	02 c0       	rjmp	.+4      	; 0x188 <main+0x18>
+	}
+	else
+	{
+		validRecieved = false;
+ 184:	10 92 64 00 	sts	0x0064, r1	; 0x800064 <validRecieved>
+	}
+	if(is_set(PINB, DataIn) && validRecieved)
+ 188:	b2 9b       	sbis	0x16, 2	; 22
+ 18a:	06 c0       	rjmp	.+12     	; 0x198 <main+0x28>
+ 18c:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <validRecieved>
+ 190:	88 23       	and	r24, r24
+ 192:	11 f0       	breq	.+4      	; 0x198 <main+0x28>
+	{
+		output_high(PORTB, DataOut);
+ 194:	c4 9a       	sbi	0x18, 4	; 24
+ 196:	01 c0       	rjmp	.+2      	; 0x19a <main+0x2a>
+	}
+	else
+	{
+		output_low(PORTB, DataOut);
+ 198:	c4 98       	cbi	0x18, 4	; 24
+	}
+	while(1)
+	{
+		sleep_enable(); // sleep until pin interrupt
+ 19a:	85 b7       	in	r24, 0x35	; 53
+ 19c:	80 62       	ori	r24, 0x20	; 32
+ 19e:	85 bf       	out	0x35, r24	; 53
+	}
+ 1a0:	fc cf       	rjmp	.-8      	; 0x19a <main+0x2a>
+
+000001a2 <_exit>:
+ 1a2:	f8 94       	cli
+
+000001a4 <__stop_program>:
+ 1a4:	ff cf       	rjmp	.-2      	; 0x1a4 <__stop_program>

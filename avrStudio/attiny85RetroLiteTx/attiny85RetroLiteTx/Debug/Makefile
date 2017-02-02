@@ -2,7 +2,7 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-SHELL := cmd.exe
+
 RM := rm -rf
 
 USER_OBJS :=
@@ -77,8 +77,8 @@ LINKER_SCRIPT_DEP+=
 
 ./%.o: .././%.c
 	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 4.3.3
-	$(QUOTE)C:\WinAVR-20100110\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.0.71\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall  -mmcu=attiny85  -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Invoking: AVR/GNU C Compiler : 0.0.0
+	$(QUOTE)C:\WinAVR-20100110\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files\Atmel\Studio\7.0\Packs\atmel\ATtiny_DFP\1.0.79\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall  -mmcu=attiny85  -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
@@ -106,14 +106,14 @@ all: $(OUTPUT_FILE_PATH) $(ADDITIONAL_DEPENDENCIES)
 
 $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP) $(LIB_DEP) $(LINKER_SCRIPT_DEP)
 	@echo Building target: $@
-	@echo Invoking: AVR/GNU Linker : 4.3.3
-	$(QUOTE)C:\WinAVR-20100110\bin\avr-gcc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="attiny85RetroLiteTx.map" -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections  -mmcu=attiny85   
+	@echo Invoking: AVR/GNU Linker : 0.0.0
+	$(QUOTE)C:\WinAVR-20100110\avr-gcc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="attiny85RetroLiteTx.map" -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections  -mmcu=attiny85   
 	@echo Finished building target: $@
-	"C:\WinAVR-20100110\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "attiny85RetroLiteTx.elf" "attiny85RetroLiteTx.hex"
-	"C:\WinAVR-20100110\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "attiny85RetroLiteTx.elf" "attiny85RetroLiteTx.eep" || exit 0
-	"C:\WinAVR-20100110\bin\avr-objdump.exe" -h -S "attiny85RetroLiteTx.elf" > "attiny85RetroLiteTx.lss"
-	"C:\WinAVR-20100110\bin\avr-objcopy.exe" -O srec -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures "attiny85RetroLiteTx.elf" "attiny85RetroLiteTx.srec"
-	"C:\WinAVR-20100110\bin\avr-size.exe" "attiny85RetroLiteTx.elf"
+	"C:\WinAVR-20100110\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "attiny85RetroLiteTx.elf" "attiny85RetroLiteTx.hex"
+	"C:\WinAVR-20100110\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "attiny85RetroLiteTx.elf" "attiny85RetroLiteTx.eep" || exit 0
+	"C:\WinAVR-20100110\avr-objdump.exe" -h -S "attiny85RetroLiteTx.elf" > "attiny85RetroLiteTx.lss"
+	"C:\WinAVR-20100110\avr-objcopy.exe" -O srec -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures "attiny85RetroLiteTx.elf" "attiny85RetroLiteTx.srec"
+	"C:\WinAVR-20100110\avr-size.exe" "attiny85RetroLiteTx.elf"
 	
 	
 
