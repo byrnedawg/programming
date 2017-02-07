@@ -35,7 +35,7 @@
   #section3 {padding-top:50px;color: black; background-color: white;}
   #section4 {padding-top:50px;color: black; background-color: white; height: 600px;}
   #section41 {padding-top:50px;color: black; background-color: white; height: 800px;}
-  #section42 {padding-top:50px;color: black; background-color: white;}
+  #section42 {padding-top:50px;color: black; background-color: white; height: 550px;}
   
    .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
@@ -211,7 +211,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
           <h2 class="panel-title">
-            <a id = "menuToggle2" data-toggle="collapse" data-parent="#accordion2" href="#collapse2"> <strong>Memory Carousel</strong></a>
+            <a id = "menuToggle2" data-toggle="collapse" data-parent="#accordion2" href="#collapse2"> <strong>Memories Carousel</strong></a>
           </h2>
           </div>
           <div id="collapse2" class="panel-collapse collapse">
@@ -321,7 +321,23 @@
   </div>
 <div id="section42" class="container-fluid">
     <h1>Proposal</h1>
-    <p>i</p>
+    <p>Tonight the sun, earth, and moon align perfectly to form something amazing <strong> The Penumbra Eclipse!!! </strong> This is analogous to all the things that had to align in our lives for us to find each other in this world! You make me the best version of myself!! I love you so much Tara!!!</p>
+    <div class="container-fluid">
+    <div class="panel-group" id="accordion3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+        <h2 class="panel-title" style = "color:blue">
+          <a id = "menuToggle3" data-toggle="collapse" data-parent="#accordion3" href="#collapse3"> <span class="glyphicon glyphicon-triangle-right"></span> Will You Marry me?</a>
+        </h2>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+          <div class="panel-body">
+            <img class="img-responsive" src="imgs/theRing.jpeg" alt="The Ring" height="200"> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- All this is for image modal on click -->
@@ -336,6 +352,7 @@
         </div>
       </div>
     </div>
+  </div>
 </div>
 
 <!-- All this is for image modal on click -->
@@ -355,6 +372,17 @@ if($('span').hasClass('glyphicon-triangle-right'))
 else
 {      
     $('#menuToggle').html('<span class="glyphicon glyphicon-triangle-right"></span> Expand for cities where penumbral eclipse is visible'); 
+}
+}); 
+
+$('#menuToggle3').click(function () {
+if($('span').hasClass('glyphicon-triangle-right'))
+{
+    $('#menuToggle3').html('<span class="glyphicon glyphicon-triangle-bottom"></span> Will You Marry me?'); 
+}
+else
+{      
+    $('#menuToggle3').html('<span class="glyphicon glyphicon-triangle-right"></span> Will You Marry me?'); 
 }
 }); 
 
