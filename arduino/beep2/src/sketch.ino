@@ -8,28 +8,23 @@
 
  Created 11 Mar, 2017
  by Greg Byrne
- 
- Version Revisions:
- Version 1.0 - Actual use for Test on 20170330
 
  */
 
 #include <Stepper.h>
 
 /*--------------------------Program Variables to Change -------------------------------------------------*/
-const byte stepsPerRevolution = 200;  // change this to fit the number of steps per revolution
-const byte stepsPerQTRRevolution = 50;
-const byte topPause = 3;
-const byte bottomPause = 7;
+const int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution
+const int stepsPerQTRRevolution = 50;
 const double adcRefVoltage = 1.1;
 // for your motor
-byte rpm = 50;
-byte rotationsTillStop = 40;
+int rpm = 80;
+int rotationsTillStop = 42;
 int testCycles = 600;
-const byte cyclesTillTorque = 50;
+const int cyclesTillTorque = 50;
 const int inputInterval = 200; // for serial input polling
-const byte adcSamplesPerRotation = 8; // for current sense poling clockwise 8
-const byte adcSamplesPerRotationCC = 8; // for current sense poling counter clockwise 8
+const int adcSamplesPerRotation = 8; // for current sense poling clockwise 8
+const int adcSamplesPerRotationCC = 8; // for current sense poling counter clockwise 8
 /*-------------------------- End Program Variables to Change --------------------------------------------------*/
 
 // initialize the stepper library on pins 8 through 11:
@@ -45,7 +40,6 @@ double peakCurrent = 0;
 double avgCurrent = 0;
 double turnCurrent = 0;
 int cycles = 0;
-int bipodSerial = 500;
 long rotationsCompleted = 0;
 unsigned long system_Second = 0;
 unsigned int system_Minute = 0;
@@ -71,63 +65,39 @@ void setup() {
 }
 void defineTestAsset()
 {
-   Serial.print("Bipod Test run at "); 
-   Serial.print(rpm);
-   Serial.print(" rpm \n");
+   Serial.println("Bipod Test 80rpm");
    Serial.println("-------------------");
    Serial.println("Enter Bipod Number (1-4)");
-   Serial.println("Enter 1 ----> Bipod S/N: 815");
-   Serial.println("Enter 2 ----> Bipod S/N: 817");
-   Serial.println("Enter 3 ----> Bipod S/N: 796");
-   Serial.println("Enter 4 ----> Bipod S/N: 819");
    bipodNumber = Serial.read();
    while(bipodNumber != '1' && bipodNumber != '2'&& bipodNumber != '3'&& bipodNumber != '4')
    {
       bipodNumber = Serial.read();
-      if(bipodNumber == '1')
-      {
-        bipodSerial = 815;
-      }
-      else if(bipodNumber == '2')
-      {
-        bipodSerial = 817;
-      }
-      else if(bipodNumber == '3')
-      {
-        bipodSerial = 796;
-      }
-      else
-      {
-        bipodSerial = 819;
-      }
       delay(250);
    }
   
    Serial.println("-------------------");
-   Serial.print("Bipod S/N: ");
-   Serial.print(bipodSerial);
+   Serial.print("Bipod # ");
+   Serial.print(bipodNumber);
    Serial.print(" Selected!!\n");
    Serial.println("-------------------");
-   Serial.println("What Run of Testing is this Bipod about to start?");
+   Serial.println("What Day of Testing is this Bipod about to start?");
    while(testDay != '1' && testDay != '2'&& testDay != '3'&& testDay != '4' && testDay != '5')
    {
       testDay = Serial.read();
       delay(250);
    }
    Serial.println("-------------------");
-   Serial.print("Test Run: ");
+   Serial.print("Test Day: ");
    Serial.print(testDay);
-   Serial.print(" Entered for Bipod S/N: ");
-
-   
-   Serial.print(bipodSerial);
+   Serial.print(" Entered for Bipod #");
+   Serial.print(bipodNumber);
    Serial.print(" !!\n");
 }
 void menu()
 {
-   Serial.print("Bipod Test with Bipod S/N: ");
-   Serial.print(bipodSerial);
-   Serial.print(" Test Run: ");
+   Serial.print("Bipod Test with Bipod # ");
+   Serial.print(bipodNumber);
+   Serial.print(" Test Day: ");
    Serial.print(testDay);
    Serial.print("\n");
    Serial.println("-------------------");
@@ -150,9 +120,9 @@ void displayStats()
   system_Hour = system_Minute/60;
   
   Serial.println("Test Statistics");
-  Serial.print("Bipod S/N: ");
-  Serial.print(bipodSerial);
-  Serial.print(" Test Run: ");
+  Serial.print("Bipod # ");
+  Serial.print(bipodNumber);
+  Serial.print(" Test Day: ");
   Serial.print(testDay);
   Serial.print("\n");
   Serial.println("-------------------");
@@ -211,7 +181,7 @@ void bipodTestCycle80RPM(int handleRotations)
     turnCurrent = 0;
     for(int i = 0; i < handleRotations; i++)
     {
-      turnCurrent = oneRotationCounterClockWise();
+      turnCurrent = oneRotationClockWise();
      // Serial.print("Current Draw:");
      // Serial.print(turnCurrent,4);
      // Serial.print(" Amps \n");
@@ -223,11 +193,7 @@ void bipodTestCycle80RPM(int handleRotations)
       rotationsCompleted++;
       checkForInput();
     }
-
-    Serial.print("Pause for "); 
-    Serial.print(topPause);
-    Serial.print(" Seconds \n");
-
+    Serial.println("Pause for 5 Seconds");
     digitalWrite(driveEN, LOW);
     avgCurrent = avgCurrent / handleRotations;
     Serial.println("-------------------");
@@ -237,7 +203,7 @@ void bipodTestCycle80RPM(int handleRotations)
     Serial.print(handleRotations);
     Serial.print(" turns \n");
     Serial.println("-------------------");
-    for(int i = 0; i < 4*topPause; i++)
+    for(int i = 0; i < 20; i++)
     {
       delay(250);
       checkForInput();
@@ -251,7 +217,7 @@ void bipodTestCycle80RPM(int handleRotations)
     turnCurrent = 0;
     for(int i = 0; i < handleRotations; i++)
     {
-      turnCurrent = oneRotationClockWise();
+      turnCurrent = oneRotationCounterClockWise();
       //Serial.print("Current Draw:");
      // Serial.print(turnCurrent,4);
      // Serial.print(" Amps \n");
@@ -263,9 +229,7 @@ void bipodTestCycle80RPM(int handleRotations)
       rotationsCompleted++;
       checkForInput();
     }
-    Serial.print("Pause for "); 
-    Serial.print(bottomPause);
-    Serial.print(" Seconds \n");
+    Serial.println("Pause for 15 Seconds");
     digitalWrite(driveEN, LOW);
   
     cycles++;
@@ -277,7 +241,7 @@ void bipodTestCycle80RPM(int handleRotations)
     Serial.print(handleRotations);
     Serial.print(" turns\n");
     Serial.println("-------------------");
-    for(int i = 0; i < 4*bottomPause; i++)
+    for(int i = 0; i < 60; i++)
     {
       delay(250);
       checkForInput();
@@ -360,8 +324,8 @@ void checkForInput()
     if(pause == '2')
     {
       Serial.println("-------------------");
-      Serial.print("Bipod S/N: ");
-      Serial.print(bipodSerial);
+      Serial.print("Bipod # ");
+      Serial.print(bipodNumber);
       Serial.print(" Test Paused\n");
       Serial.println("-------------------");
       digitalWrite(driveEN, LOW);
@@ -374,8 +338,8 @@ void checkForInput()
         delay(250);
       }
       Serial.println("-------------------");
-      Serial.print("Bipod S/N: ");
-      Serial.print(bipodSerial);
+      Serial.print("Bipod # ");
+      Serial.print(bipodNumber);
       Serial.println(" Test Resuming\n");
       Serial.println("-------------------");
       digitalWrite(driveEN, HIGH);
@@ -635,14 +599,14 @@ void loop()
     {
       Serial.println("Clockwise one rotation");
       Serial.print("Total Current:");
-      Serial.print(oneRotationCounterClockWise(),4);
+      Serial.print(oneRotationClockWise(),4);
       Serial.print(" Amps \n");
     }
     else if(ch == '5')
     {
       Serial.println("Counterclockwise one rotation");
       Serial.print("Total Current:");
-      Serial.print(oneRotationClockWise(),4);
+      Serial.print(oneRotationCounterClockWise(),4);
       Serial.print(" Amps \n");
     }
     else if(ch == '6')
@@ -653,14 +617,14 @@ void loop()
     {
       Serial.println("Clockwise 1/4 rotation");
       Serial.print("Total Current:");
-      Serial.print(oneQuaterRotationCounterClockWise(),4);
+      Serial.print(oneQuaterRotationClockWise(),4);
       Serial.print(" Amps \n");
     }
     else if(ch == '8')
     {
       Serial.println("Counterclockwise 1/4 rotation");
       Serial.print("Total Current:");
-      Serial.print(oneQuaterRotationClockWise(),4);
+      Serial.print(oneQuaterRotationCounterClockWise(),4);
       Serial.print(" Amps \n");
     }
     else
