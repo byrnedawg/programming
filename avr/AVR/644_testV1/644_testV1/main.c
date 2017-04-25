@@ -20,7 +20,20 @@
 
 // global variable
 
-
+//demonstration of progress bar
+void progress(void)
+{
+	Lcm1_SetCursor(4,0);
+	Lcm1_ShowString("DRI V1.1");
+	_delay_ms(1000);
+	for(uint8_t i=0;i<255;i++)
+	{
+		_delay_ms(100);
+		Lcm1_SetCursor(4,1);
+		LCDprogressBar(i, 255, 8);
+	}
+	Lcm1_Clearscreen();
+}
 
 void init()
 {
@@ -35,8 +48,19 @@ void init()
 	Timer0_Init();
 	Timer1_Init();
 	Timer2_Init();
-	//uart_init();
-	//adc_init();
+	uart_init(UART_BAUD_SELECT(UART_BAUD_RATE,F_CPU));
+	adc_init();
+	Lcm1_Init();
+	uart0_puts("Hardware Initialized\r\n");
+	Lcm1_Clearscreen();
+	progress();
+	_delay_ms(500);
+	Lcm1_SetCursor(0,0);
+	Lcm1_ShowString("Hardware");
+	Lcm1_SetCursor(0,1);
+	Lcm1_ShowString("Initialized");
+	
+	
 
 	// watchdog enable
 	//wdt_enable(WDTO_15MS);

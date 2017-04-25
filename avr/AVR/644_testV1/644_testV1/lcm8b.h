@@ -3,7 +3,7 @@
 
 #include "prj.h"
 
-#define LCD_CMD_CLEAR_DISPLAY	              0x01
+#define LCD_CMD_CLEAR_DISPLAY	           0x01
 #define LCD_CMD_CURSOR_HOME		          0x02
 
 // Cursor and display shift
@@ -32,6 +32,8 @@
 #define LCD_CMD_8BIT_1ROW_5X10             0x34
 #define LCD_CMD_8BIT_2ROW_5X7              0x38
 
+#define PROGRESSPIXELS_PER_CHAR	5
+
 void Lcm1_Init(void); 
 void Lcm1_CheckBusy(void); 
 void Lcm1_Write_Instruction(char instruction); 
@@ -40,6 +42,8 @@ void Lcm1_ShowString(char *msg);
 void Lcm1_SetCursor(unsigned char x, unsigned char y); 
 void Lcm1_ShowString_xy(unsigned char x, unsigned char y, char *msg); 
 void Lcm1_Clearscreen(); 
+void LCDdefinechar(const uint8_t *pc,uint8_t char_code);
+void LCDprogressBar(uint8_t progress, uint8_t maxprogress, uint8_t length);
 
 #define Lcm1_LCM_COL      16 
 

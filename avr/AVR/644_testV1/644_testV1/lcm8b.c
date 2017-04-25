@@ -36,6 +36,13 @@ void Lcm1_Init(void)
     Lcm1_Write_Instruction(LCD_CMD_CLEAR_DISPLAY); _delay_ms(15); 
     Lcm1_Write_Instruction(LCD_CMD_DISPLAY_NO_CURSOR); _delay_ms(15); 
     Lcm1_Write_Instruction(LCD_CMD_ENTRY_MODE_INC_NOSHIFT);_delay_ms(15); 
+	
+	uint8_t ch=0, chn=0;
+	while(ch<64)
+	{
+		LCDdefinechar((LcdCustomChar+ch),chn++);
+		ch=ch+8;
+	}
 } 
  
 void Lcm1_CheckBusy(void) 
@@ -120,5 +127,65 @@ void Lcm1_ShowString_xy(unsigned char x, unsigned char y, char *msg)
 void Lcm1_Clearscreen() 
 {
     Lcm1_Write_Instruction(LCD_CMD_CLEAR_DISPLAY); 
+}
+
+void LCDdefinechar(const uint8_t *pc,uint8_t char_code){
+	uint8_t a, pcc;
+	uint16_t i;
+	a=(char_code<<3)|0x40;
+	for (i=0; i<8; i++){
+		pcc=pgm_read_byte(&pc[i]);
+		Lcm1_Write_Instruction(a++);
+		Lcm1_WriteData(pcc);
+	}
+}
+
+//adapted fro mAVRLIB
+void LCDprogressBar(uint8_t progress, uint8_t maxprogress, uint8_t length)
+{
+	uint8_t i;
+	uint16_t pixelprogress;
+	uint8_t c;
+
+	// draw a progress bar displaying (progress / maxprogress)
+	// starting from the current cursor position
+	// with a total length of "length" characters
+	// ***note, LCD chars 0-5 must be programmed as the bar characters
+	// char 0 = empty ... char 5 = full
+
+	// total pixel length of bargraph equals length*PROGRESSPIXELS_PER_CHAR;
+	// pixel length of bar itself is
+	pixelprogress = ((progress*(length*PROGRESSPIXELS_PER_CHAR))/maxprogress);
+	
+	// print exactly "length" characters
+	for(i=0; i<length; i++)
+	{
+		// check if this is a full block, or partial or empty
+		// (u16) cast is needed to avoid sign comparison warning
+		if( ((i*(uint16_t)PROGRESSPIXELS_PER_CHAR)+5) > pixelprogress )
+		{
+			// this is a partial or empty block
+			if( ((i*(uint16_t)PROGRESSPIXELS_PER_CHAR)) > pixelprogress )
+			{
+				// this is an empty block
+				// use space character?
+				c = 0;
+			}
+			else
+			{
+				// this is a partial block
+				c = pixelprogress % PROGRESSPIXELS_PER_CHAR;
+			}
+		}
+		else
+		{
+			// this is a full block
+			c = 5;
+		}
+		
+		// write character to display
+		Lcm1_WriteData(c);
+	}
+
 }
 

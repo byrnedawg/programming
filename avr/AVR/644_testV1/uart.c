@@ -137,11 +137,10 @@ Date        Description
 	- Selective enabling of USART0,1,2,3 as required. (set in uart.h)
 ************************************************************************/
 
-//#include <avr/io.h>
-//#include <avr/interrupt.h>
-//#include <avr/pgmspace.h>
-//#include "uart.h"
-#include "prj.h"
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include <avr/pgmspace.h>
+#include "uart.h"
 
 /*
  *  constants and macros
@@ -362,7 +361,7 @@ Date        Description
 	#define UART3_CONTROL  UCSR3B
 	#define UART3_DATA     UDR3
 	#define UART3_UDRIE    UDRIE3  
-#elif defined(__AVR_ATmega644PA__)
+#elif defined(__AVR_ATmega644__)
 	/* ATmega with one USART */
 	#define ATMEGA_USART0
 	#define UART0_RECEIVE_INTERRUPT   USART0_RX_vect

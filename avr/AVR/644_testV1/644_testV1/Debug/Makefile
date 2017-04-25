@@ -37,11 +37,14 @@ SUBDIRS :=
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../adc.c \
 ../button.c \
 ../lcm8b.c \
 ../led.c \
 ../main.c \
-../timer.c
+../program_Memory.c \
+../timer.c \
+../uart.c
 
 
 PREPROCESSING_SRCS += 
@@ -51,32 +54,44 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+adc.o \
 button.o \
 lcm8b.o \
 led.o \
 main.o \
-timer.o
+program_Memory.o \
+timer.o \
+uart.o
 
 OBJS_AS_ARGS +=  \
+adc.o \
 button.o \
 lcm8b.o \
 led.o \
 main.o \
-timer.o
+program_Memory.o \
+timer.o \
+uart.o
 
 C_DEPS +=  \
+adc.d \
 button.d \
 lcm8b.d \
 led.d \
 main.d \
-timer.d
+program_Memory.d \
+timer.d \
+uart.d
 
 C_DEPS_AS_ARGS +=  \
+adc.d \
 button.d \
 lcm8b.d \
 led.d \
 main.d \
-timer.d
+program_Memory.d \
+timer.d \
+uart.d
 
 OUTPUT_FILE_PATH +=644_testV1.elf
 
@@ -92,6 +107,12 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
+
+
+
+
 
 
 

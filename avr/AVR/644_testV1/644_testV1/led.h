@@ -1,6 +1,8 @@
 #ifndef _LED_H
 #define _LED_H
 
+#include "prj.h"
+
 // 0 - active low, 1 - active high
 #define LED1_ACTIVE_LOW    0
 

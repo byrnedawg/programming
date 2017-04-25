@@ -8,8 +8,12 @@
 #include <avr/interrupt.h>
 #include <stdio.h>
 #include <avr/wdt.h>
+#include <stdlib.h>
+#include <string.h>
+#include <avr/pgmspace.h>
 
 #include "pin_config.h"
+#include "program_Memory.h"
 #include "adc.h"
 #include "led.h"
 #include "buzzer.h"
@@ -21,4 +25,5 @@
 #include "timer.h"
 #include "interrupt.h"
 #include "main.h" 
+
 #endif

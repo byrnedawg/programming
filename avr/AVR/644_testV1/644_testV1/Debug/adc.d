@@ -1,4 +1,4 @@
-lcm8b.d lcm8b.o lcm8b.o: .././lcm8b.c .././prj.h \
+adc.d adc.o adc.o: .././adc.c .././prj.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/avr/io.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/avr/sfr_defs.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/inttypes.h \

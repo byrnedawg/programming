@@ -1,6 +1,6 @@
 #ifndef UART_H
 #define UART_H
-#include "prj.h"
+
 
 /************************************************************************
 Title:    Interrupt UART library with receive/transmit circular buffers

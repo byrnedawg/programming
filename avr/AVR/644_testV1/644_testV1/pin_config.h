@@ -27,6 +27,10 @@
 //    20|PD6 (ICP1)        (OC2) PD7|21 
 //      +---------------------------+   
 
+/* 9600 baud */
+#define UART_BAUD_RATE      9600
+
+
 #define output_low(port,pin) port &= ~(1<<pin)		// output_low(PORTB, PB2);
 #define output_high(port,pin) port |= (1<<pin)		// output_high(PORTB, PB2);
 #define output_toggle(port,pin) port ^= (1<<pin)	// output_toggle(PORTB, PB2);
@@ -46,11 +50,11 @@
 
 
 */
-#define Button1_PORT    PORTB
-#define Button1_DIR     DDRB
-#define Button1_PIN     PINB
-#define Button1_BIT     4
-#define Button1_PIN_BIT PB4
+#define Button1_PORT    PORTD
+#define Button1_DIR     DDRD
+#define Button1_PIN     PIND
+#define Button1_BIT     6
+#define Button1_PIN_BIT PD6
 
 #define Button2_PORT    PORTD
 #define Button2_DIR     DDRD
@@ -58,39 +62,45 @@
 #define Button2_BIT     7
 #define Button2_PIN_BIT PD7
 
+#define ADC7_PORT    PORTA
+#define ADC7_DIR     DDRA
+#define ADC7_PIN     PINA
+#define ADC7_BIT     7
+#define ADC7_PIN_BIT PA7
+
 /*
 #define Keypad1_PORT    PORTC
 #define Keypad1_DIR     DDRC
 #define Keypad1_PIN     PINC
 */
 
-#define Lcm1_DATA_PORT    PORTA
-#define Lcm1_DATA_DIR     DDRA
-#define Lcm1_DATA_PIN     PINA
-#define Lcm1_RS_PORT    PORTB
-#define Lcm1_RS_DIR     DDRB
-#define Lcm1_RS_PIN     PINB
-#define Lcm1_RS_BIT     0
-#define Lcm1_RW_PORT    PORTB
-#define Lcm1_RW_DIR     DDRB
-#define Lcm1_RW_PIN     PINB
-#define Lcm1_RW_BIT     1
-#define Lcm1_EN_PORT    PORTB
-#define Lcm1_EN_DIR     DDRB
-#define Lcm1_EN_PIN     PINB
-#define Lcm1_EN_BIT     3
+#define Lcm1_DATA_PORT    PORTB
+#define Lcm1_DATA_DIR     DDRB
+#define Lcm1_DATA_PIN     PINB
+#define Lcm1_RS_PORT    PORTD
+#define Lcm1_RS_DIR     DDRD
+#define Lcm1_RS_PIN     PIND
+#define Lcm1_RS_BIT     2
+#define Lcm1_RW_PORT    PORTD
+#define Lcm1_RW_DIR     DDRD
+#define Lcm1_RW_PIN     PIND
+#define Lcm1_RW_BIT     3
+#define Lcm1_EN_PORT    PORTD
+#define Lcm1_EN_DIR     DDRD
+#define Lcm1_EN_PIN     PIND
+#define Lcm1_EN_BIT     4
 
-#define Led1_PORT    PORTB
-#define Led1_DIR     DDRB
-#define Led1_PIN     PINB
-#define Led1_BIT     5
-#define Led1_PIN_BIT PB5
+#define Led1_PORT    PORTC
+#define Led1_DIR     DDRC
+#define Led1_PIN     PINC
+#define Led1_BIT     4
+#define Led1_PIN_BIT PC4
 
 #define Led2_PORT    PORTC
 #define Led2_DIR     DDRC
 #define Led2_PIN     PINC
-#define Led2_BIT     0
-#define Led2_PIN_BIT PC0
+#define Led2_BIT     5
+#define Led2_PIN_BIT PC5
 
 
 /*

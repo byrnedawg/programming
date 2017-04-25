@@ -10,6 +10,8 @@ volatile unsigned int msCountedTimer1 = 0;
 volatile unsigned int msCountedTimer2 = 0;
 volatile unsigned int state = 5;
 volatile unsigned int toggleMsTime = 500;
+volatile char line[128];
+volatile unsigned char lineIndex = 0;
 
 
 // Timer 0  timeout= 1.000 ms, fosc = 8.0000 MHz 
@@ -51,7 +53,11 @@ void Timer2_Init()
 //====================================
 ISR (TIMER0_OVF_vect)
 {
-    TCNT0 = 256 - 125; 
+	TCNT0 = 256 - 125; 
+	int adcValue = 0;
+	char str[16];
+	const char *ptr = line;
+	
     if (++repeat_cnt0 == 1) 
     {
         repeat_cnt0 = 0; 
@@ -60,8 +66,61 @@ ISR (TIMER0_OVF_vect)
          if(msCountedTimer0 % 100 == 0)
          {
 			 //msCountedTimer0 = 0;
+			 if(uart0_available() != 0)
+			 {
+				 if(uart0_peek() != '\r')
+				 {
+					 line[lineIndex++] = uart0_getc();
+				 }
+			 }
+			 
+			 
+			 if(uart0_peek() == '\r')
+			 {
+				  uart0_flush();
+				  uart0_puts("\r\n");
+				  uart0_puts(ptr);
+				  uart0_puts("\r\n");
+				  if(strcmp(ptr,"hello") == 0)
+				  {
+					  uart0_puts("\r\n");
+					  uart0_puts(" Hello to you Goon !!!!");
+					  uart0_puts("\r\n");
+				  }
+				  else if(strcmp(ptr,"start") == 0)
+				  {
+					  uart0_puts("\r\n");
+					  uart0_puts("Starting !!!!");
+					  uart0_puts("\r\n");
+				  }
+				  else if(strcmp(ptr,"stop") == 0)
+				  {
+					  uart0_puts("\r\n");
+					  uart0_puts("Stopping !!!!");
+					  uart0_puts("\r\n");
+				  }
+				  else
+				  {
+					  uart0_puts("\r\n");
+					  uart0_puts("Invalid input");
+					  uart0_puts("\r\n");
+				  }
+				  for(int i = 0; i<128; i++)
+				  {
+					  line[i] = '\0';
+				  }
+				  lineIndex = 0;
+			 }
+			 
 	         if(buttonIsPressed(1))
 			 {
+				 uart0_puts("Button 1 Pushed\r\n");
+				 uart0_puts("ADC Ref Value: VCC \r\n");
+				 uart0_puts("ADC Value: ");
+				 adcValue = adc_get_value_ref(1,7);
+				 itoa(adcValue, str, 10);
+				 uart0_puts(str);
+				 uart0_puts("\r\n");
 				 if(state > 2)
 				 {
 					 state--;
@@ -70,6 +129,13 @@ ISR (TIMER0_OVF_vect)
 			 }
 			 else if(buttonIsPressed(2))
 			 {
+				 uart0_puts("Button 2 Pushed\r\n");
+				 uart0_puts("ADC Ref Value: 2.56V \r\n");
+				 uart0_puts("ADC Value: ");
+				 adcValue = adc_get_value_ref(3,6);
+				 itoa(adcValue, str, 10);
+				 uart0_puts(str);
+				 uart0_puts("\r\n");
 				 if(state < 10)
 				 {
 					 state++;

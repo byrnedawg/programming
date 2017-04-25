@@ -16,9 +16,12 @@ button.d button.o button.o: .././button.c .././prj.h \
   c:\winavr-20100110\bin\../lib/gcc/avr/4.3.3/include/stdarg.h \
   c:\winavr-20100110\bin\../lib/gcc/avr/4.3.3/include/stddef.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/avr/wdt.h \
-  .././pin_config.h .././adc.h .././led.h .././buzzer.h .././relay.h \
-  .././button.h .././keypad.h .././lcm8b.h .././uart.h .././timer.h \
-  .././interrupt.h .././main.h
+  c:/winavr-20100110/lib/gcc/../../avr/include/stdlib.h \
+  c:/winavr-20100110/lib/gcc/../../avr/include/string.h \
+  c:/winavr-20100110/lib/gcc/../../avr/include/avr/pgmspace.h \
+  .././pin_config.h .././program_Memory.h .././adc.h .././led.h \
+  .././buzzer.h .././relay.h .././button.h .././keypad.h .././lcm8b.h \
+  .././uart.h .././timer.h .././interrupt.h .././main.h
 
 .././prj.h:
 
@@ -56,7 +59,15 @@ c:\winavr-20100110\bin\../lib/gcc/avr/4.3.3/include/stddef.h:
 
 c:/winavr-20100110/lib/gcc/../../avr/include/avr/wdt.h:
 
+c:/winavr-20100110/lib/gcc/../../avr/include/stdlib.h:
+
+c:/winavr-20100110/lib/gcc/../../avr/include/string.h:
+
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/pgmspace.h:
+
 .././pin_config.h:
+
+.././program_Memory.h:
 
 .././adc.h:
 
