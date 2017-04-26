@@ -28,10 +28,11 @@ void progress(void)
 	_delay_ms(1000);
 	for(uint8_t i=0;i<255;i++)
 	{
-		_delay_ms(100);
 		Lcm1_SetCursor(4,1);
-		LCDprogressBar(i, 255, 8);
+		LCDprogressBar(i, 254, 8);
+		_delay_ms(10);
 	}
+	_delay_ms(1000);
 	Lcm1_Clearscreen();
 }
 
@@ -50,7 +51,8 @@ void init()
 	Timer2_Init();
 	uart_init(UART_BAUD_SELECT(UART_BAUD_RATE,F_CPU));
 	adc_init();
-	Lcm1_Init();
+	//Lcm1_Init();
+	oledMod_Init();
 	uart0_puts("Hardware Initialized\r\n");
 	Lcm1_Clearscreen();
 	progress();

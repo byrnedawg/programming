@@ -44,6 +44,69 @@ void Lcm1_Init(void)
 		ch=ch+8;
 	}
 } 
+
+void oledMod_Init(void) //from modular OLED data sheet
+{
+
+	Lcm1_DATA_DIR	 = 0xff; // output
+	Lcm1_DATA_PORT = 0x00;
+
+	Lcm1_RS_DIR |= _BV(Lcm1_RS_BIT); // output
+	Lcm1_RW_DIR |= _BV(Lcm1_RW_BIT); // output
+	Lcm1_EN_DIR |= _BV(Lcm1_EN_BIT); // output
+
+	Lcm1_RS_PORT |= _BV(Lcm1_RS_BIT);
+	Lcm1_RW_PORT |= _BV(Lcm1_RW_BIT);
+	Lcm1_EN_PORT |= _BV(Lcm1_EN_BIT);
+
+	_delay_us(10);
+
+	_delay_ms(1);
+	Lcm1_Write_Instruction(0x2A); 
+	Lcm1_Write_Instruction(0x71); 
+	Lcm1_WriteData(0x5C);
+	Lcm1_Write_Instruction(0x28);
+	Lcm1_Write_Instruction(0x08);
+	Lcm1_Write_Instruction(0x2A);
+	Lcm1_Write_Instruction(0x79);
+	Lcm1_Write_Instruction(0xD5);
+	Lcm1_Write_Instruction(0x70);
+	Lcm1_Write_Instruction(0x78);
+	Lcm1_Write_Instruction(0x08);
+	Lcm1_Write_Instruction(0x06);
+	Lcm1_Write_Instruction(0x72);
+	Lcm1_WriteData(0x00);
+	Lcm1_Write_Instruction(0x2A);
+	Lcm1_Write_Instruction(0x79);
+	Lcm1_Write_Instruction(0xDA);
+	Lcm1_Write_Instruction(0x00);
+	Lcm1_Write_Instruction(0xDC);
+	Lcm1_Write_Instruction(0x00);
+	Lcm1_Write_Instruction(0x81);
+	Lcm1_Write_Instruction(0x7F);
+	Lcm1_Write_Instruction(0xD9);
+	Lcm1_Write_Instruction(0xF1);
+	Lcm1_Write_Instruction(0xDB);
+	Lcm1_Write_Instruction(0x40);
+	Lcm1_Write_Instruction(0x78);
+	Lcm1_Write_Instruction(0x28);
+	Lcm1_Write_Instruction(0x01);
+	Lcm1_Write_Instruction(0x80);
+	Lcm1_Write_Instruction(0x0C);
+	_delay_ms(100);
+	
+	
+	
+	_delay_ms(15);
+	
+	
+	uint8_t ch=0, chn=0;
+	while(ch<64)
+	{
+		LCDdefinechar((LcdCustomChar+ch),chn++);
+		ch=ch+8;
+	}
+}
  
 void Lcm1_CheckBusy(void) 
 {

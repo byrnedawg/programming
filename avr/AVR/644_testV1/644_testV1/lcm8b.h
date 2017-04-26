@@ -35,6 +35,7 @@
 #define PROGRESSPIXELS_PER_CHAR	5
 
 void Lcm1_Init(void); 
+void oledMod_Init(void);
 void Lcm1_CheckBusy(void); 
 void Lcm1_Write_Instruction(char instruction); 
 void Lcm1_WriteData(char value); 

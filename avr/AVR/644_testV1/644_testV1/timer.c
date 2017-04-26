@@ -56,7 +56,7 @@ ISR (TIMER0_OVF_vect)
 	TCNT0 = 256 - 125; 
 	int adcValue = 0;
 	char str[16];
-	const char *ptr = line;
+	char *ptr;
 	
     if (++repeat_cnt0 == 1) 
     {
@@ -77,10 +77,14 @@ ISR (TIMER0_OVF_vect)
 			 
 			 if(uart0_peek() == '\r')
 			 {
+				  ptr = (char *)line;
 				  uart0_flush();
 				  uart0_puts("\r\n");
 				  uart0_puts(ptr);
 				  uart0_puts("\r\n");
+				  Lcm1_Clearscreen();
+				  Lcm1_SetCursor(0,0);
+				  Lcm1_ShowString(ptr);
 				  if(strcmp(ptr,"hello") == 0)
 				  {
 					  uart0_puts("\r\n");
@@ -121,6 +125,12 @@ ISR (TIMER0_OVF_vect)
 				 itoa(adcValue, str, 10);
 				 uart0_puts(str);
 				 uart0_puts("\r\n");
+				 Lcm1_Clearscreen();
+				 Lcm1_SetCursor(0,0);
+				 Lcm1_ShowString("ADC Ref: VCC");
+				 Lcm1_SetCursor(0,1);
+				 Lcm1_ShowString("ADC Value: ");
+				 Lcm1_ShowString(str);
 				 if(state > 2)
 				 {
 					 state--;
@@ -136,6 +146,12 @@ ISR (TIMER0_OVF_vect)
 				 itoa(adcValue, str, 10);
 				 uart0_puts(str);
 				 uart0_puts("\r\n");
+				 Lcm1_Clearscreen();
+				 Lcm1_SetCursor(0,0);
+				 Lcm1_ShowString("ADC Ref: 2.56V");
+				 Lcm1_SetCursor(0,1);
+				 Lcm1_ShowString("ADC Value: ");
+				 Lcm1_ShowString(str);
 				 if(state < 10)
 				 {
 					 state++;
