@@ -16,6 +16,8 @@ void commandLineTest()
 	int calcRange = 0;
 	int elevation = 0;
 	int calcElv = 0;
+	int vertInterval = 0;
+	int vertIntervalCorrection = 0;
 	
 	
 	cout << "-----------------------------------------------------------\n";
@@ -26,7 +28,7 @@ void commandLineTest()
 	cout << "4: Select Munition \n";
 	cout << "5: Select Charge 0 or 1 \n";
 	cout << "6: Display Status of gun \n";
-	cout << "7: Display fun \n";
+	cout << "7: Enter in Vertical Interval + or - meters in reference target \n";
 	cout << "9: Exit Simulator \n";
 	cout << "-----------------------------------------------------------\n";		
 
@@ -36,7 +38,11 @@ void commandLineTest()
 		{
 			cout << "Enter Distance in Meters \n";
 			cin >> value;
-			cout << "Distance " << value << " is entered \n\n";
+			cout << "Distance " << value << "m was entered \n\n";
+			if(vertInterval != 0)
+				{
+					value -= vertIntervalCorrection;
+				}
 			calcElv = calculateElevation(value,(char*)(ammotype[roundType][roundName]), gblcharge);
 			if(calcElv == -1)
 			{
@@ -48,15 +54,22 @@ void commandLineTest()
 			}
 			else
 			{
-				cout << "Elevation: " << calcElv << " Mils \n";
 				elevation = calcElv;
+				if(vertInterval == 0)
+				{
+					cout << "Elevation: " << calcElv << " Mils \n";
+				}
+				else
+				{
+					cout << "Vertical Interval Corrected Elevation: " << calcElv<< " Mils \n";
+				}
 			}
 		}
 		else if(answer == 2)
 		{
 			cout << "Enter Elevation in Mils \n";
 			cin >> elevation;
-			cout << "Elevation " << elevation << " is entered \n\n";
+			cout << "Elevation " << elevation << " Mils was entered \n";
 			calcRange = calculateRange(elevation,(char*)(ammotype[roundType][roundName]), gblcharge);
 			if(calcRange == -1)
 			{
@@ -68,22 +81,32 @@ void commandLineTest()
 			}
 			else
 			{
-				cout << "Range: " << calcRange << " Meters \n";
+				if(vertInterval == 0)
+				{
+					cout << "Range: " << calcRange << "m \n";
+				}
+				else
+				{
+					cout << "Range: " << calcRange << "m \n";
+					cout << "Vertical Interval Corrected Range: " << calcRange+vertIntervalCorrection << "m \n";
+				}
 			}
 		}
 		else if(answer == 3)
 		{
 			cout << "Enter Ammo Type \n";
-			cout << "1: HE/MAPAM \n2: WP \n3: Illum \n4: Train \n5: Elevation \n";
+			cout << "1: HE/MAPAM \n2: WP \n3: Illum \n4: Train \n";//5: Elevation \n";
 			cin >> roundType;
 			roundType--;
-			cout << "Ammo Type " << roundType << " is entered \n\n";
+			cout << "Ammo Type " << roundType << " is entered \n";
+			roundName = 0;
 			cout << "The Ammo Type selected is " << group[roundType] << 
-			" with first munition named " << ammotype[roundType][0] << "\n" ;
+			" with first munition " << ammotype[roundType][roundName] << "\n" ;
 		}
 		else if(answer == 4)
 		{
 			cout << "Select Munition in round type " << group[roundType] << "\n";
+			cout << "Current: " << ammotype[roundType][roundName] << "\n";
 			for(int i = 0; i < 5; i++)
 			{
 				if(strcmp(ammotype[roundType][i],"d") != 0)
@@ -115,7 +138,8 @@ void commandLineTest()
 			cout << "Round Type: " << group[roundType] << "\n";
 			cout << "Muniton: " << ammotype[roundType][roundName] << "\n";
 			cout << "Charge: " << gblcharge << "\n" ;
-			cout << "Tube Elevation: " << elevation << "\n";
+			cout << "Vertical Interval: " << vertInterval << "m\n";
+			cout << "Tube Elevation: " << elevation << " mils\n";
 			if(calcRange == -1)
 			{
 				cout << "Range: TOO HIGH \n";
@@ -126,7 +150,15 @@ void commandLineTest()
 			}
 			else
 			{
-				cout << "Range: " << calcRange << " Meters \n";
+				if(vertInterval == 0)
+				{
+					cout << "Range: " << calcRange << "m \n";
+				}
+				else
+				{
+					cout << "Range: " << calcRange << "m \n";
+					cout << "Vertical Interval Corrected Range: " << calcRange+vertIntervalCorrection << "m \n";
+				}
 			}
 			if(strcmp(group[roundType],"Illum") == 0)
 			{
@@ -135,9 +167,12 @@ void commandLineTest()
 		}
 		else if(answer == 7)
 		{
-			//cout << "Display Fun: " << firstFT->shelltype << "\n" ;
-			//first = firstFT->firstch1;
-			//cout << "Display mils: " << first->mils << "\n" ;
+			cout << "Enter in Vertical Interval + or - meters in reference target \n";
+			cin >> vertInterval;
+			cout << "Vertical Interval of " << vertInterval << " meters was entered \n";
+			cout << "Vertical Interval: " << vertInterval << " meters\n";
+			vertIntervalCorrection = vertInterval/2;
+			cout << "Range Correction: " << vertIntervalCorrection << " meters\n";
 		}
 		else
 		{
@@ -149,7 +184,7 @@ void commandLineTest()
 			cout << "4: Select Munition \n";
 			cout << "5: Select Charge 0 or 1 \n";
 			cout << "6: Display Status of gun \n";
-			cout << "7: Display fun \n";
+			cout << "7: Enter in Vertical Interval + or - meters in reference target \n";
 			cout << "9: Exit Simulator \n";
 			cout << "-----------------------------------------------------------\n";
 		}

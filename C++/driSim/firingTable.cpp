@@ -23,10 +23,10 @@ const char * group[5]  = {"HE/MAPAM","WP","Illum","Train","Elevation"};
 
 //const struct lookup * NULLELP =  (const) 0;
 const struct  lookup M720A1ch0[] = { /* note intermediate {} are NOT needed, just used to show limits of each lookup*/
-    { 75 ,	1509 },
+    {75 ,	1509},
     {80,	1503},
-    {85, 	1497 },
-    {90,	1491 },
+    {85, 	1497},
+    {90,	1491},
     {95	,	1485},
     {105,	1473},
     {110,	1467},
@@ -90,7 +90,7 @@ const struct  lookup M720A1ch0[] = { /* note intermediate {} are NOT needed, jus
     {400,	991	},
     {405,	975	},
     {410,	957	},
-    {415,	936	 },
+    {415,	936	},
     {420,	912	},
     {425,	883	},
     {430,	836 }
@@ -331,14 +331,14 @@ const struct lookup M720A1ch1[] = { /* 720 A1 charge 1 */
 };	/* end 720A1 charge 1 */
 
 const struct lookup M1061ch0[] = {
-	60,	1505,
-	65,	1497,
-	70,	1489,
-	75,	1481,
-	80,	1472,
-	85,	1464,
-	90,	1456,
-	95,	1448,
+	60,		1505,
+	65,		1497,
+	70,		1489,
+	75,		1481,
+	80,		1472,
+	85,		1464,
+	90,		1456,
+	95,		1448,
 	100,	1439,
 	105,	1431,
 	110,	1423,
@@ -2452,6 +2452,84 @@ int calculateElevation(int distance, const char * shltyp, int charge)
 }
 
 
+int calculateElevationVert(int distance, const char * shltyp, int charge, int vert)
+{
+	int elevation;
+	int i;
+	int  j;
+
+
+	/* generate pointers to correct shell type table ..
+	initially ignoring illumination differences */
+
+	fztime = 0;	/* assume 0 overwrite for illum rds */
+
+	for(currentFT = firstFT; currentFT <= lastFT; currentFT++)
+	{
+		if(!(strcmp(shltyp,currentFT->shelltype)))
+		{
+			if(charge == 0)
+			{
+				first = currentFT->firstch0;
+
+				/* check if charge 0 is a valid value..is except for illums normally */
+				if(first == (struct lookup *)0)
+				{
+					charge = 1;
+					goto chg1;
+				}
+				/* above being true means only charge 1 valid */
+				last = currentFT->lastch0;
+				break;
+			}
+			chg1:
+			if(charge == 1)
+			{ /* would be else except for invalid charge 0 above */
+				first = currentFT->firstch1;
+				last = currentFT->lastch1;
+				break;
+			}
+		}
+	}
+
+	gblcharge = charge;	/* usually the same as in but can override above */
+	/* translate from elevation to range */
+
+	if((first->meters) > distance) return(-1);	/* too close */
+	if((last->meters) < distance)  return(-2);	/* too far */
+
+	for(current = first; current < last ; current++) 
+	{ /* here distance in bounds, get range in meters*/
+		if((current->meters) <= distance && ((current + 1)->meters) > distance) 
+		{
+
+			if((distance - (current->meters)) < (((current + 1)->meters) - distance ))  
+			{ 
+				elevation = (current->mils);
+				i = current - first;
+			}
+			else 
+			{
+				elevation = ((current + 1)->mils);
+				i = current + 1 - first;
+
+			}
+			if(currentFT->fuzetimes)
+			{
+			    fztime =* (int*)((currentFT->fuzetimes) + i); //fztime =*
+			}
+			return(elevation);
+		}
+	}
+	/**** here the elevation is exactly the value of the last elevation otherwise done above **/
+	i = last - first;
+
+	if(currentFT->fuzetimes)
+	{
+	    fztime =* (int*)((currentFT->fuzetimes) + i); //fztime =*
+	}
+	return((last->mils));
+}	
 
 
 

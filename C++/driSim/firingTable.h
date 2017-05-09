@@ -32,5 +32,7 @@ int calculateRange(int elv, const char * shltyp, int charge);
 
 int calculateElevation(int distance, const char * shltyp, int charge);
 
+int calculateElevationVert(int distance, const char * shltyp, int charge, int vert);
+
 
 #endif 
