@@ -12,6 +12,7 @@ void commandLineTest()
 	int roundType = 0;
 	int roundName = 0;
 	int charge = 0;
+	gblcharge = charge;
 	int calcRange = 0;
 	int elevation = 0;
 	int calcElv = 0;
@@ -36,7 +37,7 @@ void commandLineTest()
 			cout << "Enter Distance in Meters \n";
 			cin >> value;
 			cout << "Distance " << value << " is entered \n\n";
-			calcElv = calculateElevation(value,(char*)(ammotype[roundType][roundName]), charge);
+			calcElv = calculateElevation(value,(char*)(ammotype[roundType][roundName]), gblcharge);
 			if(calcElv == -1)
 			{
 				cout << "Elevation: TOO CLOSE \n";
@@ -56,7 +57,7 @@ void commandLineTest()
 			cout << "Enter Elevation in Mils \n";
 			cin >> elevation;
 			cout << "Elevation " << elevation << " is entered \n\n";
-			calcRange = calculateRange(elevation,(char*)(ammotype[roundType][roundName]), charge);
+			calcRange = calculateRange(elevation,(char*)(ammotype[roundType][roundName]), gblcharge);
 			if(calcRange == -1)
 			{
 				cout << "Range: TOO HIGH \n";
@@ -92,7 +93,8 @@ void commandLineTest()
 			}
 			cin >> roundName;
 			cout << "Round Name " << roundName << " is entered \n\n";
-			cout << "The ammo type selected is " << ammotype[roundType][roundName-1] << "\n" ;
+			roundName--;
+			cout << "The ammo type selected is " << ammotype[roundType][roundName] << "\n" ;
 		}
 		else if(answer == 5)
 		{
@@ -102,17 +104,18 @@ void commandLineTest()
 			{
 				charge = 0;
 			}
+			gblcharge = charge;
 			cout << "Charge " << charge << " is Selected\n\n";
 			cout << "The current charge selected is " << charge << "\n" ;
 		}
 		else if(answer == 6)
 		{
 			cout << "Gun Status\n";
+			calcRange = calculateRange(elevation,(char*)(ammotype[roundType][roundName]), gblcharge);
 			cout << "Round Type: " << group[roundType] << "\n";
 			cout << "Muniton: " << ammotype[roundType][roundName] << "\n";
-			cout << "Charge: " << charge << "\n" ;
+			cout << "Charge: " << gblcharge << "\n" ;
 			cout << "Tube Elevation: " << elevation << "\n";
-			calcRange = calculateRange(elevation,(char*)(ammotype[roundType][roundName]), charge);
 			if(calcRange == -1)
 			{
 				cout << "Range: TOO HIGH \n";
@@ -124,6 +127,10 @@ void commandLineTest()
 			else
 			{
 				cout << "Range: " << calcRange << " Meters \n";
+			}
+			if(strcmp(group[roundType],"Illum") == 0)
+			{
+				cout << "Fuze Time: " << fztime << " Seconds \n";
 			}
 		}
 		else if(answer == 7)

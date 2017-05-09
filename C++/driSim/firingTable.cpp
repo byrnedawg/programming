@@ -2355,14 +2355,20 @@ int calculateRange(int elv, const char * shltyp, int charge)
 				i = current + 1 - first;
 
 			}
-			//if((currentFT->fuzetimes)) fztime = (uint8_t*)(((currentFT->fuzetimes)) + i); //fztime =*
-			return(range);
+			if(currentFT->fuzetimes)
+			{
+			    fztime =* (int*)((currentFT->fuzetimes) + i); //fztime =*
+			}
+			return(range); 
 		}
 	}
 	/**** here the elevation is exactly the value of the last elevation otherwise done above **/
 	i = last - first;
 
-//	if((currentFT->fuzetimes)) fztime = (int*)(((currentFT->fuzetimes)) + i); //fztime =*
+	if(currentFT->fuzetimes)
+	{
+	     fztime =* (int*)((currentFT->fuzetimes) + i); //fztime =*
+	}
 	return((last->meters));
 }
 
@@ -2428,14 +2434,20 @@ int calculateElevation(int distance, const char * shltyp, int charge)
 				i = current + 1 - first;
 
 			}
-			//if((currentFT->fuzetimes)) fztime = (uint8_t*)(((currentFT->fuzetimes)) + i); //fztime =*
+			if(currentFT->fuzetimes)
+			{
+			    fztime =* (int*)((currentFT->fuzetimes) + i); //fztime =*
+			}
 			return(elevation);
 		}
 	}
 	/**** here the elevation is exactly the value of the last elevation otherwise done above **/
 	i = last - first;
 
-//	if((currentFT->fuzetimes)) fztime = (int*)(((currentFT->fuzetimes)) + i); //fztime =*
+	if(currentFT->fuzetimes)
+	{
+	    fztime =* (int*)((currentFT->fuzetimes) + i); //fztime =*
+	}
 	return((last->mils));
 }
 
