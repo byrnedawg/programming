@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Penumbra Eclipse February 10th, 2017</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+   body {
+      /*margin: auto;*/
+      position: relative; 
+  }
+  .affix {
+      top:0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+  .navbar {
+      margin-bottom: 0px;
+  }
+
+  .affix ~ .container-fluid {
+     position: relative;
+     top: 50px;
+  }
+  img {
+    cursor: zoom-in;
+}
+
+.fixed-height {
+    max-height: 350px;
+}
+  #logo {padding-top:20px; padding-bottom:30px;cursor:default; pointer-events: none;}
+  #nav1 {padding-top:5px; padding-bottom:10px;}
+  #section1 {padding-top:50px;color: black; background-color: white;}
+  #section2 {padding-top:50px;color: black; background-color: white;}
+  #section3 {padding-top:50px;color: black; background-color: white;}
+  #section4 {padding-top:50px;color: black; background-color: white; height: 600px;}
+  #section41 {padding-top:50px;color: black; background-color: white; height: 800px;}
+  #section42 {padding-top:50px;color: black; background-color: white; height: 550px;}
+  
+   .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+     /* width: 70%;*/
+      height:350px;
+      margin: auto;
+  }
+  </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<div class="container-fluid" style="color: black; background-color: white;">
+    <div class="container">
+        <img id = "logo" class="img-responsive center-block" src="imgs/tad-logo.png" alt="Logo" width="350" height="300"> 
+    </div>
+</div>
+
+<nav id = "nav1" class="navbar navbar-inverse" data-spy="affix" data-offset-top="250"> <!-- navbar-fixed-top-->
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#logo">February 10th, 2017<br>Penumbral Lunar Eclipse</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#section1">Penumbral Lunar Eclipse</a></li>
+          <li><a href="#section2">Where to See the Eclipse</a></li>
+          <li><a href="#section3">When the Eclipse Happens Worldwide</a></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Question & Answer<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#section41">Are you My Lover</a></li>
+              <li><a href="#section42">Proposal</a></li>
+            </ul>
+          </li>
+          <li><a href="index.php">Back to Byrnedawg.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+
+<div id="section1" class="container-fluid">
+    <h1 class = "text-center">Penumbral Lunar Eclipse</h1>
+    <p class = "text-center">The penumbral lunar eclipse will be visible from Europe, most of Asia, Africa and most of North America.</p>
+    <p class = "text-center"><strong style = "color: blue">Is this Penumbral Lunar Eclipse visible in New York?</strong></p>
+    <h2 class = "text-center">What This Lunar Eclipse Looks Like</h2>
+    <p style = "text-align:center">The animation shows approximately what the eclipse looks like from the night side of the Earth.</p>
+    <div class="container">
+        <h2 class = "text-center">Penumbra Eclipse Begins</h2>
+        <img class="img-responsive center-block" src="imgs/penumbraBegins.png" alt="Penumbra Eclipse Begins" width="460" height="345"> 
+    </div>
+    <div class="container">
+        <h2 class = "text-center">Maximum Eclipse</h2>
+        <img class="img-responsive center-block" src="imgs/maxEclipse.png" alt="Max Eclipse" width="460" height="345"> 
+    </div>
+    <div class="container">
+        <h2 class = "text-center">Penumbra Eclipse Ends</h2>
+        <img class="img-responsive center-block" src="imgs/eclipseEnds.png" alt="Penumbra Eclipse Ends" width="460" height="345"> 
+    </div>
+</div>
+<div id="section2" class="container-fluid">
+  <h1 class = "text-center">Where to See the Eclipse</h1>
+  <p><strong>Regions seeing, at least, some parts of the eclipse:</strong> Europe, Much of Asia, Africa, North America, South America, Pacific, Atlantic, Indian Ocean, Arctic, Antarctica.</p>
+  <div class="container-fluid">
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+        <p class="panel-title" style = "color:blue">
+          <a id = "menuToggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1"> <span class="glyphicon glyphicon-triangle-right"></span> Expand for cities where penumbral eclipse is visible</a>
+        </p>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+          <div class="panel-body center-block">
+            <div class="row">
+              <ul class= "col-xs-6" style = "color:blue">
+                <li>Mexico City, Ciudad de México, Mexico</li>
+                <li>Johannesburg, South Africa</li>
+                <li>Brussels, Belgium</li>
+                <li>Washington DC, District of Columbia, USA</li>
+                <li>Lisbon, Portugal</li>
+                <li>New York, New York, USA</li>
+                <li>Budapest, Hungary</li>
+                <li>Paris, Île-de-France, France</li>
+                <li>Ankara, Turkey</li>
+                <li>Rome, Italy</li>
+              </ul>
+              <ul class= "col-xs-6" style = "color:blue">
+                <li>Athens, Greece</li>
+                <li>Madrid, Spain</li>
+                <li>Guatemala City, Guatemala</li>
+                <li>London, England, United Kingdom</li>
+                <li>Havana, Cuba</li>
+                <li>Buenos Aires, Argentina</li>
+                <li>Rio de Janeiro, Rio de Janeiro, Brazil</li>
+                <li>New Delhi, Delhi, India</li>
+                <li>Cairo, Egypt</li>
+                <li>Moscow, Moscow, Russia</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+  <div class = "text-center">
+    <a>Is this eclipse visible in New York?</a>
+  </div>
+  <div class="container">
+    <h2 class = "text-center">Eclipse View</h2>
+    <img class="img-responsive center-block" src="imgs/eclipseView.png" alt="Eclipse View Around the World" width="460" height="345"> 
+  </div>
+</div>
+<div id="section3" class="container-fluid class">
+  <h1 class = "text-center" >When the Eclipse Happens Worldwide</h1>
+   <p class = "text-center">Lunar eclipses look approximately the same all over the world and happen at the same time.</p>
+   <p class = "text-center">The times displayed are accurate to around 2-3 seconds.</p>
+   <div class="container">
+      <table class="table table-hover table-striped table-bordered">
+        <thead style = "background-color:#fefcf1">
+          <tr>
+            <th>Event</th>
+            <th>UTC Time</th>
+            <th>Time in New York*</th>
+            <th>Visible in New York</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Penumbral Eclipse begins</td>
+            <td>Feb 10 at 22:34:14</td>
+            <td>Feb 10 at 5:34:14 pm</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Maximum Eclipse</td>
+            <td>Feb 11 at 00:43:49</td>
+            <td>Feb 10 at 7:43:49 pm</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Penumbral Eclipse ends</td>
+            <td>Feb 11 at 02:53:25</td>
+            <td>Feb 10 at 9:53:25 pm</td>
+            <td>Yes</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>* The Moon is above the horizon during this eclipse, so with good weather conditions in New York, the entire eclipse is visible.</p>
+    <p>The <a>magnitude</a> of the eclipse is -0.035.</p>
+    <p>The penumbral magnitude of the eclipse is 0.988</p>
+    <p>The total duration of the eclipse is 4 hours, 19 minutes</p>
+</div>
+<div id="section4" class="container-fluid">
+  <h1 class = "text-center">Question & Answer</h1>
+  <div class="container">
+      <p>The form below contains a text area for questions:</p>
+      <form>
+        <div class="form-group">
+          <label for="comment">Question:</label>
+          <textarea class="form-control" rows="5" id="comment"></textarea>
+        </div>
+      </form>
+  </div>
+</div>
+
+<div id="section41" class="container">
+  <h1 class = "text-center">Are you My Lover?</h1>
+    <h2 class = "text-center">If your not sure click the button below to see the memories we have shared together!!!</h2>
+    <div class="container-fluid">
+      <div class="panel-group" id="accordion2">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h2 class="panel-title text-center">
+            <a id = "menuToggle2" data-toggle="collapse" data-parent="#accordion2" href="#collapse2"> <strong>Memories Carousel</strong></a>
+          </h2>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+              <div class="container-fluid">
+                <br>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                    <li data-target="#myCarousel" data-slide-to="4"></li>
+                    <li data-target="#myCarousel" data-slide-to="5"></li>
+                    <li data-target="#myCarousel" data-slide-to="6"></li>
+                    <li data-target="#myCarousel" data-slide-to="7"></li>
+                    <li data-target="#myCarousel" data-slide-to="8"></li>
+                    <li data-target="#myCarousel" data-slide-to="9"></li>
+                    <li data-target="#myCarousel" data-slide-to="10"></li>
+                    <li data-target="#myCarousel" data-slide-to="11"></li>
+                    <li data-target="#myCarousel" data-slide-to="12"></li>
+                    <li data-target="#myCarousel" data-slide-to="13"></li>
+                    <li data-target="#myCarousel" data-slide-to="14"></li>
+                  </ol>
+    
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner" role="listbox">
+                    <div class="item active fixed-height">
+                      <img src="imgs/newYears.jpg" alt="New Years">
+                    </div>
+    
+                    <div class="item fixed-height">
+                      <img src="imgs/TheNoes.jpg" alt="The Noes">
+                    </div>
+        
+                    <div class="item fixed-height">
+                      <img src="imgs/snowboardin.jpg" alt="Snow Boarding">
+                    </div>
+    
+                    <div class="item fixed-height">
+                      <img src="imgs/monmouth.jpg" alt="Monmouth">
+                    </div>
+                    
+                    <div class="item fixed-height">
+                      <img src="imgs/onABoat.jpg" alt="On A Boat">
+                    </div>
+                    
+                    <div class="item fixed-height">
+                      <img src="imgs/leapinArms.jpg" alt="Leaping Arms">
+                    </div>
+                    
+                    <div class="item fixed-height">
+                      <img src="imgs/halloween.jpg" alt="Halloween">
+                    </div>
+                    
+                    <div class="item fixed-height">
+                      <img src="imgs/theWalk.jpg" alt="The Walk">
+                    </div>
+                    
+                    <div class="item fixed-height">
+                      <img src="imgs/vacation.jpg" alt="Vacation">
+                    </div>
+                    
+                     <div class="item fixed-height">
+                      <img src="imgs/beachin.jpg" alt="Beachin">
+                    </div>
+                    
+                     <div class="item fixed-height">
+                      <img src="imgs/party1.jpg" alt="Party">
+                    </div>
+                    
+                     <div class="item fixed-height">
+                      <img src="imgs/applePicking.jpg" alt="Apple Picking">
+                    </div>
+                    
+                    <div class="item fixed-height">
+                      <img src="imgs/applePicking2.jpg" alt="Apple Picking 2">
+                    </div>
+                    
+                    <div class="item fixed-height">
+                      <img src="imgs/giantsGame.jpg" alt="Giants Game">
+                    </div>
+                    
+                    <div class="item fixed-height">
+                      <img src="imgs/threeYears.jpg" alt="Three Years">
+                    </div>
+                    
+                  </div>
+    
+                  <!-- Left and right controls -->
+                  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+<div id="section42" class="container-fluid">
+    <h1 class = "text-center">Proposal</h1>
+    <p>Tonight the sun, earth, and moon align perfectly to form something amazing <strong> The Penumbra Eclipse!!! </strong> This is analogous to all the things that had to align in our lives for us to find each other in this world! You make me the best version of myself!! I love you so much Tara!!!</p>
+    <div class="container-fluid">
+    <div class="panel-group" id="accordion3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+        <h2 class="panel-title text-center" style = "color:blue">
+          <a id = "menuToggle3" data-toggle="collapse" data-parent="#accordion3" href="#collapse3"> <span class="glyphicon glyphicon-triangle-right"></span> Will You Marry me?</a>
+        </h2>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+          <div class="panel-body">
+            <img class="img-responsive center-block" src="imgs/theRing.jpeg" alt="The Ring" height="200"> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer id="footer" class="container-fluid text-center">
+  <a href="#logo" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>© 2017  BYRNEDAWG ENGINEERING</p>
+</footer>
+
+<!-- All this is for image modal on click -->
+<div class="modal fade" id="enlargeImageModal" tabindex="-1" role="dialog" aria-labelledby="enlargeImageModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body">
+          <img src="" class="enlargeImageModalSource" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- All this is for image modal on click -->
+<script>
+  $(function() {
+    	$('img').on('click', function() {
+			$('.enlargeImageModalSource').attr('src', $(this).attr('src'));
+			$('#enlargeImageModal').modal('show');
+		});
+});
+
+$('#menuToggle').click(function () {
+if($('span').hasClass('glyphicon-triangle-right'))
+{
+    $('#menuToggle').html('<span class="glyphicon glyphicon-triangle-bottom"></span> Expand for cities where penumbral eclipse is visible'); 
+}
+else
+{      
+    $('#menuToggle').html('<span class="glyphicon glyphicon-triangle-right"></span> Expand for cities where penumbral eclipse is visible'); 
+}
+}); 
+
+$('#menuToggle3').click(function () {
+if($('span').hasClass('glyphicon-triangle-right'))
+{
+    $('#menuToggle3').html('<span class="glyphicon glyphicon-triangle-bottom"></span> Will You Marry me?'); 
+}
+else
+{      
+    $('#menuToggle3').html('<span class="glyphicon glyphicon-triangle-right"></span> Will You Marry me?'); 
+}
+}); 
+
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#logo']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        //scrollTop: $(hash).offset().top
+        scrollTop: $(hash).offset().top -50
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});  
+
+</script>
+</body>
+
+</html>
