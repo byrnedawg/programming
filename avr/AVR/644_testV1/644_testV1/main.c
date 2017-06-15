@@ -53,7 +53,7 @@ void init()
 	adc_init();
 	//Lcm1_Init();
 	oledMod_Init();
-	uart0_puts("Hardware Initialized\r\n");
+	//uart0_puts("Hardware Initialized\r\n");
 	Lcm1_Clearscreen();
 	progress();
 	_delay_ms(500);
@@ -61,6 +61,7 @@ void init()
 	Lcm1_ShowString("Hardware");
 	Lcm1_SetCursor(0,1);
 	Lcm1_ShowString("Initialized");
+	//uart0_flush();
 	
 	
 

@@ -11,6 +11,10 @@ volatile unsigned int msCountedTimer2 = 0;
 volatile unsigned int state = 5;
 volatile unsigned int toggleMsTime = 500;
 volatile char line[128];
+char elev[6];
+char cant[6];
+volatile char *tptr;
+volatile char *fptr;
 volatile unsigned char lineIndex = 0;
 
 
@@ -56,7 +60,9 @@ ISR (TIMER0_OVF_vect)
 	TCNT0 = 256 - 125; 
 	int adcValue = 0;
 	char str[16];
-	char *ptr;
+	//elev[5];
+	elev[6] = '\0';
+	cant[6] = '\0';
 	
     if (++repeat_cnt0 == 1) 
     {
@@ -65,7 +71,8 @@ ISR (TIMER0_OVF_vect)
          msCountedTimer0++;
          if(msCountedTimer0 % 100 == 0)
          {
-			 //msCountedTimer0 = 0;
+			 msCountedTimer0 = 0;
+			 /*
 			 if(uart0_available() != 0)
 			 {
 				 if(uart0_peek() != '\r')
@@ -73,7 +80,12 @@ ISR (TIMER0_OVF_vect)
 					 line[lineIndex++] = uart0_getc();
 				 }
 			 }
-			 
+			  //Lcm1_SetCursor(0,0);
+			  //Lcm1_ShowString("ADC Ref: VCC");
+			  //Lcm1_SetCursor(0,1);
+			  //Lcm1_ShowString("ADC Value: ");
+			 // }
+	
 			 
 			 if(uart0_peek() == '\r')
 			 {
@@ -103,6 +115,10 @@ ISR (TIMER0_OVF_vect)
 					  uart0_puts("Stopping !!!!");
 					  uart0_puts("\r\n");
 				  }
+				  else if(strcmp(ptr,"M") == 0)
+				  {
+					  uart0_puts("M");
+				  }
 				  else
 				  {
 					  uart0_puts("\r\n");
@@ -115,22 +131,26 @@ ISR (TIMER0_OVF_vect)
 				  }
 				  lineIndex = 0;
 			 }
-			 
+			 */
+			
 	         if(buttonIsPressed(1))
 			 {
-				 uart0_puts("Button 1 Pushed\r\n");
+				 
+			
 				 uart0_puts("ADC Ref Value: VCC \r\n");
 				 uart0_puts("ADC Value: ");
 				 adcValue = adc_get_value_ref(1,7);
 				 itoa(adcValue, str, 10);
 				 uart0_puts(str);
 				 uart0_puts("\r\n");
+				
 				 Lcm1_Clearscreen();
 				 Lcm1_SetCursor(0,0);
 				 Lcm1_ShowString("ADC Ref: VCC");
 				 Lcm1_SetCursor(0,1);
 				 Lcm1_ShowString("ADC Value: ");
 				 Lcm1_ShowString(str);
+				 
 				 if(state > 2)
 				 {
 					 state--;
@@ -152,6 +172,7 @@ ISR (TIMER0_OVF_vect)
 				 Lcm1_SetCursor(0,1);
 				 Lcm1_ShowString("ADC Value: ");
 				 Lcm1_ShowString(str);
+				 uart0_flush();
 				 if(state < 10)
 				 {
 					 state++;
@@ -160,7 +181,45 @@ ISR (TIMER0_OVF_vect)
 			 }
 			 else
 			 {
-				 
+				 uart0_puts("M");
+				 lineIndex = 0;
+				  while(uart0_available() != 0)
+				  {
+					  while(lineIndex < 50)
+					  {
+						  line[lineIndex++] = uart0_getc();
+					  }
+					  fptr = (char *)line;
+					  for(int i = 0; i < 10; i++)
+					  {
+						  fptr++;
+					  }
+					  tptr = (char *)elev;
+					  for(int i = 0; i < 5; i++)
+					  {
+						  *tptr++ = *fptr++;
+					  }
+					  for(int i = 0; i < 4; i++)
+					  {
+						  fptr++;
+					  }
+					  tptr = (char *)cant;
+					  for(int i = 0; i < 5; i++)
+					  {
+						  *tptr++ = *fptr++;
+					  }
+					  //tptr = elev;
+					  Lcm1_Clearscreen();
+					  Lcm1_SetCursor(0,0);
+					  Lcm1_ShowString("Elev: ");
+					  Lcm1_ShowString(elev);
+					  Lcm1_ShowString(" Mil");
+					  Lcm1_SetCursor(0,1);
+					  Lcm1_ShowString("Cant: ");
+					  Lcm1_ShowString(cant);
+					  Lcm1_ShowString(" Mil");
+					  uart0_flush();
+				  }
 			 }
 			 
 			 if(state == 1)
