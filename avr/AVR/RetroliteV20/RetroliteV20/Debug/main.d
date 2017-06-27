@@ -1,5 +1,5 @@
-RetroliteV20.d RetroliteV20.o RetroliteV20.o: .././RetroliteV20.c \
-  .././prj.h c:/winavr-20100110/lib/gcc/../../avr/include/avr/io.h \
+main.d main.o main.o: .././main.c .././prj.h \
+  c:/winavr-20100110/lib/gcc/../../avr/include/avr/io.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/avr/sfr_defs.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/inttypes.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/stdint.h \
@@ -21,8 +21,8 @@ RetroliteV20.d RetroliteV20.o RetroliteV20.o: .././RetroliteV20.c \
   c:/winavr-20100110/lib/gcc/../../avr/include/avr/wdt.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/stdlib.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/string.h \
-  c:/winavr-20100110/lib/gcc/../../avr/include/avr/pgmspace.h .././adc.h \
-  .././timer.h .././main.h
+  c:/winavr-20100110/lib/gcc/../../avr/include/avr/pgmspace.h \
+  .././pin_config.h .././adc.h .././timer.h .././main.h
 
 .././prj.h:
 
@@ -71,6 +71,8 @@ c:/winavr-20100110/lib/gcc/../../avr/include/stdlib.h:
 c:/winavr-20100110/lib/gcc/../../avr/include/string.h:
 
 c:/winavr-20100110/lib/gcc/../../avr/include/avr/pgmspace.h:
+
+.././pin_config.h:
 
 .././adc.h:
 

@@ -1,0 +1,20 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "RetroliteSoftTx", "RetroliteSoftTx\RetroliteSoftTx_6_2.cproj", "{E618C5E0-60FE-434C-AD37-F2A06BD47F1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E618C5E0-60FE-434C-AD37-F2A06BD47F1A}.Debug|AVR.ActiveCfg = Debug|AVR
+		{E618C5E0-60FE-434C-AD37-F2A06BD47F1A}.Debug|AVR.Build.0 = Debug|AVR
+		{E618C5E0-60FE-434C-AD37-F2A06BD47F1A}.Release|AVR.ActiveCfg = Release|AVR
+		{E618C5E0-60FE-434C-AD37-F2A06BD47F1A}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

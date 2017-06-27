@@ -37,7 +37,10 @@ SUBDIRS :=
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
-../main.c
+../adc.c \
+../main.c \
+../portHardware.c \
+../timer.c
 
 
 PREPROCESSING_SRCS += 
@@ -47,20 +50,32 @@ ASM_SRCS +=
 
 
 OBJS +=  \
-main.o
+adc.o \
+main.o \
+portHardware.o \
+timer.o
 
 OBJS_AS_ARGS +=  \
-main.o
+adc.o \
+main.o \
+portHardware.o \
+timer.o
 
 C_DEPS +=  \
-main.d
+adc.d \
+main.d \
+portHardware.d \
+timer.d
 
 C_DEPS_AS_ARGS +=  \
-main.d
+adc.d \
+main.d \
+portHardware.d \
+timer.d
 
-OUTPUT_FILE_PATH +=RetroliteV20.elf
+OUTPUT_FILE_PATH +=RetrolitTxV2.1.elf
 
-OUTPUT_FILE_PATH_AS_ARGS +=RetroliteV20.elf
+OUTPUT_FILE_PATH_AS_ARGS +=RetrolitTxV2.1.elf
 
 ADDITIONAL_DEPENDENCIES:=
 
@@ -72,6 +87,12 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
+
+
+
+
 
 
 
@@ -107,13 +128,13 @@ all: $(OUTPUT_FILE_PATH) $(ADDITIONAL_DEPENDENCIES)
 $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP) $(LIB_DEP) $(LINKER_SCRIPT_DEP)
 	@echo Building target: $@
 	@echo Invoking: AVR/GNU Linker : 4.3.3
-	$(QUOTE)C:\WinAVR-20100110\bin\avr-gcc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="RetroliteV20.map" -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections  -mmcu=attiny85   
+	$(QUOTE)C:\WinAVR-20100110\bin\avr-gcc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="RetrolitTxV2.1.map" -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections  -mmcu=attiny85   
 	@echo Finished building target: $@
-	"C:\WinAVR-20100110\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "RetroliteV20.elf" "RetroliteV20.hex"
-	"C:\WinAVR-20100110\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "RetroliteV20.elf" "RetroliteV20.eep" || exit 0
-	"C:\WinAVR-20100110\bin\avr-objdump.exe" -h -S "RetroliteV20.elf" > "RetroliteV20.lss"
-	"C:\WinAVR-20100110\bin\avr-objcopy.exe" -O srec -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures "RetroliteV20.elf" "RetroliteV20.srec"
-	"C:\WinAVR-20100110\bin\avr-size.exe" "RetroliteV20.elf"
+	"C:\WinAVR-20100110\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "RetrolitTxV2.1.elf" "RetrolitTxV2.1.hex"
+	"C:\WinAVR-20100110\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "RetrolitTxV2.1.elf" "RetrolitTxV2.1.eep" || exit 0
+	"C:\WinAVR-20100110\bin\avr-objdump.exe" -h -S "RetrolitTxV2.1.elf" > "RetrolitTxV2.1.lss"
+	"C:\WinAVR-20100110\bin\avr-objcopy.exe" -O srec -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures "RetrolitTxV2.1.elf" "RetrolitTxV2.1.srec"
+	"C:\WinAVR-20100110\bin\avr-size.exe" "RetrolitTxV2.1.elf"
 	
 	
 
@@ -125,5 +146,5 @@ $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP) $(LIB_DEP) $(LINKER
 clean:
 	-$(RM) $(OBJS_AS_ARGS) $(EXECUTABLES)  
 	-$(RM) $(C_DEPS_AS_ARGS)   
-	rm -rf "RetroliteV20.elf" "RetroliteV20.a" "RetroliteV20.hex" "RetroliteV20.lss" "RetroliteV20.eep" "RetroliteV20.map" "RetroliteV20.srec" "RetroliteV20.usersignatures"
+	rm -rf "RetrolitTxV2.1.elf" "RetrolitTxV2.1.a" "RetrolitTxV2.1.hex" "RetrolitTxV2.1.lss" "RetrolitTxV2.1.eep" "RetrolitTxV2.1.map" "RetrolitTxV2.1.srec" "RetrolitTxV2.1.usersignatures"
 	
