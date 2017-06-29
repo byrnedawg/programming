@@ -1,0 +1,446 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Byrnedawg Engineering</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+   body {
+      /*margin: auto;*/
+      position: relative; 
+  }
+  .affix {
+      top:0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+  .navbar {
+      margin-bottom: 0px;
+  }
+
+  .affix ~ .container-fluid {
+     position: relative;
+     top: 50px;
+  }
+  img {
+    cursor: zoom-in;
+}
+
+.no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+.navbar-brand>img {
+   max-height: 100%;
+   height: 100%;
+   width: auto;
+   margin: 0 auto;
+   pointer-events: none;
+
+
+  
+   -o-object-fit: contain;
+   object-fit: contain; 
+
+}
+
+/*
+.jumbotron {
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border: 1px dashed green;
+  
+}
+*/
+  #logo {padding-top:20px; padding-bottom:20px;cursor:default; pointer-events: none;}
+  #nav1 {padding-top:1px; padding-bottom:1px;}
+  #section1 {padding-top:20px;padding-bottom:20px;color: white; background: rgb(48,48,48);}
+  #section2 {padding-top:10px;padding-bottom:20px;color: white; background: url(imgs/gradientcheckerdouble.png);}
+  #section3 {padding-top:10px;padding-bottom:20px;color: white; background-color: rgb(48,48,48);}
+  #section4 {padding-top:10px;padding-bottom:20px;color: white; background: url(imgs/gradientcheckerdouble.png);}
+  #section5 {padding-top:10px;padding-bottom:20px;color: white; background: rgb(48,48,48);}
+  #footer   {padding-top:10px;padding-bottom:20px;color: black; background-color: LightGray;}
+  
+  
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+  
+  .navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+  
+  @media (min-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+}
+  </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<div class="container-fluid no-padding" style="color: black; background-color: Black;">
+    <div class="container">
+        <img id = "logo" class="img-responsive center-block " src="imgs/byrnedawgEngineeringLogo2.jpg" alt="Logo" height = "50 px"> 
+    </div>
+</div>
+
+<nav id = "nav1" class="navbar navbar-inverse" data-spy="affix" data-offset-top="100"> <!-- navbar-fixed-top-->
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+         <img src="imgs/ByrnedawgLogoGrayCompact.bmp" class="center-block " style="display:inline-block;" alt=""> <span>Byrnedawg Engineering</span>
+      </a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse " id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#section1">About</a></li>
+          <li><a href="#section2">Services</a></li>
+          <li><a href="#section3">Projects</a></li>
+          <li><a href="#section4">Contact</a></li>
+          <li><a href="#section5">Links</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+
+<div id="section1" class="container-fluid">
+  <div style = "padding-top:60px;padding-bottom:60px;background: url(http://media.istockphoto.com/photos/futuristic-circuit-board-blue-with-electrons-picture-id483147081?k=6&m=483147081&s=612x612&w=0&h=qUkUJKX1QvMbWv1Y2xQzgC6we1YiSLomxR1_h-25Fdk=)">
+    <h1 class = "text-center" style = "font-size: 60px; color: white"> Welcome</h1>
+    <p class = "text-center" style = "padding-top:60px; font-size: 18px; color: white"> <strong>Everyone has ideas but not everyone is an Engineer...<br>Thats where Byrnedawg Engineering comes in.</strong>  </p>
+    <!--<p class = "text-left" style = "color: white">Rather than wait for someone else or some company to develop and make money off your idea, lets team up and convert your idea into a product or design solution today. </p> -->
+  </div>
+  <div class="container" style = "padding-top:20px; background: rgb(48,48,48);">
+    <p class = "text-left" style = "color: white; background: rgb(128,128,128)">My name is Greg Byrne and I’m and Electrical and Computer Engineer who currently works for the Department of Defense at Picatinny Arsenal. I have Masters of Engineering in Computer Engineering from Stevens Institute of Technology and a Bachelor’s of Science in Electrical and Computer Engineering from Rowan University. I have experience in dealing with the full life cycle of a product within the DOD and I feel I can take this knowledge and experience from the DOD world and apply it to the development of consumer products. I personally believe that if you are not always trying to progress your skills and knowledge you end up regressing. This is one of the main reasons I decided to start my own Engineering consulting firm. I wanted the opportunity to work on some projects outside the scope of my daily work and take your ideas and create new innovative products and design solutions. </p>
+  </div>
+</div>
+<div id="section2" class="container-fluid">
+  <h1 class = "text-center">Services</h1>
+  <div class = "row">
+    <div class = "col-xs-7 col-sm-6 col-lg-8">
+      <p><strong>Convert your Idea into a Product</strong></p>
+      <ul>
+        <li>Help you determine if your idea is a feasible design solution to a problem and that your idea doesn’t exist in some other form somewhere in the world </li>
+        <li>Take your idea to the next level and design and build prototypes for evaluation and proof of concept</li>
+        <li>Refine design to deliver a product that meets industry and market requirements</li>
+        <li>Provide Technical Data Package of design solution to move forward with patent application and/or production</li>
+      </ul>
+    </div>
+    <div class = "col-xs-5 col-sm-6 col-lg-4">
+      <img class=" img-responsive" src="imgs/card.jpeg" alt="Byrnedawg Logo" height="50" >
+    </div>
+  </div>
+  <div class = "row">    
+    <div class = "col-xs-5 col-sm-6 col-lg-4">
+      <img class=" img-responsive" src="imgs/card.jpeg" alt="Byrnedawg Logo" height="50" >
+    </div>
+    <div class = "col-xs-7 col-sm-6 col-lg-8">
+      <p><strong>Website Development</strong></p>
+      <ul>
+        <li>If you have a need for a website to promote your Idea or Business I can design and build customized interactive websites </li>
+       </ul>
+    </div>
+  </div>
+  <div class = "row">    
+    <div class = "col-xs-7 col-sm-6 col-lg-8">
+      <p><strong>Technical Skills</strong></p>
+      <ul>
+        <li>Electrical Circuit Analysis and Schematics</li>
+        <li>Design and Assembly of Printed Circuit Boards</li>
+        <li>Engineering Drawings including 3D Modeling</li>
+      </ul>
+    </div>
+    <div class = "col-xs-5 col-sm-6 col-lg-4">
+      <img class=" img-responsive" src="imgs/card.jpeg" alt="Byrnedawg Logo" >
+    </div>
+  </div>
+ <div class = "row"> 
+    <div class = "col-xs-5 col-sm-6 col-lg-4">
+      <img class=" img-responsive" src="imgs/card.jpeg" alt="Byrnedawg Logo" >
+    </div>
+    <div class = "col-xs-7 col-sm-6 col-lg-8">
+      <p><strong>Programming Languages:</strong></p>
+      <ul>
+        <li>MATLAB</li>
+        <li>C</li>
+        <li>C++</li>
+        <li>Java</li>
+        <li>Python</li>
+        <li>Verilog</li>
+        <li>Javascript</li>
+        <li>SQL</li>
+      </ul>
+    </div>
+  </div>
+ <div class = "row">   
+   <div class = "col-xs-7 col-sm-6 col-lg-8">
+     <p><strong>Web Technologies:</strong></p>
+      <ul>
+        <li>HTML5</li>
+        <li>CSS</li>
+        <li>Bootstrap</li>
+        <li>Angular</li>
+        <li>XML</li>
+        <li>jQuery</li>
+      </ul>
+    </div>
+    <div class = "col-xs-5 col-sm-6 col-lg-4">
+      <img class=" img-responsive" src="imgs/card.jpeg" alt="Byrnedawg Logo" >
+    </div>
+  </div>
+ <div class = "row">
+    <div class = "col-xs-5 col-sm-6 col-lg-4">
+      <img class=" img-responsive" src="imgs/card.jpeg" alt="Byrnedawg Logo" >
+    </div>
+    <div class = "col-xs-7 col-sm-6 col-lg-8">
+      <p><strong>Embedded Architectures:</strong></p>
+      <ul>
+        <li>Atmel AVR</li>
+        <li>Arduino</li>
+        <li>Raspberry Pi </li>
+        <li>Beaglebone</li>
+        <li>Microchip Pic</li>
+        <li>TI MSP430</li>
+        <li>Intel 8051</li>
+        <li>Altera FPGAs</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="section3" class="container-fluid">
+  <h1 class = "text-center">Projects</h1>
+  <p>Here are some projects Byrnedawg Engineering has worked on in the past.</p>
+  <ul>
+    <li>RSAV</li>
+    <li>PS2 Remote Control Boat</li>
+  </ul>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+      <li data-target="#myCarousel" data-slide-to="5"></li>
+      <li data-target="#myCarousel" data-slide-to="6"></li>
+      <li data-target="#myCarousel" data-slide-to="7"></li>
+      <li data-target="#myCarousel" data-slide-to="8"></li>
+      <li data-target="#myCarousel" data-slide-to="9"></li>
+      <li data-target="#myCarousel" data-slide-to="10"></li>
+      <li data-target="#myCarousel" data-slide-to="11"></li>
+      <li data-target="#myCarousel" data-slide-to="12"></li>
+      <li data-target="#myCarousel" data-slide-to="13"></li>
+      <li data-target="#myCarousel" data-slide-to="14"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="imgs/newYears.jpg" alt="New Years" width="460" height="345">
+      </div>
+
+      <div class="item">
+        <img src="imgs/TheNoes.jpg" alt="The Noes" width="460" height="345">
+      </div>
+
+      <div class="item">
+        <img src="imgs/snowboardin.jpg" alt="Snow Boarding" width="460" height="345">
+      </div>
+
+      <div class="item">
+        <img src="imgs/monmouth.jpg" alt="Monmouth" width="460" height="345">
+      </div>
+      
+      <div class="item">
+        <img src="imgs/onABoat.jpg" alt="On A Boat" width="460" height="345">
+      </div>
+      
+      <div class="item">
+        <img src="imgs/leapinArms.jpg" alt="Leaping Arms" width="460" height="345">
+      </div>
+      
+      <div class="item">
+        <img src="imgs/halloween.jpg" alt="Halloween" width="460" height="345">
+      </div>
+      
+      <div class="item">
+        <img src="imgs/theWalk.jpg" alt="The Walk" width="460" height="345">
+      </div>
+      
+      <div class="item">
+        <img src="imgs/vacation.jpg" alt="Vacation" width="460" height="345">
+      </div>
+      
+       <div class="item">
+        <img src="imgs/beachin.jpg" alt="Beachin" width="460" height="345">
+      </div>
+      
+       <div class="item">
+        <img src="imgs/party1.jpg" alt="Party" width="460" height="345">
+      </div>
+      
+       <div class="item">
+        <img src="imgs/applePicking.jpg" alt="Apple Picking" width="460" height="345">
+      </div>
+      
+      <div class="item">
+        <img src="imgs/applePicking2.jpg" alt="Apple Picking 2" width="460" height="345">
+      </div>
+      
+      <div class="item">
+        <img src="imgs/giantsGame.jpg" alt="Giants Game" width="460" height="345">
+      </div>
+      
+      <div class="item">
+        <img src="imgs/threeYears.jpg" alt="Three Years" width="460" height="345">
+      </div>
+      
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+<div id="section4" class="container-fluid">
+  <h1 class = "text-center">Contact</h1>
+  <div class = "row">
+    <div class = "col-sm-12">
+      <img class=" img-responsive center-block" src="imgs/card.jpeg" alt="Byrnedawg Logo" height="50" >
+    </div>
+  </div>
+</div>
+
+  <!-- Container (Contact Section) -->
+<div class="container-fluid" style = "padding-top:10px; padding-bottom:10px; background-color: LightGray;">
+  <div class="row">
+    <div class="col-sm-5">
+      <p><span class="glyphicon glyphicon-map-marker"></span> New Jersey, US</p>
+      <p><span class="glyphicon glyphicon-phone"></span> 732-742-5508</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> byrnedawg95@gmail.com</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="section5" class="container-fluid">
+  <h1 class = "text-center">Links</h1>
+  <div class = "text-center" style = "padding-top: 60px; padding-bottom: 60px; background: url(http://www.publicdomainpictures.net/pictures/200000/velka/circuit-board-1477415362NkY.jpg)">
+    <p style = "font-size: 25px">Here is a list of relevant links.</p>
+    <ul class = "pull-left; text-left" style = "font-size: 20px">
+      <li><a style = "color: white;" href="penumbraMoon.html">My Proposal Webpage</a></li>
+      <li><a style = "color: white;" href="www.facebook.com/ByrnedawgEngineering">Byrnedawg Engineering Facebook Page</a></li>
+    </ul>
+  </div>
+</div>
+
+<footer id="footer" class="container-fluid text-center">
+  <a href="#section1" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>© 2017  BYRNEDAWG ENGINEERING</p>
+</footer>
+
+<!-- All this is for image modal on click -->
+<div class="modal fade" id="enlargeImageModal" tabindex="-1" role="dialog" aria-labelledby="enlargeImageModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+      <div class="modal-body">
+        <img src="" class="enlargeImageModalSource" style="width: 100%;">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- All this is for image modal on click -->
+<script>
+  $(function() {
+    	$('img').on('click', function() {
+			$('.enlargeImageModalSource').attr('src', $(this).attr('src'));
+			$('#enlargeImageModal').modal('show');
+		});
+});
+
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#section1']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top + 50
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+
+</script>
+</body>
+
+</html>
