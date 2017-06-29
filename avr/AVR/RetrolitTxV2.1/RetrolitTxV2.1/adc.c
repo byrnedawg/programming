@@ -53,6 +53,8 @@ ISR(ANA_COMP_vect)
 {
 	//toggleLED(2);
 	Led2_off();
+	_delay_ms(2000);
+	Led2_on();
 }
 
 ISR(ADC_vect) // Interrupt for ADC Converter
