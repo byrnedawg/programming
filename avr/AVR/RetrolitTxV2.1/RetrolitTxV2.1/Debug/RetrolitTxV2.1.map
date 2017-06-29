@@ -28,6 +28,8 @@ Discarded input sections
  .text          0x00000000        0x0 portHardware.o
  .data          0x00000000        0x0 portHardware.o
  .bss           0x00000000        0x0 portHardware.o
+ .text.toggleLED
+                0x00000000        0x0 portHardware.o
  .text          0x00000000        0x0 timer.o
  .data          0x00000000        0x0 timer.o
  .bss           0x00000000        0x0 timer.o
@@ -167,7 +169,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x372
+.text           0x00000000      0x376
  *(.vectors)
  .vectors       0x00000000       0x1e c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn85.o
                 0x00000000                __vectors
@@ -236,55 +238,55 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a
                 0x00000056       0x32 adc.o
                 0x00000056                Analog_Comparator_init
  .text.__vector_7
-                0x00000088       0x5c adc.o
+                0x00000088       0x68 adc.o
                 0x00000088                __vector_7
  .text.__vector_8
-                0x000000e4       0x14 adc.o
-                0x000000e4                __vector_8
- .text.init     0x000000f8       0x40 main.o
-                0x000000f8                init
- .text.main     0x00000138        0x6 main.o
-                0x00000138                main
+                0x000000f0       0x14 adc.o
+                0x000000f0                __vector_8
+ .text.init     0x00000104       0x40 main.o
+                0x00000104                init
+ .text.main     0x00000144        0x6 main.o
+                0x00000144                main
  .text.initLEDs
-                0x0000013e       0x12 portHardware.o
-                0x0000013e                initLEDs
+                0x0000014a        0xc portHardware.o
+                0x0000014a                initLEDs
+ .text.initDigitalOutput
+                0x00000156        0xc portHardware.o
+                0x00000156                initDigitalOutput
  .text.initButtons
-                0x00000150        0xc portHardware.o
-                0x00000150                initButtons
- .text.toggleLED
-                0x0000015c       0x26 portHardware.o
-                0x0000015c                toggleLED
+                0x00000162        0xc portHardware.o
+                0x00000162                initButtons
  .text.buttonIsPressed
-                0x00000182       0x1e portHardware.o
-                0x00000182                buttonIsPressed
+                0x0000016e       0x1e portHardware.o
+                0x0000016e                buttonIsPressed
  .text.Timer0_Init
-                0x000001a0       0x22 timer.o
-                0x000001a0                Timer0_Init
+                0x0000018c       0x22 timer.o
+                0x0000018c                Timer0_Init
  .text.__vector_10
-                0x000001c2       0x14 timer.o
-                0x000001c2                __vector_10
+                0x000001ae       0x14 timer.o
+                0x000001ae                __vector_10
  .text.__vector_11
-                0x000001d6       0x14 timer.o
-                0x000001d6                __vector_11
+                0x000001c2       0x14 timer.o
+                0x000001c2                __vector_11
  .text.__vector_4
-                0x000001ea       0x72 timer.o
-                0x000001ea                __vector_4
+                0x000001d6       0x72 timer.o
+                0x000001d6                __vector_4
  .text.__vector_3
-                0x0000025c       0x14 timer.o
-                0x0000025c                __vector_3
+                0x00000248       0x14 timer.o
+                0x00000248                __vector_3
  .text.__vector_9
-                0x00000270       0x14 timer.o
-                0x00000270                __vector_9
+                0x0000025c       0x14 timer.o
+                0x0000025c                __vector_9
  .text.__vector_5
-                0x00000284       0xc2 timer.o
-                0x00000284                __vector_5
- .text.libgcc   0x00000346       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a(_udivmodhi4.o)
-                0x00000346                __udivmodhi4
-                0x0000036e                . = ALIGN (0x2)
+                0x00000270       0xda timer.o
+                0x00000270                __vector_5
+ .text.libgcc   0x0000034a       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a(_udivmodhi4.o)
+                0x0000034a                __udivmodhi4
+                0x00000372                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000036e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a(_exit.o)
-                0x0000036e                exit
-                0x0000036e                _exit
+ .fini9         0x00000372        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a(_exit.o)
+                0x00000372                exit
+                0x00000372                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -303,11 +305,11 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000036e        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a(_exit.o)
+ .fini0         0x00000372        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000372                _etext = .
+                0x00000376                _etext = .
 
-.data           0x00800060        0x0 load address 0x00000372
+.data           0x00800060        0x0 load address 0x00000376
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -336,8 +338,8 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a
                 0x00800066                msCountedTimer1
  *(COMMON)
                 0x00800068                PROVIDE (__bss_end, .)
-                0x00000372                __data_load_start = LOADADDR (.data)
-                0x00000372                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000376                __data_load_start = LOADADDR (.data)
+                0x00000376                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800068        0x0
                 0x00800068                PROVIDE (__noinit_start, .)
@@ -395,82 +397,82 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x100
+.debug_aranges  0x00000000      0x108
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x48 adc.o
  .debug_aranges
                 0x00000048       0x28 main.o
  .debug_aranges
-                0x00000070       0x38 portHardware.o
+                0x00000070       0x40 portHardware.o
  .debug_aranges
-                0x000000a8       0x58 timer.o
+                0x000000b0       0x58 timer.o
 
 .debug_pubnames
-                0x00000000      0x1e9
+                0x00000000      0x1ff
  *(.debug_pubnames)
  .debug_pubnames
                 0x00000000       0x80 adc.o
  .debug_pubnames
                 0x00000080       0x24 main.o
  .debug_pubnames
-                0x000000a4       0x51 portHardware.o
+                0x000000a4       0x67 portHardware.o
  .debug_pubnames
-                0x000000f5       0xf4 timer.o
+                0x0000010b       0xf4 timer.o
 
-.debug_info     0x00000000      0x5b8
+.debug_info     0x00000000      0x5d1
  *(.debug_info)
  .debug_info    0x00000000      0x22a adc.o
- .debug_info    0x0000022a      0x135 main.o
- .debug_info    0x0000035f       0xe1 portHardware.o
- .debug_info    0x00000440      0x178 timer.o
+ .debug_info    0x0000022a      0x13a main.o
+ .debug_info    0x00000364       0xf5 portHardware.o
+ .debug_info    0x00000459      0x178 timer.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev   0x00000000      0x2ba
+.debug_abbrev   0x00000000      0x2bd
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x108 adc.o
- .debug_abbrev  0x00000108       0xc8 main.o
- .debug_abbrev  0x000001d0       0x7e portHardware.o
- .debug_abbrev  0x0000024e       0x6c timer.o
+ .debug_abbrev  0x00000108       0xcb main.o
+ .debug_abbrev  0x000001d3       0x7e portHardware.o
+ .debug_abbrev  0x00000251       0x6c timer.o
 
-.debug_line     0x00000000      0x692
+.debug_line     0x00000000      0x6d7
  *(.debug_line)
- .debug_line    0x00000000      0x247 adc.o
- .debug_line    0x00000247      0x170 main.o
- .debug_line    0x000003b7       0xfd portHardware.o
- .debug_line    0x000004b4      0x1de timer.o
+ .debug_line    0x00000000      0x257 adc.o
+ .debug_line    0x00000257      0x183 main.o
+ .debug_line    0x000003da      0x107 portHardware.o
+ .debug_line    0x000004e1      0x1f6 timer.o
 
-.debug_frame    0x00000000      0x180
+.debug_frame    0x00000000      0x190
  *(.debug_frame)
  .debug_frame   0x00000000       0x70 adc.o
  .debug_frame   0x00000070       0x30 main.o
- .debug_frame   0x000000a0       0x50 portHardware.o
- .debug_frame   0x000000f0       0x90 timer.o
+ .debug_frame   0x000000a0       0x60 portHardware.o
+ .debug_frame   0x00000100       0x90 timer.o
 
-.debug_str      0x00000000      0x253
+.debug_str      0x00000000      0x265
  *(.debug_str)
  .debug_str     0x00000000      0x13a adc.o
                                 0x173 (size before relaxing)
  .debug_str     0x0000013a       0x11 main.o
                                 0x128 (size before relaxing)
- .debug_str     0x0000014b       0x51 portHardware.o
-                                0x120 (size before relaxing)
- .debug_str     0x0000019c       0xb7 timer.o
+ .debug_str     0x0000014b       0x63 portHardware.o
+                                0x132 (size before relaxing)
+ .debug_str     0x000001ae       0xb7 timer.o
                                 0x186 (size before relaxing)
 
-.debug_loc      0x00000000      0x111
+.debug_loc      0x00000000      0x119
  *(.debug_loc)
  .debug_loc     0x00000000       0x99 adc.o
- .debug_loc     0x00000099       0x18 main.o
- .debug_loc     0x000000b1       0x60 portHardware.o
+ .debug_loc     0x00000099       0x30 main.o
+ .debug_loc     0x000000c9       0x50 portHardware.o
 
 .debug_macinfo
  *(.debug_macinfo)
 OUTPUT(RetrolitTxV2.1.elf elf32-avr)
 LOAD linker stubs
 
-.debug_ranges   0x00000000      0x128
+.debug_ranges   0x00000000       0xe8
  .debug_ranges  0x00000000       0x40 adc.o
- .debug_ranges  0x00000040       0x68 main.o
- .debug_ranges  0x000000a8       0x30 portHardware.o
- .debug_ranges  0x000000d8       0x50 timer.o
+ .debug_ranges  0x00000040       0x20 main.o
+ .debug_ranges  0x00000060       0x38 portHardware.o
+ .debug_ranges  0x00000098       0x50 timer.o

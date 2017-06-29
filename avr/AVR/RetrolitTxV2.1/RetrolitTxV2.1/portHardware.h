@@ -65,13 +65,23 @@
 #define Led1_BIT     1
 #define Led1_PIN_BIT PB1
 
-#define Led2_PORT    PORTB
-#define Led2_DIR     DDRB
-#define Led2_PIN     PINB
-#define Led2_BIT     2
-#define Led2_PIN_BIT PB2
+#define Digital_Out1_PORT    PORTB
+#define Digital_Out1_DIR     DDRB
+#define Digital_Out1_PIN     PINB
+#define Digital_Out1_BIT     2
+#define Digital_Out1_PIN_BIT PB2
 
+#define Digital_Out2_PORT    PORTB
+#define Digital_Out2_DIR     DDRB
+#define Digital_Out2_PIN     PINB
+#define Digital_Out2_BIT     4
+#define Digital_Out2_PIN_BIT PB4
 
+#define Digital_Out1_High()     Digital_Out1_PORT |=  _BV(Digital_Out1_BIT)
+#define Digital_Out1_Low()    Digital_Out1_PORT &= ~_BV(Digital_Out1_BIT)
+
+#define Digital_Out2_High()     Digital_Out2_PORT |=  _BV(Digital_Out2_BIT)
+#define Digital_Out2_Low()    Digital_Out2_PORT &= ~_BV(Digital_Out2_BIT)
 
 // 0 - active low, 1 - active high
 #define LED1_ACTIVE_LOW    0
@@ -91,6 +101,8 @@
 
 #define Button1_press()     ( ( Button1_PIN & _BV(Button1_BIT)) == 0 )
 #define Button1_release()   ( (Button1_PIN & _BV(Button1_BIT)) == 1 )
+
+void initDigitalOutput(void);
 
 void initLEDs(void);
 

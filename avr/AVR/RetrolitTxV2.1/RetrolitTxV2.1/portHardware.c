@@ -12,13 +12,17 @@
 void initLEDs(void)
 {
 	set_output(Led1_DIR, Led1_PIN_BIT);
-	set_output(Led2_DIR, Led2_PIN_BIT);
+	//set_output(Led2_DIR, Led2_PIN_BIT);
+}
+
+void initDigitalOutput(void)
+{
+	set_output(Digital_Out1_DIR, Digital_Out1_PIN_BIT);
 }
 
 void initButtons(void)
 {
 	set_input(Button1_DIR, Button1_PIN_BIT);
-	
 }
 
 void toggleLED(int ledNum)
@@ -29,7 +33,7 @@ void toggleLED(int ledNum)
 	}
 	else if(ledNum == 2)
 	{
-		output_toggle(Led2_DIR, Led2_PIN_BIT);
+		//output_toggle(Led2_DIR, Led2_PIN_BIT);
 	}
 	else
 	{

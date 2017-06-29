@@ -52,9 +52,11 @@ void Analog_Comparator_init() // Initialize Analog Comparator
 ISR(ANA_COMP_vect)
 {
 	//toggleLED(2);
-	Led2_off();
+	Digital_Out2_High();
+	Digital_Out1_Low();
 	_delay_ms(2000);
-	Led2_on();
+	Digital_Out2_Low();
+	Digital_Out1_High();
 }
 
 ISR(ADC_vect) // Interrupt for ADC Converter

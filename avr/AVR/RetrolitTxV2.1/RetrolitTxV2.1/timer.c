@@ -97,10 +97,13 @@ ISR (TIMER0_OVF_vect)
 			  {
 				  msCountedTimer0 = 0;
 				  Led1_on();
+				  Digital_Out1_Low();
+				  output_toggle(Digital_Out2_DIR, Digital_Out2_PIN_BIT);
 			  }
 			  else
 			  {
 				  Led1_off();
+				  Digital_Out1_High();
 			  }
 		 }
 		 
