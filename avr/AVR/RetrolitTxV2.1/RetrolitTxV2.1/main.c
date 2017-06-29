@@ -19,15 +19,17 @@ void init()
 {
 	initLEDs();
 	initButtons();
+	Led2_on();
 	//interrupt0_init();
 	//interrupt1_init();
 	Timer0_Init();
 	//Timer1_Init();
-	adc_init();
+	//adc_init();
+	Analog_Comparator_init();
+	
 	for(int i = 0; i < 4; i++)
 	{
 		toggleLED(1);
-		toggleLED(2);
 		_delay_ms(250);
 	}
 	

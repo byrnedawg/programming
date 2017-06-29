@@ -78,18 +78,18 @@ ISR (TIMER0_OVF_vect)
          msCountedTimer0++;
 		 if(msCountedTimer0 % 50 == 0)
 		 {
-			  msCountedTimer0 = 0;
-			  adcValue = 0;
+			 // msCountedTimer0 = 0;
+			  //adcValue = 0;
 			  //adcValue = adc_get_value(3);
-			  adcValue = adc_get_value_ref(2, 3);
-			  if(adcValue <= 670)
-			  {
-				   Led2_on();
-			  }
-			  else
-			  {
-				  Led2_off();
-			  }
+			  //adcValue = adc_get_value_ref(2, 3);
+			 // if(adcValue <= 670)
+			 // {
+				  // Led2_on();
+			  //}
+			  //else
+			  //{
+				//  Led2_off();
+			  //}
 		 }
          if(msCountedTimer0 % 100 == 0)
          {

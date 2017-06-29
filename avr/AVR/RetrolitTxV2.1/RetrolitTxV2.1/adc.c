@@ -42,14 +42,17 @@ unsigned int adc_get_value_ref(unsigned char ref, unsigned char ch)
 
 void Analog_Comparator_init() // Initialize Analog Comparator
 {
-	ADCSRB |= (0<<BIN)|(0<<ACME)|(0<<IPR)|(0<<ADTS2)|(0<<ADTS1)|(0<<ADTS0); //Analog Comparator Multiplexer Enable
-	ACSR |= (0<<ACD)|(0<<ACBG)|(0<<ACO)|(0<<ACI)|(0<<ACIE)|(0<<ACIS1)|(0<<ACIS0); // Analog Comparator Control Register
-	DIDR0 |= (0<<ADC0D)|(0<<ADC2D)|(0<<ADC3D)|(0<<ADC1D)|(0<<AIN1D)|(0<<AIN0D); // Digital input Disable Register
+	ADCSRA |= (0<<ADEN);
+	ADCSRB |= (0<<BIN)|(1<<ACME)|(0<<IPR)|(0<<ADTS2)|(0<<ADTS1)|(0<<ADTS0); //Analog Comparator Multiplexer Enable
+	ADMUX |= (0<<REFS1)|(0<<REFS0)|(0<<ADLAR)|(0<<REFS2)|(0<<MUX3)|(0<<MUX2)|(1<<MUX1)|(1<<MUX0); //ADC Multiplexer Selection Register... (ADC3(PB3) Selected ADC Input)
+	ACSR |= (0<<ACD)|(1<<ACBG)|(0<<ACO)|(0<<ACI)|(1<<ACIE)|(1<<ACIS1)|(1<<ACIS0); // Analog Comparator Control Register
+	DIDR0 |= (0<<ADC0D)|(0<<ADC2D)|(1<<ADC3D)|(0<<ADC1D)|(0<<AIN1D)|(0<<AIN0D); // Digital input Disable Register
 }
 
 ISR(ANA_COMP_vect)
 {
-
+	//toggleLED(2);
+	Led2_off();
 }
 
 ISR(ADC_vect) // Interrupt for ADC Converter

@@ -16,9 +16,11 @@ Discarded input sections
  .text          0x00000000        0x0 adc.o
  .data          0x00000000        0x0 adc.o
  .bss           0x00000000        0x0 adc.o
+ .text.adc_init
+                0x00000000        0x0 adc.o
  .text.adc_get_value
                 0x00000000        0x0 adc.o
- .text.Analog_Comparator_init
+ .text.adc_get_value_ref
                 0x00000000        0x0 adc.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
@@ -33,6 +35,7 @@ Discarded input sections
                 0x00000000        0x0 timer.o
  .data.toggleMsTime
                 0x00000000        0x0 timer.o
+ .bss.adcValue  0x00000000        0x0 timer.o
  .text          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a(_udivmodhi4.o)
  .data          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a(_udivmodhi4.o)
  .bss           0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a(_udivmodhi4.o)
@@ -164,7 +167,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x3c8
+.text           0x00000000      0x340
  *(.vectors)
  .vectors       0x00000000       0x1e c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr25/crttn85.o
                 0x00000000                __vectors
@@ -229,62 +232,59 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a
                 0x00000054                __vector_14
                 0x00000056                . = ALIGN (0x2)
  *(.text.*)
- .text.adc_init
-                0x00000056       0x26 adc.o
-                0x00000056                adc_init
- .text.adc_get_value_ref
-                0x0000007c       0x3e adc.o
-                0x0000007c                adc_get_value_ref
+ .text.Analog_Comparator_init
+                0x00000056       0x32 adc.o
+                0x00000056                Analog_Comparator_init
  .text.__vector_7
-                0x000000ba       0x14 adc.o
-                0x000000ba                __vector_7
+                0x00000088       0x2a adc.o
+                0x00000088                __vector_7
  .text.__vector_8
-                0x000000ce       0x14 adc.o
-                0x000000ce                __vector_8
- .text.init     0x000000e2       0x5e main.o
-                0x000000e2                init
- .text.main     0x00000140        0x6 main.o
-                0x00000140                main
+                0x000000b2       0x14 adc.o
+                0x000000b2                __vector_8
+ .text.init     0x000000c6       0x40 main.o
+                0x000000c6                init
+ .text.main     0x00000106        0x6 main.o
+                0x00000106                main
  .text.initLEDs
-                0x00000146       0x12 portHardware.o
-                0x00000146                initLEDs
+                0x0000010c       0x12 portHardware.o
+                0x0000010c                initLEDs
  .text.initButtons
-                0x00000158        0xc portHardware.o
-                0x00000158                initButtons
+                0x0000011e        0xc portHardware.o
+                0x0000011e                initButtons
  .text.toggleLED
-                0x00000164       0x26 portHardware.o
-                0x00000164                toggleLED
+                0x0000012a       0x26 portHardware.o
+                0x0000012a                toggleLED
  .text.buttonIsPressed
-                0x0000018a       0x1e portHardware.o
-                0x0000018a                buttonIsPressed
+                0x00000150       0x1e portHardware.o
+                0x00000150                buttonIsPressed
  .text.Timer0_Init
-                0x000001a8       0x22 timer.o
-                0x000001a8                Timer0_Init
+                0x0000016e       0x22 timer.o
+                0x0000016e                Timer0_Init
  .text.__vector_10
-                0x000001ca       0x14 timer.o
-                0x000001ca                __vector_10
+                0x00000190       0x14 timer.o
+                0x00000190                __vector_10
  .text.__vector_11
-                0x000001de       0x14 timer.o
-                0x000001de                __vector_11
+                0x000001a4       0x14 timer.o
+                0x000001a4                __vector_11
  .text.__vector_4
-                0x000001f2       0x72 timer.o
-                0x000001f2                __vector_4
+                0x000001b8       0x72 timer.o
+                0x000001b8                __vector_4
  .text.__vector_3
-                0x00000264       0x14 timer.o
-                0x00000264                __vector_3
+                0x0000022a       0x14 timer.o
+                0x0000022a                __vector_3
  .text.__vector_9
-                0x00000278       0x14 timer.o
-                0x00000278                __vector_9
+                0x0000023e       0x14 timer.o
+                0x0000023e                __vector_9
  .text.__vector_5
-                0x0000028c      0x110 timer.o
-                0x0000028c                __vector_5
- .text.libgcc   0x0000039c       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a(_udivmodhi4.o)
-                0x0000039c                __udivmodhi4
-                0x000003c4                . = ALIGN (0x2)
+                0x00000252       0xc2 timer.o
+                0x00000252                __vector_5
+ .text.libgcc   0x00000314       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a(_udivmodhi4.o)
+                0x00000314                __udivmodhi4
+                0x0000033c                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000003c4        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a(_exit.o)
-                0x000003c4                exit
-                0x000003c4                _exit
+ .fini9         0x0000033c        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a(_exit.o)
+                0x0000033c                exit
+                0x0000033c                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -303,11 +303,11 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000003c4        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a(_exit.o)
+ .fini0         0x0000033c        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a(_exit.o)
  *(.fini0)
-                0x000003c8                _etext = .
+                0x00000340                _etext = .
 
-.data           0x00800060        0x0 load address 0x000003c8
+.data           0x00800060        0x0 load address 0x00000340
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -318,7 +318,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a
                 0x00800060                _edata = .
                 0x00800060                PROVIDE (__data_end, .)
 
-.bss            0x00800060        0xa
+.bss            0x00800060        0x8
                 0x00800060                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
@@ -334,19 +334,17 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a
  .bss.msCountedTimer1
                 0x00800066        0x2 timer.o
                 0x00800066                msCountedTimer1
- .bss.adcValue  0x00800068        0x2 timer.o
-                0x00800068                adcValue
  *(COMMON)
-                0x0080006a                PROVIDE (__bss_end, .)
-                0x000003c8                __data_load_start = LOADADDR (.data)
-                0x000003c8                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800068                PROVIDE (__bss_end, .)
+                0x00000340                __data_load_start = LOADADDR (.data)
+                0x00000340                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0080006a        0x0
-                0x0080006a                PROVIDE (__noinit_start, .)
+.noinit         0x00800068        0x0
+                0x00800068                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x0080006a                PROVIDE (__noinit_end, .)
-                0x0080006a                _end = .
-                0x0080006a                PROVIDE (__heap_start, .)
+                0x00800068                PROVIDE (__noinit_end, .)
+                0x00800068                _end = .
+                0x00800068                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -420,27 +418,27 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a
  .debug_pubnames
                 0x000000f5       0xf4 timer.o
 
-.debug_info     0x00000000      0x566
+.debug_info     0x00000000      0x56d
  *(.debug_info)
  .debug_info    0x00000000      0x1df adc.o
- .debug_info    0x000001df      0x12e main.o
- .debug_info    0x0000030d       0xe1 portHardware.o
- .debug_info    0x000003ee      0x178 timer.o
+ .debug_info    0x000001df      0x135 main.o
+ .debug_info    0x00000314       0xe1 portHardware.o
+ .debug_info    0x000003f5      0x178 timer.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev   0x00000000      0x28a
+.debug_abbrev   0x00000000      0x28c
  *(.debug_abbrev)
  .debug_abbrev  0x00000000       0xda adc.o
- .debug_abbrev  0x000000da       0xc6 main.o
- .debug_abbrev  0x000001a0       0x7e portHardware.o
- .debug_abbrev  0x0000021e       0x6c timer.o
+ .debug_abbrev  0x000000da       0xc8 main.o
+ .debug_abbrev  0x000001a2       0x7e portHardware.o
+ .debug_abbrev  0x00000220       0x6c timer.o
 
-.debug_line     0x00000000      0x6c8
+.debug_line     0x00000000      0x66a
  *(.debug_line)
- .debug_line    0x00000000      0x207 adc.o
- .debug_line    0x00000207      0x1b6 main.o
- .debug_line    0x000003bd       0xfd portHardware.o
- .debug_line    0x000004ba      0x20e timer.o
+ .debug_line    0x00000000      0x21f adc.o
+ .debug_line    0x0000021f      0x170 main.o
+ .debug_line    0x0000038f       0xfd portHardware.o
+ .debug_line    0x0000048c      0x1de timer.o
 
 .debug_frame    0x00000000      0x180
  *(.debug_frame)
@@ -460,19 +458,19 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr25\libgcc.a
  .debug_str     0x0000019c       0xb7 timer.o
                                 0x186 (size before relaxing)
 
-.debug_loc      0x00000000      0x111
+.debug_loc      0x00000000       0xe1
  *(.debug_loc)
  .debug_loc     0x00000000       0x69 adc.o
- .debug_loc     0x00000069       0x48 main.o
- .debug_loc     0x000000b1       0x60 portHardware.o
+ .debug_loc     0x00000069       0x18 main.o
+ .debug_loc     0x00000081       0x60 portHardware.o
 
 .debug_macinfo
  *(.debug_macinfo)
 OUTPUT(RetrolitTxV2.1.elf elf32-avr)
 LOAD linker stubs
 
-.debug_ranges   0x00000000      0x158
+.debug_ranges   0x00000000      0x128
  .debug_ranges  0x00000000       0x40 adc.o
- .debug_ranges  0x00000040       0x98 main.o
- .debug_ranges  0x000000d8       0x30 portHardware.o
- .debug_ranges  0x00000108       0x50 timer.o
+ .debug_ranges  0x00000040       0x68 main.o
+ .debug_ranges  0x000000a8       0x30 portHardware.o
+ .debug_ranges  0x000000d8       0x50 timer.o
