@@ -18,19 +18,22 @@
 void init()
 {
 	initLEDs();
-	initButtons();
 	initDigitalOutput();
+	initButtons();
 	Led1_on();
 	Digital_Out1_Low();
 	Digital_Out2_Low();
-	_delay_ms(2000);
+	 _delay_ms(1500);
+	Led1_off();
 	Digital_Out1_High();
-	//interrupt0_init();
-	//interrupt1_init();
-	Timer0_Init();
+	Digital_Out2_Low();
+	Analog_Comparator_init();
+	 
+	//Timer0_Init();
+	//Analog_Comparator_init();
+	//_delay_ms((unsigned char)500);
 	//Timer1_Init();
 	//adc_init();
-	Analog_Comparator_init();
 	// watchdog enable
 	//wdt_enable(WDTO_15MS);
 }

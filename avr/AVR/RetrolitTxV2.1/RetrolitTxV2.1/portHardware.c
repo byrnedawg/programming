@@ -18,11 +18,14 @@ void initLEDs(void)
 void initDigitalOutput(void)
 {
 	set_output(Digital_Out1_DIR, Digital_Out1_PIN_BIT);
+	set_output(Digital_Out2_DIR, Digital_Out2_PIN_BIT);
 }
 
 void initButtons(void)
 {
 	set_input(Button1_DIR, Button1_PIN_BIT);
+	GIMSK |= (0<<INT0)|(1<<PCIE);
+	PCMSK |= (0<<PCINT5)|(0<<PCINT4)|(0<<PCINT3)|(0<<PCINT2)|(0<<PCINT1)|(1<<PCINT0);
 }
 
 void toggleLED(int ledNum)
@@ -57,5 +60,20 @@ unsigned int buttonIsPressed(int button)
 	else
 	{
 		return 0;
+	}
+}
+
+ISR (PCINT0_vect)
+{
+	if(buttonIsPressed(1))
+	{
+		Led1_on();
+		Digital_Out1_Low();
+		output_toggle(Digital_Out2_DIR, Digital_Out2_PIN_BIT);
+	}
+	else
+	{
+		Led1_off();
+		Digital_Out1_High();
 	}
 }

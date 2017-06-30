@@ -17,6 +17,7 @@ volatile unsigned int msCountedTimer0 = 0;
 volatile unsigned int msCountedTimer1 = 0;
 volatile unsigned int toggleMsTime = 500;
 volatile unsigned int adcValue = 0;
+volatile unsigned char FirstpowerOn = 1;
 
 
 // Timer 0  timeout= 1.000 ms, fosc = 8.0000 MHz 
@@ -60,7 +61,7 @@ void Timer1_Init()
    //OCR1B = 0x00; // Governs Duty Cycle (192 ~75% of 256)
    //OCR1C = PWM_200Hz;	// OCR1C = Governs PWM Frequency :: (1Mhz/prescaler)/(OCR1C+1)= PWM Frequency :: 1M/128/39+1 = 200Hz	0x27 1M/128/252+1 = 33Hz	0xFC
    TIMSK |= (0<<OCIE1A)|(0<<OCIE1B)|(0<<OCIE0A)|(0<<OCIE0B)|(1<<TOIE1)|(1<<TOIE0);	// Compare A and OVF Interrupt enabled
-   TCNT1  = 65536 - 8000;
+   TCNT1  = (unsigned char)65536 - (unsigned char)8000;
    //timer1Overflows = 0; // Start timer overflows at 0
 }
 
@@ -91,20 +92,17 @@ ISR (TIMER0_OVF_vect)
 				//  Led2_off();
 			  //}
 		 }
-         if(msCountedTimer0 % 100 == 0)
+         if(msCountedTimer0 % 1000 == 0)
          {
-			  if(buttonIsPressed(1))
+			  if(FirstpowerOn)
 			  {
-				  msCountedTimer0 = 0;
-				  Led1_on();
-				  Digital_Out1_Low();
-				  output_toggle(Digital_Out2_DIR, Digital_Out2_PIN_BIT);
-			  }
-			  else
-			  {
+				  Analog_Comparator_init();
 				  Led1_off();
 				  Digital_Out1_High();
+				  Digital_Out2_Low();
+				  FirstpowerOn = 0;
 			  }
+			  
 		 }
 		 
      }
@@ -125,13 +123,13 @@ ISR(TIMER0_COMPB_vect) // timer 0 compare B interrupt
 //====================================
 ISR (TIMER1_OVF_vect)
 {
-    TCNT1 = 65536 - 8000; 
+    TCNT1 = (unsigned char)65536 - (unsigned char)8000; 
     if (++repeat_cnt1 == 1) 
     {
         repeat_cnt1 = 0; 
 		
          msCountedTimer1++;
-         if(msCountedTimer1 == 1500)
+         if(msCountedTimer1 == (unsigned char)1500)
          {
 	         msCountedTimer1 = 0;
 	          
